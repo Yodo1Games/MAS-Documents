@@ -335,7 +335,7 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isBannerAdLoaded];
 ```
 
 ## 更新日志
-|  版本   | 分布日志  | 更新内容 |
+|  版本   |  发布日期  | 更新内容 |
 |  ----  | ------- | ------  |
 |           |              |               |
 |           |              |               |
