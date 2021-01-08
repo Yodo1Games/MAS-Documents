@@ -208,9 +208,9 @@ pod install --repo-update
 ### 3. 遵守必要的法律框架(Privacy)
 请遵守适用于您的游戏及其用户的所有法律框架。您可以通过这些链接找到相关的法规信息:
 
-* [GDPR]()
-* [COPPA]()
-* [CCPA]()
+* [GDPR](privacy-gdpr.md)
+* [COPPA](privacy-coppa.md)
+* [CCPA](privacy-ccpa.md)
 
 <font color=red>重要：</font>不遵守这些框架可能会导致苹果商店或谷歌应用商店拒绝你的游戏，并对你的游戏盈利产生负面影响。
 

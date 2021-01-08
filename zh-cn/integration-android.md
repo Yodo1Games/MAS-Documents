@@ -81,9 +81,9 @@ android.enableJetifier=true
 ### 6. 遵守必要的法律框架(Privacy)
 请遵守适用于您的游戏及其用户的所有法律框架。您可以通过这些链接找到相关的法规信息:
 
-* [GDPR]()
-* [COPPA]()
-* [CCPA]()
+* [GDPR](privacy-gdpr.md)
+* [COPPA](privacy-coppa.md)
+* [CCPA](privacy-ccpa.md)
 
 ### 7. 初始化SDK
 在`Activity`的`onCreate`方法中初始化SDK
