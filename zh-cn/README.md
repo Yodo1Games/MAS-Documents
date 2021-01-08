@@ -8,8 +8,8 @@
   * [Android集成](integration-android.md)  
 * Pre-Release
   * ATT
-    * [ATT Questionnaire Part 2](ATT-Questionnaire-Part2.md)
-    * [Apple's App Privacy Questionnaire](Apple-App-Privacy-Questionnaire.md)
+    * [ATT Questionnaire Part 2](ATT-questionnaire-part2.md)
+    * [Apple's App Privacy Questionnaire](apple-app-privacy-questionnaire.md)
   * 符合广告平台规则
     * [设置App-ads.txt](app-ads.md)
   * 遵守法律
