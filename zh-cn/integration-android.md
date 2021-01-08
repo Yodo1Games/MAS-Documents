@@ -4,7 +4,7 @@
 
 ## 集成步骤
 ### 1. 项目级别`build.gradle`添加 
-```
+```groovy
 maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
 maven { url "https://dl.bintray.com/ironsource-mobile/android-adapters" }
 maven { url "https://dl.bintray.com/yodo1/MAS-Android" }
@@ -12,7 +12,7 @@ maven { url "https://dl.bintray.com/yodo1/MAS-Android" }
 
 ### 2. app级别`build.gradle`添加
 #### 2.1 添加MAS SDK依赖
-```
+```groovy
 implementation 'com.yodo1.mas:google:0.0.0.1-beta'
 ```
 
@@ -38,7 +38,7 @@ android.enableJetifier=true
 * 你可以在MAS后台中找到你的应用的AdMob应用ID。
 * 将`android:value`替换为您自己的AdMob应用ID，示例如下：
 
-```
+```xml
 <manifest>
 	<application>
 	<!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
@@ -55,7 +55,7 @@ android.enableJetifier=true
 * 在res文件夹下创建一个`xml`文件夹
 * 然后创建一个`xml`文件(`res/xml/network_security_config.xml`)并在文件中添加如下内容：
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
 	...
@@ -68,7 +68,7 @@ android.enableJetifier=true
 ```
 * 在你的应用的`AndroidManifest.xml`文件中添加下面的配置，应用属性如下:
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest ... >
 	<application android:networkSecurityConfig="@xml/network_security_config"

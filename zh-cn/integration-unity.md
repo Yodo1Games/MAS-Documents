@@ -43,13 +43,13 @@
 ### 6. 初始化SDK
 请在应用程序启动时初始化SDK。
 
-```
+```c#
 Yodo1U3dMas.InitializeSdk();
 ```
 
 ## 插屏广告
 ### 1. 设置插屏广告代理方法
-```
+```c#
 Yodo1U3dMas.SetInterstitialAdDelegate((Yodo1U3dAdEvent adEvent, Yodo1U3dAdError error) => {
     Debug.Log("[Yodo1 Mas] InterstitialAdDelegate:" + adEvent.ToString() + "\n" + error.ToString());
     switch (adEvent)
@@ -67,18 +67,18 @@ Yodo1U3dMas.SetInterstitialAdDelegate((Yodo1U3dAdEvent adEvent, Yodo1U3dAdError 
 });
 ```
 ### 2. 检查插屏广告加载状态
-```
+```c#
 bool isLoaded = Yodo1U3dMas.IsInterstitialAdLoaded();
 ```
 
 ### 3. 展示插屏广告
-```
+```c#
 Yodo1U3dMas.ShowInterstitialAd();
 ```
 
 ## 激励视频广告
 ### 1. 设置激励视频广告代理方法
-```
+```c#
 Yodo1U3dMas.SetRewardedAdDelegate((Yodo1U3dAdEvent adEvent, Yodo1U3dAdError error) => {
     Debug.Log("[Yodo1 Mas] RewardVideoDelegate:" + adEvent.ToString() + "\n" + error.ToString());
     switch (adEvent)
@@ -100,17 +100,17 @@ Yodo1U3dMas.SetRewardedAdDelegate((Yodo1U3dAdEvent adEvent, Yodo1U3dAdError erro
 });
 ```
 ### 2. 检查激励视频广告加载状态
-```
+```c#
 bool isLoaded = Yodo1U3dMas.IsRewardedAdLoaded();
 ```
 
 ### 3. 展示激励视频广告
-```
+```c#
 Yodo1U3dMas.ShowRewardedAd();
 ```
 ## 横幅广告
 ### 1. 设置横幅广告代理方法
-```
+```c#
 Yodo1U3dMas.SetBannerAdDelegate((Yodo1U3dAdEvent adEvent, Yodo1U3dAdError error) => {
     Debug.Log("[Yodo1 Mas] BannerdDelegate:" + adEvent.ToString() + "\n" + error.ToString());
     switch (adEvent)
@@ -128,12 +128,12 @@ Yodo1U3dMas.SetBannerAdDelegate((Yodo1U3dAdEvent adEvent, Yodo1U3dAdError error)
 });
 ```
 ### 2. 检查插屏广告加载状态
-```
+```c#
 bool isLoaded = Yodo1U3dMas.IsBannerAdLoaded();
 ```
 
 ### 3. 展示横幅广告
-```
+```c#
 Yodo1U3dMas.ShowBannerAd();
 ```
 
@@ -144,17 +144,17 @@ Yodo1U3dMas.ShowBannerAd();
 以下是如何设置插屏广告、奖励广告和横幅广告的示例代码：
 
 **插屏广告**</br>
-```
+```c#
 Yodo1U3dMas.ShowRewardedAd("MY_INTERSTITIAL_PLACEMENT");
 ```
 
 **激励视频广告**</br>
-```
+```c#
 Yodo1U3dMas.ShowInterstitialAd("MY_REWARDED_PLACEMENT");
 ```
 
 **横幅广告**</br>
-```
+```c#
 Yodo1U3dMas.ShowBannerAd("MY_BANNER_PLACEMENT");
 ```
 

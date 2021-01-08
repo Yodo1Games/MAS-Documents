@@ -14,14 +14,14 @@ touch Podfile
 #### 1.2 将iOS SDK导入项目</br>
 请打开项目的 `Podfile` 文件并将下面代码添加到应用的目标中：
 
-```iOS
+```ruby
 source 'https://github.com/Yodo1Games/MAS-Spec.git'
 
 pod 'Yodo1MasSDK', '~> 0.0.0.1-beta'
 ```
 
 在`终端`中执行如下命令：</br>
-```
+```ruby
 pod install --repo-update
 ```
 
@@ -216,12 +216,12 @@ pod install --repo-update
 
 ### 4. 初始化SDK
 #### 4.1 导入头文件`Yodo1Mas.h`
-``` iOS
+``` obj-c
 #import <Yodo1MasCore/Yodo1Mas.h>
 ```
 
 #### 4.2 在 didFinishLaunchingWithOptions 中进行初始化 
-``` iOS
+``` obj-c
 [[Yodo1Mas sharedInstance] initWithAppId:@"你的AppId" successful:^{
     
 } fail:^(NSError * _Nonnull error) {
@@ -231,7 +231,7 @@ pod install --repo-update
 
 ## 插屏广告集成
 ### 1. 设置插屏广告代理方法
-``` iOS
+``` obj-c
 [Yodo1Mas sharedInstance].bannerAdDelegate = self; 
 
 #pragma mark - Interstitial Delegate
@@ -249,18 +249,18 @@ pod install --repo-update
 ```
 
 ### 2. 检查插屏广告加载状态
-``` iOS
+``` obj-c
 BOOL isLoaded = [[Yodo1Mas sharedInstance] isInterstitialAdLoaded];
 ```
 
 ### 3. 展示插屏广告
-```iOS
+```obj-c
 [[Yodo1Mas sharedInstance] showInterstitialAd];
 ```
 
 ## 激励视频广告集成
 ### 1. 设置激励视频广告代理方法
-``` iOS
+``` obj-c
 [Yodo1Mas sharedInstance].rewardAdDelegate = self;
 
 #pragma mark - Yodo1MasAdDelegate
@@ -283,18 +283,18 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isInterstitialAdLoaded];
 ```
 
 ### 2. 检查激励视频广告加载状态
-``` iOS
+``` obj-c
 BOOL isLoaded = [[Yodo1Mas sharedInstance] isRewardAdLoaded];
 ```
 
 ### 3. 展示激励视频广告
-```iOS
+```obj-c
 [[Yodo1Mas sharedInstance] showRewardAd]
 ```
 
 ## 横幅广告集成
 ### 1. 设置横幅广告代理方法
-``` iOS
+``` obj-c
 [Yodo1Mas sharedInstance].bannerAdDelegate = self;
 
 #pragma mark - Yodo1MasAdDelegate
@@ -312,33 +312,33 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isRewardAdLoaded];
 ```
 
 ### 2. 检查插屏广告加载状态
-```iOS
+```obj-c
 BOOL isLoaded = [[Yodo1Mas sharedInstance] isBannerAdLoaded];
 ```
 
 ### 3. 展示横幅广告
-```iOS
+```obj-c
 [[Yodo1Mas sharedInstance] showBannerAd];
 ```
 
 ### 4. 关闭横幅广告
-```iOS
+```obj-c
 [[Yodo1Mas sharedInstance] dismissBannerAd];
 ```
 
 ## Privacy
 **GDPR**
-```iOS
+```obj-c
 [Yodo1Mas sharedInstance].isGDPRUserConsent = YES;
 ```
 
 **COPPA**
-```iOS
+```obj-c
 [Yodo1Mas sharedInstance].isCOPPAAgeRestricted = NO;
 ```
 
 **CCPA**
-```iOS
+```obj-c
 [Yodo1Mas sharedInstance].isCCPADoNotSell = NO;
 ```
 
@@ -349,17 +349,17 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isBannerAdLoaded];
 以下是如何设置插屏广告、奖励广告和横幅广告的示例代码：
 
 **插屏广告**</br>
-```iOS
+```obj-c
 [[Yodo1Mas sharedInstance] showInterstitialAd:@"MY_INTERSTITIAL_PLACEMENT"]
 ```
 
 **激励视频广告**</br>
-```iOS
+```obj-c
 [[Yodo1Mas sharedInstance] showRewardAd:@"MY_REWARDED_PLACEMENT"]
 ```
 
 **横幅广告**</br>
-```
+```obj-c
 [[Yodo1Mas sharedInstance] showBannerAd:@"MY_BANNER_PLACEMENT"]
 ```
 
