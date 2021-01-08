@@ -1,11 +1,18 @@
 # iOS集成
->* iOS14要求Xcode版本为12+，请务必升级您的Xcode版本到12+。
->*  SDK要求iOS的最低版本为iOS 9.0及以上版本
->*  最简便的方法就是使用 CocoaPods, 如果您刚开始接触 CocoaPods，请参阅其[官方文档](https://guides.cocoapods.org/using/using-cocoapods)，了解如何创建和使用 Podfile
+>* `iOS14`要求`Xcode`版本为`12+`，请务必升级您的`Xcode`版本到`12+`。
+>*  `SDK`要求`iOS`的最低版本为`iOS9.0`
+>*  最简便的方法就是使用`CocoaPods`, 如果您刚开始接触`CocoaPods`，请参阅其[官方文档](https://guides.cocoapods.org/using/using-cocoapods)，了解如何创建和使用`Podfile`
 
 ## 集成步骤
-### 1.将iOS SDK导入项目</br>
-请打开项目的 Podfile 并将下面代码添加到应用的目标中：
+### 1. 将`iOS SDK`添加到项目中
+#### 1.1 创建`Podfile`文件</br>
+在项目根目录下创建`Podfile`文件
+```ruby
+touch Podfile
+```
+
+#### 1.2 将iOS SDK导入项目</br>
+请打开项目的 `Podfile` 文件并将下面代码添加到应用的目标中：
 
 ```iOS
 source 'https://github.com/Yodo1Games/MAS-Spec.git'
@@ -13,32 +20,46 @@ source 'https://github.com/Yodo1Games/MAS-Spec.git'
 pod 'Yodo1MasSDK', '~> 0.0.0.1-beta'
 ```
 
-在命令行中执行如下命令：</br>
+在`终端`中执行如下命令：</br>
 ```
 pod install --repo-update
 ```
 
-### 2.配置Xcode项目设置
-#### 2.1 iOS9 App Transport Security设置
-在iOS9中，苹果增加了关于“ATS”的控制。为了确保在所有中介网络上不间断地支持MAS广告，需要在您的***info.plist***文件中进行以下设置：
+### 2. `Xcode`工程配置
+#### 2.1 `iOS9 App Transport Security`设置
+在`iOS9`中，苹果增加了关于`ATS`的控制。为了确保在所有中介网络上不间断地支持MAS广告，需要您在`Info.plist`文件中进行以下设置：
 
-* 添加NSAppTransportSecurity，类型为Dictionary
-* 在NSAppTransportSecurity中添加字段: 
+* 添加`NSAppTransportSecurity`，类型为`Dictionary`
+* 在`NSAppTransportSecurity`中添加`NSAllowsArbitraryLoads`，类型为`Boolean`，值为`YES`
 
-***NSAllowsArbitraryLoads***，类型为Boolean，值为YES，你也可以直接编辑plist源码(Open As Source Code)实现同样的功能，示例如下：
+你也可以直接编辑plist源码(`Open As Source Code`)实现同样的功能，示例如下：
         
 ``` xml
 <key>NSAppTransportSecurity</key> 
-    <dict> 
+<dict> 
     <key>NSAllowsArbitraryLoads</key> 
     <true/> 
 </dict>
 ```
-#### 2.2 iOS14 AppTrackingTransparency设置
-请在xcode工程的info.plist中配置"***NSUserTrackingUsageDescription***"及描述文案，并对描述文案进行多语言配置。描述文案的多语言配置可以通过如下操作完成：
 
-#### 2.3 使用S​​KAdNetwork跟踪转化
-使用Apple的转化跟踪***SKAdNetwork***，这意味着即使IDFA不可用，广告平台也可以通过这个获取应用安装归因。请参阅Apple的***SKAdNetwork***文档，以了解更多信息。要启用此功能，您需要在***info.plist***中添加***SKAdNetworkItems***。
+#### 2.2 `iOS14 AppTrackingTransparency`设置
+请在`Xcode`工程的`Info.plist`中配置`NSUserTrackingUsageDescription`及描述文案，并对描述文案进行多语言配置。描述文案的多语言配置可以通过如下操作完成：
+
+* 在`XCode`工程中创建名为`InfoPlist.strings`的文件，如图:
+<img src="../resource/ios-att-string.png" style="zoom:50%;" />
+
+* 选中`InfoPlist.string`在`Xcode`的右侧边栏找到`Localization`并点击`Localization`按钮，如图：
+<img src="../resource/ios-att-localization.png" style="zoom:50%;" />
+
+* 在`XCode`工程中添加多语言，如图： 
+<img src="../resource/ios-att-add-language-1.png" style="zoom:50%;" />
+<img src="../resource/ios-att-add-language-2.png" style="zoom:50%;" />
+
+* 将`NSUserTrackingUsageDescription`对应的描述文案添加到InfoPlist.strings(xxx)文件中，如图：
+<img src="../resource/ios-att-add-language-3.png" style="zoom:50%;" />
+
+#### 2.3 使用`S​​KAdNetwork`跟踪转化
+使用`Apple`的转化跟踪`SKAdNetwork`，这意味着即使`IDFA`不可用，广告平台也可以通过这个获取应用安装归因。请参阅`Apple`的`SKAdNetwork`[官方文档](https://developer.apple.com/documentation/storekit/skadnetwork)，以了解更多信息。要启用此功能，您需要在`Info.plist`中添加`SKAdNetworkItems`。
 
 ```xml
 <key>SKAdNetworkItems</key>
@@ -170,16 +191,19 @@ pod install --repo-update
 </array>
 
 ```
-    
-#### 2.4 添加AdMob App ID
-    
-   * 添加"GADApplicationIdentifier"字段到info.plist文件中，类型为"String"。
-   * 可以编辑info.plist文件，使用“Open As Source Code”打开文件，并将“GADApplicationIdentifier”添加到文件中。示例:
-    
-    ``` xml
-    <key>GADApplicationIdentifier</key> 
-    <string>Your MAS AdMob App ID</string>
-    ```
+
+#### 2.4 禁用`BitCode`
+为确保所有中介网络正常工作，请禁用bitcode，如下图所示:
+<img src="../resource/ios-bitcode-disable.png" style="zoom:50%;" />
+
+#### 2.5 添加AdMob App ID
+* 添加`GADApplicationIdentifier`字段到`Info.plist`文件中，类型为`String`。
+* 可以编辑`Info.plist`文件，使用`Open As Source Code`打开文件，并将`GADApplicationIdentifier`添加到文件中。示例:
+
+``` xml
+<key>GADApplicationIdentifier</key> 
+<string>Your MAS AdMob App ID</string>
+```
 
 ### 3. 遵守必要的法律框架(Privacy)
 请遵守适用于您的游戏及其用户的所有法律框架。您可以通过这些链接找到相关的法规信息:
@@ -190,15 +214,13 @@ pod install --repo-update
 
 <font color=red>重要：</font>不遵守这些框架可能会导致苹果商店或谷歌应用商店拒绝你的游戏，并对你的游戏盈利产生负面影响。
 
-### 4.初始化SDK
-#### 4.1 导入头文件 Yodo1Ads.h
-
+### 4. 初始化SDK
+#### 4.1 导入头文件`Yodo1Mas.h`
 ``` iOS
 #import <Yodo1MasCore/Yodo1Mas.h>
 ```
+
 #### 4.2 在 didFinishLaunchingWithOptions 中进行初始化 
-    
-    
 ``` iOS
 [[Yodo1Mas sharedInstance] initWithAppId:@"你的AppId" successful:^{
     
@@ -208,9 +230,7 @@ pod install --repo-update
 ```
 
 ## 插屏广告集成
-
 ### 1. 设置插屏广告代理方法
-
 ``` iOS
 [Yodo1Mas sharedInstance].bannerAdDelegate = self; 
 
@@ -227,23 +247,19 @@ pod install --repo-update
     
 }       
 ```
-    
-### 2. 检查插屏广告加载状态
 
+### 2. 检查插屏广告加载状态
 ``` iOS
 BOOL isLoaded = [[Yodo1Mas sharedInstance] isInterstitialAdLoaded];
 ```
-    
-### 3. 展示插屏广告
 
+### 3. 展示插屏广告
 ```iOS
 [[Yodo1Mas sharedInstance] showInterstitialAd];
 ```
-    
-## 激励视频广告
 
+## 激励视频广告集成
 ### 1. 设置激励视频广告代理方法
-
 ``` iOS
 [Yodo1Mas sharedInstance].rewardAdDelegate = self;
 
@@ -265,22 +281,19 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isInterstitialAdLoaded];
     
 }
 ```
-    
-### 2. 检查激励视频广告加载状态
 
+### 2. 检查激励视频广告加载状态
 ``` iOS
 BOOL isLoaded = [[Yodo1Mas sharedInstance] isRewardAdLoaded];
 ```
-    
-### 3. 展示激励视频广告
 
+### 3. 展示激励视频广告
 ```iOS
 [[Yodo1Mas sharedInstance] showRewardAd]
 ```
 
 ## 横幅广告集成
 ### 1. 设置横幅广告代理方法
-
 ``` iOS
 [Yodo1Mas sharedInstance].bannerAdDelegate = self;
 
@@ -298,19 +311,35 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isRewardAdLoaded];
 }
 ```
 
-### 2. 检查横幅广告加载状态
+### 2. 检查插屏广告加载状态
 ```iOS
 BOOL isLoaded = [[Yodo1Mas sharedInstance] isBannerAdLoaded];
 ```
-    
+
 ### 3. 展示横幅广告
 ```iOS
 [[Yodo1Mas sharedInstance] showBannerAd];
 ```
- 
+
 ### 4. 关闭横幅广告
 ```iOS
 [[Yodo1Mas sharedInstance] dismissBannerAd];
+```
+
+## Privacy
+**GDPR**
+```iOS
+[Yodo1Mas sharedInstance].isGDPRUserConsent = YES;
+```
+
+**COPPA**
+```iOS
+[Yodo1Mas sharedInstance].isCOPPAAgeRestricted = NO;
+```
+
+**CCPA**
+```iOS
+[Yodo1Mas sharedInstance].isCCPADoNotSell = NO;
 ```
 
 ## 高级设置
@@ -340,5 +369,5 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isBannerAdLoaded];
 |           |              |               |
 |           |              |               |
 
-   
-    
+
+​    

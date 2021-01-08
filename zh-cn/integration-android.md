@@ -1,6 +1,6 @@
 # Android集成
-> SDK要求Android OS的最低版本为Android 4.4及以上版本</br>
-> 重要: 确保你使用的是Gradle 3.3.0+版本。
+> `SDK`要求`Android OS`的最低版本为`Android 4.4`及以上版本</br>
+> 重要: 确保你使用的是`Gradle 3.3.0+`版本。
 
 ## 集成步骤
 ### 1. 项目级别`build.gradle`添加 
@@ -9,6 +9,7 @@ maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
 maven { url "https://dl.bintray.com/ironsource-mobile/android-adapters" }
 maven { url "https://dl.bintray.com/yodo1/MAS-Android" }
 ```
+
 ### 2. app级别`build.gradle`添加
 #### 2.1 添加MAS SDK依赖
 ```
@@ -16,7 +17,7 @@ implementation 'com.yodo1.mas:google:0.0.0.1-beta'
 ```
 
 #### 2.2 添加`compileOptions`属性到 `android` 部分
-```
+```ruby
 android {
 	compileOptions {
 		sourceCompatibility = 1.8
@@ -27,7 +28,7 @@ android {
 ### 3. 支持AndroidX
 添加下面内容到 `gradle.properties` 文件
 
-```
+```ruby
 android.useAndroidX=true
 android.enableJetifier=true
 ```
@@ -37,45 +38,45 @@ android.enableJetifier=true
 * 你可以在MAS后台中找到你的应用的AdMob应用ID。
 * 将`android:value`替换为您自己的AdMob应用ID，示例如下：
 
-	```
-	<manifest>
-	  <application>
-	    <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
-	    <meta-data
-	      android:name="com.google.android.gms.ads.APPLICATION_ID"
-	      android:value="YOUR_ADMOB_APP_ID"/>
-	  </application>
-	</manifest>
-	```
+```
+<manifest>
+	<application>
+	<!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+	<meta-data
+		android:name="com.google.android.gms.ads.APPLICATION_ID"
+		android:value="YOUR_ADMOB_APP_ID"/>
+	</application>
+</manifest>
+```
 	
 ### 5. Android P 适配
-为了兼容Android P(API level 28)，请完成以下步骤:
+为了兼容`Android P(API level 28)`，请完成以下步骤:
 
-* 在res文件夹下创建一个xml文件夹
-* 然后创建一个xml文件(`res/xml/network_security_config.xml`)并在文件中添加如下内容：
+* 在res文件夹下创建一个`xml`文件夹
+* 然后创建一个`xml`文件(`res/xml/network_security_config.xml`)并在文件中添加如下内容：
 
-	```
-	<?xml version="1.0" encoding="utf-8"?>
-	<network-security-config>
-	   ...
-	   <base-config cleartextTrafficPermitted="true" />
-	   <domain-config cleartextTrafficPermitted="true">
-	   <domain includeSubdomains="true">127.0.0.1</domain>
-	   </domain-config>
-	   ...
-	</network-security-config>  
-	```
+```
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+	...
+	<base-config cleartextTrafficPermitted="true" />
+	<domain-config cleartextTrafficPermitted="true">
+	<domain includeSubdomains="true">127.0.0.1</domain>
+	</domain-config>
+	...
+</network-security-config>  
+```
 * 在你的应用的`AndroidManifest.xml`文件中添加下面的配置，应用属性如下:
 
-	```
-	<?xml version="1.0" encoding="utf-8"?>
-	<manifest ... >
-	  <application android:networkSecurityConfig="@xml/network_security_config"
-	  ... >
-	  ...
-	  </application>
-	</manifest>
-	```
+```
+<?xml version="1.0" encoding="utf-8"?>
+<manifest ... >
+	<application android:networkSecurityConfig="@xml/network_security_config"
+	... >
+	...
+	</application>
+</manifest>
+```
 	
 ### 6. 遵守必要的法律框架(Privacy)
 请遵守适用于您的游戏及其用户的所有法律框架。您可以通过这些链接找到相关的法规信息:
@@ -432,6 +433,22 @@ Yodo1Mas.getInstance().showBannerAd(MyActivity.this);
 ### 4. 关闭横幅广告
 ```java
 Yodo1Mas.getInstance().dismissBannerAd(MyActivity.this);
+```
+
+## Privacy
+**GDPR**
+```java
+Yodo1Mas.getInstance().setGDPR(true);
+```
+
+**COPPA**
+```java
+Yodo1Mas.getInstance().setCOPPA(false);
+```
+
+**CCPA**
+```java
+Yodo1Mas.getInstance().setCCPA(false);
 ```
 
 ## 高级设置
