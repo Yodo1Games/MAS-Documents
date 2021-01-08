@@ -15,7 +15,7 @@
     * [CCPA](privacy-ccpa.md)
 * Post-Release
   * Post-Release Tasks
-    * [FAN配置](Fan-configuration.md)
+    * [FAN配置](FAN-configuration.md)
 * 账号
   * [子账号]()
 * [检查清单]()
