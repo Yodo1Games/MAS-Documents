@@ -1,6 +1,6 @@
 # iOS集成
 >* iOS14要求Xcode版本为12+，请务必升级您的Xcode版本到12+。
->*  SDK要求iOS的最低版本为iOS 9.0及以上
+>*  SDK要求iOS的最低版本为iOS 9.0及以上版本
 >*  最简便的方法就是使用 CocoaPods, 如果您刚开始接触 CocoaPods，请参阅其[官方文档](https://guides.cocoapods.org/using/using-cocoapods)，了解如何创建和使用 Podfile
 
 ## 集成步骤
@@ -298,7 +298,7 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isRewardAdLoaded];
 }
 ```
 
-### 2. 检查插屏广告加载状态
+### 2. 检查横幅广告加载状态
 ```iOS
 BOOL isLoaded = [[Yodo1Mas sharedInstance] isBannerAdLoaded];
 ```
