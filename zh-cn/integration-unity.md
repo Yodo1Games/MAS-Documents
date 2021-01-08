@@ -5,31 +5,48 @@
 ### 1. 下载[Unity插件]()
 > * MAS支持Unity 2017.4.37f1+ LTS版本，2018年和2019年通用维护的LTS Unity版本以及以上版本。
 > * [Jetifier](https://developer.android.com/jetpack/androidx/releases/jetifier)是Android构建所必需的，可以通过选择 ***Assets > External Dependency Manager > Android Resolver > Settings > Use Jetifier*** 启用
-> * CocoaPods是iOS构建所必需的，可以按照[这里](https://guides.cocoapods.org/using/getting-started.html#getting-started)的说明安装。
-> * iOS14需要Xcode 12+，请确保你的Xcode是最新的。
-> * Unity插件包含示例代码，路径为 ***“/Assets/Yodo1/MAS/Sample”***</br>
+> * `CocoaPods`是`iOS`构建所必需的，可以按照[这里](https://guides.cocoapods.org/using/getting-started.html#getting-started)的说明安装。
+> * iOS14需要`Xcode` 12+，请确保你的`Xcode`是最新的。
+> * `Unity`插件包含示例代码，路径为 ***“/Assets/Yodo1/MAS/Sample”***</br>
 
 ### 2. 将SDK集成到项目中
 打开你的Unity项目并导入Unity包，双击下载后的Unity插件压缩包图标。文件将自动填充，如下图所示：
-![](../resource/import-package.png)
+
+<center class="half">
+    <img src="../resource/import-package.png" width="400"/> 
+</center>
 
 ### 3. 设置游戏信息
 > MAS为Unity提供了一个配置向导来快速配置应用信息，您可以通过 ***"Assets/Yodo1/MAS Settings"*** 打开配置页面。
 
-![](../resource/settings-mas.png)
+<center class="half">
+    <img src="../resource/settings-mas.png" width="400"/> 
+</center>
 
 #### 3.1 设置安卓配置
-![](../resource/settings-android.png)
+
+<center class="half">
+    <img src="../resource/settings-android.png" width="400"/> 
+</center>
 
 #### 3.2 设置iOS配置
-![](../resource/settings-ios.png)
+
+<center class="half">
+    <img src="../resource/settings-ios.png" width="400"/> 
+</center>
 
 ### 4. 支持AndroidX
 #### 4.1 打开下图中的"Settings"，如图：
-![](../resource/settings-resolver-android.png)
+
+<center class="half">
+    <img src="../resource/settings-resolver-android.png" width="400"/> 
+</center>
 
 #### 4.2 勾选"***Use Jetifier***".
-![](../resource/use-jetifier.png)
+
+<center class="half">
+    <img src="../resource/use-jetifier.png" width="400"/> 
+</center>
 
 ### 5. 遵守必要的法律框架(Privacy)
 请遵守适用于您的游戏及其用户的所有法律框架。您可以通过这些链接找到相关的法规信息:
@@ -43,8 +60,24 @@
 ### 6. 初始化SDK
 请在应用程序启动时初始化SDK。
 
+#### 6.1 设置初始化代理方法
 ```c#
-Yodo1U3dMas.InitializeSdk();
+Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => {
+    if (success){// Initialize successful
+
+    } else { // Initialize failure
+
+    }
+});
+    
+```
+
+#### 6.2 在`Start`方法中调用SDK初始化
+
+```c#
+void Start()  {
+	Yodo1U3dMas.InitializeSdk();
+}
 ```
 
 ## 插屏广告
@@ -144,16 +177,19 @@ Yodo1U3dMas.ShowBannerAd();
 以下是如何设置插屏广告、奖励广告和横幅广告的示例代码：
 
 **插屏广告**</br>
+
 ```c#
 Yodo1U3dMas.ShowRewardedAd("MY_INTERSTITIAL_PLACEMENT");
 ```
 
 **激励视频广告**</br>
+
 ```c#
 Yodo1U3dMas.ShowInterstitialAd("MY_REWARDED_PLACEMENT");
 ```
 
 **横幅广告**</br>
+
 ```c#
 Yodo1U3dMas.ShowBannerAd("MY_BANNER_PLACEMENT");
 ```
