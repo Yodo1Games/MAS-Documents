@@ -11,7 +11,7 @@
   * [COPPA](privacy-coppa.md)
   * [CCPA](privacy-ccpa.md)
 * 符合广告平台规则
-  * [App-ads.txt](app-ads.md)
+  * [设置App-ads.txt](app-ads.md)
 * [FAN配置]()
 * [检查清单]()
 * [常见问题]()
