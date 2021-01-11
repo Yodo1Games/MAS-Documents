@@ -58,6 +58,9 @@ pod install --repo-update
 * 将`NSUserTrackingUsageDescription`对应的描述文案添加到InfoPlist.strings(xxx)文件中，如图：
 <img src="../resource/ios-att-add-language-3.png" style="zoom:50%;" />
 
+> 此标识符将用于向您发送个性广告
+> This identifier will be used to send you personalized ads
+
 #### 2.3 使用`S​​KAdNetwork`跟踪转化
 使用`Apple`的转化跟踪`SKAdNetwork`，这意味着即使`IDFA`不可用，广告平台也可以通过这个获取应用安装归因。请参阅`Apple`的`SKAdNetwork`[官方文档](https://developer.apple.com/documentation/storekit/skadnetwork)，以了解更多信息。要启用此功能，您需要在`Info.plist`中添加`SKAdNetworkItems`。
 
