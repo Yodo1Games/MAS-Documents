@@ -25,7 +25,17 @@ android {
 	} 
 }
 ```
-### 3. 支持AndroidX
+
+### 3. 开启`MultiDex`，app级别`build.gradle`添加
+```
+defaultConfig {
+    ...
+    multiDexEnabled true
+    ...
+}
+```
+
+### 4. 支持AndroidX
 添加下面内容到 `gradle.properties` 文件
 
 ```ruby
@@ -33,7 +43,7 @@ android.useAndroidX=true
 android.enableJetifier=true
 ```
 
-### 4. 添加AdMob应用ID
+### 5. 添加AdMob应用ID
 * 通过添加`<meta-data>`标签，将AdMob应用ID添加到你的应用的`AndroidManifest.xml`文件中
 * 你可以在MAS后台中找到你的应用的AdMob应用ID。
 * 将`android:value`替换为您自己的AdMob应用ID，示例如下：
@@ -49,7 +59,7 @@ android.enableJetifier=true
 </manifest>
 ```
 	
-### 5. Android P 适配
+### 6. Android P 适配
 为了兼容`Android P(API level 28)`，请完成以下步骤:
 
 * 在res文件夹下创建一个`xml`文件夹
@@ -78,14 +88,14 @@ android.enableJetifier=true
 </manifest>
 ```
 	
-### 6. 遵守必要的法律框架(Privacy)
+### 7. 遵守必要的法律框架(Privacy)
 请遵守适用于您的游戏及其用户的所有法律框架。您可以通过这些链接找到相关的法规信息:
 
 * [GDPR](privacy-gdpr.md)
 * [COPPA](privacy-coppa.md)
 * [CCPA](privacy-ccpa.md)
 
-### 7. 初始化SDK
+### 8. 初始化SDK
 在`Activity`的`onCreate`方法中初始化SDK
 
 ```java
@@ -105,7 +115,7 @@ protected void onCreate() {
 }
 ```
 
-### 8. 混淆
+### 9. 混淆
 如果您的应用需要混淆，必须将以下代码添加到您的ProGuard文件中(Android Studio: `ProGuard-rules.pro`或Eclipse: `proguard-project.txt`):
 
 ```
