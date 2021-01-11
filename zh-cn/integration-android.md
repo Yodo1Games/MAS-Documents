@@ -122,11 +122,10 @@ protected void onCreate() {
 -ignorewarnings
 -keeppackagenames com.yodo1.**
 -keep class com.yodo1.** { *; }
--keep class com.yodo1.advert.open.** { *; }
--keep class com.yodo1.advert.unity.** { *; }
--keep class com.yodo1.advert.callback.** { *; }
--keep class com.yodo1.advert.entity.** { *; }
--keep public class * extends com.yodo1.advert.AdapterAdvertBase
+-keep class com.yodo1.mas.** { *; }
+-keep class com.yodo1.mas.error.** { *; }
+-keep class com.yodo1.mas.event.** { *; }
+-keep public class * extends com.yodo1.mas.mediation.Yodo1MasAdapterBase
 
 -keep class com.google.ads.** { *; }
 
@@ -443,22 +442,6 @@ Yodo1Mas.getInstance().showBannerAd(MyActivity.this);
 ### 4. 关闭横幅广告
 ```java
 Yodo1Mas.getInstance().dismissBannerAd(MyActivity.this);
-```
-
-## Privacy
-**GDPR**
-```java
-Yodo1Mas.getInstance().setGDPR(true);
-```
-
-**COPPA**
-```java
-Yodo1Mas.getInstance().setCOPPA(false);
-```
-
-**CCPA**
-```java
-Yodo1Mas.getInstance().setCCPA(false);
 ```
 
 ## 高级设置

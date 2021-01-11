@@ -326,22 +326,6 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isBannerAdLoaded];
 [[Yodo1Mas sharedInstance] dismissBannerAd];
 ```
 
-## Privacy
-**GDPR**
-```obj-c
-[Yodo1Mas sharedInstance].isGDPRUserConsent = YES;
-```
-
-**COPPA**
-```obj-c
-[Yodo1Mas sharedInstance].isCOPPAAgeRestricted = NO;
-```
-
-**CCPA**
-```obj-c
-[Yodo1Mas sharedInstance].isCCPADoNotSell = NO;
-```
-
 ## 高级设置
 ### 广告位
 > MAS SDK让你能够设置每个广告单元的放置名称(例如: MainMenu, Upgrade_Level等)。
