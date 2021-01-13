@@ -1,4 +1,4 @@
-# Member management
+# Member Management
 
 MAS lets you give other members the ability to view and edit your applications
 Set it up by following these steps.
