@@ -39,6 +39,7 @@
   * [Member management](account-member-management.md)
 * 检查清单 - TODO
 * 常见问题 - TODO
-* 支持 - TODO
+* Support
+  * [Contact Us](contact-us.md)
 <!--te-->
 
