@@ -15,13 +15,17 @@ Please carefully select the correct audience. Certain ad networks used in MAS ar
 
 Also, please note that if your game serves either a general audience or children under 13, you will need to comply with various privacy regulations in different regions. Information on how to do this can be found here.
 
-![](../resource/submission-additional-step-1.png)
+<center class="half">
+    <img src="../resource/submission-additional-step-1.png" width="400"/> 
+</center>
 
 ### Step 2: Providing Details About Your Ad Injection Points
 
 During submission, you'll be asked to provide information about the ads in your game. 
 
-![](../resource/submission-additional-step-2.png)
+<center class="half">
+    <img src="../resource/submission-additional-step-2.png" width="400"/> 
+</center>
 
 For "Display rules of ads", please provide basic information about how ads work in your game.
 
@@ -32,7 +36,9 @@ For example:
 
 For "Ad injection screenshot", please search your game for examples of ads being displayed in the game. As you can see in the previous screenshot, "Video" is selected. Here is an example of a screenshot that could be submitted for rewarded video:
 
-![](../resource/submission-additional-step-2-1.png)
+<center class="half">
+    <img src="../resource/submission-additional-step-2-1.png" width="400"/> 
+</center>
 
 ### Step 3: Adding Your SHA1 (Chinese Android SDK Only)
 
@@ -40,6 +46,7 @@ Your SHA1 is a cryptographic hash that is used as an identifying marker for your
 
 Not sure how to get your SHA1? Here are guides for [Unity](https://www.youtube.com/watch?v=o-I-Eq2fQRg) and [Android](https://medium.com/pen-bold-kiln-press/sha-1-android-studio-ec02fb893e72).
 
-![](../resource/submission-additional-step-3.png)
-
+<center class="half">
+    <img src="../resource/submission-additional-step-3.png" width="400"/> 
+</center>
 
