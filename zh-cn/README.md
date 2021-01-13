@@ -10,6 +10,11 @@
     * [Supported Ad Formats](supported-ad-Formats.md)
 * Game Submission
   * Game Submission
+    * [Introduction](submission-introduction.md)
+    * [New App vs Live App](submission-newapp-vs-liveapp.md)
+    * [Main Steps for Submission](submission-main-steps.md)
+    * [Additional Steps For Live Games](submission-additional-steps.md)
+    * [Submitting Your Revenue Metrics](submission-revenue-metrics.md)
   * Payment
 * 集成指南
   * [Unity集成](integration-unity.md)
