@@ -28,6 +28,6 @@ See that **IMPORTANT!** up there? It's one of the signals we use to tell you to 
 ***Note*** is our way of telling you that something may be optional. We will explain when it is optional, and when it isn't, allowing you to skip past certain tasks.
 
 ## The Checklist 
-We have created [a checklist](https://support.yodo1.com/hc/en-us/articles/360051732214) that includes top priority tasks for you to complete. Completing these tasks at the times mentioned in the checklist will lead to the best revenue with MAS. Please follow it and consult your assigned Yodo1 Business Developer if you have any questions or concerns.
+We have created [a checklist](checklist-key-tasks.md) that includes top priority tasks for you to complete. Completing these tasks at the times mentioned in the checklist will lead to the best revenue with MAS. Please follow it and consult your assigned Yodo1 Business Developer if you have any questions or concerns.
 
 And that's all, for now! If you have any feedback, on either this article, or any others, please reach out and let us know! For now, go ahead and submit your game to the MAS. You'll get an automatic confirmation when review is complete, and be on your way to making more with MAS.
