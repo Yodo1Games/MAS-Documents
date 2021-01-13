@@ -10,17 +10,17 @@
   * ATT
     * [ATT Questionnaire Part 2](ATT-questionnaire-part2.md)
     * [Apple's App Privacy Questionnaire](apple-app-privacy-questionnaire.md)
-  * 符合广告平台规则
+  * Compliance With Ad Networks
     * [设置App-ads.txt](app-ads.md)
-  * 遵守法律
+  * Legal Compliance
     * [GDPR](privacy-gdpr.md)
     * [COPPA](privacy-coppa.md)
     * [CCPA](privacy-ccpa.md)
 * Post-Release
   * Post-Release Tasks
-    * [FAN配置](FAN-configuration.md)
-* 账号
-  * [子账号](account-member-management.md)
+    * [FAN Configuration](FAN-configuration.md)
+* Account
+  * [Member management](account-member-management.md)
 * 检查清单 - TODO
 * 常见问题 - TODO
 * 支持 - TODO
