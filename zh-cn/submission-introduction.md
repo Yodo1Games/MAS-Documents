@@ -10,6 +10,4 @@ The only important thing to note is that it may take up to 48 hours after your g
 
 Video Guide:
 
-<video id="video" controls="" preload="none" poster="http://om2bks7xs.bkt.clouddn.com/2017-08-26-Markdown-Advance-Video.jpg">
-<source id="mp4" src="http://om2bks7xs.bkt.clouddn.com/2017-08-26-Markdown-Advance-Video.mp4" type="video/mp4">
-</video>
+[filename](https://www.loom.com/share/c03d4cd46eae4328887ac9ad4a47375a ':include')
