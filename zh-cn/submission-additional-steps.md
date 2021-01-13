@@ -15,17 +15,13 @@ Please carefully select the correct audience. Certain ad networks used in MAS ar
 
 Also, please note that if your game serves either a general audience or children under 13, you will need to comply with various privacy regulations in different regions. Information on how to do this can be found here.
 
-<center class="half">
-    <img src="../resource/submission-additional-step-1.png" width="400"/> 
-</center>
+![](../resource/submission-additional-step-1.png)
 
 ### Step 2: Providing Details About Your Ad Injection Points
 
 During submission, you'll be asked to provide information about the ads in your game. 
 
-<center class="half">
-    <img src="../resource/submission-additional-step-2.png" width="400"/> 
-</center>
+![](../resource/submission-additional-step-2.png)
 
 For "Display rules of ads", please provide basic information about how ads work in your game.
 
@@ -46,7 +42,6 @@ Your SHA1 is a cryptographic hash that is used as an identifying marker for your
 
 Not sure how to get your SHA1? Here are guides for [Unity](https://www.youtube.com/watch?v=o-I-Eq2fQRg) and [Android](https://medium.com/pen-bold-kiln-press/sha-1-android-studio-ec02fb893e72).
 
-<center class="half">
-    <img src="../resource/submission-additional-step-3.png" width="400"/> 
-</center>
+![](../resource/submission-additional-step-3.png)
+
 
