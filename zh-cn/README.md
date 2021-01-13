@@ -37,10 +37,10 @@
     * [FAN Configuration](FAN-configuration.md)
 * Account
   * [Member management](account-member-management.md)
-* 检查清单 - TODO
 * Checklist
   * [Checklist for Releasing With MAS](checklist-releasing.md)
   * [Key Tasks Checklist](checklist-key-tasks.md)
+* FAQs
 * Support
   * [Contact Us](contact-us.md)
 <!--te-->
