@@ -7,7 +7,7 @@
   * Compatability
     * [Supported Platforms and Regions](supported-platforms-regions.md)
     * [Supported Engines and Minimum Versions](supported-engines-minimum-versions.md)
-    * [Supported Ad Formats](supported-ad-Formats.md)
+    * [Supported Ad Formats](supported-ad-formats.md)
 * Game Submission
   * Game Submission
     * [Introduction](submission-introduction.md)
