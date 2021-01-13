@@ -1,4 +1,4 @@
-# MAS Documents
+# MAS Document
 
 <!--ts-->
 * Getting Started
