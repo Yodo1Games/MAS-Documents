@@ -36,7 +36,7 @@
   * Post-Release Tasks
     * [FAN Configuration](FAN-configuration.md)
 * Account
-  * [Member management](account-member-management.md)
+  * [Member Management](account-member-management.md)
 * Checklist
   * [Checklist for Releasing With MAS](checklist-releasing.md)
   * [Key Tasks Checklist](checklist-key-tasks.md)
