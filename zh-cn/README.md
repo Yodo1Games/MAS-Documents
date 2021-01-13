@@ -16,6 +16,8 @@
     * [Additional Steps For Live Games](submission-additional-steps.md)
     * [Submitting Your Revenue Metrics](submission-revenue-metrics.md)
   * Payment
+    * [Submitting Your Payment Information](payment-submitting-information.md)
+    * [Receiving Your Payment](payment-receiving.md)
 * 集成指南
   * [Unity集成](integration-unity.md)
   * [iOS集成](integration-ios.md)
