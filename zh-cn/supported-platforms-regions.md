@@ -4,11 +4,11 @@
 
 MAS was created for MOBILE games and applications. As such, we supported the two major global app stores.
 
-**Google Play**                              **Apple App Store**
+**Google Play** and **Apple App Store**
 
 The good news is, that's not where the power of MAS ends! We also provide an SDK for China's unique mobile application ecosystem. You can use MAS for monetization in China with:
 
-**Android China**                            **China Apple App Store**
+**Android China**  and **China Apple App Store**
 
 Why would you want to use a separate SDK for China?
 
