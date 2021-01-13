@@ -6,11 +6,11 @@ This checklist is designed to make sure you don't miss any steps necessary to ma
 
 ## Task 1: Removing all Ad SDKs
 
-**When? **
+**When?**
 
 At the beginning of integration.
 
-**Why? **
+**Why?**
 
 MAS contains the code of several ad SDKs. Removing all other ad SDKs and plugins from your build will eliminate confusing dependency conflicts.
 
@@ -20,7 +20,7 @@ MAS contains the code of several ad SDKs. Removing all other ad SDKs and plugins
 
 MAS supports compliance with all major global legal frameworks focused on user data privacy. Please see guides on how to comply with these frameworks. Click here for [COPPA](privacy-coppa.md), here for [CCPA](privacy-ccpa.md), and here for [GDPR](privacy-gdpr.md).
 
-**When? **
+**When?**
 
 The best time to complete this task is during integration. You must add the necessary code to your build before you add the code to initialize the MAS SDK. 
 
