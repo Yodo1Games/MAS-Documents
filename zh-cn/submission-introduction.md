@@ -11,9 +11,9 @@ The only important thing to note is that it may take up to 48 hours after your g
 Video Guide:
 
 <iframe 
-    height=450 
-    width=800 
-    src='https://www.loom.com/share/c03d4cd46eae4328887ac9ad4a47375a'
-    frameborder=0 
+    width="800" 
+    height="450" 
+    src="https://www.loom.com/share/c03d4cd46eae4328887ac9ad4a47375a"
+    frameborder="0" 
     allowfullscreen>
 </iframe>
