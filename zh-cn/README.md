@@ -11,7 +11,7 @@
     * [ATT Questionnaire Part 2](ATT-questionnaire-part2.md)
     * [Apple's App Privacy Questionnaire](apple-app-privacy-questionnaire.md)
   * Compliance With Ad Networks
-    * [设置App-ads.txt](app-ads.md)
+    * [Setting Up Your App-Ads.txt](app-ads.md)
   * Legal Compliance
     * [GDPR](privacy-gdpr.md)
     * [COPPA](privacy-coppa.md)
