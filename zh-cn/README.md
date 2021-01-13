@@ -18,7 +18,7 @@
   * Payment
     * [Submitting Your Payment Information](payment-submitting-information.md)
     * [Receiving Your Payment](payment-receiving.md)
-* 集成指南
+* Integration
   * [Unity集成](integration-unity.md)
   * [iOS集成](integration-ios.md)
   * [Android集成](integration-android.md)  
