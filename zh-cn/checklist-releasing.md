@@ -4,7 +4,7 @@
 
 ## 2. Register an account at https://mas.yodo1.com/registration/register
 
-## 3. [Submit your game](https://support.yodo1.com/hc/en-us/articles/360052647773) at https://mas.yodo1.com.
+## 3. [Submit your game](submission-introduction.md) at https://mas.yodo1.com.
 
 ## 4. Fill in the [required information](payment-submitting-information.md) for get payment.
 
