@@ -38,7 +38,9 @@
 * Account
   * [Member management](account-member-management.md)
 * 检查清单 - TODO
-* 常见问题 - TODO
+* Checklist
+  * [Checklist for Releasing With MAS](checklist-releasing.md)
+  * [Key Tasks Checklist](checklist-key-tasks.md)
 * Support
   * [Contact Us](contact-us.md)
 <!--te-->
