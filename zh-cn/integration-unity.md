@@ -79,6 +79,35 @@ void Start()  {
 }
 ```
 
+### 7. AdMob Android Manifest Merging Errors
+The AdMob SDK use the `<queries>` element in their bundled Android Manifest files. If you are on an incompatible version of the Android Gradle plugin, you will encounter the following build errors, respectively:
+
+```xml
+com.android.builder.internal.aapt.v2.Aapt2Exception: Android resource linking failed
+error: unexpected element <queries> found in <manifest>.
+```
+
+You will need to upgrade to one of the following versions of the Android Gradle plugin that supports it:
+
+| **Current Android Gradle Plugin Version** | **Supported Android Gradle Plugin Version** |
+|  :-------------------------------------:  | :-----------------------------------------: | 
+|    4.1.*                                  |            Already Supported                | 
+|    4.0.*                                  |            4.0.1                            |   
+|    3.6.*                                  |            3.6.4                            |   
+|    3.5.*                                  |            3.5.4                            |   
+|    3.4.*                                  |            3.4.3                            |   
+|    3.3.*                                  |            3.3.3                            |  
+
+To update the Gradle Plugin version to a compatible one, please enable the custom base Gradle template by selecting **Edit > Project Settings > Android tab > Publisher Settings > Custom Base Gradle Template**.
+
+The template will be located at `Assets/Plugins/Android/mainTemplate.gradle` for Unity 2019.2 or below and `Assets/Plugins/Android/baseProjectTemplate.gradle` for Unity 2019.3 or above. Then update the below line with the appropriate version:
+
+```java
+classpath com.android.tools.build:gradle:x.x.x
+```
+
+If you are on Unity 2017.4 or below, please ensure that you are on at least 2017.4.40 which uses a compatible version of the Gradle Plugin by default.
+
 ## 插屏广告
 ### 1. 设置插屏广告代理方法
 ```c#
