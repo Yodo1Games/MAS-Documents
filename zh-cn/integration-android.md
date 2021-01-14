@@ -58,8 +58,28 @@ android.enableJetifier=true
 	</application>
 </manifest>
 ```
+
+### 6. AdMob Android Manifest Merging Errors
+The AdMob SDK use the `<queries>` element in their bundled Android Manifest files. If you are on an incompatible version of the Android Gradle plugin, you will encounter the following build errors, respectively:
+
+```xml
+com.android.builder.internal.aapt.v2.Aapt2Exception: Android resource linking failed
+error: unexpected element <queries> found in <manifest>.
+```
+
+You will need to upgrade to one of the following versions of the Android Gradle plugin that supports it:
+
+| **Current Android Gradle Plugin Version** | **Supported Android Gradle Plugin Version** |
+|  ---------------------------------------  | ------------------------------------------- | 
+|    4.1.*                                  |            Already Supported                | 
+|    4.0.*                                  |            4.0.1                            |   
+|    3.6.*                                  |            3.6.4                            |   
+|    3.5.*                                  |            3.5.4                            |   
+|    3.4.*                                  |            3.4.3                            |   
+|    3.3.*                                  |            3.3.3                            |   
+
 	
-### 6. Android P 适配
+### 7. Android P 适配
 为了兼容`Android P(API level 28)`，请完成以下步骤:
 
 * 在res文件夹下创建一个`xml`文件夹
@@ -88,14 +108,14 @@ android.enableJetifier=true
 </manifest>
 ```
 	
-### 7. 遵守必要的法律框架(Privacy)
+### 8. 遵守必要的法律框架(Privacy)
 请遵守适用于您的游戏及其用户的所有法律框架。您可以通过这些链接找到相关的法规信息:
 
 * [GDPR](privacy-gdpr.md)
 * [COPPA](privacy-coppa.md)
 * [CCPA](privacy-ccpa.md)
 
-### 8. 初始化SDK
+### 9. 初始化SDK
 在`Activity`的`onCreate`方法中初始化SDK
 
 ```java
@@ -115,7 +135,7 @@ protected void onCreate() {
 }
 ```
 
-### 9. 混淆
+### 10. 混淆
 如果您的应用需要混淆，必须将以下代码添加到您的ProGuard文件中(Android Studio: `ProGuard-rules.pro`或Eclipse: `proguard-project.txt`):
 
 ```
