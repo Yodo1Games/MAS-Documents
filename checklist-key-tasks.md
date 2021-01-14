@@ -72,6 +72,6 @@ Failure to do so will result in no live ads in your game and thus no ad revenue.
 
 **Where?**
 
-![](../resource/checklist-1.png)
+![](./resource/checklist-1.png)
 
 

@@ -46,17 +46,17 @@ pod install --repo-update
 请在`Xcode`工程的`Info.plist`中配置`NSUserTrackingUsageDescription`及描述文案，并对描述文案进行多语言配置。描述文案的多语言配置可以通过如下操作完成：
 
 * 在`XCode`工程中创建名为`InfoPlist.strings`的文件，如图:
-<img src="../resource/ios-att-string.png" style="zoom:50%;" />
+<img src="./resource/ios-att-string.png" style="zoom:50%;" />
 
 * 选中`InfoPlist.string`在`Xcode`的右侧边栏找到`Localization`并点击`Localization`按钮，如图：
-<img src="../resource/ios-att-localization.png" style="zoom:50%;" />
+<img src="./resource/ios-att-localization.png" style="zoom:50%;" />
 
 * 在`XCode`工程中添加多语言，如图： 
-<img src="../resource/ios-att-add-language-1.png" style="zoom:50%;" />
-<img src="../resource/ios-att-add-language-2.png" style="zoom:50%;" />
+<img src="./resource/ios-att-add-language-1.png" style="zoom:50%;" />
+<img src="./resource/ios-att-add-language-2.png" style="zoom:50%;" />
 
 * 将`NSUserTrackingUsageDescription`对应的描述文案添加到InfoPlist.strings(xxx)文件中，如图：
-<img src="../resource/ios-att-add-language-3.png" style="zoom:50%;" />
+<img src="./resource/ios-att-add-language-3.png" style="zoom:50%;" />
 
 > 此标识符将用于向您发送个性广告
 > This identifier will be used to send you personalized ads
@@ -197,7 +197,7 @@ pod install --repo-update
 
 #### 2.4 禁用`BitCode`
 为确保所有中介网络正常工作，请禁用bitcode，如下图所示:
-<img src="../resource/ios-bitcode-disable.png" style="zoom:50%;" />
+<img src="./resource/ios-bitcode-disable.png" style="zoom:50%;" />
 
 #### 2.5 添加AdMob App ID
 * 添加`GADApplicationIdentifier`字段到`Info.plist`文件中，类型为`String`。
