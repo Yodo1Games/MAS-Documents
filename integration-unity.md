@@ -13,7 +13,7 @@
 打开你的Unity项目并导入Unity包，双击下载后的Unity插件压缩包图标。文件将自动填充，如下图所示：
 
 <center class="half">
-    <img src=./resource/import-package.png" width="400"/> 
+    <img src="./resource/import-package.png" width="400"/> 
 </center>
 
 ### 3. 设置游戏信息
