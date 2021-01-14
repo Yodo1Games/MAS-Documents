@@ -108,7 +108,7 @@ classpath com.android.tools.build:gradle:x.x.x
 
 If you are on Unity 2017.4 or below, please ensure that you are on at least 2017.4.40 which uses a compatible version of the Gradle Plugin by default.
 
-Detailed steps for different versions of Unity can be found [here](apple-app-privacy-questionnaire.md)
+Detailed steps for different versions of Unity can be found [here](android-manifest-merging-errors-queries.md).
 
 ## 插屏广告
 ### 1. 设置插屏广告代理方法
