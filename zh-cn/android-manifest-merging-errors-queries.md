@@ -5,8 +5,10 @@
 
 ## Unity 2019
 
-![图1](../resource/manifest-merging-errors-queries-1.png)
-![图2](../resource/manifest-merging-errors-queries-2.png)
+<center class="half">
+    <img src="../resource/manifest-merging-errors-queries-1.png" width="200"/>
+    <img src="../resource/manifest-merging-errors-queries-2.png" width="200"/>
+</center>
 
 * 找到 `File -> Build Setting -> Player Settings -> Publishing Settings -> Build` 如图1，并且勾选箭头所指选项
 * 打开`Assets/Plugins/Android/` 目录下的 `baseProjectTemplate.gradle` 文件，修改 `gradle android` 插件版本 如：3.4.3
@@ -16,8 +18,10 @@
 
 ## Unity 2018
 
-![图1](../resource/manifest-merging-errors-queries-3.png)
-![图2](../resource/manifest-merging-errors-queries-4.png)
+<center class="half">
+    <img src="../resource/manifest-merging-errors-queries-3.png" width="200"/>
+    <img src="../resource/manifest-merging-errors-queries-4.png" width="200"/>
+</center>
 
 * 找到`File -> Build Setting -> Player Settings -> Publishing Settings -> Build` 如图1，并且勾选箭头所指选项，
 * 打开`Assets/Plugins/Android/` 目录下的 `mainTemplate.gradle` 文件，修改里面的 `gradle android` 插件版本 如：3.4.3
@@ -26,7 +30,9 @@
 
 ## Unity 2017
 
-![](../resource/manifest-merging-errors-queries-5.png)
+<center class="half">
+    <img src="../resource/manifest-merging-errors-queries-5.png" width="200"/>
+</center>
 
 * 找到`File -> Build Setting -> Player Settings -> Publishing Settings -> Build`如图并且勾选箭头所指选项
 * 打开`Assets/Plugins/Android/` 目录下的 `mainTemplate.gradle` 文件，修改里面的 `gradle android` 插件版本 如：3.4.3，
