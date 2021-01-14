@@ -30,15 +30,17 @@
 
 * 找到`File -> Build Setting -> Player Settings -> Publishing Settings -> Build`如图并且勾选箭头所指选项
 * 打开`Assets/Plugins/Android/` 目录下的 `mainTemplate.gradle` 文件，修改里面的 `gradle android` 插件版本 如：3.4.3，
+* 在`mainTemplate.gradle` 文件中进行如下设置
+    ```
+    multiDexEnabled true
+    ```
+    ```
+    compileOptions {
 
-1.multiDexEnabled true
+        sourceCompatibility JavaVersion.VERSION_1_8
 
-2.compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
 
-    sourceCompatibility JavaVersion.VERSION_1_8
-
-    targetCompatibility JavaVersion.VERSION_1_8
-
-}
-
-然后 `Assets -> External Dependency Manager -> Android Resolver -> Force Resolve`
+    }
+    ```
+ * 点击`Assets -> External Dependency Manager -> Android Resolver -> Force Resolve`
