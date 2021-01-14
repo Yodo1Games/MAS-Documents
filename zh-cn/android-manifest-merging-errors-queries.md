@@ -6,8 +6,7 @@
 ## Unity 2019
 
 <center class="half">
-    <img src="../resource/manifest-merging-errors-queries-1.png" width="200"/>
-    <img src="../resource/manifest-merging-errors-queries-2.png" width="200"/>
+    <img src="../resource/manifest-merging-errors-queries-1.png" width="200"/><img src="../resource/manifest-merging-errors-queries-2.png" width="200"/>
 </center>
 
 * 找到 `File -> Build Setting -> Player Settings -> Publishing Settings -> Build` 如图1，并且勾选箭头所指选项
@@ -19,8 +18,7 @@
 ## Unity 2018
 
 <center class="half">
-    <img src="../resource/manifest-merging-errors-queries-3.png" width="200"/>
-    <img src="../resource/manifest-merging-errors-queries-4.png" width="200"/>
+    <img src="../resource/manifest-merging-errors-queries-3.png" width="200"/><img src="../resource/manifest-merging-errors-queries-4.png" width="200"/>
 </center>
 
 * 找到`File -> Build Setting -> Player Settings -> Publishing Settings -> Build` 如图1，并且勾选箭头所指选项，
