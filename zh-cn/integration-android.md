@@ -70,7 +70,7 @@ error: unexpected element <queries> found in <manifest>.
 You will need to upgrade to one of the following versions of the Android Gradle plugin that supports it:
 
 | **Current Android Gradle Plugin Version** | **Supported Android Gradle Plugin Version** |
-|  ---------------------------------------  | ------------------------------------------- | 
+|  :-------------------------------------:  | :-----------------------------------------: | 
 |    4.1.*                                  |            Already Supported                | 
 |    4.0.*                                  |            4.0.1                            |   
 |    3.6.*                                  |            3.6.4                            |   
