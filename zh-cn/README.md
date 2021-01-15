@@ -1,47 +1,47 @@
-# MAS Document
+# MAS文档
 
 <!--ts-->
-* Getting Started
-  * Introduction
-    * [Using This Knowledge Base](knowledge-base.md)
-  * Compatability
-    * [Supported Platforms and Regions](supported-platforms-regions.md)
-    * [Supported Engines and Minimum Versions](supported-engines-minimum-versions.md)
-    * [Supported Ad Formats](supported-ad-formats.md)
-* Game Submission
-  * Game Submission
+* 开始
+  * 介绍
+    * [知识库](knowledge-base.md)
+  * 兼容性
+    * [支持平台和地区](supported-platforms-regions.md)
+    * [支持引擎和最小版本](supported-engines-minimum-versions.md)
+    * [支持的广告形式](supported-ad-formats.md)
+* 游戏提交
+  * 提交你的游戏
     * [Introduction](submission-introduction.md)
-    * [New App vs Live App](submission-newapp-vs-liveapp.md)
-    * [Main Steps for Submission](submission-main-steps.md)
-    * [Additional Steps For Live Games](submission-additional-steps.md)
-    * [Submitting Your Revenue Metrics](submission-revenue-metrics.md)
-  * Payment
-    * [Submitting Your Payment Information](payment-submitting-information.md)
-    * [Receiving Your Payment](payment-receiving.md)
-* Integration
+    * [新应用 vs Live应用](submission-newapp-vs-liveapp.md)
+    * [提交应用程序的主要步骤](submission-main-steps.md)
+    * [Live游戏的其他步骤](submission-additional-steps.md)
+    * [提交你的收入指标](submission-revenue-metrics.md)
+  * 财务
+    * [提交您的收款信息](payment-submitting-information.md)
+    * [收到你的付款](payment-receiving.md)
+* 集成指南
   * [Unity集成](integration-unity.md)
   * [iOS集成](integration-ios.md)
   * [Android集成](integration-android.md)  
-* Pre-Release
+* 预发布
   * ATT
     * [ATT Questionnaire Part 2](ATT-questionnaire-part2.md)
     * [Apple's App Privacy Questionnaire](apple-app-privacy-questionnaire.md)
-  * Compliance With Ad Networks
+  * 符合广告网络的规定
     * [Setting Up Your App-Ads.txt](app-ads.md)
-  * Legal Compliance
+  * 遵守法律
     * [GDPR](privacy-gdpr.md)
     * [COPPA](privacy-coppa.md)
     * [CCPA](privacy-ccpa.md)
-* Post-Release
-  * Post-Release Tasks
-    * [FAN Configuration](FAN-configuration.md)
-* Account
-  * [Member Management](account-member-management.md)
-* Checklist
-  * [Checklist for Releasing With MAS](checklist-releasing.md)
-  * [Key Tasks Checklist](checklist-key-tasks.md)
+* 已发布
+  * 发布后任务
+    * [FAN配置](FAN-configuration.md)
+* 账号
+  * [成员管理](account-member-management.md)
+* 检查清单
+  * [MAS Release检查表](checklist-releasing.md)
+  * [关键任务清单](checklist-key-tasks.md)
 * FAQs
-* Support
-  * [Contact Us](contact-us.md)
+* 支持
+  * [联系我们](contact-us.md)
 <!--te-->
 
