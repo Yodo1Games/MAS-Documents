@@ -65,6 +65,8 @@ iOS 14 requires publishers to obtain permission to track user devices across app
 
 For more information, check Apple's developer [documentation](https://developer.apple.com/documentation/bundleresources/information_property_list/nsusertrackingusagedescription). 
 
+For multi-language localizations, check Apple's developer [documentation](https://developer.apple.com/documentation/xcode/localization/adding_support_for_languages_and_regions).
+
 **Advertising Network ID**
 
 Games for users running iOS 14 or later need to include the network ID of each advertising platform in the attribute list file (`Info.plist`):
