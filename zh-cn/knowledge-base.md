@@ -1,33 +1,33 @@
-# Using This Knowledge Base
+# 知识库
 
-## Welcome To MAS
-Congratulations on your decision to automate your monetization! By choosing to use MAS, you've guaranteed your game will be making more money with less effort, so you can focus on what matters:
+## 欢迎来到MAS
+祝贺您决定选择使用MAS自动优化您的收入，你就可以保证你的游戏能够以更少的努力赚取更多的钱，这样你就可以专注于重要的事情:
 
-### Making great games.
-This knowledge base was created to make sure you have the smoothest on-boarding experience with MAS possible. As a developer, we know your time is precious. That's why we are constantly working to make your experience as smooth and straightforward as possible.
+### 制作好的游戏
+建立这个知识库是为了确保你在MAS有更好的体验。作为开发人员，我们知道您的时间是宝贵的。这就是为什么我们一直在努力让你们的体验尽可能的顺畅和直接。
 
-There are a few features of the knowledge base we want to highlight. 
+我们想强调知识库的一些特性。 
 
-## The Organization
-You'll find this knowledge base is separated into 3 sections: 
+## 组织
+你会发现这个知识库被分成3个部分:
 
-**Game Submission**, which is all the information you need to submit your game to the MAS portal. 
+**游戏提交**, 这是你提交游戏到MAS门户所需要的全部信息。 
 
-**Integration**, which covers how to integrate the Android and IOS SDKs, as well as the Unity Plugin.
+**集成指南**, 包括如何集成Android和IOS SDK，以及Unity插件。
 
-**Pre-release**, where you'll find information on how to comply with Ad Network policies and legal frameworks that protect player privacy.
+**预发布**, 在这里你可以找到关于如何遵守广告网络政策和保护玩家隐私的法律框架的信息。
 
-**IMPORTANT!** To get the most out of MAS, please complete every step in the knowledge base, unless it is clearly indicated as optional. On that note...
+**重要!** 为了充分利用MAS，请完成知识库中的每一个步骤，除非它被清楚地标示为可选。在注意…
 
-## The Signals
+## 信号
 
-See that **IMPORTANT!** up there? It's one of the signals we use to tell you to pay attention. Here are the three signals to look out for and what they mean.
+看到**重要!**在那里吗?这是我们用来告诉你注意的信号之一。以下是需要注意的三个信号以及它们的含义。
 
-**IMPORTANT!** marks a message we strongly believe you need to pay attention to. We are all only human, and sometimes we either forget or ignore certain things. This marker makes sure you don't miss something important.
+**重要!**标志着我们坚信你需要注意的信息。我们都是凡人，有时我们会忘记或忽略某些事情。这个记号笔可以确保你不会错过一些重要的东西。
 
-***Note*** is our way of telling you that something may be optional. We will explain when it is optional, and when it isn't, allowing you to skip past certain tasks.
+***注意***是我们告诉你有些事情是可选的。我们将解释它何时是可选的，何时不是，允许您跳过某些任务。
 
-## The Checklist 
-We have created [a checklist](checklist-key-tasks.md) that includes top priority tasks for you to complete. Completing these tasks at the times mentioned in the checklist will lead to the best revenue with MAS. Please follow it and consult your assigned Yodo1 Business Developer if you have any questions or concerns.
+## 检查表
+我们已经创建了一个[清单](checklist-key-tasks.md)，包括最优先的任务，让你完成。按照清单中提到的时间完成这些任务，将会带来MAS的最佳收益。如果您有任何问题或担忧，请遵循它并咨询您指定的Yodo1业务开发人员。
 
-And that's all, for now! If you have any feedback, on either this article, or any others, please reach out and let us know! For now, go ahead and submit your game to the MAS. You'll get an automatic confirmation when review is complete, and be on your way to making more with MAS.
+到此为止!如果你对这篇文章或其他文章有任何反馈，请联系我们并让我们知道!现在，继续把你的游戏提交给MAS。当评审完成时，你会得到一个自动确认，然后你就可以用MAS赚更多的钱了。
