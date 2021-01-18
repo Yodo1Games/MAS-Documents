@@ -10,7 +10,7 @@
     * [支持的广告形式](supported-ad-formats.md)
 * 游戏提交
   * 提交你的游戏
-    * [Introduction](submission-introduction.md)
+    * [介绍](submission-introduction.md)
     * [新应用 vs Live应用](submission-newapp-vs-liveapp.md)
     * [提交应用程序的主要步骤](submission-main-steps.md)
     * [Live游戏的其他步骤](submission-additional-steps.md)
@@ -24,10 +24,10 @@
   * [Android集成](integration-android.md)  
 * 预发布
   * ATT
-    * [ATT Questionnaire Part 2](ATT-questionnaire-part2.md)
-    * [Apple's App Privacy Questionnaire](apple-app-privacy-questionnaire.md)
+    * [ATT问卷第二部分](ATT-questionnaire-part2.md)
+    * [苹果的应用程序隐私调查问卷](apple-app-privacy-questionnaire.md)
   * 符合广告网络的规定
-    * [Setting Up Your App-Ads.txt](app-ads.md)
+    * [设置App-Ads.txt](app-ads.md)
   * 遵守法律
     * [GDPR](privacy-gdpr.md)
     * [COPPA](privacy-coppa.md)
