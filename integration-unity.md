@@ -3,7 +3,7 @@
 ## The integration steps
 
 ### 1. Download[Unity Plugin]()
-> * MAS支持Unity 2017.4.37f1+ LTS版本，2018年和2019年通用维护的LTS Unity版本以及以上版本。
+> * MAS supports Unity 2017.4.37f1+ LTS version, 2018 and 2019 common maintained LTS Unity version and above.
 > * [Jetifier](https://developer.android.com/jetpack/androidx/releases/jetifier) is required for Android builds and can be enabled by selecting ***Assets > External Dependency Manager > Android Resolver > Settings > Use Jetifier***
 > * `CocoaPods` is required for iOS builds and can be installed following the instructions [here](https://guides.cocoapods.org/using/getting-started.html#getting-started)
 > * `Xcode12+` is required for iOS14, please make sure your xcode is lastest version.
