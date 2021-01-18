@@ -28,7 +28,7 @@ Execute the following command in `Terminal` :
 pod install --repo-update
 ```
 
-### 2. `Xcode` project configuration
+### 2. Xcode project configuration
 #### 2.1 iOS9 `App Transport Security (ATS)` Settings
 
 Apple has added in controls for ATS in iOS9. To ensure uninterrupted ad delivery across all Mediation Networks, it’s important to make these changes to your `info.plist`.
