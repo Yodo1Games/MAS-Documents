@@ -1,6 +1,5 @@
-# Contact Us
+# 联系我们
 
-For support, please email helpdesk@yodo1.com. 
+如需支持，请发邮件至 helpdesk@yodo1.com. 
 
-In the body of the email, please provide your name, your game's name, app key (if available), MAS SDK Version, the Game Engine and version you are using, a brief description of the issue your are facing, and applicable screenshots. 
-
+请在邮件正文中提供您的姓名、游戏名称、应用程序密钥(如有)、MAS SDK版本、游戏引擎和您使用的版本、您面临的问题的简要描述和适用的截图。
