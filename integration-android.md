@@ -1,22 +1,22 @@
-# Android集成
-> `SDK`要求`Android OS`的最低版本为`Android 4.4`及以上版本</br>
-> 重要: 确保你使用的是`Gradle 3.3.0+`版本。
+# Android Integration
+> MAS supports Android version 4.4.+ (Android API level: 19+) and above
 
-## 集成步骤
-### 1. 项目级别`build.gradle`添加 
+## The Integration Steps
+### 1. Open your project-level `build.gradle` and add the relevant code.
+
 ```groovy
 maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
 maven { url "https://dl.bintray.com/ironsource-mobile/android-adapters" }
 maven { url "https://dl.bintray.com/yodo1/MAS-Android" }
 ```
 
-### 2. app级别`build.gradle`添加
-#### 2.1 添加MAS SDK依赖
+### 2. Open your app-level `build.gradle` and add the relevant code.
+#### 2.1 Add a Gradle dependency
 ```groovy
 implementation 'com.yodo1.mas:google:0.0.0.1-beta'
 ```
 
-#### 2.2 添加`compileOptions`属性到 `android` 部分
+#### 2.2 Add the `compileOptions` property to the `Android` section
 ```ruby
 android {
 	compileOptions {
@@ -26,7 +26,8 @@ android {
 }
 ```
 
-### 3. 开启`MultiDex`，app级别`build.gradle`添加
+### 3. Add the `MultiDex` property to the `defaultConfig` section
+
 ```
 defaultConfig {
     ...
@@ -35,18 +36,18 @@ defaultConfig {
 }
 ```
 
-### 4. 支持AndroidX
-添加下面内容到 `gradle.properties` 文件
+### 4. Support AndroidX
+Add the following content to the `gradle.properties` file
 
 ```ruby
 android.useAndroidX=true
 android.enableJetifier=true
 ```
 
-### 5. 添加AdMob应用ID
-* 通过添加`<meta-data>`标签，将AdMob应用ID添加到你的应用的`AndroidManifest.xml`文件中
-* 你可以在MAS后台中找到你的应用的AdMob应用ID。
-* 将`android:value`替换为您自己的AdMob应用ID，示例如下：
+### 5. Add AdMob App ID
+* Add your `AdMob App ID` to your app's AndroidManifest.xml file by adding the `<meta-data>` tag 
+* You can find your App ID in the MAS dashboard
+* Please replace `android:value` with your own AdMob App ID
 
 ```xml
 <manifest>
@@ -79,11 +80,12 @@ You will need to upgrade to one of the following versions of the Android Gradle 
 |    3.3.*                                  |            3.3.3                            |   
 
 	
-### 7. Android P 适配
-为了兼容`Android P(API level 28)`，请完成以下步骤:
+### 7. Android P Adaptation
 
-* 在res文件夹下创建一个`xml`文件夹
-* 然后创建一个`xml`文件(`res/xml/network_security_config.xml`)并在文件中添加如下内容：
+To be compatible with `Android P (API level 28)`, please do the following:
+
+* Create an XML folder in your resources folder
+* Create an XML file named `network_security_configi.xml` in the XML folder. In the `res/xml/network_security_config.xml` file, please add these lines
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -96,7 +98,7 @@ You will need to upgrade to one of the following versions of the Android Gradle 
 	...
 </network-security-config>  
 ```
-* 在你的应用的`AndroidManifest.xml`文件中添加下面的配置，应用属性如下:
+* Next, add these lines to the application element in `AndroidManifest.xml`.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -108,15 +110,15 @@ You will need to upgrade to one of the following versions of the Android Gradle 
 </manifest>
 ```
 	
-### 8. 遵守必要的法律框架(Privacy)
-请遵守适用于您的游戏及其用户的所有法律框架。您可以通过这些链接找到相关的法规信息:
+### 8. Comply With Necessary Legal Frameworks
+Please comply with all legal frameworks that apply to your game and its users. You can find references to major legal frameworks and details about how to comply with them while using MAS through these links:
 
 * [GDPR](privacy-gdpr.md)
 * [COPPA](privacy-coppa.md)
 * [CCPA](privacy-ccpa.md)
 
-### 9. 初始化SDK
-在`Activity`的`onCreate`方法中初始化SDK
+### 9. Initialize the SDK
+Initialize the SDK in the `onCreate` method of `Activity`
 
 ```java
 protected void onCreate() {
@@ -135,8 +137,8 @@ protected void onCreate() {
 }
 ```
 
-### 10. 混淆
-如果您的应用需要混淆，必须将以下代码添加到您的ProGuard文件中(Android Studio: `ProGuard-rules.pro`或Eclipse: `proguard-project.txt`):
+### 10. ProGuard
+If you're using ProGuard with the MAS SDK, add the following code to your ProGuard file (Android Studio: `proguard-rules.pro` or Eclipse: `proguard-project.txt`).
 
 ```
 -ignorewarnings
@@ -354,9 +356,9 @@ public static ** valueOf(java.lang.String);
 -keep interface com.uc.crashsdk.** { *; }
 ```
 
-## 插屏广告集成
+## Interstitial Integration
 
-### 1. 设置插屏广告代理方法
+### 1. Set the interstitial ad delegate method
 
 ```java
 Yodo1Mas.getInstance().setInterstitialListener(new Yodo1Mas.InterstitialListener() {
@@ -376,21 +378,21 @@ Yodo1Mas.getInstance().setInterstitialListener(new Yodo1Mas.InterstitialListener
 });      
 ```
     
-### 2. 检查插屏广告加载状态
+### 2. Check the loading status of interstitials
 
 ```java
 boolean isLoaded = Yodo1Mas.getInstance().isInterstitialAdLoaded();
 ```
     
-### 3. 展示插屏广告
+### 3. Show interstitial ad
 
 ```java
 Yodo1Mas.getInstance().showInterstitialAd(MyActivity.this);
 ```
     
-## 激励视频广告
+## Rewarded Video Integration
 
-### 1. 设置激励视频广告代理方法
+### 1. Set up rewarded video ad delegate methods
 
 ```java
 Yodo1Mas.getInstance().setRewardListener(new Yodo1Mas.RewardListener() {
@@ -416,20 +418,20 @@ Yodo1Mas.getInstance().setRewardListener(new Yodo1Mas.RewardListener() {
 });
 ```
     
-### 2. 检查激励视频广告加载状态
+### 2. Check the loading status of rewarded video ads
 
 ```java
 boolean isLoaded = Yodo1Mas.getInstance().isBannerAdLoaded();
 ```
     
-### 3. 展示激励视频广告
+### 3. Show rewarded video ads
 
 ```java
 Yodo1Mas.getInstance().showRewardedAd(MyActivity.this);
 ```
 
-## 横幅广告集成
-### 1. 设置横幅广告代理方法
+## Banner Integration
+### 1. Set up the banner ad delegate method
 ```java
 Yodo1Mas.getInstance().setBannerListener(new Yodo1Mas.BannerListener() {
     @Override
@@ -449,48 +451,48 @@ Yodo1Mas.getInstance().setBannerListener(new Yodo1Mas.BannerListener() {
 });
 ```
 
-### 2. 检查横幅广告加载状态
+### 2. Check the banner ad load status
 ```java
 boolean isLoaded =  Yodo1Mas.getInstance().isBannerAdLoaded();
 ```
     
-### 3. 展示横幅广告
+### 3. Show banner ad
 ```java
 Yodo1Mas.getInstance().showBannerAd(MyActivity.this);
 ```
  
-### 4. 关闭横幅广告
+### 4. Dismiss banner ad
 ```java
 Yodo1Mas.getInstance().dismissBannerAd(MyActivity.this);
 ```
 
-## 高级设置
-### 广告位
-> MAS SDK让你能够设置每个广告单元的放置名称(例如: MainMenu, Upgrade_Level等)。
+## Advanced Settings
+### Ad Placements
+> MAS SDK gives you the ability to set a placement name(e.g. MainMenu, Upgrade_Level etc)
 
-以下是如何设置插屏广告、奖励广告和横幅广告的示例代码：
+Below are code snippets on how to set placements for banners, interstitials, and rewarded ads.
 
-**插屏广告**
+**Interstitial Ads**
 
 ```java
 Yodo1Mas.getInstance().showInterstitialAd(MyActivity.this, "MY_INTERSTITIAL_PLACEMENT");
 ```
 
-**激励视频广告**
+**Rewarded Video Ads**
 
 ```java
 Yodo1Mas.getInstance().showRewardedAd(MyActivity.this, "MY_REWARDED_PLACEMENT");
 ```
 
-**横幅广告**
+**Banner Ads**
 
 ```java
 Yodo1Mas.getInstance(). showBannerAd(MyActivity.this, "MY_BANNER_PLACEMENT");
 ```
 
-## 更新日志
-|  版本   | 发布日期  | 更新内容 |
-|  ----  | ------- | ------  |
-|           |              |               |
-|           |              |               |
+## Changelog
+|  Version   | Release Date | Notes |
+|  --------  | ------------ | ------------  |
+|            |              |               |
+|            |              |               |
 
