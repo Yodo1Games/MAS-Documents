@@ -4,7 +4,7 @@
 >* The easiest way is to use `cocoaPods`, If you are just starting out with 'CocoaPods', please refer to its [official documentation](https://guides.cocoapods.org/using/using-cocoapods) to study how to create and use it `Podfile`
 
 ## The Integration Steps
-### 1. Add `iOS SDK` to your project
+### 1. Add iOS SDK to your project
 #### 1.1 Create the `Podfile` file
 
 Create the `Podfile` file in the project root directory
@@ -13,7 +13,7 @@ Create the `Podfile` file in the project root directory
 touch Podfile
 ```
 
-#### 1.2 Import the `iOS SDK` into the project
+#### 1.2 Import the iOS SDK into the project
 Please open the project's `Podfile` file and add the following code to the target of the application:
 
 ```ruby
