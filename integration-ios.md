@@ -48,7 +48,7 @@ You may edit the `info.plist` file using the `Open As Source Code` and add the c
 
 #### 2.2 iOS14 `AppTrackingTransparency(ATT)` Settings
 
-##### User tracking instructions
+**User tracking instructions**
 
 iOS 14 requires publishers to obtain permission to track user devices across applications. Follow these steps to complete the process.
 
@@ -65,7 +65,8 @@ iOS 14 requires publishers to obtain permission to track user devices across app
 
 For more information, check Apple's developer [documentation](https://developer.apple.com/documentation/bundleresources/information_property_list/nsusertrackingusagedescription). 
 
-##### Advertising Network ID
+**Advertising Network ID**
+
 Games for users running iOS 14 or later need to include the network ID of each advertising platform in the attribute list file (`Info.plist`):
 
 * Under the Xcode project navigator, select `Info.plist`.
