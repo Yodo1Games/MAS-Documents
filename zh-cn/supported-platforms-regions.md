@@ -1,10 +1,9 @@
-# Supported Platforms and Regions
+# 支持平台和地区
 
-## What platforms does MAS support?
+## MAS支持哪些平台？
 
-MAS was created for MOBILE games and applications. As such, we supported the two major global app stores.
+MAS是为手机游戏和应用程序而创建的。因此，我们支持两大全球应用程序商店。
 
 **Google Play** and **Apple App Store**
 
-
-If you have further questions, please reach out to bd@yodo1.com or your MAS Business Development Manager for details!
+如果您有更多的问题，请联系bd@yodo1.com或您的MAS业务发展经理了解详情!
