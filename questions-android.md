@@ -2,7 +2,7 @@
 
 ## What platform architectures are supported?
 
-MAS supports various platform architectures. Please configure your game's architecture in the project under the label "defaultConfig" in the "build.gradle" file as required by the app. Avoid exceptions caused by using unnecessary platform architectures.
+MAS supports various platform architectures. Please configure your game's architecture in the project under the label `defaultConfig` in the `build.gradle` file as required by the app. Avoid exceptions caused by using unnecessary platform architectures.
 
 Example:
 
