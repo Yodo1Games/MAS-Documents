@@ -1,27 +1,27 @@
-# Supported Engines and Minimum Versions
+# 支持引擎和最小版本
 
-## Where can I use MAS?
+## 我可以在哪里使用MAS?
 
-In any mobile app or game. 
+在任何移动应用程序或游戏中。
 
-To expand on that, there are three versions of the MAS SDK, with versions of each for Global and China only.
+在此基础上进行扩展，有三个MAS SDK版本。
 
-They include:
+它们包括:
 
-## MAS for Unity
+## MAS Unity插件
 
-A plugin for games built on the Unity Engine which will run as mobile apps IOS or Android.
+一个基于Unity引擎的游戏插件，可以作为IOS或Android的移动应用程序运行。
 
-**IMPORTANT!**  MAS supports Unity 2017.4.37f1+ LTS version, 2018 and 2019 common maintained LTS  Unity version.
+**重要!**  MAS支持Unity 5.6.4+版本，这是Unity在2017年10月16日发布的版本。
 
-## MAS for Android
+## MAS Android SDK
 
-Designed for games and apps that run on an Android-powered mobile phone but were not built from Unity. Any game engine or framework that allows you to build an Android app is eligible to use the Android SDK.  Implemented in Java.
+专为运行在Android手机上的游戏和应用而设计，但不是基于Unity。允许你构建Android应用程序的游戏引擎或框架都可以使用Android SDK。
 
-**IMPORTANT!**  MAS supports Android version 4.4.+ (Android API level: 19+).
+**重要!** MAS支持Android版本4.4+ (Android API级别:19+)。
 
-##  MAS for IOS
+## MAS iOS SDK
 
-Designed for games and apps that run on an iPhone device but were not built from Unity. Any game engine or framework that allows you to build an iPhone app is eligible to use the IOS SDK. Implemented in Objective C.
+专为iPhone设备上运行的游戏和应用而设计，但不是基于Unity。允许你构建iPhone应用程序的游戏引擎或框架都可以使用IOS SDK。在Objective C中实现。
 
-**IMPORTANT!**  MAS supports iOS 9.0+ and Xcode 12.+.
+**重要!** MAS支持iOS 9.0+和Xcode 12.+
