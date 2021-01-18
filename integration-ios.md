@@ -63,7 +63,7 @@ iOS 14 requires publishers to obtain permission to track user devices across app
 <string>This identifier will be used to deliver personalized ads to you.</string>
 ```
 
-For more information, check Apple's developer [documentation](https://developer.apple.com/documentation/bundleresources/information_property_list/nsusertrackingusagedescription). 
+For more information about `NSUserTrackingUsageDescription`, check Apple's developer [documentation](https://developer.apple.com/documentation/bundleresources/information_property_list/nsusertrackingusagedescription). 
 
 For multi-language localizations, check Apple's developer [documentation](https://developer.apple.com/documentation/xcode/localization/adding_support_for_languages_and_regions).
 
