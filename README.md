@@ -23,7 +23,7 @@
   * [iOS Integration](integration-ios.md)
   * [Android Integration](integration-android.md)  
 * Pre-Release
-  * ATT
+  * AppTrackingTransparency(ATT)
     * [ATT Questionnaire Part 2](ATT-questionnaire-part2.md)
     * [Apple's App Privacy Questionnaire](apple-app-privacy-questionnaire.md)
   * Compliance With Ad Networks
