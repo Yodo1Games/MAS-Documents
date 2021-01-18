@@ -41,6 +41,9 @@
   * [Checklist for Releasing With MAS](checklist-releasing.md)
   * [Key Tasks Checklist](checklist-key-tasks.md)
 * FAQs
+  * [General Questions](questions-general.md)
+  * [iOS Questions](questions-ios.md)
+  * [Android Questions](questions-anroid.md)
 * Support
   * [Contact Us](contact-us.md)
 <!--te-->
