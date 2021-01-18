@@ -1,25 +1,25 @@
-# Supported Ad Formats
+# 支持广告形式
 
-What kind of ads does MAS support?
+MAS支持什么样的广告?
 
-MAS supports three ad formats.
+MAS支持三种广告格式。
 
-**Banner Ads**
+**横幅广告**
 
-At present, MAS provides banner ads that are x by y pixels. Banners are a great way to make revenue without disrupting game play. However, many players find banners annoying for their adverse impact. We highly encourage you to explore other formats and keep banners to a minimum!
+目前，MAS提供x * y像素的横幅广告。横幅广告是在不影响游戏玩法的情况下创造收入的好方法。然而，许多玩家发现条幅的负面影响很恼人。我们强烈鼓励您探索其他格式和保持横幅至最低!
 
-**Interstitial Ads**
+**插屏广告**
 
-Interstitial ads are full screen ads that come in one of three forms:
+插屏广告是全屏广告，有三种形式:
 
-* Playable interstitial ads, where the user can play a game in the ad in order to get a sense of what it is like.
-* Video interstitial ads, where the user must watch a video, and can skip after a certain interval.
-* Static interstitial ads, which are the equivalent of full screen banners that the player must view for a certain interval.
+* 可玩的插播广告，用户可以在广告中玩游戏来感受它是什么样子的。
+* 视频插播广告，用户必须观看视频，并可以在一定间隔后跳过。
+* 静态插播广告，相当于全屏广告，玩家必须在一定的时间间隔内观看。
 
-Interstitial ads bring more revenue than banner ads, and are typically better accepted by players. However, we encourage developers to be thoughtful about where they place an interstitial ad. Games that place the ad in the middle of game play, particularly without warning the player, tend to lose users and/or get bad reviews.
+插入广告比横幅广告带来更多的收入，而且通常更容易被球员接受。但是，我们鼓励开发人员考虑在哪里放置插槽广告。在游戏中放置广告的游戏，尤其是在没有向玩家发出警告的情况下，往往会失去用户和/或得到不好的评论。
 
-**Rewarded Videos**
+**激励视频广告**
 
-Rewarded videos, commonly referred to as RV, are videos the player chooses to watch in order to get a reward. Unlike other ads, a player chooses to watch a rewarded video, typically in order to gain assistance, in-game currency, or some other benefit in the game.
+激励视频广告，通常被称为RV，是玩家为了获得奖励而选择观看的视频。与其他广告不同的是，玩家选择观看奖励视频，通常是为了获得帮助、游戏内货币或游戏中的其他好处。
 
-Rewarded videos are the BEST ad format in gaming and apps today. They have the highest eCPMs, can feel engaging to the user, and are chosen by the viewer, rather than forced upon them, making them the ideal User Experience.
+激励视频广告是当今游戏和应用程序中最好的广告形式。它们具有最高的eCPMs，可以让用户感到有参与感，并且是由查看者选择的，而不是强迫他们，这使它们成为理想的用户体验。
