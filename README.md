@@ -3,7 +3,7 @@
 <!--ts-->
 * Getting Started
   * Introduction
-    * [Using This Knowledge Base](./markdowns/knowledge-base.md)
+    * [Knowledge Base](./markdowns/knowledge-base.md)
   * Compatability
     * [Supported Platforms and Regions](./markdowns/supported-platforms-regions.md)
     * [Supported Engines and Minimum Versions](./markdowns/supported-engines-minimum-versions.md)
@@ -19,9 +19,9 @@
     * [Submitting Your Payment Information](./markdowns/payment-submitting-information.md)
     * [Receiving Your Payment](./markdowns/payment-receiving.md)
 * Integration
-  * [Unity Integration](./markdowns/integration-unity.md)
-  * [iOS Integration](./markdowns/integration-ios.md)
-  * [Android Integration](./markdowns/integration-android.md)  
+  * [Unity](./markdowns/integration-unity.md)
+  * [iOS](./markdowns/integration-ios.md)
+  * [Android](./markdowns/integration-android.md)  
 * Pre-Release
   * AppTrackingTransparency(ATT)
     * [ATT Questionnaire Part 2](./markdowns/ATT-questionnaire-part2.md)
