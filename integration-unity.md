@@ -1,6 +1,6 @@
 # Unity Integration
 
-## The integration steps
+## The Integration Steps
 
 ### 1. Download [Unity Plugin]()
 > * MAS supports Unity 2017.4.37f1+ LTS version, 2018 and 2019 common maintained LTS Unity version and above.
