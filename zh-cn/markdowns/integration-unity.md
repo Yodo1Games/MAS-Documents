@@ -13,39 +13,39 @@
 打开你的Unity项目并导入Unity包，双击下载后的Unity插件压缩包图标。文件将自动填充，如下图所示：
 
 <center class="half">
-    <img src="../resource/import-package.png" width="400"/> 
+    <img src="./../../resource/import-package.png" width="400"/> 
 </center>
 
 ### 3. 设置游戏信息
 > MAS为Unity提供了一个配置向导来快速配置应用信息，您可以通过 ***"Assets/Yodo1/MAS Settings"*** 打开配置页面。
 
 <center class="half">
-    <img src="../resource/settings-mas.png" width="400"/> 
+    <img src="./../../resource/settings-mas.png" width="400"/> 
 </center>
 
 #### 3.1 设置安卓配置
 
 <center class="half">
-    <img src="../resource/settings-android.png" width="400"/> 
+    <img src="./../../resource/settings-android.png" width="400"/> 
 </center>
 
 #### 3.2 设置iOS配置
 
 <center class="half">
-    <img src="../resource/settings-ios.png" width="400"/> 
+    <img src="./../../resource/settings-ios.png" width="400"/> 
 </center>
 
 ### 4. 支持AndroidX
 #### 4.1 打开下图中的"Settings"，如图：
 
 <center class="half">
-    <img src="../resource/settings-resolver-android.png" width="400"/> 
+    <img src="./../../resource/settings-resolver-android.png" width="400"/> 
 </center>
 
 #### 4.2 勾选"***Use Jetifier***".
 
 <center class="half">
-    <img src="../resource/use-jetifier.png" width="400"/> 
+    <img src="./../../resource/use-jetifier.png" width="400"/> 
 </center>
 
 ### 5. 遵守必要的法律框架(Privacy)

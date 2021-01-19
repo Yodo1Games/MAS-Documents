@@ -13,7 +13,7 @@
 Open your Unity project and import the Unity package. Double click the compressed package icon. The files will populate automatically as illustrated below.
 
 <center class="half">
-    <img src="./resource/import-package.png" width="400"/> 
+    <img src="./../resource/import-package.png" width="400"/> 
 </center>
 
 **Important!** The MAS Unity Plugin is built for Android & iOS platforms. Please run your projects on an Android or iOS device to test ads when the integration is completed.
@@ -22,32 +22,32 @@ Open your Unity project and import the Unity package. Double click the compresse
 > MAS provides a configuration wizard for Unity to quickly configure application information. You can access it through `Assets/Yodo1/MAS Settings`.
 
 <center class="half">
-    <img src="./resource/settings-mas.png" width="400"/> 
+    <img src="./../resource/settings-mas.png" width="400"/> 
 </center>
 
 #### 3.1 Set Android Configuration
 
 <center class="half">
-    <img src="./resource/settings-android.png" width="400"/> 
+    <img src="./../resource/settings-android.png" width="400"/> 
 </center>
 
 #### 3.2 Set iOS Configuration
 
 <center class="half">
-    <img src="./resource/settings-ios.png" width="400"/> 
+    <img src="./../resource/settings-ios.png" width="400"/> 
 </center>
 
 ### 4. Support AndroidX
 #### 4.1 Look for and click on "Settings" under "Assets".
 
 <center class="half">
-    <img src="./resource/settings-resolver-android.png" width="400"/> 
+    <img src="./../resource/settings-resolver-android.png" width="400"/> 
 </center>
 
 #### 4.2 Select `Use Jetifier`.
 
 <center class="half">
-    <img src="./resource/use-jetifier.png" width="400"/> 
+    <img src="./../resource/use-jetifier.png" width="400"/> 
 </center>
 
 ### 5. Comply With Necessary Legal Frameworks

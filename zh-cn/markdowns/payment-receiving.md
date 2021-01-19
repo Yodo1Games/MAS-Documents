@@ -11,7 +11,7 @@ For you to receive your first payment:
 1) Payment information must be completely and correctly filled in the system before the 1st of the month.
 2) The amount of “Finalized Earnings” is equal or greater than $300 (three hundred US dollars).
 
-![](../resource/payment-newpaymentinfo.png)
+![](./../../resource/payment-newpaymentinfo.png)
 
 ## 3. What is the difference between Estimated Earnings and Finalized Earnings?
 

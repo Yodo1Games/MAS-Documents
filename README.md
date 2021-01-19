@@ -3,48 +3,48 @@
 <!--ts-->
 * Getting Started
   * Introduction
-    * [Using This Knowledge Base](knowledge-base.md)
+    * [Using This Knowledge Base](./markdowns/knowledge-base.md)
   * Compatability
-    * [Supported Platforms and Regions](supported-platforms-regions.md)
-    * [Supported Engines and Minimum Versions](supported-engines-minimum-versions.md)
-    * [Supported Ad Formats](supported-ad-formats.md)
+    * [Supported Platforms and Regions](./markdowns/supported-platforms-regions.md)
+    * [Supported Engines and Minimum Versions](./markdowns/supported-engines-minimum-versions.md)
+    * [Supported Ad Formats](./markdowns/supported-ad-formats.md)
 * Game Submission
   * Game Submission
-    * [Introduction](submission-introduction.md)
-    * [New App vs Live App](submission-newapp-vs-liveapp.md)
-    * [Main Steps for Submission](submission-main-steps.md)
-    * [Additional Steps For Live Games](submission-additional-steps.md)
-    * [Submitting Your Revenue Metrics](submission-revenue-metrics.md)
+    * [Introduction](./markdowns/submission-introduction.md)
+    * [New App vs Live App](./markdowns/submission-newapp-vs-liveapp.md)
+    * [Main Steps for Submission](./markdowns/submission-main-steps.md)
+    * [Additional Steps For Live Games](./markdowns/submission-additional-steps.md)
+    * [Submitting Your Revenue Metrics](./markdowns/submission-revenue-metrics.md)
   * Payment
-    * [Submitting Your Payment Information](payment-submitting-information.md)
-    * [Receiving Your Payment](payment-receiving.md)
+    * [Submitting Your Payment Information](./markdowns/payment-submitting-information.md)
+    * [Receiving Your Payment](./markdowns/payment-receiving.md)
 * Integration
-  * [Unity Integration](integration-unity.md)
-  * [iOS Integration](integration-ios.md)
-  * [Android Integration](integration-android.md)  
+  * [Unity Integration](./markdowns/integration-unity.md)
+  * [iOS Integration](./markdowns/integration-ios.md)
+  * [Android Integration](./markdowns/integration-android.md)  
 * Pre-Release
   * AppTrackingTransparency(ATT)
-    * [ATT Questionnaire Part 2](ATT-questionnaire-part2.md)
-    * [Apple's App Privacy Questionnaire](apple-app-privacy-questionnaire.md)
+    * [ATT Questionnaire Part 2](./markdowns/ATT-questionnaire-part2.md)
+    * [Apple's App Privacy Questionnaire](./markdowns/apple-app-privacy-questionnaire.md)
   * Compliance With Ad Networks
-    * [Setting Up Your App-Ads.txt](app-ads.md)
+    * [Setting Up Your App-Ads.txt](./markdowns/app-ads.md)
   * Legal Compliance
-    * [GDPR](privacy-gdpr.md)
-    * [COPPA](privacy-coppa.md)
-    * [CCPA](privacy-ccpa.md)
+    * [GDPR](./markdowns/privacy-gdpr.md)
+    * [COPPA](./markdowns/privacy-coppa.md)
+    * [CCPA](./markdowns/privacy-ccpa.md)
 * Post-Release
   * Post-Release Tasks
-    * [FAN Configuration](FAN-configuration.md)
+    * [FAN Configuration](./markdowns/FAN-configuration.md)
 * Account
-  * [Member Management](account-member-management.md)
+  * [Member Management](./markdowns/account-member-management.md)
 * Checklist
-  * [Checklist for Releasing With MAS](checklist-releasing.md)
-  * [Key Tasks Checklist](checklist-key-tasks.md)
+  * [Checklist for Releasing With MAS](./markdowns/checklist-releasing.md)
+  * [Key Tasks Checklist](./markdowns/checklist-key-tasks.md)
 * FAQs
-  * [General Questions](questions-general.md)
-  * [iOS Questions](questions-ios.md)
-  * [Android Questions](questions-android.md)
+  * [General Questions](./markdowns/questions-general.md)
+  * [iOS Questions](./markdowns/questions-ios.md)
+  * [Android Questions](./markdowns/questions-android.md)
 * Support
-  * [Contact Us](contact-us.md)
+  * [Contact Us](./markdowns/contact-us.md)
 <!--te-->
 

@@ -182,7 +182,7 @@ The following shows the array of dictionaries you need to access the SDK.
 #### 2.4 Disable `BitCode`
 Ensure that all mediation networks work properly by disabling bitcode.
 
-<img src="./resource/ios-bitcode-disable.png" style="zoom:50%;" />
+<img src="./../resource/ios-bitcode-disable.png" style="zoom:50%;" />
 
 #### 2.5 Add AdMob App ID
 * Add `GADApplicationIdentifier` with `String` type to your project's `info.plist` file.

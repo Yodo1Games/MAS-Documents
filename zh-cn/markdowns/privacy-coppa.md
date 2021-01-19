@@ -38,7 +38,7 @@ Yodo1Mas.getInstance().setCOPPA(true);
 
 1) Create an Age Verification Pop-up to collect the user's age. Here are some examples:
 <center class="half">
-    <img src="./resource/privacy-coppa-sample-1.png" width="200"/><img src="./resource/privacy-coppa-sample-2.png" width="200"/><img src="./resource/privacy-coppa-sample-3.png" width="200"/>
+    <img src="./../../resource/privacy-coppa-sample-1.png" width="200"/><img src="./../../resource/privacy-coppa-sample-2.png" width="200"/><img src="./../../resource/privacy-coppa-sample-3.png" width="200"/>
 </center>
 
 2) Use the age to trigger one of the following methods in the MAS SDK:

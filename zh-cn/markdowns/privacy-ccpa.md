@@ -12,7 +12,7 @@ CCPA is a legal framework created by the state of California, in the USA, to pro
 2) Use the location to trigger a message which asks users whether or not they consent to having their data collected. Here is an example, though we suggest changing the wording to better suit your audience.
 
 <center class="half">
-    <img src="../resource/privacy-ccpa.png" width="300"/> 
+    <img src="./../../resource/privacy-ccpa.png" width="300"/> 
 </center>
 
 3) Use the input to trigger a CCPA compliance method.
