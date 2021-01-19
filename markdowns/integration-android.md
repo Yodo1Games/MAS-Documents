@@ -13,7 +13,7 @@ maven { url "https://dl.bintray.com/yodo1/MAS-Android" }
 ### 2. Open your app-level `build.gradle` and add the relevant code.
 #### 2.1 Add a Gradle dependency
 ```groovy
-implementation 'com.yodo1.mas:google:0.0.0.1-beta'
+implementation 'com.yodo1.mas:google:0.0.0.12-beta'
 ```
 
 #### 2.2 Add the `compileOptions` property to the `Android` section
