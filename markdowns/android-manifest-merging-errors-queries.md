@@ -1,7 +1,7 @@
-# AdMob Android Manifest Merging Errors
+# Android Manifest Merging Errors
 
 ## Unity 2020
-默认支持无需特殊设置
+No special setup required
 
 ## Unity 2019
 
@@ -9,10 +9,10 @@
     <img src="./../resource/manifest-merging-errors-queries-1.png" width="200"/><img src="./../resource/manifest-merging-errors-queries-2.png" width="200"/>
 </center>
 
-* 找到 `File -> Build Setting -> Player Settings -> Publishing Settings -> Build` 如图1，并且勾选箭头所指选项
-* 打开`Assets/Plugins/Android/` 目录下的 `baseProjectTemplate.gradle` 文件，修改 `gradle android` 插件版本 如：3.4.3
-* 修改 Unity 使用的 Gradle 版本，使其与上面修改的插件版本匹配，如图2
-* 点击 `Assets -> External Dependency Manager -> Android Resolver -> Force Resolve`
+* Find `File -> Build Setting -> Player Settings -> Publishing Settings -> Build` as shown above in figure 1 and select the options indicated by the arrow
+* Open the `baseProjectTemplate.gradle` file in the `Assets/Plugins/Android/` directory and change `gradle android` version, e.g. 3.4.3
+* Change the version of Gradle used by Unity to match the plugin version modified above, as shown in figure 2
+* Click `Assets -> External Dependency Manager -> Android Resolver -> Force Resolve`
 
 
 ## Unity 2018
@@ -21,10 +21,10 @@
     <img src="./../resource/manifest-merging-errors-queries-3.png" width="200"/><img src="./../resource/manifest-merging-errors-queries-4.png" width="200"/>
 </center>
 
-* 找到`File -> Build Setting -> Player Settings -> Publishing Settings -> Build` 如图1，并且勾选箭头所指选项，
-* 打开`Assets/Plugins/Android/` 目录下的 `mainTemplate.gradle` 文件，修改里面的 `gradle android` 插件版本 如：3.4.3
-* 修改 Unity 使用的 Gradle 版本，使其与上面修改的 插件版本匹配，如图2
-* 点击`Assets -> External Dependency Manager -> Android Resolver -> Force Resolve`,
+* Find`File -> Build Setting -> Player Settings -> Publishing Settings -> Build` as shown above in figure 1 and select the options indicated by the arrow
+* Open the `mainTemplate.gradle` file in the `Assets/Plugins/Android/` directory and change `gradle android` version, e.g. 3.4.3
+* Change the version of Gradle used by Unity to match the plugin version modified above, as shown in figure 2
+* Click `Assets -> External Dependency Manager -> Android Resolver -> Force Resolve`
 
 ## Unity 2017
 
@@ -32,9 +32,10 @@
     <img src="./../resource/manifest-merging-errors-queries-5.png" width="200"/>
 </center>
 
-* 找到`File -> Build Setting -> Player Settings -> Publishing Settings -> Build`如图并且勾选箭头所指选项
-* 打开`Assets/Plugins/Android/` 目录下的 `mainTemplate.gradle` 文件，修改里面的 `gradle android` 插件版本 如：3.4.3，
-* 在`mainTemplate.gradle` 文件中进行如下设置
+* Find`File -> Build Setting -> Player Settings -> Publishing Settings -> Build` as shown above and select the options indicated by the arrow
+* Open the `mainTemplate.gradle` file in the `Assets/Plugins/Android/` directory and chenge `gradle android` version, e.g. 3.4.3，
+* Add the following information to the `mainTemplate.gradle` file
+
     ```
     multiDexEnabled true
     ```
@@ -47,4 +48,4 @@
 
     }
     ```
- * 点击`Assets -> External Dependency Manager -> Android Resolver -> Force Resolve`
+ * Click `Assets -> External Dependency Manager -> Android Resolver -> Force Resolve`
