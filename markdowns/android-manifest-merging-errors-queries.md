@@ -35,7 +35,11 @@ No special setup required
 * Add the following information to the `mainTemplate.gradle` file
 
     ```
-    multiDexEnabled true
+    defaultConfig {
+    
+        multiDexEnabled true
+        
+    }
     ```
     ```
     compileOptions {
