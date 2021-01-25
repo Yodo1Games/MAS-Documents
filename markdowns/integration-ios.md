@@ -361,7 +361,7 @@ Please comply with all legal frameworks that apply to your game and its users. Y
 ## Interstitial Integration
 ### 1. Set the interstitial ad delegate method
 ``` obj-c
-[Yodo1Mas sharedInstance].bannerAdDelegate = self; 
+[Yodo1Mas sharedInstance].interstitialAdDelegate = self; 
 
 #pragma mark - Interstitial Delegate
 - (void)onAdOpened:(Yodo1MasAdEvent *)event {
