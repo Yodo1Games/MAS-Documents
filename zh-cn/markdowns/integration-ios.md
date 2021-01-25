@@ -16,8 +16,9 @@ touch Podfile
 
 ```ruby
 source 'https://github.com/Yodo1Games/MAS-Spec.git'
+source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 
-pod 'Yodo1MasSDK', '~> 0.0.0.1-beta'
+pod 'Yodo1MasSDK', '~> 0.0.0.7-beta'
 ```
 
 在`终端`中执行如下命令：</br>
