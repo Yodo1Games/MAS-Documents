@@ -8,12 +8,13 @@
 maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
 maven { url "https://dl.bintray.com/ironsource-mobile/android-adapters" }
 maven { url "https://dl.bintray.com/yodo1/MAS-Android" }
+maven { url "https://dl.bintray.com/yodo1/android-sdk" }
 ```
 
 ### 2. app级别`build.gradle`添加
 #### 2.1 添加MAS SDK依赖
 ```groovy
-implementation 'com.yodo1.mas:google:0.0.0.1-beta'
+implementation 'com.yodo1.mas:google:0.0.0.13-beta'
 ```
 
 #### 2.2 添加`compileOptions`属性到 `android` 部分
