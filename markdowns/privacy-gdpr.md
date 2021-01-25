@@ -14,8 +14,9 @@ If you have EU users, follow the steps below to comply with GDPR.
 **2) Create a pop up window that verifies that the user is over 16 and consents to sharing their data.**
 
 <center class="half">
-    <img src="./../resource/privacy-gdpr.png" width="300"/> 
 </center>
+
+![](./../resource/privacy-gdpr.png)
 
 IMPORTANT! The message depicted above is unnecessarily long. We suggest a shorter version that reads as follows:
 
