@@ -18,6 +18,7 @@ Please open the project's `Podfile` file and add the following code to the targe
 
 ```ruby
 source 'https://github.com/Yodo1Games/MAS-Spec.git'
+source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 
 pod 'Yodo1MasSDK', '~> 0.0.0.7-beta'
 ```
