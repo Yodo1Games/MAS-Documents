@@ -8,12 +8,13 @@
 maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
 maven { url "https://dl.bintray.com/ironsource-mobile/android-adapters" }
 maven { url "https://dl.bintray.com/yodo1/MAS-Android" }
+maven { url "https://dl.bintray.com/yodo1/android-sdk" }
 ```
 
 ### 2. Open your app-level `build.gradle` and add the relevant code.
 #### 2.1 Add a Gradle dependency
 ```groovy
-implementation 'com.yodo1.mas:google:0.0.0.12-beta'
+implementation 'com.yodo1.mas:google:0.0.0.13-beta'
 ```
 
 #### 2.2 Add the `compileOptions` property to the `Android` section
