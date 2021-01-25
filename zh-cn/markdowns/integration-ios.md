@@ -73,67 +73,39 @@ pod install --repo-update
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>4DZT52R2T5.skadnetwork</string>
+    <string>2u9pt9hc89.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>SU67R6K2V3.skadnetwork</string>
+    <string>4468km3ulz.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>4PFYVQ9L8R.skadnetwork</string>
+    <string>4fzdc2evr5.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>ludvb6z3bs.skadnetwork</string>
+    <string>7ug5zh24hu.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>KBD757YWX3.skadnetwork</string>
+    <string>8s468mfl3y.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>F38H382JLK.skadnetwork</string>
+    <string>9rd848q2bz.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>4FZDC2EVR5.skadnetwork</string>
+    <string>9t245vhmpl.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>2U9PT9HC89.skadnetwork</string>
+    <string>av6w8kgt66.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>WZMMZ9FP6W.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>t38b2kh725.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>9T245VHMPL.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>7UG5ZH24HU.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>M8DBW4SV7C.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>mlmmfzh3r3.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>TL55SBB4FM.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>YCLNXRL5PM.skadnetwork</string>
+    <string>f38h382jlk.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -141,47 +113,47 @@ pod install --repo-update
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>av6w8kgt66.skadnetwork</string>
+    <string>kbd757ywx3.skadnetwork</string>
 </dict>
- <dict>
+<dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>8s468mfl3y.skadnetwork</string>
+    <string>ludvb6z3bs.skadnetwork</string>
 </dict>
- <dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>m8dbw4sv7c.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>mlmmfzh3r3.skadnetwork</string>
+</dict>
+<dict>
     <key>SKAdNetworkIdentifier</key>
     <string>prcb7njmu6.skadnetwork</string>
 </dict>
- <dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>4468km3ulz.skadnetwork</string>
-</dict>
- <dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>9RD848Q2BZ.skadnetwork</string>
-</dict>   
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>238da6jt44.skadnetwork</string>
+    <string>t38b2kh725.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>22mmun2rn5.skadnetwork</string>
-</dict>
- <dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>bvpn9ufa9b.skadnetwork</string>
-</dict>     
-<dict>
-<key>SKAdNetworkIdentifier</key>
-    <string>58922NB4GD.skadnetwork</string>
+    <string>tl55sbb4fm.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>GTA9LK7P23.skadnetwork</string>
+    <string>wzmmz9fp6w.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>ecpz2srf59.skadnetwork</string>
+    <string>yclnxrl5pm.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>ydx93a7ass.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>n38lu8286q.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -189,7 +161,143 @@ pod install --repo-update
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>n38lu8286q.skadnetwork</string>
+    <string>3sh42y64q3.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>44jx6755aq.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>4pfyvq9l8r.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>5l3tpt7t6e.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>5lm9lj6jb7.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>7rz58n8ntl.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>c6k4g5qg8m.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>cg4yq2srnc.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>f73kdq92p3.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>ggvn48r87g.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>klf5c3l5u5.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>p78axxw29g.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>ppxm28t8ap.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>uw77j35x4d.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>v72qych5uu.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>w9q455wk68.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>wg4vff78zm.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>su67r6k2v3.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>578prtvx9j.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>ecpz2srf59.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>22mmun2rn5.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>238da6jt44.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>3rd42ekr43.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>424m5254lk.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>44n7hlldy6.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>488r3q3dtq.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>4dzt52r2t5.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>5a6flpkh64.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>bvpn9ufa9b.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>glqzh8vgby.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>lr83yxwka7.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>v79kvwwj4g.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>zmvfpc5aq8.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>gta9lk7p23.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>n9x2a789qt.skadnetwork</string>
 </dict>
 </array>
 
@@ -235,7 +343,7 @@ pod install --repo-update
 ## 插屏广告集成
 ### 1. 设置插屏广告代理方法
 ``` obj-c
-[Yodo1Mas sharedInstance].bannerAdDelegate = self; 
+[Yodo1Mas sharedInstance].interstitialAdDelegate = self; 
 
 #pragma mark - Interstitial Delegate
 - (void)onAdOpened:(Yodo1MasAdEvent *)event {
