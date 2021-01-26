@@ -30,7 +30,17 @@ pod install --repo-update
 ```
 
 ### 2. Xcode project configuration
-#### 2.1 iOS9 `App Transport Security (ATS)` Settings
+#### 2.1 AppLovin SDK Key
+* Using the Xcode project navigator, select `Info.plist`.
+* Click the add button (+) next to any key in the property list editor and create a new property key.
+* Enter the key name - `AppLovinSdkKey`.
+* Choose a string value type.
+* Enter `rNHXebCtrUWyeDeAihKoDCmwM9sL2WfshXTVHs-7N0yUBE4D0KtcycoTQgE7Ha2a9CsCn9WI22ZwsJQ29h6LzI` in the value field.
+```xml
+<key>AppLovinSdkKey</key>
+<string>rNHXebCtrUWyeDeAihKoDCmwM9sL2WfshXTVHs-7N0yUBE4D0KtcycoTQgE7Ha2a9CsCn9WI22ZwsJQ29h6LzI</string>
+```
+#### 2.2 iOS9 `App Transport Security (ATS)` Settings
 
 Apple has added in controls for ATS in iOS9. To ensure uninterrupted ad delivery across all Mediation Networks, it’s important to make these changes to your `info.plist`.
 
@@ -47,7 +57,7 @@ You may edit the `info.plist` file using the `Open As Source Code` and add the c
 </dict>
 ```
 
-#### 2.2 iOS14 `AppTrackingTransparency(ATT)` Settings
+#### 2.3 iOS14 `AppTrackingTransparency(ATT)` Settings
 
 **User tracking instructions**
 
