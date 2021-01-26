@@ -27,7 +27,14 @@ pod install --repo-update
 ```
 
 ### 2. `Xcode`工程配置
-#### 2.1 `iOS9 App Transport Security`设置
+#### 2.1 添加AppLovin SDK Key
+请在`Xcode`工程的`Info.plist`中配置`AppLovinSdkKey`
+```xml
+<key>AppLovinSdkKey</key>
+<string>rNHXebCtrUWyeDeAihKoDCmwM9sL2WfshXTVHs-7N0yUBE4D0KtcycoTQgE7Ha2a9CsCn9WI22ZwsJQ29h6LzI</string>
+```
+
+#### 2.2 `iOS9 App Transport Security`设置
 在`iOS9`中，苹果增加了关于`ATS`的控制。为了确保在所有中介网络上不间断地支持MAS广告，需要您在`Info.plist`文件中进行以下设置：
 
 * 添加`NSAppTransportSecurity`，类型为`Dictionary`
@@ -43,7 +50,7 @@ pod install --repo-update
 </dict>
 ```
 
-#### 2.2 `iOS14 AppTrackingTransparency`设置
+#### 2.3 `iOS14 AppTrackingTransparency`设置
 请在`Xcode`工程的`Info.plist`中配置`NSUserTrackingUsageDescription`及描述文案，并对描述文案进行多语言配置。描述文案的多语言配置可以通过如下操作完成：
 
 * 在`XCode`工程中创建名为`InfoPlist.strings`的文件，如图:
@@ -62,7 +69,7 @@ pod install --repo-update
 > 此标识符将用于向您发送个性广告
 > This identifier will be used to send you personalized ads
 
-#### 2.3 使用`S​​KAdNetwork`跟踪转化
+#### 2.4 使用`S​​KAdNetwork`跟踪转化
 使用`Apple`的转化跟踪`SKAdNetwork`，这意味着即使`IDFA`不可用，广告平台也可以通过这个获取应用安装归因。请参阅`Apple`的`SKAdNetwork`[官方文档](https://developer.apple.com/documentation/storekit/skadnetwork)，以了解更多信息。要启用此功能，您需要在`Info.plist`中添加`SKAdNetworkItems`。
 
 ```xml
@@ -304,11 +311,11 @@ pod install --repo-update
 
 ```
 
-#### 2.4 禁用`BitCode`
+#### 2.5 禁用`BitCode`
 为确保所有中介网络正常工作，请禁用bitcode，如下图所示:
 <img src="./../../resource/ios-bitcode-disable.png" style="zoom:50%;" />
 
-#### 2.5 添加AdMob App ID
+#### 2.6 添加AdMob App ID
 * 添加`GADApplicationIdentifier`字段到`Info.plist`文件中，类型为`String`。
 * 可以编辑`Info.plist`文件，使用`Open As Source Code`打开文件，并将`GADApplicationIdentifier`添加到文件中。示例:
 
