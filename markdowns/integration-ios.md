@@ -4,9 +4,8 @@
 >* The easiest way is to use `cocoaPods`, If you are just starting out with 'CocoaPods', please refer to its [official documentation](https://guides.cocoapods.org/using/using-cocoapods) to study how to create and use it `Podfile`
 
 **Important** Update MAS Rivendell SDK
-- To upgrade from an older SDK to MAS Rivendell SDK, you must remove all the contents of the old SDK
-- As the interface of the new SDK has changed a lot compared to the old SDK, please refer to the following integration documents to modify
-- In order to reduce the developer’s migration cost, we have added a `Yodo1Ads` compatible interface
+- To upgrade from an older SDK to MAS SDK v2, you must remove all the contents of the old SDK
+- We have modified the interface of the new SDK, please carefully refer to the following documents to upgrade
 
 ## The Integration Steps
 ### 1. Add iOS SDK to your project
