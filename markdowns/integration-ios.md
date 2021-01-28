@@ -35,10 +35,10 @@ pod install --repo-update
 * Click the add button (+) next to any key in the property list editor and create a new property key.
 * Enter the key name - `AppLovinSdkKey`.
 * Choose a string value type.
-* Enter `rNHXebCtrUWyeDeAihKoDCmwM9sL2WfshXTVHs-7N0yUBE4D0KtcycoTQgE7Ha2a9CsCn9WI22ZwsJQ29h6LzI` in the value field.
+* Enter `xcGD2fy-GdmiZQapx_kUSy5SMKyLoXBk8RyB5u9MVv34KetGdbl4XrXvAUFy0Qg9scKyVTI0NM4i_yzdXih4XE` in the value field.
 ```xml
 <key>AppLovinSdkKey</key>
-<string>rNHXebCtrUWyeDeAihKoDCmwM9sL2WfshXTVHs-7N0yUBE4D0KtcycoTQgE7Ha2a9CsCn9WI22ZwsJQ29h6LzI</string>
+<string>xcGD2fy-GdmiZQapx_kUSy5SMKyLoXBk8RyB5u9MVv34KetGdbl4XrXvAUFy0Qg9scKyVTI0NM4i_yzdXih4XE</string>
 ```
 #### 2.2 iOS9 `App Transport Security (ATS)` Settings
 
