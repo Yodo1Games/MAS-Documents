@@ -3,6 +3,11 @@
 >*  `SDK`要求`iOS`的最低版本为`iOS9.0`
 >*  最简便的方法就是使用`CocoaPods`, 如果您刚开始接触`CocoaPods`，请参阅其[官方文档](https://guides.cocoapods.org/using/using-cocoapods)，了解如何创建和使用`Podfile`
 
+**重要** 更新MAS Rivendell SDK
+- 从较旧的SDK升级到MAS Rivendell SDK，您必须删除所有旧SDK的内容
+- 由于新SDK相对于旧SDK接口变化较大，请参照以下集成文档进行修改
+- 为了减少开发者的迁移成本，我们增加了`Yodo1Ads`兼容接口
+
 ## 集成步骤
 ### 1. 将`iOS SDK`添加到项目中
 #### 1.1 创建`Podfile`文件</br>
@@ -18,7 +23,7 @@ touch Podfile
 source 'https://github.com/Yodo1Games/MAS-Spec.git'
 source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 
-pod 'Yodo1MasSDK', '~> 0.0.0.7-beta'
+pod 'Yodo1MasSDK', '~> 0.0.0.8-beta'
 ```
 
 在`终端`中执行如下命令：</br>
@@ -31,7 +36,7 @@ pod install --repo-update
 请在`Xcode`工程的`Info.plist`中配置`AppLovinSdkKey`
 ```xml
 <key>AppLovinSdkKey</key>
-<string>rNHXebCtrUWyeDeAihKoDCmwM9sL2WfshXTVHs-7N0yUBE4D0KtcycoTQgE7Ha2a9CsCn9WI22ZwsJQ29h6LzI</string>
+<string>xcGD2fy-GdmiZQapx_kUSy5SMKyLoXBk8RyB5u9MVv34KetGdbl4XrXvAUFy0Qg9scKyVTI0NM4i_yzdXih4XE</string>
 ```
 
 #### 2.2 `iOS9 App Transport Security`设置

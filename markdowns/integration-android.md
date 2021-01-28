@@ -1,6 +1,11 @@
 # Android Integration
 > MAS supports Android version 4.4.+ (Android API level: 19+) and above
 
+**Important** Update MAS Rivendell SDK
+- To upgrade from an older SDK to MAS Rivendell SDK, you must remove all the contents of the old SDK
+- As the interface of the new SDK has changed a lot compared to the old SDK, please refer to the following integration documents to modify
+- In order to reduce the developer’s migration cost, we have added a `Yodo1Advert` compatible interface
+
 ## The Integration Steps
 ### 1. Open your project-level `build.gradle` and add the relevant code.
 

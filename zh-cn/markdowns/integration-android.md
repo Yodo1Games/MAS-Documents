@@ -2,6 +2,11 @@
 > `SDK`要求`Android OS`的最低版本为`Android 4.4`及以上版本</br>
 > 重要: 确保你使用的是`Gradle 3.3.0+`版本。
 
+**重要** 更新MAS Rivendell SDK
+- 从较旧的SDK升级到MAS Rivendell SDK，您必须删除所有旧SDK的内容
+- 由于新SDK相对于旧SDK接口变化较大，请参照以下集成文档进行修改
+- 为了减少开发者的迁移成本，我们增加了`Yodo1Advert`兼容接口
+
 ## 集成步骤
 ### 1. 项目级别`build.gradle`添加 
 ```groovy
@@ -14,7 +19,7 @@ maven { url "https://dl.bintray.com/yodo1/android-sdk" }
 ### 2. app级别`build.gradle`添加
 #### 2.1 添加MAS SDK依赖
 ```groovy
-implementation 'com.yodo1.mas:google:0.0.0.13-beta'
+implementation 'com.yodo1.mas:google:0.0.0.14-beta'
 ```
 
 #### 2.2 添加`compileOptions`属性到 `android` 部分

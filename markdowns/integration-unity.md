@@ -1,5 +1,10 @@
 # Unity Integration
 
+**Important** Update MAS Rivendell SDK
+- To upgrade from an older SDK to MAS Rivendell SDK, you must remove all the contents of the old SDK as following:`Assets/Plugins/iOS/Yodo1Ads`
+- As the interface of the new SDK has changed a lot compared to the old SDK, please refer to the following integration documents to modify
+- In order to reduce the developer’s migration cost, we have added a `Yodo1U3dAds` compatible interface
+
 ## The Integration Steps
 
 ### 1. Download [Unity Plugin](https://docs.yodo1.com/download/Rivendell-SDKs/Rivendell-0.0.0.13-beta.unitypackage)
