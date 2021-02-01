@@ -24,7 +24,7 @@ Please open the project's `Podfile` file and add the following code to the targe
 source 'https://github.com/Yodo1Games/MAS-Spec.git'
 source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 
-pod 'Yodo1MasSDK', '~> 0.0.0.20-beta'
+pod 'Yodo1MasSDK', '~> 4.0.0.0'
 ```
 
 Execute the following command in `Terminal` :
