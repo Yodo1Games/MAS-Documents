@@ -6,7 +6,7 @@
 
 ## The Integration Steps
 
-### 1. Download [Unity Plugin](https://docs.yodo1.com/download/Rivendell-SDKs/Rivendell-4.0.0.0.unitypackage)
+### 1. Download [Unity Plugin](https://docs.yodo1.com/download/Rivendell-SDKs/Rivendell-4.0.0.0.unitypackage) 
 > * MAS supports Unity 2017.4.37f1+ LTS version, 2018 and 2019 common maintained LTS Unity version and above.
 > * [Jetifier](https://developer.android.com/jetpack/androidx/releases/jetifier) is required for Android builds and can be enabled by selecting ***Assets > External Dependency Manager > Android Resolver > Settings > Use Jetifier***
 > * `CocoaPods` is required for iOS builds and can be installed following the instructions [here](https://guides.cocoapods.org/using/getting-started.html#getting-started)
@@ -114,7 +114,7 @@ classpath com.android.tools.build:gradle:x.x.x
 
 If you are on Unity 2017.4 or below, please ensure that you are on at least 2017.4.40 which uses a compatible version of the Gradle Plugin by default.
 
-Detailed steps for different versions of Unity can be found [here](android-manifest-merging-errors-queries.md).
+Detailed steps for different versions of Unity can be found [here](android-manifest-merging-errors-queries.md). 
 
 ## Interstitial Integration
 ### 1. Set the interstitial ad delegate method
