@@ -128,7 +128,7 @@ Initialize the SDK in the `onCreate` method of `Activity`
 ```java
 protected void onCreate() {
   super.onCreate();
-	Yodo1Mas.getInstance().init(this, "你的AppId", new Yodo1Mas.InitListener() {
+	Yodo1Mas.getInstance().init(this, "Your AppId", new Yodo1Mas.InitListener() {
 	    @Override
 	    public void onMasInitSuccessful() {
 	        // 初始化成功
@@ -150,6 +150,7 @@ If you're using ProGuard with the MAS SDK, add the following code to your ProGua
 -keeppackagenames com.yodo1.**
 -keep class com.yodo1.** { *; }
 -keep class com.yodo1.mas.** { *; }
+-keep class com.yodo1.mas.ads.** {*;}
 -keep class com.yodo1.mas.error.** { *; }
 -keep class com.yodo1.mas.event.** { *; }
 -keep public class * extends com.yodo1.mas.mediation.Yodo1MasAdapterBase
