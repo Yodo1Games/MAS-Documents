@@ -21,6 +21,8 @@ touch Podfile
 Please open the project's `Podfile` file and add the following code to the target of the application:
 
 ```ruby
+use_frameworks!
+source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
 source 'https://github.com/Yodo1Games/MAS-Spec.git'
 source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 
