@@ -26,7 +26,7 @@ source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cd
 source 'https://github.com/Yodo1Games/MAS-Spec.git'
 source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 
-pod 'Yodo1MasSDK', '~> 4.0.0.0'
+pod 'Yodo1MasSDK', '~> 4.0.0.1'
 ```
 
 Execute the following command in `Terminal` :
