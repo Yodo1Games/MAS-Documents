@@ -22,7 +22,8 @@ touch Podfile
 source 'https://github.com/Yodo1Games/MAS-Spec.git'
 source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 
-pod 'Yodo1MasSDK', '~> 0.0.0.20-beta'
+pod 'FBSDKCoreKit' # 如果你已经引入FBSDKCoreKit,请忽略
+pod 'Yodo1MasSDK', '~> 4.0.0.2'
 ```
 
 在`终端`中执行如下命令：</br>

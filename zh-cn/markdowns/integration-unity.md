@@ -6,7 +6,7 @@
 
 ## 集成步骤
 
-### 1. 下载[Unity插件](https://docs.yodo1.com/download/Rivendell-SDKs/Rivendell-0.0.0.20-beta.unitypackage)
+### 1. 下载[Unity插件](https://docs.yodo1.com/download/Rivendell-SDKs/Rivendell-4.0.0.2.unitypackage)
 > * MAS支持Unity 2017.4.37f1+ LTS版本，2018年和2019年通用维护的LTS Unity版本以及以上版本。
 > * [Jetifier](https://developer.android.com/jetpack/androidx/releases/jetifier)是Android构建所必需的，可以通过选择 ***Assets > External Dependency Manager > Android Resolver > Settings > Use Jetifier*** 启用
 > * `CocoaPods`是`iOS`构建所必需的，可以按照[这里](https://guides.cocoapods.org/using/getting-started.html#getting-started)的说明安装。

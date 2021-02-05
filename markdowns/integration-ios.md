@@ -26,7 +26,8 @@ source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cd
 source 'https://github.com/Yodo1Games/MAS-Spec.git'
 source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 
-pod 'Yodo1MasSDK', '~> 4.0.0.1'
+pod 'FBSDKCoreKit' # If you have introduced FBSDKCoreKit, please ignore
+pod 'Yodo1MasSDK', '~> 4.0.0.2'
 ```
 
 Execute the following command in `Terminal` :
