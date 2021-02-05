@@ -1,7 +1,7 @@
 # iOS集成
 >* `iOS14`要求`Xcode`版本为`12+`，请务必升级您的`Xcode`版本到`12+`。
 >*  `SDK`要求`iOS`的最低版本为`iOS9.0`
->*  最简便的方法就是使用`CocoaPods`, 如果您刚开始接触`CocoaPods`，请参阅其[官方文档](https://guides.cocoapods.org/using/using-cocoapods)，了解如何创建和使用`Podfile`
+>*  最简便的方法就是使用`CocoaPods`(请使用`1.8`及以上版本), 如果您刚开始接触`CocoaPods`，请参阅其[官方文档](https://guides.cocoapods.org/using/using-cocoapods)，了解如何创建和使用`Podfile`
 
 **重要** 更新MAS Rivendell SDK
 - 从较旧的SDK升级到MAS SDK v2，您必须移除所有旧SDK的内容
