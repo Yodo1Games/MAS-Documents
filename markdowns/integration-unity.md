@@ -1,17 +1,23 @@
 # Unity Integration
 
 **Important** Update MAS Rivendell SDK
-- To upgrade from an older SDK to MAS SDK v2, you must remove all the contents of the old SDK as following:`Assets/Plugins/iOS/Yodo1Ads`
+
+- To upgrade from an older SDK to MAS SDK v2, you must remove all the contents of the old SDK as following:</br>
+ - Assets/Plugins/iOS/Yodo1Ads
+ - Assets/Plugins/Android/Yodo1Ads
+ - Assets/Yodo1Ads
 - We have modified the interface of the new SDK, please carefully refer to the following documents to upgrade
 
 ## The Integration Steps
 
-### 1. Download [Unity Plugin 4.0.0.1](https://docs.yodo1.com/download/Rivendell-SDKs/Rivendell-4.0.0.2.unitypackage)
+### 1. Download [Unity Plugin 4.0.0.2](https://docs.yodo1.com/download/Rivendell-SDKs/Rivendell-4.0.0.2.unitypackage)
 > * MAS supports Unity 2017.4.37f1+ LTS version, 2018.4.30f1+ LTS version, 2019.41f18+ LTS version, 2020 all version and above.
 > * [Jetifier](https://developer.android.com/jetpack/androidx/releases/jetifier) is required for Android builds and can be enabled by selecting ***Assets > External Dependency Manager > Android Resolver > Settings > Use Jetifier***
-> * `CocoaPods` is required for iOS builds and can be installed following the instructions [here](https://guides.cocoapods.org/using/getting-started.html#getting-started)
+> * `CocoaPods` is required for iOS builds and can be installed following the instructions [here](https://guides.cocoapods.org/using/getting-started.html#getting-started), please use version 1.8 and above.
 > * `Xcode12+` is required for iOS14, please make sure your xcode is lastest version.
-> * The Unity plugin contains Sample code. The path is *** "/Assets/Yodo1/MAS/Sample" ***</br>
+> * The Unity plugin contains Sample code. The path is `/Assets/Yodo1/MAS/Sample`</br>
+
+Please upgrade to Firebase 7.0.0 and above if you are using Firebase, lower Firebase will not be probably compatible with AdMob since we are using the most updated Admob. According to Admob, Firebase needs to be updated to match the Admob version. And this update will also improve your general SDK integration process for long-term
 
 ### 2. Integrate the SDK Into Your Project
 Open your Unity project and import the Unity package. Double click the compressed package icon. The files will populate automatically as illustrated below.
@@ -35,11 +41,15 @@ Open your Unity project and import the Unity package. Double click the compresse
     <img src="./../resource/settings-android.png" width="400"/> 
 </center>
 
+**Important!** Invalid AdMob AppID will cause a crash, please make sure to fetch the AdMob App ID from MAS dashboard
+
 #### 3.2 Set iOS Configuration
 
 <center class="half">
     <img src="./../resource/settings-ios.png" width="400"/> 
 </center>
+
+**Important!** Invalid AdMob AppID will cause a crash, please make sure to fetch the AdMob App ID from MAS dashboard
 
 ### 4. Support AndroidX
 #### 4.1 Look for and click on "Settings" under "Assets".
