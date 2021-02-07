@@ -1,7 +1,7 @@
 # iOS Integration
 >* iOS14 requires `Xcode 12+`. Please make sure you are using the latest version of Xcode.
 >* MAS supports iOS 9.0 and above
->* The easiest way is to use `cocoaPods`, If you are just starting out with 'CocoaPods', please refer to its [official documentation](https://guides.cocoapods.org/using/using-cocoapods) to study how to create and use it `Podfile`
+>* The easiest way is to use `CocoaPods`(Please use version `1.8` and above), If you are just starting out with 'CocoaPods', please refer to its [official documentation](https://guides.cocoapods.org/using/using-cocoapods) to study how to create and use it `Podfile`
 
 **Important** Update MAS Rivendell SDK
 - To upgrade from an older SDK to MAS SDK v2, you must remove all the contents of the old SDK
@@ -26,7 +26,8 @@ source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cd
 source 'https://github.com/Yodo1Games/MAS-Spec.git'
 source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 
-pod 'Yodo1MasSDK', '~> 4.0.0.1'
+pod 'FBSDKCoreKit' # If you have introduced FBSDKCoreKit, please ignore
+pod 'Yodo1MasSDK', '~> 4.0.0.2'
 ```
 
 Execute the following command in `Terminal` :

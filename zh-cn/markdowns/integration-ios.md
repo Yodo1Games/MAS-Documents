@@ -1,7 +1,7 @@
 # iOS集成
 >* `iOS14`要求`Xcode`版本为`12+`，请务必升级您的`Xcode`版本到`12+`。
 >*  `SDK`要求`iOS`的最低版本为`iOS9.0`
->*  最简便的方法就是使用`CocoaPods`, 如果您刚开始接触`CocoaPods`，请参阅其[官方文档](https://guides.cocoapods.org/using/using-cocoapods)，了解如何创建和使用`Podfile`
+>*  最简便的方法就是使用`CocoaPods`(请使用`1.8`及以上版本), 如果您刚开始接触`CocoaPods`，请参阅其[官方文档](https://guides.cocoapods.org/using/using-cocoapods)，了解如何创建和使用`Podfile`
 
 **重要** 更新MAS Rivendell SDK
 - 从较旧的SDK升级到MAS SDK v2，您必须移除所有旧SDK的内容
@@ -22,7 +22,8 @@ touch Podfile
 source 'https://github.com/Yodo1Games/MAS-Spec.git'
 source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 
-pod 'Yodo1MasSDK', '~> 0.0.0.20-beta'
+pod 'FBSDKCoreKit' # 如果你已经引入FBSDKCoreKit,请忽略
+pod 'Yodo1MasSDK', '~> 4.0.0.2'
 ```
 
 在`终端`中执行如下命令：</br>
