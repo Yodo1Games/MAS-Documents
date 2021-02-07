@@ -29,7 +29,7 @@ source 'https://github.com/Yodo1Games/MAS-Spec.git'
 source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 
 pod 'FBSDKCoreKit' # If you have introduced FBSDKCoreKit, please ignore
-pod 'Yodo1MasSDK', '~> 4.0.0.2'
+pod 'Yodo1MasSDK', '~> 4.0.0.3'
 ```
 
 Execute the following command in `Terminal` :
