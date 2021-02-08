@@ -191,6 +191,53 @@ pubnative.net, 1007170, RESELLER, d641df8625486a7b
 Verve.com, 15290, RESELLER, 0c8f5958fc2d6270
 indexexchange.com, 191086, RESELLER 
 indexexchange.com, 192740, DIRECT
+fyber.com, 213070, DIRECT 
+adcolony.com, 801e49d1be83b5f9, RESELLER, 1ad675c9de6b5176
+admanmedia.com, 26, RESELLER
+advertising.com, 25990, RESELLER
+algorix.co, 54236, RESELLER
+algorix.co, 60082, Reseller, 5b394c12fea27a1d
+algorix.co, 60085, Reseller, 5b394c12fea27a1d
+algorix.co, 60086, Reseller, 5b394c12fea27a1d
+algorix.co, 60087, Reseller, 5b394c12fea27a1d
+algorix.co, 60093, Reseller, 5b394c12fea27a1d
+appnexus.com, 8178, RESELLER, f5ab79cb980f11d1
+appnexus.com, 8804, RESELLER, f5ab79cb980f11d1
+aralego.com, par-BE7E29B3B48DE66BC7DDDA24E6267E29, RESELLER
+axonix.com, 56716, RESELLER
+bidmachine.io, 124, RESELLER
+blis.com, 74, RESELLER, 61453ae19a4b73f4
+cmcm.com, 58, RESELLER
+cmcm.com, 66, RESELLER
+improvedigital.com, 1532, RESELLER
+indexexchange.com, 191572, RESELLER
+inmobi.com, 3a4f7da341dd490cbb7dde02b126275e, RESELLER, 83e75a7ae333ca9d
+inmobi.com, 7c9e112a810a4b639bb6af3fa397233e, RESELLER, 83e75a7ae333ca9d
+loopme.com, 5176, RESELLER, 6c8d5f95897a5a3b
+mars.media, 103116, RESELLER
+onetag.com, 5983e2d1b849490, RESELLER
+openx.com, 537125459, RESELLER, 6a698e2ec38604c6
+openx.com, 540298543, RESELLER, 6a698e2ec38604c6
+openx.com, 540679900, RESELLER, 6a698e2ec38604c6
+openx.com, 540866936, RESELLER, 6a698e2ec38604c6
+pubmatic.com, 157559, RESELLER, 5d62403b186f2ace
+pubmatic.com, 157899, RESELLER, 5d62403b186f2ace
+pubmatic.com, 158060, RESELLER, 5d62403b186f2ace
+pubmatic.com, 158291, RESELLER, 5d62403b186f2ace
+pubmatic.com, 158481, RESELLER, 5d62403b186f2ace
+pubmatic.com, 160145, RESELLER, 5d62403b186f2ace
+pubnative.net, 1006353, RESELLER, d641df8625486a7b
+pubnative.net, 1007055, RESELLER, d641df8625486a7b
+rhythmone.com, 2169000724, RESELLER, a670c89d4a324e47
+rhythmone.com, 3948367200, RESELLER, a670c89d4a324e47
+rhythmone.com, 4173858586, RESELLER, a670c89d4a324e47
+rubiconproject.com, 15320, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 18364, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 20744, RESELLER, 0bfd66d529a55807
+startapp.com, inr, RESELLER
+ucfunnel.com, par-BE7E29B3B48DE66BC7DDDA24E6267E29, RESELLER
+verve.com, 15290, RESELLER, 0c8f5958fc2d6270
+video.unrulymedia.com, 2169000724, RESELLER
 ```
 
 ## 4. When does app-ads.txt get verified? 
