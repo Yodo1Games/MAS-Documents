@@ -5,7 +5,7 @@
 ### Unity Method Updates
 
 |  v3.13.0                        | v3.14.0                           | v4.+                             |
-|  -----------------------------  | --------------------------------- | ------------------------------  |
+|  :--------------------------  | :------------------------------|:------------------------------  |
 |  Yodo1U3dAds.InitializeSdk();   | Yodo1U3dAds.InitializeSdk();      | **Yodo1U3dMas.InitializeSdk();** |
 |  |  | **Yodo1U3dMas.SetInitializeDelegate** |
 |  Yodo1U3dSDK.setBannerdDelegate | **Yodo1U3dAdsSDK.setBannerdDelegate** | **Yodo1U3dMas.SetBannerAdDelegate** |
@@ -22,7 +22,7 @@
 
 
 |  v3.13.0                        | v3.14.0                           | v4.+                             |
-|  -----------------------------  | --------------------------------- | ------------------------------  |
+|  :----------------------------  | :-------------------------------- | :-----------------------------  |
 | Yodo1Advert.initSDK(activity, appKey); | Yodo1Advert.initSDK(activity, appKey); | **Yodo1Mas.getInstance().init(Activity activity, String appId);** |
 |  |  | **Yodo1Mas.getInstance().init(Activity activity, String appId, InitListener listener);** |
 | Yodo1Advert.setUserConsent(consent) |Yodo1Advert.setUserConsent(consent) | **Yodo1Mas.getInstance().setGDPR(userConsent);** |
@@ -49,8 +49,8 @@
 
 ### iOS Method Upates
 
-| v3.13.0                                                 | v3.14.0                                                 |                             V4.+                             |
-| ------------------------------------------------------- | ------------------------------------------------------- | :----------------------------------------------------------: |
+| v3.13.0                         | v3.14.0              |    v4.+                             |
+| :----------------------------- | :----------------------- | :---------------------- |
 | [Yodo1Ads initWithAppKey: appKey];                      | [Yodo1Advert initWithAppKey: appKey];                   | **[[Yodo1Mas sharedInstance] initWithAppId: successful: fail:];** |
 | [Yodo1Ads setUserConsent:consent];                      | [Yodo1Ads setUserConsent:consent];                      |       **[Yodo1Mas sharedInstance].isGDPRUserConsent**        |
 | [Yodo1Ads isUserConsent];                               | [Yodo1Ads isUserConsent];                               |       **[Yodo1Mas sharedInstance].isGDPRUserConsent**        |
