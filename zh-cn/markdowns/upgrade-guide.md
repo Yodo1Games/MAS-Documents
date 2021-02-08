@@ -1,10 +1,10 @@
-# Upgrade Guide
+# 升级指引
 
 
 
-## Method Updates
+## 方法更新
 
-### Unity Method Updates
+### Unity方法更新
 
 |  v3.13.0                        | v3.14.0                           | v4.+                             |
 |  :--------------------------  | :------------------------------|:------------------------------  |
@@ -20,7 +20,7 @@
 |  bool isReady = Yodo1U3dAds.VideoIsReady();  |  bool isReady = Yodo1U3dAds.VideoIsReady(); | bool isLoaded = **Yodo1U3dMas.IsRewardedAdLoaded();** |
 |  Yodo1U3dAds.ShowVideo()  |  Yodo1U3dAds.ShowVideo();  | **Yodo1U3dMas.ShowRewardedAd();** |
 
-### Android Method Updates
+### Android方法更新
 
 
 |  v3.13.0                        | v3.14.0                           | v4.+                             |
@@ -49,7 +49,7 @@
 |  Yodo1Advert.showVideo(activity, callback);  |  Yodo1Advert.showVideo(activity, callback);  | **Yodo1Mas.getInstance().showRewardedAd(Activity activity);** |
 |Yodo1Advert.showVideo(activity, placementId,  callback)|Yodo1Advert.showVideo(activity, placementId,  callback)|**Yodo1Mas.getInstance().showRewardedAd(activity, placement);**|
 
-### iOS Method Upates
+### iOS方法更新
 
 | v3.13.0                         | v3.14.0              |    v4.+                             |
 | :----------------------------- | :----------------------- | :---------------------- |
@@ -83,9 +83,9 @@
 
 
 
-## Ad Event Updates
+## Ad Event更新
 
-#### Unity Ad Event Updates
+#### Unity Ad Event更新
 
 **Important!**`AdEventClick` event has been deprecated in the version 4.0.0.0 and above
 
