@@ -81,11 +81,11 @@
 
 **Important!**`AdEventClick` event has been deprecated in the version 4.0.0.0 and above
 
-| v3.13.0v3.13.0 | v3.14.0 | v4.+                                   |
-| -------------- | ------- | -------------------------------------- |
-|                |         | **Yodo1.MAS.Yodo1U3dAdEvent.AdError**  |
-|                |         | **Yodo1.MAS.Yodo1U3dAdEvent.AdOpened** |
-|                |         | **Yodo1.MAS.Yodo1U3dAdEvent.AdClosed** |
-|                |         | **Yodo1.MAS.Yodo1U3dAdEvent.AdReward** |
-|                |         |                                        |
+| v3.13.0                                      | v3.14.0                                      | v4.+                                   |
+| -------------------------------------------- | -------------------------------------------- | -------------------------------------- |
+| Yodo1U3dConstants.AdEvent.AdEventShowFail    | Yodo1U3dConstants.AdEvent.AdEventShowFail    | **Yodo1.MAS.Yodo1U3dAdEvent.AdError**  |
+| Yodo1U3dConstants.AdEvent.AdEventShowSuccess | Yodo1U3dConstants.AdEvent.AdEventShowSuccess | **Yodo1.MAS.Yodo1U3dAdEvent.AdOpened** |
+| Yodo1U3dConstants.AdEvent.AdEventClose       | Yodo1U3dConstants.AdEvent.AdEventClose       | **Yodo1.MAS.Yodo1U3dAdEvent.AdClosed** |
+| Yodo1U3dConstants.AdEvent.AdEventFinish      | Yodo1U3dConstants.AdEvent.AdEventFinish      | **Yodo1.MAS.Yodo1U3dAdEvent.AdReward** |
+| Yodo1U3dConstants.AdEvent.AdEventClick       | Yodo1U3dConstants.AdEvent.AdEventClick       |                                        |
 
