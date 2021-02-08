@@ -17,7 +17,7 @@
 > * `Xcode12+` is required for iOS14, please make sure your xcode is lastest version.
 > * The Unity plugin contains Sample code. The path is `/Assets/Yodo1/MAS/Sample`</br>
 
-Please upgrade to Firebase 7.0.0 and above if you are using Firebase, lower Firebase will not be probably compatible with AdMob since we are using the most updated Admob. According to Admob, Firebase needs to be updated to match the Admob version. And this update will also improve your general SDK integration process for long-term
+Please upgrade to Firebase 7.0.0 and above if you are using Firebase, lower Firebase will not be probably compatible with AdMob since we are using the most updated Admob. According to Admob, Firebase needs to be updated to match the Admob version. And this update will also improve your general SDK integration process for long-term.
 
 ### 2. Integrate the SDK Into Your Project
 Open your Unity project and import the Unity package. Double click the compressed package icon. The files will populate automatically as illustrated below.
@@ -125,6 +125,19 @@ classpath com.android.tools.build:gradle:x.x.x
 If you are on Unity 2017.4 or below, please ensure that you are on at least 2017.4.40 which uses a compatible version of the Gradle Plugin by default.
 
 Detailed steps for different versions of Unity can be found [here](android-manifest-merging-errors-queries.md).
+
+### 8. Upgrading Firebase
+
+If you are using Firebase, please upgrade to Firebase 7.0.0 or above. Lower versions will not be compatible with AdMob, as MAS uses the most updated version of Admob. Admob requires and a version of Firebase that matches the Admob version. 
+
+Note: This update will also improve your general SDK integration process for long-term
+
+### 9. FBCoreKit Conflicts
+
+If you are using a Facebook related SDK and have FBCoreKit conflict, you can resolve the conflict by following these steps
+
+* Enter `Assets/Yodo1/MAS/Editor/Dependencies` directory and open the `Yodo1MasiOSDependencies.xml` file
+* Remove or comment `<iosPod name="FBSDKCoreKit" version="~> 6.5.2" bitcode="false" minTargetSdk="9.0" />`
 
 ## Interstitial Integration
 ### 1. Set the interstitial ad delegate method
