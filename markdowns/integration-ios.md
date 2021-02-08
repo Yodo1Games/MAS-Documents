@@ -7,6 +7,8 @@
 - To upgrade from an older SDK to MAS SDK v2, you must remove all the contents of the old SDK
 - We have modified the interface of the new SDK, please carefully refer to the following documents to upgrade
 
+Please upgrade to Firebase 7.0.0 and above if you are using Firebase, lower Firebase will not be probably compatible with AdMob since we are using the most updated Admob. According to Admob, Firebase needs to be updated to match the Admob version. And this update will also improve your general SDK integration process for long-term
+
 ## The Integration Steps
 ### 1. Add iOS SDK to your project
 #### 1.1 Create the `Podfile` file
@@ -27,7 +29,7 @@ source 'https://github.com/Yodo1Games/MAS-Spec.git'
 source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 
 pod 'FBSDKCoreKit' # If you have introduced FBSDKCoreKit, please ignore
-pod 'Yodo1MasSDK', '~> 4.0.0.2'
+pod 'Yodo1MasSDK', '~> 4.0.0.3'
 ```
 
 Execute the following command in `Terminal` :
