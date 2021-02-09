@@ -38,7 +38,7 @@ pod update
 
 #### 3.方法修改
 
-v4提供了更加规范的的API，请参考以下进行修改:
+##### v4提供了更加规范的的API，请参考以下对照表进行修改:
 
 | v3.13.0/v3.14.0                 |    v4.+                             |
 | :----------------------------- | :---------------------- |
@@ -52,20 +52,21 @@ v4提供了更加规范的的API，请参考以下进行修改:
 | [Yodo1Ads setBannerCallback:callback];                  |        **[Yodo1Mas sharedInstance].bannerAdDelegate**        |
 | [Yodo1Ads setBannerAlign:align];                        | **[[Yodo1Mas sharedInstance] showBannerAdWithAlign:align];** |
 | [Yodo1Ads setBannerOffset:point];                       | **[[Yodo1Mas sharedInstance] showBannerAdWithAlign:align offset:offset];** |
-| BOOL isLoaded = [Yodo1Ads bannerIsReady];               | BOOL isLoaded = **[[Yodo1Mas sharedInstance] isBannerAdLoaded];** |
+| [Yodo1Ads bannerIsReady];               | **[[Yodo1Mas sharedInstance] isBannerAdLoaded];** |
 | [Yodo1Ads showBanner];                                  |        **[[Yodo1Mas sharedInstance] showBannerAd];**         |
 | [Yodo1Ads showBanner:placement_id];                     | **[[Yodo1Mas sharedInstance] showBannerAdWithPlacement:placement];** |
 | [Yodo1Ads hideBanner];                                  |       **[[Yodo1Mas sharedInstance] dismissBannerAd];**       |
 | [Yodo1Ads removeBanner];                                | **[[Yodo1Mas sharedInstance] dismissBannerAdWithDestroy:YES];** |
 | [Yodo1Ads setInterstitialCallback:callback];            |     **[Yodo1Mas sharedInstance].interstitialAdDelegate**     |
-| BOOL isLoaded = [Yodo1Ads interstitialIsReady];         | BOOL isLoaded = **[[Yodo1Mas sharedInstance] isInterstitialAdLoaded];** |
+| [Yodo1Ads interstitialIsReady];         | **[[Yodo1Mas sharedInstance] isInterstitialAdLoaded];** |
 | [Yodo1Ads showInterstitial];                            |     **[[Yodo1Mas sharedInstance] showInterstitialAd];**      |
 | [Yodo1Ads showInterstitialWithPlacement:placement_id];  | **[[Yodo1Mas sharedInstance] showInterstitialAdWithPlacement:placement];** |
 | [Yodo1Ads showInterstitial:viewcontroller]; | **[[Yodo1Mas sharedInstance] showInterstitialAd];** |
 | [Yodo1Ads showInterstitial:viewcontroller placement:placement]; | **[[Yodo1Mas sharedInstance] showInterstitialAdWithPlacement:placement];** |
 | [Yodo1Ads setVideoCallback:callback];                   |        **[Yodo1Mas sharedInstance].rewardAdDelegate**        |
-| BOOL isLoaded = [Yodo1Ads videoIsReady];                | BOOL isLoaded = **[[Yodo1Mas sharedInstance] isRewardAdLoaded];** |
+| [Yodo1Ads videoIsReady];                | **[[Yodo1Mas sharedInstance] isRewardAdLoaded];** |
 | [Yodo1Ads showVideo];                                   |        **[[Yodo1Mas sharedInstance] showRewardAd];**         |
 | [Yodo1Ads showVideoWithPlacement:placement_id];         | **[[Yodo1Mas sharedInstance] showRewardAdWithPlacement:placement];** |
 | [Yodo1Ads showVideo:viewcontroller]; | **[[Yodo1Mas sharedInstance] showRewardAd];** |
 | [Yodo1Ads showVideo:viewcontroller placement:placement]; | **[[Yodo1Mas sharedInstance] showRewardAdWithPlacement:placement];** |
+

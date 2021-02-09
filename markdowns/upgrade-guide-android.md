@@ -42,7 +42,7 @@ implementation 'com.yodo1.mas:google:4.0.0.3'
 
 #### 3.方法修改
 
-v4提供了更加规范的的API，请参考以下进行修改:
+##### v4提供了更加规范的的API，请参考以下对照表进行修改:
 
 
 |  v3.13.0/v3.14.0               | v4.+                             |
@@ -57,16 +57,16 @@ v4提供了更加规范的的API，请参考以下进行修改:
 ||**Yodo1Mas.getInstance().isCCPADoNotSell();**|
 |   | **Yodo1Mas.getInstance().setBannerListener** |
 | Yodo1Advert.setBannerAlign(activity, align); | **Yodo1Mas.getInstance().showBannerAd(activity, align);** |
-|  boolean isReady = Yodo1Advert.bannerIsReady(activity);  | boolean isLoaded = **Yodo1Mas.getInstance().isBannerAdLoaded();** |
+|  Yodo1Advert.bannerIsReady(activity);  | **Yodo1Mas.getInstance().isBannerAdLoaded();** |
 |  Yodo1Advert.showBanner(activity, callback);  | **Yodo1Mas.getInstance().showBannerAd(activity);** |
 |Yodo1Advert.showBanner(activity, placementId,  callback)|**Yodo1Mas.getInstance().showBannerAd(activity, placement);**|
 |Yodo1Advert.hideBanner(activity)|**Yodo1Mas.getInstance().dismissBannerAd();**|
 |Yodo1Advert.removeBanner(activity)|**Yodo1Mas.getInstance().dismissBannerAd(true);**|
 |    | **Yodo1Mas.getInstance().setInterstitialListener** |
-|  boolean isReady = Yodo1Advert.interstitialIsReady(activity);  | boolean isLoaded = **Yodo1Mas.getInstance().isInterstitialAdLoaded();** |
+|  Yodo1Advert.interstitialIsReady(activity);  | **Yodo1Mas.getInstance().isInterstitialAdLoaded();** |
 |  Yodo1Advert.showInterstitial(activity, callback);  | **Yodo1Mas.getInstance().showInterstitialAd(activity);** |
 |Yodo1Advert.showInterstitial(activity, placementId,  callback)|**Yodo1Mas.getInstance().showInterstitialAd(activity, placement);**|
 |    | **Yodo1Mas.getInstance().setRewardListener** |
-|  boolean isReady = Yodo1Advert.videoIsReady(activity);  | boolean isLoaded = **Yodo1Mas.getInstance().isRewardedAdLoaded();** |
+|  Yodo1Advert.videoIsReady(activity);  | **Yodo1Mas.getInstance().isRewardedAdLoaded();** |
 |  Yodo1Advert.showVideo(activity, callback);  | **Yodo1Mas.getInstance().showRewardedAd(Activity activity);** |
 |Yodo1Advert.showVideo(activity, placementId,  callback)|**Yodo1Mas.getInstance().showRewardedAd(activity, placement);**|
