@@ -1,12 +1,12 @@
 # Unity Integration
 
-**开始之前**:
+**Before Start**:
 
-请确认你当前使用的SDK版本是否是v3版本：
+Please confirm whether the SDK version you are currently using is v3：
 
-如果是v3版本，请阅读[升级文档](upgrade-guide-unity.md)
+If it is v3 version, please read [upgrade document](upgrade-guide-unity.md)
 
-如果未集成过，请阅读以下文档
+If you have not integrated, please read the following documents
 
 ## The Integration Steps
 
