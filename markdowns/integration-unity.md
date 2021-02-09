@@ -75,7 +75,13 @@ Please comply with all legal frameworks that apply to your game and its users. Y
 
 ### 6. Initialize the SDK
 
-#### 6.1 Sets the initialization delegate method
+#### 6.1 Using namespace
+
+```c#
+using Yodo1.MAS;
+```
+
+#### 6.2 Sets the initialization delegate method
 ```c#
 Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => {
     if (success){// Initialize successful
@@ -87,7 +93,7 @@ Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => {
     
 ```
 
-#### 6.2 SDK initialization is called in the `Start` method
+#### 6.3 SDK initialization is called in the `Start` method
 
 ```c#
 void Start()  {
@@ -106,13 +112,13 @@ error: unexpected element <queries> found in <manifest>.
 You will need to upgrade to one of the following versions of the Android Gradle plugin that supports it:
 
 | **Current Android Gradle Plugin Version** | **Supported Android Gradle Plugin Version** |
-|  :-------------------------------------:  | :-----------------------------------------: | 
-|    4.1.*                                  |            Already Supported                | 
-|    4.0.*                                  |            4.0.1                            |   
-|    3.6.*                                  |            3.6.4                            |   
-|    3.5.*                                  |            3.5.4                            |   
-|    3.4.*                                  |            3.4.3                            |   
-|    3.3.*                                  |            3.3.3                            |  
+|  :-------------------------------------:  | :-----------------------------------------: |
+|    4.1.*                                  |            Already Supported                |
+|    4.0.*                                  |            4.0.1                            |
+|    3.6.*                                  |            3.6.4                            |
+|    3.5.*                                  |            3.5.4                            |
+|    3.4.*                                  |            3.4.3                            |
+|    3.3.*                                  |            3.3.3                            |
 
 To update the Gradle Plugin version to a compatible one, please enable the custom base Gradle template by selecting **Edit > Project Settings > Android tab > Publisher Settings > Custom Base Gradle Template**.
 
