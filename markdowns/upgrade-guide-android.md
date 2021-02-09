@@ -1,8 +1,8 @@
-# Android升级指引
+# Android upgrade guide
 
-#### 1. 删除旧SDK
+#### 1. Remove old SDK
 
-请删除`project`级别`build.gradle`文件中的以下内容:
+Please delete the following content in the `build.gradle` file at the `project` level:
 
 ```groovy
 maven { url "https://applovin.bintray.com/Android-Adapter-SDKs" }
@@ -12,7 +12,7 @@ maven { url "https://fyber.bintray.com/marketplace" }
 maven { url "https://dl.bintray.com/mintegral-official/mintegral_ad_sdk_android_for_oversea" }
 ```
 
-请删除`app`级别`build.gradle`文件中的以下内容：
+Please delete the following content in the `build.gradle` file at the `app` level:
 
 ```groovy
 implementation 'com.google.android.gms:play-services-base:16.+'
@@ -21,9 +21,9 @@ implementation 'com.google.android.gms:play-services-basement:16.+'
 implementation 'com.yodo1:advert-gp:3.14.0'
 ```
 
-#### 2. 添加新SDK
+#### 2. Add new SDK
 
-修改`project`级别`build.gradle`文件，替换成以下内容:
+Modify the `build.gradle` file of `project` level and replace it with the following content:
 
 ```groovy
 maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
@@ -32,17 +32,17 @@ maven { url "https://dl.bintray.com/yodo1/MAS-Android" }
 maven { url "https://dl.bintray.com/yodo1/android-sdk" }
 ```
 
-修改`app`级别`build.gradle`文件，替换成以下内容：
+Modify the `build.gradle` file at the `app` level and replace it with the following:
 
 ```groovy
 implementation 'com.yodo1.mas:google:4.0.0.3'
 ```
 
-具体集成步骤请参考[文档](https://github.com/Yodo1Games/MAS-Documents/blob/upgrade-guide/markdowns/integration-android.md#the-integration-steps)
+For specific integration steps, please refer to [Document](integration-android.md#the-integration-steps)
 
-#### 3.方法修改
+#### 3.Method signature change
 
-##### v4提供了更加规范的的API，请参考以下对照表进行修改:
+##### v4 provides a more standardized API, please refer to the following comparison table to modify:
 
 
 |  v3.13.0/v3.14.0               | v4.+                             |

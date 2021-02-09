@@ -1,20 +1,20 @@
-# iOS升级指引
+# iOS upgrade guide
 
-#### 1. 删除旧SDK
+#### 1. Remove old SDK
 
-v3.13.0及以下请删除以下目录:
+Please delete the following directories for v3.13.0 and below:
 
 - Yodo1Ads
 
-> 具体目录请根据自己的实际情况而定
+> The specific catalogue depends on your actual situation
 
-v3.14.0请删除`Podfile`文件中的以下内容:
+v3.14.0 Please delete the following content in the `Podfile` file:
 
 - `pod 'MasSdk/MasSdk_iOS', "3.14.0"`
 
-#### 2. 添加新SDK
+#### 2. Add new SDK
 
-修改`Podfile`文件：
+update `Podfile`：
 
 ```shell
 use_frameworks!
@@ -26,19 +26,19 @@ pod 'FBSDKCoreKit' # If you have introduced FBSDKCoreKit, please ignore
 pod 'Yodo1MasSDK', '~> 4.0.0.3'
 ```
 
-终端内执行:
+Execute in the terminal:
 
 ```shell
 pod update
 ```
 
-> 请使用`Cocoapods 1.8`及以上版本
+> Please use `Cocoapods 1.8` and above
 
-具体集成步骤请参考[文档](https://github.com/Yodo1Games/MAS-Documents/blob/upgrade-guide/markdowns/integration-ios.md#12-import-the-ios-sdk-into-the-project)
+For specific integration steps, please refer to [Document](integration-ios.md#12-import-the-ios-sdk-into-the -project)
 
-#### 3.方法修改
+#### 3. Method signature change
 
-##### v4提供了更加规范的的API，请参考以下对照表进行修改:
+##### v4 provides a more standardized API, please refer to the following comparison table to modify:
 
 | v3.13.0/v3.14.0                 |    v4.+                             |
 | :----------------------------- | :---------------------- |

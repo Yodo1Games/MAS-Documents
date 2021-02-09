@@ -38,7 +38,7 @@ maven { url "https://dl.bintray.com/yodo1/android-sdk" }
 implementation 'com.yodo1.mas:google:4.0.0.3'
 ```
 
-具体集成步骤请参考[文档](https://github.com/Yodo1Games/MAS-Documents/blob/upgrade-guide/markdowns/integration-android.md#the-integration-steps)
+具体集成步骤请参考[文档](integration-android.md#the-integration-steps)
 
 #### 3.方法修改
 

@@ -34,7 +34,7 @@ pod update
 
 > 请使用`Cocoapods 1.8`及以上版本
 
-具体集成步骤请参考[文档](https://github.com/Yodo1Games/MAS-Documents/blob/upgrade-guide/markdowns/integration-ios.md#12-import-the-ios-sdk-into-the-project)
+具体集成步骤请参考[文档](integration-ios.md#12-import-the-ios-sdk-into-the-project)
 
 #### 3.方法修改
 

@@ -14,7 +14,7 @@
 
 - 双击打开插件并导入
 
-具体集成步骤请参考[文档](https://github.com/Yodo1Games/MAS-Documents/blob/main/markdowns/integration-unity.md#the-integration-steps)
+具体集成步骤请参考[文档](integration-unity.md#the-integration-steps)
 
 #### 3.方法签名变更
 

@@ -1,63 +1,80 @@
-# Unity升级指引
+# Unity upgrade guide
 
-#### 1. 删除旧SDK
+#### 1. Remove old SDK
 
-请删除以下目录:
+Please delete the following directories:
 
 - Assets/Plugins/iOS/Yodo1Ads
 - Assets/Plugins/Android/Yodo1Ads
 - Assets/Yodo1Ads
 
-#### 2. 添加新SDK
+#### 2. Add new SDK
 
-- 下载最新的[Unity Plugin](https://docs.yodo1.com/download/Rivendell-SDKs/Rivendell-4.0.0.3.unitypackage)
+- Download the latest [Unity Plugin](https://docs.yodo1.com/download/Rivendell-SDKs/Rivendell-4.0.0.3.unitypackage)
 
-- 双击打开插件并导入
+- Double click to open the plugin and import
 
-具体集成步骤请参考[文档](https://github.com/Yodo1Games/MAS-Documents/blob/main/markdowns/integration-unity.md#the-integration-steps)
+For specific integration steps, please refer to [Document](integration-unity.md#the-integration-steps)
 
-#### 3.方法签名变更
+#### 3. Method signature change
 
-新的命名空间，v4提供了更加规范的的API，相关的API所属命名空间为`Yodo1.MAS`，在使用v4.+时请确保引入该命名空间。
+New namespace,v4 provides a more standardized API,The namespace of the related API is `Yodo1.MAS`,please make sure to introduce this namespace when using v4.+
 
-##### v3.13.0及以下版本升级到v4.+请参考以下对照表:
+##### Upgrade from v3.13.0 and below to v4.+Please refer to the following comparison table:
 
-| v3.13.0                               | v4.+                                                  |
-| :------------------------------------ | :---------------------------------------------------- |
-| Yodo1U3dAds.InitializeSdk();          | **Yodo1U3dMas.InitializeSdk();**                      |
-| Yodo1U3dSDK.setBannerdDelegate        | **Yodo1U3dMas.SetBannerAdDelegate**                   |
-| Yodo1U3dSDK.setInterstitialAdDelegate | **Yodo1U3dMas.SetInterstitialAdDelegate**             |
-| Yodo1U3dSDK.setRewardVideoDelegate    | **Yodo1U3dMas.SetRewardedAdDelegate**                 |
-| Yodo1U3dAds.BannerIsReady();          | **Yodo1U3dMas.IsBannerAdLoaded();**                   |
-| Yodo1U3dAds.InterstitialIsReady();    | **Yodo1U3dMas.IsInterstitialAdLoaded();**             |
-| Yodo1U3dAds.VideoIsReady();           | **Yodo1U3dMas.IsRewardedAdLoaded();**                 |
-| Yodo1U3dAds.ShowBanner();             | **Yodo1U3dMas.ShowBannerAd();**                       |
-| Yodo1U3dAds.ShowInterstitial()        | **Yodo1U3dMas.ShowInterstitialAd();**                 |
-| Yodo1U3dAds.ShowVideo()               | **Yodo1U3dMas.ShowRewardedAd();**                     |
-|                                       | **Yodo1U3dMas.SetInitializeDelegate**//新增初始化回调 |
+| v3.13.0                                   | v4.+                                                         |
+| :---------------------------------------- | :----------------------------------------------------------- |
+| Yodo1U3dAds.InitializeSdk();              | **Yodo1U3dMas.InitializeSdk();**                             |
+| Yodo1U3dSDK.setBannerdDelegate            | **Yodo1U3dMas.SetBannerAdDelegate**                          |
+| Yodo1U3dSDK.setInterstitialAdDelegate     | **Yodo1U3dMas.SetInterstitialAdDelegate**                    |
+| Yodo1U3dSDK.setRewardVideoDelegate        | **Yodo1U3dMas.SetRewardedAdDelegate**                        |
+| Yodo1U3dAds.BannerIsReady();              | **Yodo1U3dMas.IsBannerAdLoaded();**                          |
+| Yodo1U3dAds.InterstitialIsReady();        | **Yodo1U3dMas.IsInterstitialAdLoaded();**                    |
+| Yodo1U3dAds.VideoIsReady();               | **Yodo1U3dMas.IsRewardedAdLoaded();**                        |
+| Yodo1U3dAds.ShowBanner();                 | **Yodo1U3dMas.ShowBannerAd();**                              |
+| Yodo1U3dAds.ShowBanner(placementId)       | **Yodo1U3dMas.ShowBannerAd(placementId)**                    |
+| Yodo1U3dAds.SetBannerAlign(align)         | **Yodo1U3dMas.ShowBannerAd(align)**                          |
+| Yodo1U3dAds.SetBannerOffset(x, y)         | **Yodo1U3dMas.ShowBannerAd(align, x, y)**                    |
+| Yodo1U3dAds.HideBanner()                  | **Yodo1U3dMas.DismissBannerAd()**                            |
+| Yodo1U3dAds.RemoveBanner()                | **Yodo1U3dMas.DismissBannerAd(true)**                        |
+| Yodo1U3dAds.ShowInterstitial()            | **Yodo1U3dMas.ShowInterstitialAd();**                        |
+| Yodo1U3dAds.ShowInterstitial(placementId) | **Yodo1U3dMas.ShowInterstitialAd(placementId)**              |
+| Yodo1U3dAds.ShowVideo()                   | **Yodo1U3dMas.ShowRewardedAd();**                            |
+| Yodo1U3dAds.ShowVideo(placementId)        | **Yodo1U3dMas.ShowRewardedAd(placementId)**                  |
+|                                           | **Yodo1U3dMas.SetInitializeDelegate**//Add initialization callback |
 
-##### 从v3.14.0版本到v4.+请参考以下对照表:
 
-| v3.14.0                                  | v4.+                                                   |
-| :--------------------------------------- | :----------------------------------------------------- |
-| Yodo1U3dAds.InitializeSdk();             | **Yodo1U3dMas.InitializeSdk();**                       |
-| Yodo1U3dAdsSDK.setBannerdDelegate        | **Yodo1U3dMas.SetBannerAdDelegate**                    |
-| Yodo1U3dAdsSDK.setInterstitialAdDelegate | **Yodo1U3dMas.SetInterstitialAdDelegate**              |
-| Yodo1U3dAdsSDK.setRewardVideoDelegate    | **Yodo1U3dMas.SetRewardedAdDelegate**                  |
-| Yodo1U3dAds.BannerIsReady();             | **Yodo1U3dMas.IsBannerAdLoaded();**                    |
-| Yodo1U3dAds.InterstitialIsReady();       | **Yodo1U3dMas.IsInterstitialAdLoaded();**              |
-| Yodo1U3dAds.VideoIsReady();              | **Yodo1U3dMas.IsRewardedAdLoaded();**                  |
-| Yodo1U3dAds.ShowBanner();                | **Yodo1U3dMas.ShowBannerAd();**                        |
-| Yodo1U3dAds.ShowInterstitial()           | **Yodo1U3dMas.ShowInterstitialAd();**                  |
-| Yodo1U3dAds.ShowVideo()                  | **Yodo1U3dMas.ShowRewardedAd();**                      |
-|                                          | **Yodo1U3dMas.SetInitializeDelegate** //新增初始化回调 |
 
-##### Unity Ad Event签名变更，请参考以下对照表：
 
-| v3.13.0/v3.14.0                              | v4.+                                                  |
-| -------------------------------------------- | ----------------------------------------------------- |
-| Yodo1U3dConstants.AdEvent.AdEventShowFail    | **Yodo1.MAS.Yodo1U3dAdEvent.AdError**                 |
-| Yodo1U3dConstants.AdEvent.AdEventShowSuccess | **Yodo1.MAS.Yodo1U3dAdEvent.AdOpened**                |
-| Yodo1U3dConstants.AdEvent.AdEventClose       | **Yodo1.MAS.Yodo1U3dAdEvent.AdClosed**                |
-| Yodo1U3dConstants.AdEvent.AdEventFinish      | **Yodo1.MAS.Yodo1U3dAdEvent.AdReward**                |
-| Yodo1U3dConstants.AdEvent.AdEventClick       | **重要!**`AdEventClick` 事件已在4.0.0.0及以上版本移除 |
+##### From v3.14.0 to v4.+, please refer to the following comparison table:
+
+| v3.14.0                                  | v4.+                                                         |
+| :--------------------------------------- | :----------------------------------------------------------- |
+| Yodo1U3dAds.InitializeSdk();             | **Yodo1U3dMas.InitializeSdk();**                             |
+| Yodo1U3dAdsSDK.setBannerdDelegate        | **Yodo1U3dMas.SetBannerAdDelegate**                          |
+| Yodo1U3dAdsSDK.setInterstitialAdDelegate | **Yodo1U3dMas.SetInterstitialAdDelegate**                    |
+| Yodo1U3dAdsSDK.setRewardVideoDelegate    | **Yodo1U3dMas.SetRewardedAdDelegate**                        |
+| Yodo1U3dAds.BannerIsReady();             | **Yodo1U3dMas.IsBannerAdLoaded();**                          |
+| Yodo1U3dAds.InterstitialIsReady();       | **Yodo1U3dMas.IsInterstitialAdLoaded();**                    |
+| Yodo1U3dAds.VideoIsReady();              | **Yodo1U3dMas.IsRewardedAdLoaded();**                        |
+| Yodo1U3dAds.ShowBanner();                | **Yodo1U3dMas.ShowBannerAd();**                              |
+| Yodo1U3dAds.ShowBanner(placementId)      | **Yodo1U3dMas.ShowBannerAd(placementId)**                    |
+| Yodo1U3dAds.SetBannerAlign(align)        | **Yodo1U3dMas.ShowBannerAd(align)**                          |
+| Yodo1U3dAds.SetBannerOffset(x, y)        | **Yodo1U3dMas.ShowBannerAd(align, x, y)**                    |
+| Yodo1U3dAds.HideBanner()                 | **Yodo1U3dMas.DismissBannerAd()**                            |
+| Yodo1U3dAds.RemoveBanner()               | **Yodo1U3dMas.DismissBannerAd(true)**                        |
+| Yodo1U3dAds.ShowInterstitial()           | **Yodo1U3dMas.ShowInterstitialAd();**                        |
+| Yodo1U3dAds.ShowInterstitial(placementId)| **Yodo1U3dMas.ShowInterstitialAd(placementId)**              |
+| Yodo1U3dAds.ShowVideo()                  | **Yodo1U3dMas.ShowRewardedAd();**                            |
+| Yodo1U3dAds.ShowVideo(placementId)       | **Yodo1U3dMas.ShowRewardedAd(placementId)**                  |
+|                                          | **Yodo1U3dMas.SetInitializeDelegate** //Add initialization callback |
+
+##### Unity Ad Event signature change，please refer to the following comparison table：
+
+| v3.13.0/v3.14.0                              | v4.+                                                         |
+| -------------------------------------------- | ------------------------------------------------------------ |
+| Yodo1U3dConstants.AdEvent.AdEventShowFail    | **Yodo1.MAS.Yodo1U3dAdEvent.AdError**                        |
+| Yodo1U3dConstants.AdEvent.AdEventShowSuccess | **Yodo1.MAS.Yodo1U3dAdEvent.AdOpened**                       |
+| Yodo1U3dConstants.AdEvent.AdEventClose       | **Yodo1.MAS.Yodo1U3dAdEvent.AdClosed**                       |
+| Yodo1U3dConstants.AdEvent.AdEventFinish      | **Yodo1.MAS.Yodo1U3dAdEvent.AdReward**                       |
+| Yodo1U3dConstants.AdEvent.AdEventClick       | **important!** The `AdEventClick` event has been removed in 4.0.0.0 and above |
