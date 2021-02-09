@@ -1,9 +1,14 @@
 # Android Integration
-> MAS supports Android version 4.4.+ (Android API level: 19+) and above
 
-**Important** Update MAS Rivendell SDK
-- To upgrade from an older SDK to MAS SDK v2, you must remove all the contents of the old SDK
-- We have modified the interface of the new SDK, please carefully refer to the following documents to upgrade
+**开始之前**:
+
+请确认你当前使用的SDK版本是否是v3版本：
+
+如果是v3版本，请阅读[升级文档](upgrade-guide-android.md)
+
+如果未集成过，请阅读以下文档
+
+> MAS supports Android version 4.4.+ (Android API level: 19+) and above
 
 ## The Integration Steps
 ### 1. Open your project-level `build.gradle` and add the relevant code.
@@ -76,15 +81,15 @@ error: unexpected element <queries> found in <manifest>.
 You will need to upgrade to one of the following versions of the Android Gradle plugin that supports it:
 
 | **Current Android Gradle Plugin Version** | **Supported Android Gradle Plugin Version** |
-|  :-------------------------------------:  | :-----------------------------------------: | 
-|    4.1.*                                  |            Already Supported                | 
-|    4.0.*                                  |            4.0.1                            |   
-|    3.6.*                                  |            3.6.4                            |   
-|    3.5.*                                  |            3.5.4                            |   
-|    3.4.*                                  |            3.4.3                            |   
-|    3.3.*                                  |            3.3.3                            |   
+|  :-------------------------------------:  | :-----------------------------------------: |
+|    4.1.*                                  |            Already Supported                |
+|    4.0.*                                  |            4.0.1                            |
+|    3.6.*                                  |            3.6.4                            |
+|    3.5.*                                  |            3.5.4                            |
+|    3.4.*                                  |            3.4.3                            |
+|    3.3.*                                  |            3.3.3                            |
 
-	
+
 ### 7. Android P Adaptation
 
 To be compatible with `Android P (API level 28)`, please do the following:
@@ -114,7 +119,7 @@ To be compatible with `Android P (API level 28)`, please do the following:
 	</application>
 </manifest>
 ```
-	
+
 ### 8. Comply With Necessary Legal Frameworks
 Please comply with all legal frameworks that apply to your game and its users. You can find references to major legal frameworks and details about how to comply with them while using MAS through these links:
 
@@ -383,19 +388,19 @@ Yodo1Mas.getInstance().setInterstitialListener(new Yodo1Mas.InterstitialListener
     }
 });      
 ```
-    
+
 ### 2. Check the loading status of interstitials
 
 ```java
 boolean isLoaded = Yodo1Mas.getInstance().isInterstitialAdLoaded();
 ```
-    
+
 ### 3. Show interstitial ad
 
 ```java
 Yodo1Mas.getInstance().showInterstitialAd(MyActivity.this);
 ```
-    
+
 ## Rewarded Video Integration
 
 ### 1. Set up rewarded video ad delegate methods
@@ -423,13 +428,13 @@ Yodo1Mas.getInstance().setRewardListener(new Yodo1Mas.RewardListener() {
     }
 });
 ```
-    
+
 ### 2. Check the loading status of rewarded video ads
 
 ```java
 boolean isLoaded = Yodo1Mas.getInstance().isBannerAdLoaded();
 ```
-    
+
 ### 3. Show rewarded video ads
 
 ```java
@@ -461,12 +466,12 @@ Yodo1Mas.getInstance().setBannerListener(new Yodo1Mas.BannerListener() {
 ```java
 boolean isLoaded =  Yodo1Mas.getInstance().isBannerAdLoaded();
 ```
-    
+
 ### 3. Show banner ad
 ```java
 Yodo1Mas.getInstance().showBannerAd(MyActivity.this);
 ```
- 
+
 ### 4. Dismiss banner ad
 ```java
 Yodo1Mas.getInstance().dismissBannerAd(MyActivity.this);

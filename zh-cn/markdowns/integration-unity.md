@@ -1,8 +1,12 @@
 # Unity集成
 
-**重要** 更新MAS Rivendell SDK
-- 从较旧的SDK升级到MAS SDK v2，您必须移除所有旧SDK的内容，例如:`Assets/Plugins/iOS/Yodo1Ads`
-- 我们对新SDK的接口做出了修改，请仔细参照以下文档进行升级
+**开始之前**:
+
+请确认你当前使用的SDK版本是否是v3版本：
+
+如果是v3版本，请阅读[升级文档](upgrade-guide-unity.md)
+
+如果未集成过，请阅读以下文档
 
 ## 集成步骤
 
@@ -63,7 +67,15 @@
 
 ### 6. 初始化SDK
 
-#### 6.1 设置初始化代理方法
+#### 6.1 使用命名空间
+
+```c#
+using Yodo1.MAS;
+```
+
+
+
+#### 6.2 设置初始化代理方法
 ```c#
 Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => {
     if (success){// Initialize successful
@@ -75,7 +87,7 @@ Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => {
     
 ```
 
-#### 6.2 在`Start`方法中调用SDK初始化
+#### 6.3 在`Start`方法中调用SDK初始化
 
 ```c#
 void Start()  {
@@ -94,13 +106,13 @@ error: unexpected element <queries> found in <manifest>.
 You will need to upgrade to one of the following versions of the Android Gradle plugin that supports it:
 
 | **Current Android Gradle Plugin Version** | **Supported Android Gradle Plugin Version** |
-|  :-------------------------------------:  | :-----------------------------------------: | 
-|    4.1.*                                  |            Already Supported                | 
-|    4.0.*                                  |            4.0.1                            |   
-|    3.6.*                                  |            3.6.4                            |   
-|    3.5.*                                  |            3.5.4                            |   
-|    3.4.*                                  |            3.4.3                            |   
-|    3.3.*                                  |            3.3.3                            |  
+|  :-------------------------------------:  | :-----------------------------------------: |
+|    4.1.*                                  |            Already Supported                |
+|    4.0.*                                  |            4.0.1                            |
+|    3.6.*                                  |            3.6.4                            |
+|    3.5.*                                  |            3.5.4                            |
+|    3.4.*                                  |            3.4.3                            |
+|    3.3.*                                  |            3.3.3                            |
 
 To update the Gradle Plugin version to a compatible one, please enable the custom base Gradle template by selecting **Edit > Project Settings > Android tab > Publisher Settings > Custom Base Gradle Template**.
 

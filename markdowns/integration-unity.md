@@ -1,12 +1,12 @@
 # Unity Integration
 
-**Important** Update MAS Rivendell SDK
+**开始之前**:
 
-- To upgrade from an older SDK to MAS SDK v2, you must remove all the contents of the old SDK as following:</br>
- - Assets/Plugins/iOS/Yodo1Ads
- - Assets/Plugins/Android/Yodo1Ads
- - Assets/Yodo1Ads
-- We have modified the interface of the new SDK, please carefully refer to the following documents to upgrade
+请确认你当前使用的SDK版本是否是v3版本：
+
+如果是v3版本，请阅读[升级文档](upgrade-guide-unity.md)
+
+如果未集成过，请阅读以下文档
 
 ## The Integration Steps
 

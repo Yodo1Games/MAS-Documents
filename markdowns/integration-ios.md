@@ -1,11 +1,16 @@
 # iOS Integration
+
+**开始之前**:
+
+请确认你当前使用的SDK版本是否是v3版本：
+
+如果是v3版本，请阅读[升级文档](upgrade-guide-ios.md)
+
+如果未集成过，请阅读以下文档
+
 >* iOS14 requires `Xcode 12+`. Please make sure you are using the latest version of Xcode.
 >* MAS supports iOS 9.0 and above
 >* The easiest way is to use `CocoaPods`(Please use version `1.8` and above), If you are just starting out with 'CocoaPods', please refer to its [official documentation](https://guides.cocoapods.org/using/using-cocoapods) to study how to create and use it `Podfile`
-
-**Important** Update MAS Rivendell SDK
-- To upgrade from an older SDK to MAS SDK v2, you must remove all the contents of the old SDK
-- We have modified the interface of the new SDK, please carefully refer to the following documents to upgrade
 
 Please upgrade to Firebase 7.0.0 and above if you are using Firebase, lower Firebase will not be probably compatible with AdMob since we are using the most updated Admob. According to Admob, Firebase needs to be updated to match the Admob version. And this update will also improve your general SDK integration process for long-term
 
