@@ -1,12 +1,12 @@
 # Unity Integration
 
-**Important** Update MAS Rivendell SDK
+**Before Start**:
 
-- To upgrade from an older SDK to MAS SDK v2, you must remove all the contents of the old SDK as following:</br>
- - Assets/Plugins/iOS/Yodo1Ads
- - Assets/Plugins/Android/Yodo1Ads
- - Assets/Yodo1Ads
-- We have modified the interface of the new SDK, please carefully refer to the following documents to upgrade
+Please confirm whether the SDK version you are currently using is v3：
+
+If it is v3 version, please read [upgrade document](upgrade-guide-unity.md)
+
+If you have not integrated, please read the following documents
 
 ## The Integration Steps
 
@@ -17,7 +17,7 @@
 > * `Xcode12+` is required for iOS14, please make sure your xcode is lastest version.
 > * The Unity plugin contains Sample code. The path is `/Assets/Yodo1/MAS/Sample`</br>
 
-Please upgrade to Firebase 7.0.0 and above if you are using Firebase, lower Firebase will not be probably compatible with AdMob since we are using the most updated Admob. According to Admob, Firebase needs to be updated to match the Admob version. And this update will also improve your general SDK integration process for long-term
+Please upgrade to Firebase 7.0.0 and above if you are using Firebase, lower Firebase will not be probably compatible with AdMob since we are using the most updated Admob. According to Admob, Firebase needs to be updated to match the Admob version. And this update will also improve your general SDK integration process for long-term.
 
 ### 2. Integrate the SDK Into Your Project
 Open your Unity project and import the Unity package. Double click the compressed package icon. The files will populate automatically as illustrated below.
@@ -75,7 +75,13 @@ Please comply with all legal frameworks that apply to your game and its users. Y
 
 ### 6. Initialize the SDK
 
-#### 6.1 Sets the initialization delegate method
+#### 6.1 Using namespace
+
+```c#
+using Yodo1.MAS;
+```
+
+#### 6.2 Sets the initialization delegate method
 ```c#
 Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => {
     if (success){// Initialize successful
@@ -87,7 +93,7 @@ Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => {
     
 ```
 
-#### 6.2 SDK initialization is called in the `Start` method
+#### 6.3 SDK initialization is called in the `Start` method
 
 ```c#
 void Start()  {
@@ -106,13 +112,13 @@ error: unexpected element <queries> found in <manifest>.
 You will need to upgrade to one of the following versions of the Android Gradle plugin that supports it:
 
 | **Current Android Gradle Plugin Version** | **Supported Android Gradle Plugin Version** |
-|  :-------------------------------------:  | :-----------------------------------------: | 
-|    4.1.*                                  |            Already Supported                | 
-|    4.0.*                                  |            4.0.1                            |   
-|    3.6.*                                  |            3.6.4                            |   
-|    3.5.*                                  |            3.5.4                            |   
-|    3.4.*                                  |            3.4.3                            |   
-|    3.3.*                                  |            3.3.3                            |  
+|  :-------------------------------------:  | :-----------------------------------------: |
+|    4.1.*                                  |            Already Supported                |
+|    4.0.*                                  |            4.0.1                            |
+|    3.6.*                                  |            3.6.4                            |
+|    3.5.*                                  |            3.5.4                            |
+|    3.4.*                                  |            3.4.3                            |
+|    3.3.*                                  |            3.3.3                            |
 
 To update the Gradle Plugin version to a compatible one, please enable the custom base Gradle template by selecting **Edit > Project Settings > Android tab > Publisher Settings > Custom Base Gradle Template**.
 
@@ -125,6 +131,19 @@ classpath com.android.tools.build:gradle:x.x.x
 If you are on Unity 2017.4 or below, please ensure that you are on at least 2017.4.40 which uses a compatible version of the Gradle Plugin by default.
 
 Detailed steps for different versions of Unity can be found [here](android-manifest-merging-errors-queries.md).
+
+### 8. Upgrading Firebase
+
+If you are using Firebase, please upgrade to Firebase 7.0.0 or above. Lower versions will not be compatible with AdMob, as MAS uses the most updated version of Admob. Admob requires and a version of Firebase that matches the Admob version. 
+
+Note: This update will also improve your general SDK integration process for long-term
+
+### 9. FBCoreKit Conflicts
+
+If you are using a Facebook related SDK and have FBCoreKit conflict, you can resolve the conflict by following these steps
+
+* Enter `Assets/Yodo1/MAS/Editor/Dependencies` directory and open the `Yodo1MasiOSDependencies.xml` file
+* Remove or comment `<iosPod name="FBSDKCoreKit" version="~> 6.5.2" bitcode="false" minTargetSdk="9.0" />`
 
 ## Interstitial Integration
 ### 1. Set the interstitial ad delegate method

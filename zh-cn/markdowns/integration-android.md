@@ -1,10 +1,15 @@
 # Android集成
+
+**开始之前**:
+
+请确认你当前使用的SDK版本是否是v3版本：
+
+如果是v3版本，请阅读[升级文档](upgrade-guide-android.md)
+
+如果未集成过，请阅读以下文档
+
 > `SDK`要求`Android OS`的最低版本为`Android 4.4`及以上版本</br>
 > 重要: 确保你使用的是`Gradle 3.3.0+`版本。
-
-**重要** 更新MAS Rivendell SDK
-- 从较旧的SDK升级到MAS SDK v2，您必须移除所有旧SDK的内容
-- 我们对新SDK的接口做出了修改，请仔细参照以下文档进行升级
 
 ## 集成步骤
 ### 1. 项目级别`build.gradle`添加 
@@ -18,7 +23,7 @@ maven { url "https://dl.bintray.com/yodo1/android-sdk" }
 ### 2. app级别`build.gradle`添加
 #### 2.1 添加MAS SDK依赖
 ```groovy
-implementation 'com.yodo1.mas:google:4.0.0.2'
+implementation 'com.yodo1.mas:google:4.0.0.3'
 ```
 
 #### 2.2 添加`compileOptions`属性到 `android` 部分
@@ -75,15 +80,15 @@ error: unexpected element <queries> found in <manifest>.
 You will need to upgrade to one of the following versions of the Android Gradle plugin that supports it:
 
 | **Current Android Gradle Plugin Version** | **Supported Android Gradle Plugin Version** |
-|  :-------------------------------------:  | :-----------------------------------------: | 
-|    4.1.*                                  |            Already Supported                | 
-|    4.0.*                                  |            4.0.1                            |   
-|    3.6.*                                  |            3.6.4                            |   
-|    3.5.*                                  |            3.5.4                            |   
-|    3.4.*                                  |            3.4.3                            |   
-|    3.3.*                                  |            3.3.3                            |   
+|  :-------------------------------------:  | :-----------------------------------------: |
+|    4.1.*                                  |            Already Supported                |
+|    4.0.*                                  |            4.0.1                            |
+|    3.6.*                                  |            3.6.4                            |
+|    3.5.*                                  |            3.5.4                            |
+|    3.4.*                                  |            3.4.3                            |
+|    3.3.*                                  |            3.3.3                            |
 
-	
+
 ### 7. Android P 适配
 为了兼容`Android P(API level 28)`，请完成以下步骤:
 
@@ -112,7 +117,7 @@ You will need to upgrade to one of the following versions of the Android Gradle 
 	</application>
 </manifest>
 ```
-	
+
 ### 8. 遵守必要的法律框架(Privacy)
 请遵守适用于您的游戏及其用户的所有法律框架。您可以通过这些链接找到相关的法规信息:
 
@@ -380,19 +385,19 @@ Yodo1Mas.getInstance().setInterstitialListener(new Yodo1Mas.InterstitialListener
     }
 });      
 ```
-    
+
 ### 2. 检查插屏广告加载状态
 
 ```java
 boolean isLoaded = Yodo1Mas.getInstance().isInterstitialAdLoaded();
 ```
-    
+
 ### 3. 展示插屏广告
 
 ```java
 Yodo1Mas.getInstance().showInterstitialAd(MyActivity.this);
 ```
-    
+
 ## 激励视频广告
 
 ### 1. 设置激励视频广告代理方法
@@ -420,13 +425,13 @@ Yodo1Mas.getInstance().setRewardListener(new Yodo1Mas.RewardListener() {
     }
 });
 ```
-    
+
 ### 2. 检查激励视频广告加载状态
 
 ```java
 boolean isLoaded = Yodo1Mas.getInstance().isBannerAdLoaded();
 ```
-    
+
 ### 3. 展示激励视频广告
 
 ```java
@@ -458,12 +463,12 @@ Yodo1Mas.getInstance().setBannerListener(new Yodo1Mas.BannerListener() {
 ```java
 boolean isLoaded =  Yodo1Mas.getInstance().isBannerAdLoaded();
 ```
-    
+
 ### 3. 展示横幅广告
 ```java
 Yodo1Mas.getInstance().showBannerAd(MyActivity.this);
 ```
- 
+
 ### 4. 关闭横幅广告
 ```java
 Yodo1Mas.getInstance().dismissBannerAd(MyActivity.this);

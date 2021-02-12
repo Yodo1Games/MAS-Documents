@@ -22,6 +22,10 @@
   * [Unity Integration](./markdowns/integration-unity.md)
   * [iOS Integration](./markdowns/integration-ios.md)
   * [Android Integration](./markdowns/integration-android.md)  
+* Upgrade
+  * [Unity Upgrade](./markdowns/upgrade-guide-unity.md)
+  * [iOS Upgrade](./markdowns/upgrade-guide-ios.md)
+  * [Adnroid Upgrade](./markdowns/upgrade-guide-android.md)
 * Pre-Release
   * AppTrackingTransparency(ATT)
     * [ATT Questionnaire Part 2](./markdowns/ATT-questionnaire-part2.md)

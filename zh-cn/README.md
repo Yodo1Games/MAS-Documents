@@ -22,6 +22,10 @@
   * [Unity集成](./markdowns/integration-unity.md)
   * [iOS集成](./markdowns/integration-ios.md)
   * [Android集成](./markdowns/integration-android.md)  
+* 升级指南
+  * [Unity升级](./markdowns/upgrade-guide-unity.md)
+  * [iOS升级](./markdowns/upgrade-guide-ios.md)
+  * [Adnroid升级](./markdowns/upgrade-guide-android.md)
 * 预发布
   * ATT
     * [ATT问卷第二部分](./markdowns/ATT-questionnaire-part2.md)
