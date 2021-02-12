@@ -142,6 +142,12 @@ If Firebase 7.0.0 is not upgraded and there is a conflict when building android,
 
 ![](./../resource/conflict-firebase.png)
 
+```java
+Duplicate calss com.google.android.gms.internal.measurement.zzjp found in modules classes.jar
+(com.google.android.gms:play-services-measurement-base:17.5.0) and classes.jar
+(com.google.android.gms:play-services-measurement-impl:17.2.0)
+```
+
 You can handle the conflict in the following solution
 
 * Open the `mainTemplate.gradle` file in the `Assets/Plugins/Android` directory
