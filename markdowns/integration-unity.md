@@ -138,6 +138,29 @@ If you are using Firebase, please upgrade to Firebase 7.0.0 or above. Lower vers
 
 Note: This update will also improve your general SDK integration process for long-term
 
+If Firebase 7.0.0 is not upgraded and there is a conflict when building android, the conflict as below:
+
+![](./../resource/conflict-firebase.png)
+
+You can handle the conflict in the following solution
+
+* Open the `mainTemplate.gradle` file in the `Assets/Plugins/Android` directory
+* Change specified content, {MAS\_SDK\_VERSION} is the SDK version of MAS, e.g. 4.0.0.3</br>
+	Before
+	
+	``` groovy
+	implementation 'com.yodo1.mas:google:{MAS_SDK_VERSION}'
+	```
+
+	After
+	
+	``` groovy
+	implementation('com.yodo1.mas:google:{MAS_SDK_VERSION}') {
+	    exclude group: 'com.google.android.gms'
+	}
+	```
+	
+
 ### 9. FBCoreKit Conflicts
 
 If you are using a Facebook related SDK and have FBCoreKit conflict, you can resolve the conflict by following these steps
