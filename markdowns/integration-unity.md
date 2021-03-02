@@ -180,6 +180,28 @@ If you are using a Facebook related SDK and have FBCoreKit conflict, you can res
 * Enter `Assets/Yodo1/MAS/Editor/Dependencies` directory and open the `Yodo1MasiOSDependencies.xml` file
 * Remove or comment `<iosPod name="FBSDKCoreKit" version="~> 6.5.2" bitcode="false" minTargetSdk="9.0" />`
 
+### 10. How can you check if MAS is in your apk?
+
+1) If MAS is present, your Unity project will have the following structure:
+![](./../resource/check-unity-1.png)
+
+2) Check Unity integration mode
+
+2.1)If you're using gradle then you will find reference `'com.yodo1.mas:standard:versioncode'` or `'com.yodo1.mas:google:versioncode'` in the file at the end of .gradle in the `Assets/Plugins/Android` folder
+![](./../resource/check-main-template.png)
+
+2.2）If you're using Android Resolver you will find the file `com.yodo1.mas:standard:version.aar` or `com.yodo1.mas:google:version.aar` in the `Assets/Plugins/Android` folder
+![](./../resource/check-unity-2.png)
+
+3) If MAS is present, your APK will have the package com.yodo1.advert in one of the .dex files as the following structure:
+> Drag apk file to AndroidStudio, or you can follow this guid [Analyze your build with APK Analyzer](https://developer.android.com/studio/build/apk-analyzer)
+
+![](./../resource/check-apk.png)
+
+4) The MAS initialization log will be in the console:
+![](./../resource/check-logcat.png)
+
+
 ## Interstitial Integration
 ### 1. Set the interstitial ad delegate method
 ```c#
@@ -295,9 +317,3 @@ Yodo1U3dMas.ShowInterstitialAd("MY_REWARDED_PLACEMENT");
 ```c#
 Yodo1U3dMas.ShowBannerAd("MY_BANNER_PLACEMENT");
 ```
-
-## Changelog
-|  Version   | Release Date | Notes |
-|  --------  | ------------ | ------------  |
-|            |              |               |
-|            |              |               |
