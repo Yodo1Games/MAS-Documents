@@ -487,8 +487,26 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isBannerAdLoaded];
 ```
 
 ### 3. Show banner ad
+
+The method using the default parameters, align: `Yodo1MasAdBannerAlignTop | Yodo1MasAdBannerAlignHorizontalCenter` and offset(X: 0,Y: 0)
+
 ```obj-c
 [[Yodo1Mas sharedInstance] showBannerAd];
+```
+
+The method using the default offset(X: 0, Y: 0), you need to customize the banner alignment.
+
+```obj-c
+Yodo1MasAdBannerAlign align = Yodo1MasAdBannerAlignTop | Yodo1MasAdBannerAlignHorizontalCenter;
+[[Yodo1Mas sharedInstance] showBannerAdWithAlign:align];
+```
+
+The method need to customize the banner alignment and offset.
+
+```obj-c
+Yodo1MasAdBannerAlign align = Yodo1MasAdBannerAlignTop | Yodo1MasAdBannerAlignHorizontalCenter;
+CGPoint point = CGPointMake(10.0f, 10.0f);
+[[Yodo1Mas sharedInstance] showBannerAdWithAlign:align offset:point];
 ```
 
 ### 4. Dismiss banner ad
@@ -516,9 +534,3 @@ Below are code snippets on how to set placements for banners, interstitials, and
 ```obj-c
 [[Yodo1Mas sharedInstance] showBannerAd:@"MY_BANNER_PLACEMENT"]
 ```
-
-## Changelog
-|  Version   | Release Date | Notes |
-|  --------  | ------------ | ------------  |
-|            |              |               |
-|            |              |               |

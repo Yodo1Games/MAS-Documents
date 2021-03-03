@@ -468,8 +468,27 @@ boolean isLoaded =  Yodo1Mas.getInstance().isBannerAdLoaded();
 ```
 
 ### 3. Show banner ad
+
+The method using the default parameters, align: `Yodo1Mas.BannerTop | Yodo1Mas.BannerHorizontalCenter` and offset(X: 0,Y: 0)
+
 ```java
 Yodo1Mas.getInstance().showBannerAd(MyActivity.this);
+```
+
+The method using the default offset(X: 0, Y: 0), you need to customize the banner alignment.
+
+```java
+int align = Yodo1Mas.BannerTop | Yodo1Mas.BannerHorizontalCenter;
+Yodo1Mas.getInstance().showBannerAd(MyActivity.this, align);
+```
+
+The method need to customize the banner alignment and offset.
+
+```java
+int align = Yodo1Mas.BannerTop | Yodo1Mas.BannerHorizontalCenter;
+int offsetX = 10;
+int offsetY = 10;
+Yodo1Mas.getInstance().showBannerAd(MyActivity.this, align, offsetX, offsetY);
 ```
 
 ### 4. Dismiss banner ad
@@ -498,12 +517,5 @@ Yodo1Mas.getInstance().showRewardedAd(MyActivity.this, "MY_REWARDED_PLACEMENT");
 **Banner Ads**
 
 ```java
-Yodo1Mas.getInstance(). showBannerAd(MyActivity.this, "MY_BANNER_PLACEMENT");
+Yodo1Mas.getInstance().showBannerAd(MyActivity.this, "MY_BANNER_PLACEMENT");
 ```
-
-## Changelog
-|  Version   | Release Date | Notes |
-|  --------  | ------------ | ------------  |
-|            |              |               |
-|            |              |               |
-
