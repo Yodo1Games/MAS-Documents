@@ -22,12 +22,15 @@ maven { url "https://dl.bintray.com/yodo1/android-sdk" }
 
 ### 2. Open your app-level `build.gradle` and add the relevant code.
 #### 2.1 Add a Gradle dependency
+
 ```groovy
-implementation 'com.yodo1.mas:standard:4.0.1.1'
+implementation 'com.yodo1.mas:standard:4.0.1.2'
 ```
+
 If you need to comply with Google Family Policy:
+
 ```groovy
-implementation 'com.yodo1.mas:google:4.0.1.1'
+implementation 'com.yodo1.mas:google:4.0.1.2'
 ```
 
 #### 2.2 Add the `compileOptions` property to the `Android` section
