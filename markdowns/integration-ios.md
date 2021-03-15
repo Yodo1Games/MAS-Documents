@@ -43,6 +43,11 @@ Execute the following command in `Terminal` :
 pod install --repo-update
 ```
 
+Make sure to always open the Xcode workspace instead of the project file when building your project:
+```
+open App.xcworkspace
+```
+
 ### 2. Xcode project configuration
 #### 2.1 AppLovin SDK Key
 * Using the Xcode project navigator, select `Info.plist`.
