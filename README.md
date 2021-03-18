@@ -18,10 +18,12 @@
   * Payment
     * [Submitting Your Payment Information](./markdowns/payment-submitting-information.md)
     * [Receiving Your Payment](./markdowns/payment-receiving.md)
-* Integration
+* Integration(Global Docs)
   * [Unity Integration](./markdowns/integration-unity.md)
   * [iOS Integration](./markdowns/integration-ios.md)
   * [Android Integration](./markdowns/integration-android.md)  
+* Integration(Mainland China Docs)
+  * [Unity Integration](./markdowns/integration-unity-china.md)
 * Upgrade
   * [Unity Upgrade](./markdowns/upgrade-guide-unity.md)
   * [iOS Upgrade](./markdowns/upgrade-guide-ios.md)
