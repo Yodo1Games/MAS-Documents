@@ -503,7 +503,7 @@ Yodo1Mas.getInstance().showBannerAd(MyActivity.this, align, offsetX, offsetY);
 
 ### 4. Dismiss banner ad
 ```java
-Yodo1Mas.getInstance().dismissBannerAd(MyActivity.this);
+Yodo1Mas.getInstance().dismissBannerAd();
 ```
 
 ## Advanced Settings
