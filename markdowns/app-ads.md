@@ -83,7 +83,7 @@ rubiconproject.com, 17328, RESELLER, 0bfd66d529a55807
 adcolony.com, 1efc6603710003ea, RESELLER, 1ad675c9de6b5176
 Contextweb.com, 561884, RESELLER, 89ff185a4c4e857c
 rhythmone.com, 4173858586, RESELLER, a670c89d4a324e47
-improvedigital.com, 1366, RESELLER
+improvedig ital.com, 1366, RESELLER
 EMXDGT.com, 1324, RESELLER, 1e1d41537f7cad7f
 engagebdr.com, 10252, RESELLER #banner #video
 bidmachine.io, 55, RESELLER
@@ -238,6 +238,7 @@ startapp.com, inr, RESELLER
 ucfunnel.com, par-BE7E29B3B48DE66BC7DDDA24E6267E29, RESELLER
 verve.com, 15290, RESELLER, 0c8f5958fc2d6270
 video.unrulymedia.com, 2169000724, RESELLER
+google.com, pub-5784311004955543, DIRECT, f08c47fec0942fa0
 ```
 
 ## 4. When does app-ads.txt get verified? 
