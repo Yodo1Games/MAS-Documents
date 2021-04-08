@@ -83,7 +83,7 @@ rubiconproject.com, 17328, RESELLER, 0bfd66d529a55807
 adcolony.com, 1efc6603710003ea, RESELLER, 1ad675c9de6b5176
 Contextweb.com, 561884, RESELLER, 89ff185a4c4e857c
 rhythmone.com, 4173858586, RESELLER, a670c89d4a324e47
-improvedig ital.com, 1366, RESELLER
+improvedigital.com, 1366, RESELLER
 EMXDGT.com, 1324, RESELLER, 1e1d41537f7cad7f
 engagebdr.com, 10252, RESELLER #banner #video
 bidmachine.io, 55, RESELLER
