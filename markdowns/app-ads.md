@@ -238,6 +238,7 @@ startapp.com, inr, RESELLER
 ucfunnel.com, par-BE7E29B3B48DE66BC7DDDA24E6267E29, RESELLER
 verve.com, 15290, RESELLER, 0c8f5958fc2d6270
 video.unrulymedia.com, 2169000724, RESELLER
+google.com, pub-5784311004955543, DIRECT, f08c47fec0942fa0
 ```
 
 ## 4. When does app-ads.txt get verified? 
