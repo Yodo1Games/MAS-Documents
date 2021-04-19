@@ -29,7 +29,7 @@
 * Test-Mode
   * [Integration Testing](./markdowns/test-integration.md)
   * [Test Devices & Test Mode](./markdowns/test-devices&mode.md)
-  * [Test Ads](./markdowns/test-ads.md.md)
+  * [Test Ads](./markdowns/test-ads.md)
   * [Init Log Helper](./markdowns/test-init-log-helper.md)
   * [How to get IDFA/GAID](./markdowns/test-idfa&gaid.md)
 * Pre-Release
