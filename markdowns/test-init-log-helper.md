@@ -1,8 +1,8 @@
 The MAS SDK provides an easy way to verify that you’ve successfully integrated.You only need to pay attention to one thing: the log printing of the initialization method.
 
-
 💡**Before you start**
 The Init Log Helper can only be used with Unity Plugin 4.1.0+.
+
 ## Init method and log
 When you call the following method and then notice the output.
 ```csharp
