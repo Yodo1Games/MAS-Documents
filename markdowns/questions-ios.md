@@ -10,3 +10,6 @@ The cause is most likely a dependency conflict. MAS includes several third party
 
 This pop-up window is from applovin, which will stop appearing by deleting `NSAllowsArbitraryLoadsInWebContent` from Info.plist. 
 
+## Will integrate with MAS be rejected by Apple because of UIWebView?
+
+No, the MAS SDK does not use UIWebView. To see where UIWebView is used, click [here](https://levelup.gitconnected.com/how-to-find-and-remove-uiwebview-uses-in-your-ios-app-d9395f7baacc).
