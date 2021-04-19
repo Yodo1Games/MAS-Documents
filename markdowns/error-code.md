@@ -1,15 +1,13 @@
 Error Code
 
-| Error Code | Note | 
-| --- | --- | 
-| -1 | unknown error |
-| -2 | invalid appkey |
-| -1000| get config failed |
-| -1001| network error |
-| -1002| server error |
-| -2001| ad config is null |
-| -2002| ad adapter is null |
-| -2003| ad adapter uninitialized |
-| -2004| ad no loaded |
-| -2005| ad load error |
-| -2006| ad show error |
+| Error Code | Note                                                         |
+| ---------- | ------------------------------------------------------------ |
+| -100000    | No WIFI/4G or Request Timeout                                |
+| -100501    | Data parsing failed                                          |
+| -400000    | Invalid AppKey or Wrong AppKey                               |
+| -400001    | AppKey Bundle ID Admob ID not match please check your app profile |
+| -600000    | Wrong ad type call.Please check your app profile on MAS to ensure you have selected the correct ad type. |
+| -600001    | Ad adapter error                                             |
+| -600200    | Ad not avaliable,no cache                                    |
+| -600201    | Ad not avaliable,unable to show                              |
+| -600202    | Ad download failed                                           |
