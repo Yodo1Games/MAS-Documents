@@ -8,7 +8,7 @@ First you need to confirm the 'Tracking' feature is ON.
 ![](./../resource/test-idfa&gaid-3.png)
 
 ### MAS Init Log Helper
-The MAS SDK provides an easy way to verify that you’ve successfully integrated.then you can find IDFA through the output. please read [this](test-init-log-helper.md). TODO
+The MAS SDK provides an easy way to verify that you’ve successfully integrated.then you can find IDFA through the output. please read [this](test-init-log-helper.md).
 
 ### Programmatically
 please read [this](https://developer.apple.com/documentation/adsupport/asidentifiermanager).

@@ -17,14 +17,14 @@ GAID is: xxxx-xxx-xxx-xxx
 Test Device: On
 Test Ad: On
 ```
-For the meaning of each of these items you can read [this](test-init-log-helper.md). TODO add the link to Init Log Helper
+For the meaning of each of these items you can read [this](test-init-log-helper.md). 
 
 
-The most important thing is to check the **Init Status** item.If it prints Init failed, then you should pay attention to the ErrorCode printed. TODO add the link to ErrorCode
+The most important thing is to check the **Init Status** item.If it prints Init failed, then you should pay attention to the [ErrorCode](error-code.md) printed. 
 
 ## Use Test ads to review ads feature
 MAS Test Ads for apps facilitates the ad implementation and ad content testing process for developers.
 ![](./../resource/test-integration.png)
-For live app you can test the ads feature by adding test devices.For details, please see [here](test-devices&mode.md). TODO
+For live app you can test the ads feature by adding test devices.For details, please see [here](test-devices&mode.md). 
 > When you add an **non-live app** to your MAS account, it will remain in test ads until you set them to live.
 

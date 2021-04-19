@@ -11,7 +11,7 @@ To use this feature, follow these steps:
 
 ### 3.Enter Name and Device ID(IDFA for iOS or GAID for Android)
 ![](./../resource/test-devices&mode-3.png)
-If you are not sure how to fill in IDFA/GAID please refer [here](test-idfa&gaid.md). TODO
+If you are not sure how to fill in IDFA/GAID please refer [here](test-idfa&gaid.md).
 
 ### 4.Once you've successfully added a test device, you will see it on the under list and the Test Mode will set to ON status by default.
 ![](./../resource/test-devices&mode-4.png)
@@ -21,7 +21,7 @@ Test mode is a kind of status management for test devices.When the test mode is 
 
 Once you toggle the state it will take some time(about 10 mins),then you need rebot your app to accept the new state.
 
-About the Test Ads you can read [this](test-idfa&gaid.md). TODO add the link to Test Ads
+About the Test Ads you can read [this](test-idfa&gaid.md). 
 
 ### Relationship about Test ads/Test mode/Store status
 ✅ Test ads will show
@@ -33,4 +33,4 @@ About the Test Ads you can read [this](test-idfa&gaid.md). TODO add the link to 
 | non-live | ✅ | ✅ |
 
 You can also check the logs from the init method to confirm whether the device is a test device(
-**Test Device**) and whether receive test ads(**Test Ad**). For details please read [this](test-init-log-helper.md).TODO add the link to Init log helper
+**Test Device**) and whether receive test ads(**Test Ad**). For details please read [this](test-init-log-helper.md).

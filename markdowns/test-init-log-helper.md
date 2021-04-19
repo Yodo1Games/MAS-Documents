@@ -30,7 +30,7 @@ When **Init Status failed** then print **None**. | On |
 When **Init Status failed** then print **None** | On |
 
 Output example:
-TODO image
+![](./../resource/test-init-log-helper.png)
 
 
 The init log helper reviews everything you need.You should care about the results that are displayed, where the **Init Status** you should **pay special attention**, if the display **Init failed** please check the ErrorCode.
