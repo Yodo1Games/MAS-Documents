@@ -246,55 +246,11 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>cstr6suwn9.skadnetwork</string>
+    <string>2fnua5tdw4.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>5a6flpkh64.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>av6w8kgt66.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>f38h382jlk.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>kbd757ywx3.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>ludvb6z3bs.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>wzmmz9fp6w.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>ydx93a7ass.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>n38lu8286q.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>v9wttpbfk9.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>24t9a8vw3c.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>252b5q8x7y.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>32z4fx6l9h.skadnetwork</string>
+    <string>3qcr597p9d.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -306,7 +262,163 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>424m5254lk.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>5a6flpkh64.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>av6w8kgt66.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>cstr6suwn9.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>e5fvkxwrpn.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>ecpz2srf59.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>f38h382jlk.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>hjevpa356n.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>k674qkevps.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>kbd757ywx3.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>ludvb6z3bs.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>n6fk4nfna4.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>p78axxw29g.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>s39g8k73mm.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>v9wttpbfk9.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>wzmmz9fp6w.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>y2ed4ez56y.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>ydx93a7ass.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>zq492l623r.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>24t9a8vw3c.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>32z4fx6l9h.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>523jb4fst2.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>54nzkqm89y.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>578prtvx9j.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>5l3tpt7t6e.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>6xzpu9s2p8.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>79pbpufp6p.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>9b89h5y424.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>cj5566h2ga.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>feyaarzu9v.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>ggvn48r87g.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>glqzh8vgby.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>gta9lk7p23.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>n9x2a789qt.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>pwa73g5rt2.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>wg4vff78zm.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>xy9t38ct57.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>zmvfpc5aq8.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>n38lu8286q.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>252b5q8x7y.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -322,43 +434,11 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>f7s53z58qe.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
     <string>hdw39hrw9y.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>wg4vff78zm.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
     <string>y45688jllp.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>424m5254lk.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>578prtvx9j.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>e5fvkxwrpn.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>ggvn48r87g.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>p78axxw29g.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>pwa73g5rt2.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -370,19 +450,7 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>6xzpu9s2p8.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
     <string>737z793b9f.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>glqzh8vgby.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>n9x2a789qt.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -406,10 +474,6 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>523jb4fst2.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
     <string>52fl2v3hgk.skadnetwork</string>
 </dict>
 <dict>
@@ -423,14 +487,6 @@ The following shows the array of dictionaries you need to access the SDK.
 <dict>
     <key>SKAdNetworkIdentifier</key>
     <string>9yg77x724h.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>cj5566h2ga.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>ecpz2srf59.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -458,15 +514,7 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>s39g8k73mm.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
     <string>v79kvwwj4g.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>xy9t38ct57.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -478,10 +526,6 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>zmvfpc5aq8.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
     <string>4dzt52r2t5.skadnetwork</string>
 </dict>
 <dict>
@@ -490,11 +534,11 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>7953jerfzd.skadnetwork</string>
+    <string>f7s53z58qe.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>gta9lk7p23.skadnetwork</string>
+    <string>7953jerfzd.skadnetwork</string>
 </dict>
 ```
 
