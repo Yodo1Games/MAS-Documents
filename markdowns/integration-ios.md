@@ -218,6 +218,10 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>qqp299437r.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>rx5hdcabgc.skadnetwork</string>
 </dict>
 <dict>
