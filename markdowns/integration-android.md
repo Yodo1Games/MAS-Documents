@@ -15,8 +15,7 @@ If you have not integrated, please read the following documents
 
 ```groovy
 mavenCentral()
-maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
-maven { url "https://dl.bintray.com/ironsource-mobile/android-adapters" }
+maven { url "https://android-sdk.is.com" }
 maven { url  "https://fyber.bintray.com/marketplace"}
 maven { url "https://dl.bintray.com/yodo1/MAS-Android" }
 maven { url "https://dl.bintray.com/yodo1/android-sdk" }
@@ -25,8 +24,7 @@ maven { url "https://dl.bintray.com/yodo1/android-sdk" }
 If you need to comply with Google Family Policy:
 ```groovy
 mavenCentral()
-maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
-maven { url "https://dl.bintray.com/ironsource-mobile/android-adapters" }
+maven { url "https://android-sdk.is.com" }
 maven { url "https://dl.bintray.com/yodo1/MAS-Android" }
 maven { url "https://dl.bintray.com/yodo1/android-sdk" }
 ```
