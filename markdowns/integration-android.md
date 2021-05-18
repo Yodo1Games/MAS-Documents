@@ -14,8 +14,8 @@ If you have not integrated, please read the following documents
 ### 1. Open your project-level `build.gradle` and add the relevant code.
 
 ```groovy
-maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
-maven { url "https://dl.bintray.com/ironsource-mobile/android-adapters" }
+mavenCentral()
+maven { url "https://android-sdk.is.com" }
 maven { url  "https://fyber.bintray.com/marketplace"}
 maven { url "https://dl.bintray.com/yodo1/MAS-Android" }
 maven { url "https://dl.bintray.com/yodo1/android-sdk" }
@@ -23,8 +23,8 @@ maven { url "https://dl.bintray.com/yodo1/android-sdk" }
 
 If you need to comply with Google Family Policy:
 ```groovy
-maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
-maven { url "https://dl.bintray.com/ironsource-mobile/android-adapters" }
+mavenCentral()
+maven { url "https://android-sdk.is.com" }
 maven { url "https://dl.bintray.com/yodo1/MAS-Android" }
 maven { url "https://dl.bintray.com/yodo1/android-sdk" }
 ```
@@ -33,13 +33,13 @@ maven { url "https://dl.bintray.com/yodo1/android-sdk" }
 #### 2.1 Add a Gradle dependency
 
 ```groovy
-implementation 'com.yodo1.mas:full:4.0.5'
+implementation 'com.yodo1.mas:full:4.1.0'
 ```
 
 If you need to comply with Google Family Policy:
 
 ```groovy
-implementation 'com.yodo1.mas:google:4.0.5'
+implementation 'com.yodo1.mas:google:4.1.0'
 ```
 
 #### 2.2 Add the `compileOptions` property to the `Android` section

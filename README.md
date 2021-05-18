@@ -26,6 +26,12 @@
   * [Unity Upgrade](./markdowns/upgrade-guide-unity.md)
   * [iOS Upgrade](./markdowns/upgrade-guide-ios.md)
   * [Adnroid Upgrade](./markdowns/upgrade-guide-android.md)
+* Test-Mode
+  * [Integration Testing](./markdowns/test-integration.md)
+  * [Test Devices & Test Mode](./markdowns/test-devices&mode.md)
+  * [Test Ads](./markdowns/test-ads.md)
+  * [Init Log Helper](./markdowns/test-init-log-helper.md)
+  * [How to get IDFA/GAID](./markdowns/test-idfa&gaid.md)
 * Pre-Release
   * AppTrackingTransparency(ATT)
     * [ATT Questionnaire Part 2](./markdowns/ATT-questionnaire-part2.md)
