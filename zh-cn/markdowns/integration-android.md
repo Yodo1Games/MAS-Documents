@@ -14,16 +14,17 @@
 ## 集成步骤
 ### 1. 项目级别`build.gradle`添加 
 ```groovy
-maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
-maven { url "https://dl.bintray.com/ironsource-mobile/android-adapters" }
-maven { url "https://dl.bintray.com/yodo1/MAS-Android" }
-maven { url "https://dl.bintray.com/yodo1/android-sdk" }
+mavenCentral()
+maven { url "https://android-sdk.is.com" }
+maven { url 'http://nexus.yodo1.com:8081/repository/maven-yodo1mas/' }
+maven { url 'https://artifact.bytedance.com/repository/pangle'}
+maven { url "https://sdk.tapjoy.com/" }
 ```
 
 ### 2. app级别`build.gradle`添加
 #### 2.1 添加MAS SDK依赖
 ```groovy
-implementation 'com.yodo1.mas:google:4.0.0.3'
+implementation 'com.yodo1.mas:full:4.2.0'
 ```
 
 #### 2.2 添加`compileOptions`属性到 `android` 部分
