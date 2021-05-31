@@ -398,7 +398,8 @@ You can handle the conflict in the following solution
 	
 	``` groovy
 	implementation('com.yodo1.mas:google:{MAS_SDK_VERSION}') {
-	    exclude group: 'com.google.android.gms'
+        exclude group: 'com.google.android.gms', module: 'play-services-measurement'
+        exclude group: 'com.google.android.gms', module: 'play-services-measurement-sdk-api'
 	}
 	```
 	
