@@ -81,7 +81,6 @@ pod update
 
 ```groovy
 maven { url "https://android-sdk.is.com" }
-maven { url 'http://nexus.yodo1.com:8081/repository/maven-yodo1mas/' }
 maven { url 'https://artifact.bytedance.com/repository/pangle'}
 maven { url "https://sdk.tapjoy.com/" }
 ```

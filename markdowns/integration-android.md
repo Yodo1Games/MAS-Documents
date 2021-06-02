@@ -16,7 +16,6 @@ If you have not integrated, please read the following documents
 ```groovy
 mavenCentral()
 maven { url "https://android-sdk.is.com" }
-maven { url 'http://nexus.yodo1.com:8081/repository/maven-yodo1mas/' }
 maven { url 'https://artifact.bytedance.com/repository/pangle'}
 maven { url "https://sdk.tapjoy.com/" }
 ```
@@ -26,7 +25,6 @@ If you need to comply with Google Family Policy:
 ```groovy
 mavenCentral()
 maven { url "https://android-sdk.is.com" }
-maven { url 'http://nexus.yodo1.com:8081/repository/maven-yodo1mas/' }
 ```
 
 ### 2. Open your app-level `build.gradle` and add the relevant code.
