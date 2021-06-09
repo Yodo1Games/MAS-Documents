@@ -24,7 +24,7 @@ maven { url "https://sdk.tapjoy.com/" }
 #### 2.1 Add a Gradle dependency
 
 ```groovy
-implementation 'com.yodo1.mas:full:1'
+implementation 'com.yodo1.mas:full:4.1.1'
 ```
 
 If you need to comply with Google Family Policy:
