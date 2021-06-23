@@ -476,7 +476,7 @@ boolean isLoaded =  Yodo1Mas.getInstance().isBannerAdLoaded();
 
 ### 3. Show banner ad
 
-The method using the default parameters, align: `Yodo1Mas.BannerTop | Yodo1Mas.BannerHorizontalCenter` and offset(X: 0,Y: 0)
+The method using the default parameters, align: `Yodo1Mas.BannerBottom | Yodo1Mas.BannerHorizontalCenter` and offset(X: 0,Y: 0)
 
 ```java
 Yodo1Mas.getInstance().showBannerAd(MyActivity.this);
