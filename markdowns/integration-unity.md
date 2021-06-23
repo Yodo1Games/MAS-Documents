@@ -10,7 +10,7 @@ If you have not integrated, please read the following documents
 
 ## The Integration Steps
 
-### 1. Download [Unity Plugin 4.2.0](https://docs.yodo1.com/download/Rivendell-SDKs/4.2.0/Unity/Rivendell-4.2.0-Full.unitypackage) Or Google Families Policy Edition [Unity Plugin 4.2.0](https://docs.yodo1.com/download/Rivendell-SDKs/4.2.0/Unity/Rivendell-4.2.0-Family.unitypackage)
+### 1. Download [Unity Plugin 4.2.0](https://mas-artifacts.yodo1.com/unity/4.2.0/Rivendell-4.2.0-Full.unitypackage) Or Google Families Policy Edition [Unity Plugin 4.2.0](https://mas-artifacts.yodo1.com/unity/4.2.0/Rivendell-4.2.0-Family.unitypackage)
 > * MAS supports Unity 2017.4.37f1+ LTS version, 2018.4.30f1+ LTS version, 2019.41f18+ LTS version, 2020 all version and above.
 > * [Jetifier](https://developer.android.com/jetpack/androidx/releases/jetifier) is required for Android builds and can be enabled by selecting ***Assets > External Dependency Manager > Android Resolver > Settings > Use Jetifier***
 > * `CocoaPods` is required for iOS builds and can be installed following the instructions [here](https://guides.cocoapods.org/using/getting-started.html#getting-started), please use version 1.8 and above.
