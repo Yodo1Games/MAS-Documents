@@ -10,7 +10,7 @@ Please delete the following directories:
 
 #### 2. Add new SDK
 
-- Download the latest [Unity Plugin](https://docs.yodo1.com/download/Rivendell-SDKs/Rivendell-4.0.0.3.unitypackage)
+- Download the latest [Unity Plugin](https://mas-artifacts.yodo1.com/unity/4.2.0/Rivendell-4.2.0-Full.unitypackage)
 
 - Double click to open the plugin and import
 
