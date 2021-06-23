@@ -522,7 +522,7 @@ bool isLoaded = Yodo1U3dMas.IsBannerAdLoaded();
 
 ### 3. Show banner ad
 
-The method using the default parameters, align: `Yodo1U3dBannerAlign.BannerTop | Yodo1U3dBannerAlign.BannerHorizontalCenter` and offset(X: 0,Y: 0)
+The method using the default parameters, align: `Yodo1U3dBannerAlign.BannerBottom | Yodo1U3dBannerAlign.BannerHorizontalCenter` and offset(X: 0,Y: 0)
 
 ```c#
 Yodo1U3dMas.ShowBannerAd();
