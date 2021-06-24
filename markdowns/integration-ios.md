@@ -710,7 +710,7 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isBannerAdLoaded];
 
 ### 3. Show banner ad
 
-The method using the default parameters, align: `Yodo1MasAdBannerAlignTop | Yodo1MasAdBannerAlignHorizontalCenter` and offset(X: 0,Y: 0)
+The method using the default parameters, align: `Yodo1MasAdBannerAlignBottom | Yodo1MasAdBannerAlignHorizontalCenter` and offset(X: 0,Y: 0)
 
 ```obj-c
 [[Yodo1Mas sharedInstance] showBannerAd];

@@ -15,8 +15,8 @@ If you have not integrated, please read the following documents
 
 ```groovy
 mavenCentral()
+maven { url "https://artifact.bytedance.com/repository/pangle" }
 maven { url "https://android-sdk.is.com" }
-maven { url 'https://artifact.bytedance.com/repository/pangle'}
 maven { url "https://sdk.tapjoy.com/" }
 ```
 
@@ -25,6 +25,7 @@ If you need to comply with Google Family Policy:
 ```groovy
 mavenCentral()
 maven { url "https://android-sdk.is.com" }
+maven { url "https://sdk.tapjoy.com/" }
 ```
 
 ### 2. Open your app-level `build.gradle` and add the relevant code.
@@ -483,7 +484,7 @@ boolean isLoaded =  Yodo1Mas.getInstance().isBannerAdLoaded();
 
 ### 3. Show banner ad
 
-The method using the default parameters, align: `Yodo1Mas.BannerTop | Yodo1Mas.BannerHorizontalCenter` and offset(X: 0,Y: 0)
+The method using the default parameters, align: `Yodo1Mas.BannerBottom | Yodo1Mas.BannerHorizontalCenter` and offset(X: 0,Y: 0)
 
 ```java
 Yodo1Mas.getInstance().showBannerAd(MyActivity.this);
