@@ -25,12 +25,6 @@ Please upgrade to Firebase 7.0.0 and above if you are using Firebase, lower Fire
 * Ad networks that comply with the Google Families Policy are supported only
 * More information about the Google Family Policy can be found [here](https://support.google.com/googleplay/android-developer/answer/9283445)
 
-### Note:
-If you are use unity **2017**,please check on the Custom Gradle Template at File -> Build Setting -> Player Settings -> Publishing Settings -> Build as below
-<center class="half">
-    <img src="./../resource/manifest-merging-errors-queries-5.png" width="400"/> 
-</center>
-
 ### 2. Integrate the SDK Into Your Project
 Open your Unity project and import the Unity package. Double click the compressed package icon. The files will populate automatically as illustrated below.
 
@@ -74,12 +68,6 @@ Open your Unity project and import the Unity package. Double click the compresse
 
 <center class="half">
     <img src="./../resource/use-jetifier.png" width="400"/> 
-</center>
-#### 4.3 Force Resolve
-
-Do the force resolve as below
-<center class="half">
-    <img src="./../resource/unity-android-forceresolve.png" width="400"/> 
 </center>
 
 ### 5. Comply With Necessary Legal Frameworks
