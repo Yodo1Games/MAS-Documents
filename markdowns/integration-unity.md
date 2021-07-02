@@ -10,7 +10,8 @@ If you have not integrated, please read the following documents
 
 ## The Integration Steps
 
-### 1. Download [Unity Plugin 4.1.1](https://mas-artifacts.yodo1.com/4.1.1/Unity/Release/Rivendell-4.1.1-Full.unitypackage) Or Google Families Policy Edition [Unity Plugin 4.1.1](https://mas-artifacts.yodo1.com/4.1.1/Unity/Release/Rivendell-4.1.1-Family.unitypackage)
+### 1. Download [Unity Plugin 4.2.0](https://mas-artifacts.yodo1.com/4.2.0/Unity/Release/Rivendell-4.2.0-Full.unitypackage) Or Google Families Policy Edition [Unity Plugin 4.2.0](https://mas-artifacts.yodo1.com/4.2.0/Unity/Release/Rivendell-4.2.0-Family.unitypackage)
+
 > * MAS supports Unity 2017.4.37f1+ LTS version, 2018.4.30f1+ LTS version, 2019.41f18+ LTS version, 2020 all version and above.
 > * [Jetifier](https://developer.android.com/jetpack/androidx/releases/jetifier) is required for Android builds and can be enabled by selecting ***Assets > External Dependency Manager > Android Resolver > Settings > Use Jetifier***
 > * `CocoaPods` is required for iOS builds and can be installed following the instructions [here](https://guides.cocoapods.org/using/getting-started.html#getting-started), please use version 1.8 and above.
@@ -24,6 +25,12 @@ Please upgrade to Firebase 7.0.0 and above if you are using Firebase, lower Fire
 * For games that comply with the Google family policy
 * Ad networks that comply with the Google Families Policy are supported only
 * More information about the Google Family Policy can be found [here](https://support.google.com/googleplay/android-developer/answer/9283445)
+
+### Note:
+If you are use unity **2017**,please check on the Custom Gradle Template at File -> Build Setting -> Player Settings -> Publishing Settings -> Build as below
+<center class="half">
+    <img src="./../resource/manifest-merging-errors-queries-5.png" width="400"/> 
+</center>
 
 ### 2. Integrate the SDK Into Your Project
 Open your Unity project and import the Unity package. Double click the compressed package icon. The files will populate automatically as illustrated below.
@@ -68,6 +75,17 @@ Open your Unity project and import the Unity package. Double click the compresse
 
 <center class="half">
     <img src="./../resource/use-jetifier.png" width="400"/> 
+</center>
+#### 4.3 Force Resolve
+
+Do the force resolve as below
+<center class="half">
+    <img src="./../resource/unity-android-forceresolve.png" width="400"/> 
+</center>
+
+If force resolve succeeded, you will see the result as the following screenshot
+<center class="half">
+    <img src="./../resource/unity-android-resolve-succeeded.jpg" width="400"/> 
 </center>
 
 ### 5. Comply With Necessary Legal Frameworks

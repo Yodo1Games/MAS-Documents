@@ -80,16 +80,15 @@ pod update
 修改`project`级别`build.gradle`文件，替换成以下内容:
 
 ```groovy
-maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
-maven { url "https://dl.bintray.com/ironsource-mobile/android-adapters" }
-maven { url "https://dl.bintray.com/yodo1/MAS-Android" }
-maven { url "https://dl.bintray.com/yodo1/android-sdk" }
+maven { url "https://android-sdk.is.com" }
+maven { url 'https://artifact.bytedance.com/repository/pangle'}
+maven { url "https://sdk.tapjoy.com/" }
 ```
 
 修改`app`级别`build.gradle`文件，替换成以下内容：
 
 ```groovy
-implementation 'com.yodo1.mas:google:4.0.0.3'
+implementation 'com.yodo1.mas:full:4.2.0'
 ```
 
 具体集成步骤请参考[文档](https://github.com/Yodo1Games/MAS-Documents/blob/upgrade-guide/markdowns/integration-android.md#the-integration-steps)

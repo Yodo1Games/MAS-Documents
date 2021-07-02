@@ -20,17 +20,25 @@ maven { url "https://android-sdk.is.com" }
 maven { url "https://sdk.tapjoy.com/" }
 ```
 
+If you need to comply with Google Family Policy:
+
+```groovy
+mavenCentral()
+maven { url "https://android-sdk.is.com" }
+maven { url "https://sdk.tapjoy.com/" }
+```
+
 ### 2. Open your app-level `build.gradle` and add the relevant code.
 #### 2.1 Add a Gradle dependency
 
 ```groovy
-implementation 'com.yodo1.mas:full:4.1.1'
+implementation 'com.yodo1.mas:full:4.2.0'
 ```
 
 If you need to comply with Google Family Policy:
 
 ```groovy
-implementation 'com.yodo1.mas:google:4.1.1'
+implementation 'com.yodo1.mas:google:4.2.0'
 ```
 
 #### 2.2 Add the `compileOptions` property to the `Android` section

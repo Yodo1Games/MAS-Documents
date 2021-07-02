@@ -26,16 +26,15 @@ implementation 'com.yodo1:advert-gp:3.14.0'
 Modify the `build.gradle` file of `project` level and replace it with the following content:
 
 ```groovy
-maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
-maven { url "https://dl.bintray.com/ironsource-mobile/android-adapters" }
-maven { url "https://dl.bintray.com/yodo1/MAS-Android" }
-maven { url "https://dl.bintray.com/yodo1/android-sdk" }
+maven { url "https://android-sdk.is.com" }
+maven { url 'https://artifact.bytedance.com/repository/pangle'}
+maven { url "https://sdk.tapjoy.com/" }
 ```
 
 Modify the `build.gradle` file at the `app` level and replace it with the following:
 
 ```groovy
-implementation 'com.yodo1.mas:google:4.0.0.3'
+implementation 'com.yodo1.mas:full:4.2.0'
 ```
 
 For specific integration steps, please refer to [Document](integration-android.md#the-integration-steps)

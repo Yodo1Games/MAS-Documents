@@ -8,7 +8,7 @@ Here are some tips.
 
 When your integration is complete, check the log print of the call to the init method. The log format is as follows.
 ```shell
-MAS SDK Version: Android-4.1.0
+MAS SDK Version: Android-4.2.0
 AppKey: xxxx
 Bundle ID: com.yourbundle.id
 Admob ID: ca-app-pub-xxx~xxx
