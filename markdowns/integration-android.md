@@ -110,7 +110,7 @@ You will need to upgrade to one of the following versions of the Android Gradle 
 To be compatible with `Android P (API level 28)`, please do the following:
 
 * Create an XML folder in your resources folder
-* Create an XML file named `network_security_configi.xml` in the XML folder. In the `res/xml/network_security_config.xml` file, please add these lines
+* Create an XML file named `network_security_config.xml` in the XML folder. In the `res/xml/network_security_config.xml` file, please add these lines
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
