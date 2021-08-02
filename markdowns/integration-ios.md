@@ -727,13 +727,17 @@ The method need to customize the banner alignment and offset.
 
 ```obj-c
 Yodo1MasAdBannerAlign align = Yodo1MasAdBannerAlignTop | Yodo1MasAdBannerAlignHorizontalCenter;
-CGPoint point = CGPointMake(10.0f, 10.0f);
+// point.x > 0, the banner will move to the right. point.x < 0, the banner will move to the left, point.y > 0, the banner will move to the bottom. point.y < 0, the banner will move to the top
+CGPoint point = CGPointMake(10.0f, 10.0f); 
 [[Yodo1Mas sharedInstance] showBannerAdWithAlign:align offset:point];
 ```
 
 ### 4. Dismiss banner ad
 ```obj-c
 [[Yodo1Mas sharedInstance] dismissBannerAd];
+
+BOOL destroy = NO; // if destroy == YES, the ads displayed in the next call to showBanner are different. if destroy == NO, the ads displayed in the next call to showBanner are same
+[[Yodo1Mas sharedInstance] dismissBannerAdWithDestroy:destroy];
 ```
 
 ## Advanced Settings
