@@ -16,7 +16,10 @@ Please upgrade to Firebase 7.0.0 and above if you are using Firebase, lower Fire
 
 ## The Integration Steps
 ### 1. Add iOS SDK to your project
-#### 1.1 Create the `Podfile` file
+
+#### 1.1 Cocoapods
+
+##### Create the `Podfile`  file
 
 Create the `Podfile` file in the project root directory
 
@@ -24,7 +27,8 @@ Create the `Podfile` file in the project root directory
 touch Podfile
 ```
 
-#### 1.2 Import the iOS SDK into the project
+##### Import the iOS SDK into the project
+
 Please open the project's `Podfile` file and add the following code to the target of the application:
 
 ```ruby
@@ -44,11 +48,123 @@ pod install --repo-update
 ```
 
 Make sure to always open the Xcode workspace instead of the project file when building your project:
-```
+```shell
 open App.xcworkspace
 ```
 
+#### 1.2 manual
+
+#### Download SDK
+
+- [Yodo1MasLite](https://mas-artifacts.yodo1.com/4.3.0-beta-03/iOS/Pre/Yodo1MasLite.zip) 
+- [Yodo1MasFull](https://mas-artifacts.yodo1.com/4.3.0-beta-03/iOS/Pre/Yodo1MasFull.zip) 
+
+#### Import the iOS SDK into the project
+
+Unzip and copy the downloaded SDK into the project
+
+<img src="./../resource/ios-manual-01.png" width="400"/> 
+
+<img src="./../resource/ios-manual-02.png" width="800"/> 
+
+
+
+#### Add `-Objc`
+
+<img src="./../resource/ios-manual-05.png"  width="800"/>
+
+#### Add system resource library
+
+<img src="./../resource/ios-manual-03.png" width="800"/>
+
+<img src="./../resource/ios-manual-04.png" width="400"/>
+
+- Accelerate
+
+- AdSupport
+
+- AppTrackingTransparency
+
+- AudioToolbox
+
+- AVKit
+
+- MapKit
+
+- WebKit
+
+- Security
+
+- CoreMedia
+
+- AVFoundation
+
+- CoreTelephony
+
+- CoreLocation
+
+- SystemConfiguration
+
+- MobileCoreServices
+
+- JavaScriptCore
+
+- MessageUI
+
+- CoreImage
+
+- ImageIO
+
+- CoreText
+
+- CoreMotion
+
+- CoreServices
+
+- SafariServices
+
+- StoreKit
+
+- CFNetwork
+
+- Social
+
+- WatchConnectivity
+
+- QuartzCore
+
+- EventKit
+
+- CoreVideo
+
+- MediaPlayer
+
+- LocalAuthentication
+
+- VideoToolbox
+
+- c++
+
+- c++abi
+
+- sqlite3
+
+- sqlite3.0
+
+- xml2
+
+- xml2.2
+
+- bz2
+
+- resolv
+
+- iconv
+
+- z
+
 ### 2. Xcode project configuration
+
 #### 2.1 AppLovin SDK Key
 * Using the Xcode project navigator, select `Info.plist`.
 * Click the add button (+) next to any key in the property list editor and create a new property key.
@@ -608,7 +724,7 @@ Please comply with all legal frameworks that apply to your game and its users. Y
 ### 4. Initialize the SDK
 #### 4.1 Import header file `Yodo1Mas.h`
 ``` obj-c
-#import <Yodo1MasCore/Yodo1Mas.h>
+#import "Yodo1Mas.h"
 ```
 
 #### 4.2 Add the snippet below by using your AppDelegate's `didFinishLaunchingWithOptions` method:
