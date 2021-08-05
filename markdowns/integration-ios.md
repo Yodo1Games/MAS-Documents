@@ -52,7 +52,7 @@ Make sure to always open the Xcode workspace instead of the project file when bu
 open App.xcworkspace
 ```
 
-#### 1.2 manual
+#### 1.2 Manual
 
 #### Download SDK
 
@@ -62,106 +62,72 @@ open App.xcworkspace
 #### Import the iOS SDK into the project
 
 Unzip and copy the downloaded SDK into the project
-
 <img src="./../resource/ios-manual-01.png" width="400"/> 
-
 <img src="./../resource/ios-manual-02.png" width="800"/> 
 
-
-
-#### Add `-Objc`
-
-<img src="./../resource/ios-manual-05.png"  width="800"/>
+#### Set `FairBidSDK.framework` Optional
+<img src="./../resource/ios-manual-06.png" width="800"/>  
 
 #### Add system resource library
-
 <img src="./../resource/ios-manual-03.png" width="800"/>
-
 <img src="./../resource/ios-manual-04.png" width="400"/>
 
 - Accelerate
-
 - AdSupport
-
 - AppTrackingTransparency
-
 - AudioToolbox
-
 - AVKit
-
 - MapKit
-
 - WebKit
-
 - Security
-
 - CoreMedia
-
 - AVFoundation
-
 - CoreTelephony
-
 - CoreLocation
-
 - SystemConfiguration
-
 - MobileCoreServices
-
 - JavaScriptCore
-
 - MessageUI
-
 - CoreImage
-
 - ImageIO
-
 - CoreText
-
 - CoreMotion
-
 - CoreServices
-
 - SafariServices
-
 - StoreKit
-
 - CFNetwork
-
 - Social
-
 - WatchConnectivity
-
 - QuartzCore
-
 - EventKit
-
 - CoreVideo
-
 - MediaPlayer
-
 - LocalAuthentication
-
 - VideoToolbox
-
 - c++
-
 - c++abi
-
 - sqlite3
-
 - sqlite3.0
-
 - xml2
-
 - xml2.2
-
 - bz2
-
 - resolv
-
 - iconv
-
 - z
+
+#### Add `-Objc`
+<img src="./../resource/ios-manual-05.png"  width="800"/>
+- `-ObjC`
+- `-l"bz2"`
+- `-l"c++"`
+- `-l"c++abi"`
+- `-l"iconv"`
+- `-l"resolv"`
+- `-l"sqlite3"`
+- `-l"sqlite3.0"`
+- `-l"xml2"`
+- `-l"xml2.2"`
+- `-l"z"`
 
 ### 2. Xcode project configuration
 
