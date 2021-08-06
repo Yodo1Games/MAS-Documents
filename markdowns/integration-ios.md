@@ -72,6 +72,10 @@ Unzip and copy the downloaded SDK into the project
 <img src="./../resource/ios-manual-03.png" width="800"/>
 <img src="./../resource/ios-manual-04.png" width="400"/>
 
+
+
+Please follow the above method to add all the following:
+
 - Accelerate
 - AdSupport
 - AppTrackingTransparency
@@ -117,6 +121,9 @@ Unzip and copy the downloaded SDK into the project
 
 #### Add `-Objc`
 <img src="./../resource/ios-manual-05.png"  width="800"/>
+
+Please follow the above method to add all the following:
+
 - `-ObjC`
 - `-l"bz2"`
 - `-l"c++"`
