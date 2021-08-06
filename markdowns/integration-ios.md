@@ -62,7 +62,12 @@ open App.xcworkspace
 #### Import the iOS SDK into the project
 
 Unzip and copy the downloaded SDK into the project
-<img src="./../resource/ios-manual-01.png" width="400"/> 
+
+
+
+<img src="./../resource/ios-manual-01.png" width="800"/>
+
+
 <img src="./../resource/ios-manual-02.png" width="800"/> 
 
 #### Set `FairBidSDK.framework` Optional
