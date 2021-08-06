@@ -50,7 +50,7 @@ implementation 'com.yodo1.mas:google:4.2.0'
 
 ##### Download SDK
 
-- [Yodo1MasFull](https://mas-artifacts.yodo1.com/4.3.0-beta-01/Android/Pre/Yodo1MasSdk.zip)
+- [Yodo1MasFull](https://mas-artifacts.yodo1.com/4.3.0-beta-01/Android/Dev/Yodo1MasSdk.zip)
 
 #### Import the iOS SDK into the project
 
@@ -74,6 +74,22 @@ Add a Gradle dependency
 
 ```groovy
 implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+implementation 'androidx.annotation:annotation:1.2.0'
+implementation 'androidx.appcompat:appcompat:1.2.0'
+implementation 'androidx.browser:browser:1.3.0'
+implementation 'androidx.collection:collection:1.1.0'
+implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+implementation 'androidx.arch.core:core-common:2.1.0'
+implementation 'androidx.arch.core:core-runtime:2.1.0'
+implementation 'androidx.core:core:1.3.2'
+implementation 'androidx.fragment:fragment:1.2.5'
+implementation 'androidx.lifecycle:lifecycle-common:2.2.0'
+implementation 'androidx.lifecycle:lifecycle-runtime:2.2.0'
+implementation 'androidx.lifecycle:lifecycle-viewmodel:2.2.0'
+implementation 'androidx.recyclerview:recyclerview:1.1.0'
+implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
 ```
 
 
