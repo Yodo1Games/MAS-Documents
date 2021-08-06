@@ -11,7 +11,11 @@ If you have not integrated, please read the following documents
 > MAS supports Android version 4.4.+ (Android API level: 19+) and above
 
 ## The Integration Steps
-### 1. Open your project-level `build.gradle` and add the relevant code.
+### 1. Add the Sdk to the project 
+
+#### Maven
+
+##### Open your project-level `build.gradle` and add the relevant code.
 
 ```groovy
 mavenCentral()
@@ -28,8 +32,9 @@ maven { url "https://android-sdk.is.com" }
 maven { url "https://sdk.tapjoy.com/" }
 ```
 
-### 2. Open your app-level `build.gradle` and add the relevant code.
-#### 2.1 Add a Gradle dependency
+##### Open your app-level `build.gradle` and add the relevant code.
+
+Add a Gradle dependency
 
 ```groovy
 implementation 'com.yodo1.mas:full:4.2.0'
@@ -41,7 +46,40 @@ If you need to comply with Google Family Policy:
 implementation 'com.yodo1.mas:google:4.2.0'
 ```
 
-#### 2.2 Add the `compileOptions` property to the `Android` section
+#### Manual
+
+##### Download SDK
+
+- [Yodo1MasFull](https://mas-artifacts.yodo1.com/4.3.0-beta-01/Android/Pre/Yodo1MasSdk.zip)
+
+#### Import the iOS SDK into the project
+
+Unzip the SDK and copy all aar/jar files to the lib folder of the project
+
+<img src="./../resource/android-manual-01.png" width="800"/>  
+
+
+
+<img src="./../resource/android-manual-02.png" width="800"/>  
+
+
+
+<img src="./../resource/android-manual-03.png" width="800"/>  
+
+
+
+##### Open your app-level `build.gradle` and add the relevant code.
+
+Add a Gradle dependency
+
+```groovy
+implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+```
+
+
+
+### 2. Add the `compileOptions` property to the `Android` section.
+
 ```ruby
 android {
 	compileOptions {
