@@ -28,13 +28,12 @@ touch Podfile
 Please open the project's `Podfile` file and add the following code to the target of the application:
 
 ```ruby
-use_frameworks!
+# use_frameworks! # If you use Facebook to share or log in, please add
 source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
 source 'https://github.com/Yodo1Games/MAS-Spec.git'
 source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 
-pod 'FBSDKCoreKit' # If you have introduced FBSDKCoreKit, please ignore
-pod 'Yodo1MasFull', '4.2.0'
+pod 'Yodo1MasFull', '4.2.2'
 ```
 
 Execute the following command in `Terminal` :

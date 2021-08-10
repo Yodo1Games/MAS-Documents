@@ -10,7 +10,7 @@ If you have not integrated, please read the following documents
 
 ## The Integration Steps
 
-### 1. Download [Unity Plugin 4.2.0](https://mas-artifacts.yodo1.com/4.2.0/Unity/Release/Rivendell-4.2.0-Full.unitypackage) Or Google Families Policy Edition [Unity Plugin 4.2.0](https://mas-artifacts.yodo1.com/4.2.0/Unity/Release/Rivendell-4.2.0-Family.unitypackage)
+### 1. Download [Unity Plugin 4.2.2](https://mas-artifacts.yodo1.com/4.2.2/Unity/Release/Rivendell-4.2.2-Full.unitypackage) Or Google Families Policy Edition [Unity Plugin 4.2.2](https://mas-artifacts.yodo1.com/4.2.2/Unity/Release/Rivendell-4.2.2-Family.unitypackage)
 
 > * MAS supports Unity 2017.4.37f1+ LTS version, 2018.4.30f1+ LTS version, 2019.41f18+ LTS version, 2020 all version and above.
 > * [Jetifier](https://developer.android.com/jetpack/androidx/releases/jetifier) is required for Android builds and can be enabled by selecting ***Assets > External Dependency Manager > Android Resolver > Settings > Use Jetifier***
@@ -405,7 +405,7 @@ Duplicate calss com.google.android.gms.internal.measurement.zzjp found in module
 You can handle the conflict in the following solution
 
 * Open the `mainTemplate.gradle` file in the `Assets/Plugins/Android` directory
-* Change specified content, {MAS\_SDK\_VERSION} is the SDK version of MAS, e.g. 4.0.0.3</br>
+* Change specified content, {MAS\_SDK\_VERSION} is the SDK version of MAS, e.g. 4.2.0</br>
 	Before
 	
 	``` groovy
@@ -422,12 +422,15 @@ You can handle the conflict in the following solution
 	```
 	
 
-### 10. FBCoreKit Conflicts
+### 10. Remove `user_frameworks!`
 
-If you are using a Facebook related SDK and have FBCoreKit conflict, you can resolve the conflict by following these steps
+![ios-remove-use-frameworks-01](./../resource/ios-remove-use-frameworks-01.png)
 
-* Enter `Assets/Yodo1/MAS/Editor/Dependencies` directory and open the `Yodo1MasiOSDependencies.xml` file
-* Remove or comment `<iosPod name="FBSDKCoreKit" version="~> 6.5.2" bitcode="false" minTargetSdk="9.0" />`
+
+
+Do not  check 'Add use_frameworks!'  and 'Always add the main target to Podfile', If you use the Facebook sharing function or login function, please don't do it.
+
+![ios-remove-use-frameworks-02](./../resource/ios-remove-use-frameworks-02.png)
 
 ### 11. How can you check if MAS is in your apk?
 
@@ -436,7 +439,7 @@ If you are using a Facebook related SDK and have FBCoreKit conflict, you can res
 
 2) Check Unity integration mode
 
-2.1)If you're using gradle then you will find reference `'com.yodo1.mas:standard:versioncode'` or `'com.yodo1.mas:google:versioncode'` in the file at the end of .gradle in the `Assets/Plugins/Android` folder
+2.1)If you're using gradle then you will find reference `'com.yodo1.mas:full:versioncode'` or `'com.yodo1.mas:google:versioncode'` in the file at the end of .gradle in the `Assets/Plugins/Android` folder
 ![](./../resource/check-main-template.png)
 
 2.2）If you're using Android Resolver you will find the file `com.yodo1.mas:standard:version.aar` or `com.yodo1.mas:google:version.aar` in the `Assets/Plugins/Android` folder
