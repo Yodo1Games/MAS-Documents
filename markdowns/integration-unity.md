@@ -428,7 +428,7 @@ You can handle the conflict in the following solution
 
 
 
-Do not  check 'Add use_frameworks!'  and 'Always add the main target to Podfile', If you use the Facebook sharing function or login function, please don't do it.
+Do not  check 'Add use_frameworks!'  and 'Always add the main target to Podfile', But If you use the Facebook sharing function or login function, please check 'Add use_frameworks!' and 'Always add the main target to Podfile'.
 
 ![ios-remove-use-frameworks-02](./../resource/ios-remove-use-frameworks-02.png)
 
