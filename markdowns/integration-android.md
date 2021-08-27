@@ -501,14 +501,17 @@ The method need to customize the banner alignment and offset.
 
 ```java
 int align = Yodo1Mas.BannerTop | Yodo1Mas.BannerHorizontalCenter;
-int offsetX = 10;
-int offsetY = 10;
+int offsetX = 10; //offsetX > 0, the banner will move to the right. offsetX < 0, the banner will move to the left. if align = Yodo1Mas.BannerLeft, offsetX < 0 is invalid
+int offsetY = 10; // offsetY > 0, the banner will move to the bottom. offsetY < 0, the banner will move to the top. if align = Yodo1Mas.BannerTop, offsetY < 0 is invalid
 Yodo1Mas.getInstance().showBannerAd(MyActivity.this, align, offsetX, offsetY);
 ```
 
 ### 4. Dismiss banner ad
 ```java
 Yodo1Mas.getInstance().dismissBannerAd();
+
+boolean destroy = false; // if destroy == true, the ads displayed in the next call to showBanner are different. if destroy == false, the ads displayed in the next call to showBanner are same
+Yodo1Mas.getInstance().dismissBannerAd(destroy);
 ```
 
 ## Advanced Settings

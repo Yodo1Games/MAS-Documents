@@ -557,14 +557,17 @@ The method need to customize the banner alignment and offset.
 
 ```c#
 int align = Yodo1U3dBannerAlign.BannerTop | Yodo1U3dBannerAlign.BannerHorizontalCenter;
-int offsetX = 10;
-int offsetY = 10;
+int offsetX = 10; // offsetX > 0, the banner will move to the right. offsetX < 0, the banner will move to the left. if align = Yodo1Mas.BannerLeft, offsetX < 0 is invalid (Only Android)
+int offsetY = 10; // offsetY > 0, the banner will move to the bottom. offsetY < 0, the banner will move to the top. if align = Yodo1Mas.BannerTop, offsetY < 0 is invalid(Only Android)
 Yodo1U3dMas.ShowBannerAd(align, offsetX, offsetY);
 ```
 
 ### 4. Dismiss banner ad
 ```c#
 Yodo1U3dMas.DismissBannerAd();
+
+bool destroy = false; // if destroy == true, the ads displayed in the next call to showBanner are different. if destroy == false, the ads displayed in the next call to showBanner are same
+Yodo1U3dMas.DismissBannerAd(destroy);
 ```
 
 ## Advanced Settings
