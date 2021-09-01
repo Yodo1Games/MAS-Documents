@@ -50,7 +50,7 @@ implementation 'com.yodo1.mas:google:4.2.0'
 
 ##### Download SDK
 
-- [Yodo1MasFull](https://mas-artifacts.yodo1.com/4.3.0-beta-01/Android/Dev/Yodo1MasSdk.zip)
+- [Yodo1MasFull](https://mas-artifacts.yodo1.com/4.3.0/Android/Release/Yodo1MasSdk-4.3.0.zip)
 
 #### Import the iOS SDK into the project
 
