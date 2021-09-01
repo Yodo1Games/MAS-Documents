@@ -56,8 +56,8 @@ open App.xcworkspace
 
 #### Download SDK
 
-- [Yodo1MasLite](https://mas-artifacts.yodo1.com/4.3.0-beta-03/iOS/Pre/Yodo1MasLite.zip) 
-- [Yodo1MasFull](https://mas-artifacts.yodo1.com/4.3.0-beta-03/iOS/Pre/Yodo1MasFull.zip) 
+- [Yodo1MasLite](https://mas-artifacts.yodo1.com/4.3.0/iOS/Release/Yodo1MasLite-4.3.0.zip) 
+- [Yodo1MasFull](https://mas-artifacts.yodo1.com/4.3.03/iOS/Release/Yodo1MasFull-4.3.0.zip) 
 
 #### Import the iOS SDK into the project
 
