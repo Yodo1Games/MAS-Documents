@@ -10,7 +10,7 @@ If you have not integrated, please read the following documents
 
 ## The Integration Steps
 
-### 1. Download [Unity Plugin 4.2.2](https://mas-artifacts.yodo1.com/4.2.2/Unity/Release/Rivendell-4.2.2-Full.unitypackage) Or Google Families Policy Edition [Unity Plugin 4.2.2](https://mas-artifacts.yodo1.com/4.2.2/Unity/Release/Rivendell-4.2.2-Family.unitypackage)
+### 1. Download [Unity Plugin 4.3.0](https://mas-artifacts.yodo1.com/4.3.0/Unity/Release/Rivendell-4.3.0-Full.unitypackage) Or Google Families Policy Edition [Unity Plugin 4.3.0](https://mas-artifacts.yodo1.com/4.3.0/Unity/Release/Rivendell-4.3.0-Family.unitypackage)
 
 > * MAS supports Unity 2017.4.37f1+ LTS version, 2018.4.30f1+ LTS version, 2019.41f18+ LTS version, 2020 all version and above.
 > * [Jetifier](https://developer.android.com/jetpack/androidx/releases/jetifier) is required for Android builds and can be enabled by selecting ***Assets > External Dependency Manager > Android Resolver > Settings > Use Jetifier***
@@ -94,6 +94,31 @@ Please comply with all legal frameworks that apply to your game and its users. Y
 * [GDPR](privacy-gdpr.md)
 * [COPPA](privacy-coppa.md)
 * [CCPA](privacy-ccpa.md)
+
+Or, you can enable the built-in privacy compliance dialog in the SDK to collect user information:
+
+<img src="./../resource/privacy-dialog.png" style="zoom:50%;" />
+
+1. Enable (Please call before initialization)
+```c#
+    Yodo1AdBuildConfig config = new Yodo1AdBuildConfig()
+        .enableUserPrivacyDialog(true); // default value is false
+    Yodo1U3dMas.SetAdBuildConfig(config);
+```
+2. Custom user agreement
+```c#
+    Yodo1AdBuildConfig config = new Yodo1AdBuildConfig()
+        .enableUserPrivacyDialog(true)
+        .userAgreementUrl("https://gamepolicy.yodo1.com/terms_of_Service_en.html");
+    Yodo1U3dMas.SetAdBuildConfig(config);
+```
+3. Custom privacy policy 
+```c#
+    Yodo1AdBuildConfig config = new Yodo1AdBuildConfig()
+        .enableUserPrivacyDialog(true)
+        .privacyPolicyUrl("ttps://gamepolicy.yodo1.com/privacy_policy_en.html");
+    Yodo1U3dMas.SetAdBuildConfig(config);
+```
 
 <font color=red>IMPORTANT!</font> Failure to comply with these frameworks can lead the Apple App Store and/or Google Play Store rejecting your game, as well as a negative impact of your game's monetization.
 

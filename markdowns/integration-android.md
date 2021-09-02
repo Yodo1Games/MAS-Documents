@@ -32,13 +32,13 @@ maven { url "https://sdk.tapjoy.com/" }
 #### 2.1 Add a Gradle dependency
 
 ```groovy
-implementation 'com.yodo1.mas:full:4.2.2'
+implementation 'com.yodo1.mas:full:4.3.0'
 ```
 
 If you need to comply with Google Family Policy:
 
 ```groovy
-implementation 'com.yodo1.mas:google:4.2.2'
+implementation 'com.yodo1.mas:google:4.3.0'
 ```
 
 #### 2.2 Add the `compileOptions` property to the `Android` section
@@ -141,6 +141,35 @@ Please comply with all legal frameworks that apply to your game and its users. Y
 * [GDPR](privacy-gdpr.md)
 * [COPPA](privacy-coppa.md)
 * [CCPA](privacy-ccpa.md)
+
+
+Or, you can enable the built-in privacy compliance dialog in the SDK to collect user information:
+
+<img src="./../resource/privacy-dialog.png" style="zoom:50%;" />
+
+1. Enable (Please call before initialization)
+```java
+    Yodo1MasAdBuildConfig config = new Yodo1MasAdBuildConfig.Builder()
+                .enableUserPrivacyDialog(true) // default value is false
+                .build();
+    Yodo1Mas.getInstance().setAdBuildConfig(config);
+```
+2. Custom user agreement
+```java
+    Yodo1MasAdBuildConfig config = new Yodo1MasAdBuildConfig.Builder()
+                .enableUserPrivacyDialog(true)
+                .userAgreementUrl("https://gamepolicy.yodo1.com/terms_of_Service_en.html")
+                .build();
+    Yodo1Mas.getInstance().setAdBuildConfig(config);
+```
+3. Custom privacy policy 
+```java
+    Yodo1MasAdBuildConfig config = new Yodo1MasAdBuildConfig.Builder()
+                .enableUserPrivacyDialog(true)
+                .privacyPolicyUrl("https://gamepolicy.yodo1.com/privacy_policy_en.html")
+                .build();
+    Yodo1Mas.getInstance().setAdBuildConfig(config);
+```
 
 ### 9. Initialize the SDK
 Initialize the SDK in the `onCreate` method of `Activity`
