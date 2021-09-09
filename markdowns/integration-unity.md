@@ -109,14 +109,14 @@ Or, you can enable the built-in privacy compliance dialog in the SDK to collect 
 ```c#
     Yodo1AdBuildConfig config = new Yodo1AdBuildConfig()
         .enableUserPrivacyDialog(true)
-        .userAgreementUrl("https://gamepolicy.yodo1.com/terms_of_Service_en.html");
+        .userAgreementUrl("Your user agreement url");
     Yodo1U3dMas.SetAdBuildConfig(config);
 ```
 3. Custom privacy policy 
 ```c#
     Yodo1AdBuildConfig config = new Yodo1AdBuildConfig()
         .enableUserPrivacyDialog(true)
-        .privacyPolicyUrl("ttps://gamepolicy.yodo1.com/privacy_policy_en.html");
+        .privacyPolicyUrl("Your privacy policy url");
     Yodo1U3dMas.SetAdBuildConfig(config);
 ```
 
