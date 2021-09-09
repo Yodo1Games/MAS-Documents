@@ -158,7 +158,7 @@ Or, you can enable the built-in privacy compliance dialog in the SDK to collect 
 ```java
     Yodo1MasAdBuildConfig config = new Yodo1MasAdBuildConfig.Builder()
                 .enableUserPrivacyDialog(true)
-                .userAgreementUrl("https://gamepolicy.yodo1.com/terms_of_Service_en.html")
+                .userAgreementUrl("Your user agreement url")
                 .build();
     Yodo1Mas.getInstance().setAdBuildConfig(config);
 ```
@@ -166,7 +166,7 @@ Or, you can enable the built-in privacy compliance dialog in the SDK to collect 
 ```java
     Yodo1MasAdBuildConfig config = new Yodo1MasAdBuildConfig.Builder()
                 .enableUserPrivacyDialog(true)
-                .privacyPolicyUrl("https://gamepolicy.yodo1.com/privacy_policy_en.html")
+                .privacyPolicyUrl("Your privacy policy url")
                 .build();
     Yodo1Mas.getInstance().setAdBuildConfig(config);
 ```
