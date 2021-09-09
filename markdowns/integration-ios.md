@@ -640,14 +640,14 @@ Or, you can enable the built-in privacy compliance dialog in the SDK to collect 
 ```obj-c
     Yodo1MasAdBuildConfig *config = [Yodo1MasAdBuildConfig instance];
     config.enableUserPrivacyDialog = YES;
-    config.userAgreementUrl = @"https://gamepolicy.yodo1.com/terms_of_Service_en.html";
+    config.userAgreementUrl = @"Your user agreement url";
     [[Yodo1Mas sharedInstance] setAdBuildConfig:config];
 ```
 3. Custom privacy policy 
 ```obj-c
     Yodo1MasAdBuildConfig *config = [Yodo1MasAdBuildConfig instance];
     config.enableUserPrivacyDialog = YES;
-    config.privacyPolicyUrl = @"https://gamepolicy.yodo1.com/privacy_policy_en.html";
+    config.privacyPolicyUrl = @"Your privacy policy url";
     [[Yodo1Mas sharedInstance] setAdBuildConfig:config];
 ```
 
