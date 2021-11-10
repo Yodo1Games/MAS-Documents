@@ -451,6 +451,163 @@ Simply add the placement name as a string after the positioning and offset.
 Yodo1U3dMas.ShowBannerAd("Placement_Name");
 ```
 
+## Banner(V2) Integration
+
+### 1. Create a Yodo1U3dBannerAdView
+
+The first step toward displaying a banner is to create a **Yodo1U3dBannerAdView** object in a C# script attached to a GameObject.
+
+```c#
+using System;
+using UnityEngine;
+using Yodo1.MAS;
+...
+public class BannerSampleV2 : MonoBehaviour
+{
+    private Yodo1U3dBannerAdView bannerAdView;
+    ...
+    public void Start()
+    {
+		// Initialize the MAS SDK.
+		Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => { });
+		Yodo1U3dMas.InitializeSdk();
+		 
+		this.RequestBanner();
+    }
+
+    private void RequestBanner()
+    {
+        // Create a 320x50 banner at top of the screen
+        bannerAdView = new Yodo1U3dBannerAdView(Yodo1U3dBannerAdSize.Banner, Yodo1U3dBannerAdPosition.BannerTop | Yodo1U3dBannerAdPosition.BannerHorizontalCenter);
+    }
+}
+```
+
+The constructor for a `Yodo1U3dBannerAdView` has the following parameters:
+
+* `Yodo1U3dBannerAdSize` - The MAS ad size you'd like to use.
+* `Yodo1U3dBannerAdPosition` - The position where the banner ad should be placed. The `Yodo1U3dBannerAdPosition` enum lists the valid ad position values.
+
+### 2. (Optional) Custom ad position
+For greater control over where a `Yodo1U3dBannerAdView` is placed on screen than what's offered by `Yodo1U3dBannerAdPosition` values, use the `Yodo1U3dBannerAdView` constructor that has x- and y-coordinates as parameters:
+
+```c#
+// Create a 320x50 banner ad at coordinate (0,50) on screen.
+bannerAdView = new Yodo1U3dBannerAdView(Yodo1U3dBannerAdSize.Banner, 0, 50);
+```
+
+The top-left corner of the `Yodo1U3dBannerAdView` will be positioned at the x and y values passed to the constructor, where the origin is the top-left of the screen.
+
+### 3. Load an ad
+
+Once the BannerView is instantiated, the next step is to load an ad. That's done with the loadAd() method in the BannerView class.
+
+Here's an example that shows how to load an ad:
+
+```c#
+...
+    private void RequestBanner()
+    {
+        // Create a 320x50 banner at top of the screen
+        bannerAdView = new Yodo1U3dBannerAdView(Yodo1U3dBannerAdSize.Banner, Yodo1U3dBannerAdPosition.BannerTop | Yodo1U3dBannerAdPosition.BannerHorizontalCenter);
+
+        // Load banner ads, the banner ad will be displayed automatically after loaded
+        bannerAdView.LoadAd();
+    }
+...
+```
+
+That's it! Your app is now ready to display banner ads from MAS.
+
+### 4. Ad events
+
+To further customize the behavior of your ad, you can hook into a number of events in the ad's lifecycle: loading, opening, closing, and so on.
+
+```c#
+...
+using System;
+using UnityEngine;
+using Yodo1.MAS;
+...
+public class BannerSampleV2 : MonoBehaviour
+{
+    private Yodo1U3dBannerAdView bannerAdView;
+
+    public void Start()
+    {
+		 // Initialize the MAS SDK.
+		 Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => { });
+		 Yodo1U3dMas.InitializeSdk();
+		
+        this.RequestBanner();
+    }
+
+    private void RequestBanner()
+    {
+		  // Clean up banner before reusing
+        if (bannerAdView != null)
+        {
+            bannerAdView.Destroy();
+        }
+
+    	 // Create a 320x50 banner at top of the screen
+        bannerAdView = new Yodo1U3dBannerAdView(Yodo1U3dBannerAdSize.Banner, Yodo1U3dBannerAdPosition.BannerTop | Yodo1U3dBannerAdPosition.BannerHorizontalCenter);
+
+		 // Ad Events
+        bannerAdView.OnAdLoadedEvent += OnBannerAdLoadedEvent;
+        bannerAdView.OnAdFailedToLoadEvent += OnBannerAdFailedToLoadEvent;
+        bannerAdView.OnAdOpenedEvent += OnBannerAdOpenedEvent;
+        bannerAdView.OnAdFailedToOpenEvent += OnBannerAdFailedToOpenEvent;
+        bannerAdView.OnAdClosedEvent += OnBannerAdClosedEvent;
+
+        // Load banner ads, the banner ad will be displayed automatically after loaded
+        bannerAdView.LoadAd();
+    }
+
+    private void OnBannerAdLoadedEvent(Yodo1U3dBannerAdView adView)
+    {
+        // Banner ad is ready to be shown.
+        Debug.Log("[Yodo1 Mas] OnBannerAdLoadedEvent event received");
+    }
+
+    private void OnBannerAdFailedToLoadEvent(Yodo1U3dBannerAdView adView, Yodo1U3dAdError adError)
+    {
+        Debug.Log("[Yodo1 Mas] OnBannerAdFailedToLoadEvent event received with error: " + adError.ToString());
+    }
+
+    private void OnBannerAdOpenedEvent(Yodo1U3dBannerAdView adView)
+    {
+        Debug.Log("[Yodo1 Mas] OnBannerAdOpenedEvent event received");
+    }
+
+    private void OnBannerAdFailedToOpenEvent(Yodo1U3dBannerAdView adView, Yodo1U3dAdError adError)
+    {
+        Debug.Log("[Yodo1 Mas] OnBannerAdFailedToOpenEvent event received with error: " + adError.ToString());
+    }
+
+    private void OnBannerAdClosedEvent(Yodo1U3dBannerAdView adView)
+    {
+        Debug.Log("[Yodo1 Mas] OnBannerAdClosedEvent event received");
+    }
+}
+```
+
+### 5. Clean up banner ads
+
+When you are finished with a BannerView, make sure to call the Destroy() method before dropping your reference to it:
+
+```c#
+bannerAdView.Destroy();
+```
+
+### 6. Create a Banner Placement
+
+Simply add the placement name as a string in the parentheses.
+
+```c#
+bannerAdView.SetAdPlacement("Placement_Name")
+```
+
 ## Interstitial Integration
 ### 1. Set the interstitial ad delegate method
 ```c#
