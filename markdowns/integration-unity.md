@@ -14,7 +14,7 @@ If you have not integrated, please read the following documents
 
 > * MAS supports Unity 2017.4.37f1+ LTS version, 2018.4.30f1+ LTS version, 2019.41f18+ LTS version, 2020 all version and above.
 > * [Jetifier](https://developer.android.com/jetpack/androidx/releases/jetifier) is required for Android builds and can be enabled by selecting ***Assets > External Dependency Manager > Android Resolver > Settings > Use Jetifier***
-> * `CocoaPods` is required for iOS builds and can be installed following the instructions [here](https://guides.cocoapods.org/using/getting-started.html#getting-started), please use version 1。10.0 and above.
+> * `CocoaPods` is required for iOS builds and can be installed following the instructions [here](https://guides.cocoapods.org/using/getting-started.html#getting-started), please use version 1.10.0 and above.
 > * `Xcode 13+` is required for iOS 15, please make sure your xcode is lastest version.
 > * The Unity plugin contains Sample code. The path is `/Assets/Yodo1/MAS/Sample`</br>
 
@@ -100,19 +100,24 @@ Or, you can enable the built-in privacy compliance dialog in the SDK to collect 
 <img src="./../resource/privacy-dialog.png" style="zoom:50%;" />
 
 1. Enable (Please call before initialization)
+
 ```c#
     Yodo1AdBuildConfig config = new Yodo1AdBuildConfig()
         .enableUserPrivacyDialog(true); // default value is false
     Yodo1U3dMas.SetAdBuildConfig(config);
 ```
+
 2. Custom user agreement
+
 ```c#
     Yodo1AdBuildConfig config = new Yodo1AdBuildConfig()
         .enableUserPrivacyDialog(true)
         .userAgreementUrl("Your user agreement url");
     Yodo1U3dMas.SetAdBuildConfig(config);
 ```
-3. Custom privacy policy 
+
+3. Custom privacy policy
+ 
 ```c#
     Yodo1AdBuildConfig config = new Yodo1AdBuildConfig()
         .enableUserPrivacyDialog(true)
@@ -380,104 +385,72 @@ public static ** valueOf(java.lang.String);
 -keep interface com.uc.crashsdk.** { *; } 
 ```
 
-### 8. AdMob Android Manifest Merging Errors
-The AdMob SDK use the `<queries>` element in their bundled Android Manifest files. If you are on an incompatible version of the Android Gradle plugin, you will encounter the following build errors, respectively:
-
-```xml
-com.android.builder.internal.aapt.v2.Aapt2Exception: Android resource linking failed
-error: unexpected element <queries> found in <manifest>.
+## Banner Integration
+### 1. Set the banner ad delegate method
+```c#
+Yodo1U3dMas.SetBannerAdDelegate((Yodo1U3dAdEvent adEvent, Yodo1U3dAdError error) => {
+    Debug.Log("[Yodo1 Mas] BannerdDelegate:" + adEvent.ToString() + "\n" + error.ToString());
+    switch (adEvent)
+    {
+        case Yodo1U3dAdEvent.AdClosed:
+            Debug.Log("[Yodo1 Mas] Banner ad has been closed.");
+            break;
+        case Yodo1U3dAdEvent.AdOpened:
+            Debug.Log("[Yodo1 Mas] Banner ad has been shown.");
+            break;
+        case Yodo1U3dAdEvent.AdError:
+            Debug.Log("[Yodo1 Mas] Banner ad error, " + error.ToString());
+            break;
+    }
+});
 ```
 
-You will need to upgrade to one of the following versions of the Android Gradle plugin that supports it:
+### 2. Show banner ad
 
-| **Current Android Gradle Plugin Version** | **Supported Android Gradle Plugin Version** |
-|  :-------------------------------------:  | :-----------------------------------------: |
-|    4.1.*                                  |            Already Supported                |
-|    4.0.*                                  |            4.0.1                            |
-|    3.6.*                                  |            3.6.4                            |
-|    3.5.*                                  |            3.5.4                            |
-|    3.4.*                                  |            3.4.3                            |
-|    3.3.*                                  |            3.3.3                            |
+The method using the default parameters, align: `Yodo1U3dBannerAlign.BannerBottom | Yodo1U3dBannerAlign.BannerHorizontalCenter` and offset(X: 0,Y: 0)
 
-To update the Gradle Plugin version to a compatible one, please enable the custom base Gradle template by selecting **Edit > Project Settings > Android tab > Publisher Settings > Custom Base Gradle Template**.
-
-The template will be located at `Assets/Plugins/Android/mainTemplate.gradle` for Unity 2019.2 or below and `Assets/Plugins/Android/baseProjectTemplate.gradle` for Unity 2019.3 or above. Then update the below line with the appropriate version:
-
-```java
-classpath com.android.tools.build:gradle:x.x.x
+```c#
+Yodo1U3dMas.ShowBannerAd();
 ```
 
-If you are on Unity 2017.4 or below, please ensure that you are on at least 2017.4.40 which uses a compatible version of the Gradle Plugin by default.
+### 3. Set Banner Position
 
-Detailed steps for different versions of Unity can be found [here](android-manifest-merging-errors-queries.md).
+You can choose the banner position (bottom or top) by creating an in variable in the following way:
 
-### 9. Upgrading Firebase
+```c#
+//for banner on bottom
+int align = Yodo1U3dBannerAlign.BannerBottom; 
+//for banner on top
+int align = Yodo1U3dBannerAlign.BannerTop; 
 
-If you are using Firebase, please upgrade to Firebase 7.0.0 or above. Lower versions will not be compatible with AdMob, as MAS uses the most updated version of Admob. Admob requires and a version of Firebase that matches the Admob version. 
-
-Note: This update will also improve your general SDK integration process for long-term
-
-If Firebase 7.0.0 is not upgraded and there is a conflict when building android, the conflict as below:
-
-![](./../resource/conflict-firebase.png)
-
-```java
-Duplicate calss com.google.android.gms.internal.measurement.zzjp found in modules classes.jar
-(com.google.android.gms:play-services-measurement-base:17.5.0) and classes.jar
-(com.google.android.gms:play-services-measurement-impl:17.2.0)
+Yodo1U3dMas.ShowBannerAd(align);
 ```
 
-You can handle the conflict in the following solution
+### 4. Set Banner Offset
 
-* Open the `mainTemplate.gradle` file in the `Assets/Plugins/Android` directory
-* Change specified content, {MAS\_SDK\_VERSION} is the SDK version of MAS, e.g. 4.2.0</br>
-	Before
-	
-	``` groovy
-	implementation 'com.yodo1.mas:google:{MAS_SDK_VERSION}'
-	```
+You can customize the banner offset for avoid notch or camera holes for example using the next code:
 
-	After
-	
-	``` groovy
-	implementation('com.yodo1.mas:google:{MAS_SDK_VERSION}') {
-        exclude group: 'com.google.android.gms', module: 'play-services-measurement'
-        exclude group: 'com.google.android.gms', module: 'play-services-measurement-sdk-api'
-	}
-	```
-	
+```c#
+int align = Yodo1U3dBannerAlign.BannerTop | Yodo1U3dBannerAlign.BannerHorizontalCenter;
+int offsetX = 10; // offsetX > 0, the banner will move to the right. offsetX < 0, the banner will move to the left. if align = Yodo1Mas.BannerLeft, offsetX < 0 is invalid (Only Android)
+int offsetY = 10; // offsetY > 0, the banner will move to the bottom. offsetY < 0, the banner will move to the top. if align = Yodo1Mas.BannerTop, offsetY < 0 is invalid(Only Android)
+Yodo1U3dMas.ShowBannerAd(align, offsetX, offsetY);
+```
 
-### 10. Remove `user_frameworks!`
+### 5. Dismiss banner ad
+```c#
+Yodo1U3dMas.DismissBannerAd();
 
-![ios-remove-use-frameworks-01](./../resource/ios-remove-use-frameworks-01.png)
+bool destroy = false; // if destroy == true, the ads displayed in the next call to showBanner are different. if destroy == false, the ads displayed in the next call to showBanner are same
+Yodo1U3dMas.DismissBannerAd(destroy);
+```
 
+### 6. Create a Banner Placement
+Simply add the placement name as a string after the positioning and offset.
 
-
-Do not  check 'Add use_frameworks!'  and 'Always add the main target to Podfile', But If you use the Facebook sharing function or login function, please check 'Add use_frameworks!' and 'Always add the main target to Podfile'.
-
-![ios-remove-use-frameworks-02](./../resource/ios-remove-use-frameworks-02.png)
-
-### 11. How can you check if MAS is in your apk?
-
-1) If MAS is present, your Unity project will have the following structure:
-![](./../resource/check-unity-1.png)
-
-2) Check Unity integration mode
-
-2.1)If you're using gradle then you will find reference `'com.yodo1.mas:full:versioncode'` or `'com.yodo1.mas:google:versioncode'` in the file at the end of .gradle in the `Assets/Plugins/Android` folder
-![](./../resource/check-main-template.png)
-
-2.2）If you're using Android Resolver you will find the file `com.yodo1.mas:standard:version.aar` or `com.yodo1.mas:google:version.aar` in the `Assets/Plugins/Android` folder
-![](./../resource/check-unity-2.png)
-
-3) If MAS is present, your APK will have the package com.yodo1.advert in one of the .dex files as the following structure:
-> Drag apk file to AndroidStudio, or you can follow this guid [Analyze your build with APK Analyzer](https://developer.android.com/studio/build/apk-analyzer)
-
-![](./../resource/check-apk.png)
-
-4) The MAS initialization log will be in the console:
-![](./../resource/check-logcat.png)
-
+```
+Yodo1U3dMas.ShowBannerAd("Placement_Name");
+```
 
 ## Interstitial Integration
 ### 1. Set the interstitial ad delegate method
@@ -508,6 +481,14 @@ bool isLoaded = Yodo1U3dMas.IsInterstitialAdLoaded();
 
 ```c#
 Yodo1U3dMas.ShowInterstitialAd();
+```
+
+### 4. Create a Interstitial Placement
+
+Simply add the placement name as a string in the parentheses.
+
+```
+Yodo1U3dMas.ShowInterstitialAd("Placement_Name");
 ```
 
 ## Rewarded Video Ad Integration
@@ -542,82 +523,11 @@ bool isLoaded = Yodo1U3dMas.IsRewardedAdLoaded();
 ```c#
 Yodo1U3dMas.ShowRewardedAd();
 ```
-## Banner Integration
-### 1. Set the banner ad delegate method
-```c#
-Yodo1U3dMas.SetBannerAdDelegate((Yodo1U3dAdEvent adEvent, Yodo1U3dAdError error) => {
-    Debug.Log("[Yodo1 Mas] BannerdDelegate:" + adEvent.ToString() + "\n" + error.ToString());
-    switch (adEvent)
-    {
-        case Yodo1U3dAdEvent.AdClosed:
-            Debug.Log("[Yodo1 Mas] Banner ad has been closed.");
-            break;
-        case Yodo1U3dAdEvent.AdOpened:
-            Debug.Log("[Yodo1 Mas] Banner ad has been shown.");
-            break;
-        case Yodo1U3dAdEvent.AdError:
-            Debug.Log("[Yodo1 Mas] Banner ad error, " + error.ToString());
-            break;
-    }
-});
+
+### 4. Create a Rewarded Video Placement
+
+Simply add the placement name as a string into the parentheses.
+
 ```
-### 2. Check Banner Ad Loading Status
-```c#
-bool isLoaded = Yodo1U3dMas.IsBannerAdLoaded();
-```
-
-### 3. Show banner ad
-
-The method using the default parameters, align: `Yodo1U3dBannerAlign.BannerBottom | Yodo1U3dBannerAlign.BannerHorizontalCenter` and offset(X: 0,Y: 0)
-
-```c#
-Yodo1U3dMas.ShowBannerAd();
-```
-
-The method using the default offset(X: 0, Y: 0), you need to customize the banner alignment.
-
-```c#
-int align = Yodo1U3dBannerAlign.BannerTop | Yodo1U3dBannerAlign.BannerHorizontalCenter;
-Yodo1U3dMas.ShowBannerAd(align);
-```
-
-The method need to customize the banner alignment and offset.
-
-```c#
-int align = Yodo1U3dBannerAlign.BannerTop | Yodo1U3dBannerAlign.BannerHorizontalCenter;
-int offsetX = 10; // offsetX > 0, the banner will move to the right. offsetX < 0, the banner will move to the left. if align = Yodo1Mas.BannerLeft, offsetX < 0 is invalid (Only Android)
-int offsetY = 10; // offsetY > 0, the banner will move to the bottom. offsetY < 0, the banner will move to the top. if align = Yodo1Mas.BannerTop, offsetY < 0 is invalid(Only Android)
-Yodo1U3dMas.ShowBannerAd(align, offsetX, offsetY);
-```
-
-### 4. Dismiss banner ad
-```c#
-Yodo1U3dMas.DismissBannerAd();
-
-bool destroy = false; // if destroy == true, the ads displayed in the next call to showBanner are different. if destroy == false, the ads displayed in the next call to showBanner are same
-Yodo1U3dMas.DismissBannerAd(destroy);
-```
-
-## Advanced Settings
-### Ad Placements
-> MAS SDK gives you the ability to set a placement name(e.g. MainMenu, Upgrade_Level etc)。
-
-Below are code snippets on how to set placements for banners, interstitials, and rewarded ads.
-
-**Interstitial Ads**</br>
-
-```c#
-Yodo1U3dMas.ShowRewardedAd("MY_INTERSTITIAL_PLACEMENT");
-```
-
-**Rewarded Video Ads**</br>
-
-```c#
-Yodo1U3dMas.ShowInterstitialAd("MY_REWARDED_PLACEMENT");
-```
-
-**Banner Ads**</br>
-
-```c#
-Yodo1U3dMas.ShowBannerAd("MY_BANNER_PLACEMENT");
+Yodo1U3dMas.ShowRewardedAd("Placement_Name");
 ```
