@@ -10,12 +10,12 @@ If you have not integrated, please read the following documents
 
 ## The Integration Steps
 
-### 1. Download [Unity Plugin 4.3.1](https://mas-artifacts.yodo1.com/4.3.1/Unity/Release/Rivendell-4.3.1-Full.unitypackage) Or Google Families Policy Edition [Unity Plugin 4.3.1](https://mas-artifacts.yodo1.com/4.3.1/Unity/Release/Rivendell-4.3.1-Family.unitypackage)
+### 1. Download [Unity Plugin 4.3.2](https://mas-artifacts.yodo1.com/4.3.2/Unity/Release/Rivendell-4.3.2-Full.unitypackage) Or Google Families Policy Edition [Unity Plugin 4.3.2](https://mas-artifacts.yodo1.com/4.3.2/Unity/Release/Rivendell-4.3.2-Family.unitypackage)
 
 > * MAS supports Unity 2017.4.37f1+ LTS version, 2018.4.30f1+ LTS version, 2019.41f18+ LTS version, 2020 all version and above.
 > * [Jetifier](https://developer.android.com/jetpack/androidx/releases/jetifier) is required for Android builds and can be enabled by selecting ***Assets > External Dependency Manager > Android Resolver > Settings > Use Jetifier***
-> * `CocoaPods` is required for iOS builds and can be installed following the instructions [here](https://guides.cocoapods.org/using/getting-started.html#getting-started), please use version 1.8 and above.
-> * `Xcode12+` is required for iOS14, please make sure your xcode is lastest version.
+> * `CocoaPods` is required for iOS builds and can be installed following the instructions [here](https://guides.cocoapods.org/using/getting-started.html#getting-started), please use version 1。10.0 and above.
+> * `Xcode 13+` is required for iOS 15, please make sure your xcode is lastest version.
 > * The Unity plugin contains Sample code. The path is `/Assets/Yodo1/MAS/Sample`</br>
 
 Please upgrade to Firebase 7.0.0 and above if you are using Firebase, lower Firebase will not be probably compatible with AdMob since we are using the most updated Admob. According to Admob, Firebase needs to be updated to match the Admob version. And this update will also improve your general SDK integration process for long-term.

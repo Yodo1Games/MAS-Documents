@@ -8,9 +8,9 @@ If it is v3 version, please read [upgrade document](upgrade-guide-ios.md)
 
 If you have not integrated, please read the following documents
 
->* iOS14 requires `Xcode 12+`. Please make sure you are using the latest version of Xcode.
->* MAS supports iOS 9.0 and above
->* The easiest way is to use `CocoaPods`(Please use version `1.8` and above), If you are just starting out with 'CocoaPods', please refer to its [official documentation](https://guides.cocoapods.org/using/using-cocoapods) to study how to create and use it `Podfile`
+>* iOS 15 requires `Xcode 13+`. Please make sure you are using the latest version of Xcode.
+>* MAS supports iOS 10.0 and above
+>* The easiest way is to use `CocoaPods`(Please use version `1.10.0` and above), If you are just starting out with 'CocoaPods', please refer to its [official documentation](https://guides.cocoapods.org/using/using-cocoapods) to study how to create and use it `Podfile`
 
 Please upgrade to Firebase 7.0.0 and above if you are using Firebase, lower Firebase will not be probably compatible with AdMob since we are using the most updated Admob. According to Admob, Firebase needs to be updated to match the Admob version. And this update will also improve your general SDK integration process for long-term
 
@@ -33,7 +33,7 @@ source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cd
 source 'https://github.com/Yodo1Games/MAS-Spec.git'
 source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 
-pod 'Yodo1MasFull', '4.3.1'
+pod 'Yodo1MasFull', '4.3.2'
 ```
 
 Execute the following command in `Terminal` :
