@@ -447,7 +447,7 @@ Yodo1U3dMas.DismissBannerAd(destroy);
 ### 6. Create a Banner Placement
 Simply add the placement name as a string after the positioning and offset.
 
-```
+```c#
 Yodo1U3dMas.ShowBannerAd("Placement_Name");
 ```
 
@@ -643,7 +643,7 @@ Yodo1U3dMas.ShowInterstitialAd();
 
 Simply add the placement name as a string in the parentheses.
 
-```
+```c#
 Yodo1U3dMas.ShowInterstitialAd("Placement_Name");
 ```
 
@@ -684,6 +684,6 @@ Yodo1U3dMas.ShowRewardedAd();
 
 Simply add the placement name as a string into the parentheses.
 
-```
+```c#
 Yodo1U3dMas.ShowRewardedAd("Placement_Name");
 ```
