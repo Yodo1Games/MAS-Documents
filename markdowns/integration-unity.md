@@ -536,8 +536,8 @@ public class BannerSampleV2 : MonoBehaviour
     public void Start()
     {
 		 // Initialize the MAS SDK.
-		 Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => { });
-		 Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => { });
+        Yodo1U3dMas.InitializeSdk();
 		
         this.RequestBanner();
     }
