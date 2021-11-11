@@ -571,10 +571,10 @@ class MainActivity : AppCompatActivity() {
 
         Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
         	override fun onMasInitSuccessful() {    
-        	Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
+        		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
         	} 
         	override fun onMasInitFailed(error: Yodo1MasError) {
-        	Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()  
+        		Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()  
         	}
         })
 
@@ -669,14 +669,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-	     Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
-			  override fun onMasInitSuccessful() {    
-			    Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
-			  } 
-			  override fun onMasInitFailed(error: Yodo1MasError) {
-			    Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()  
-			  }
-		  })
+        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        	override fun onMasInitSuccessful() {    
+        		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
+        	} 
+        	override fun onMasInitFailed(error: Yodo1MasError) {
+        		Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()  
+        	}
+        })
 
         bannerAdView = findViewById(R.id.yodo1_mas_banner)
         bannerAdView.setAdListener(object : Yodo1MasBannerAdListener {
