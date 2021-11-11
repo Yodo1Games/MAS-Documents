@@ -203,6 +203,7 @@ If you're using ProGuard with the MAS SDK, add the following code to your ProGua
 -keep class com.yodo1.mas.ads.** {*;}
 -keep class com.yodo1.mas.error.** { *; }
 -keep class com.yodo1.mas.event.** { *; }
+-keep class com.yodo1.mas.banner.** { *; }
 -keep public class * extends com.yodo1.mas.mediation.Yodo1MasAdapterBase
 
 -keep class com.google.ads.** { *; }
