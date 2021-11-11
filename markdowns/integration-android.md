@@ -569,14 +569,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-	     Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
-			  override fun onMasInitSuccessful() {    
-			    Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
-			  } 
-			  override fun onMasInitFailed(error: Yodo1MasError) {
-			    Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()  
-			  }
-		  })
+        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        	override fun onMasInitSuccessful() {    
+        	Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
+        	} 
+        	override fun onMasInitFailed(error: Yodo1MasError) {
+        	Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()  
+        	}
+        })
 
         bannerAdView = findViewById(R.id.yodo1_mas_banner)
         bannerAdView.loadAd()
@@ -597,6 +597,7 @@ package ...
 
 import ...
 import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.banner.Yodo1MasBannerAdListener;
 import com.yodo1.mas.banner.Yodo1MasBannerAdView;
 
 public class MainActivity extends AppCompatActivity {
@@ -657,6 +658,7 @@ package ...
 
 import ...
 import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.banner.Yodo1MasBannerAdListener;
 import com.yodo1.mas.banner.Yodo1MasBannerAdView;
 
 class MainActivity : AppCompatActivity() {
