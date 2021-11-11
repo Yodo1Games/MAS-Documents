@@ -175,6 +175,7 @@ If you need to use Proguard to obfuscate the code, make sure you don't obfuscate
 -keep class com.yodo1.mas.ads.** {*;}
 -keep class com.yodo1.mas.error.** { *; }
 -keep class com.yodo1.mas.event.** { *; }
+-keep class com.yodo1.mas.banner.** { *; }
 -keep public class * extends com.yodo1.mas.mediation.Yodo1MasAdapterBase
 
 -keep class com.google.ads.** { *; }
