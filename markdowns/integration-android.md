@@ -479,7 +479,7 @@ The first step toward displaying a banner is to place `Yodo1MasBannerAdView` in 
 		android:id="@+id/yodo1_mas_banner"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_gravity="left|top"
+		android:layout_gravity="center_horizontal|top"
 		masads:adSize="Banner" />
 ...
 ```
