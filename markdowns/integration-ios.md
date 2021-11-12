@@ -787,6 +787,238 @@ CGPoint point = CGPointMake(10.0f, 10.0f);
 BOOL destroy = NO; // if destroy == YES, the ads displayed in the next call to showBanner are different. if destroy == NO, the ads displayed in the next call to showBanner are same
 [[Yodo1Mas sharedInstance] dismissBannerAdWithDestroy:destroy];
 ```
+## Banner(V2) Integration
+
+### 1. Init Yodo1MasBannerAdView
+
+For `Objective-C` 
+
+```objective-c
+Yodo1MasBannerAdView *bannerAdView = [[Yodo1MasBannerAdView alloc] init];
+[bannerAdView setAdSize:Yodo1MasBannerAdSizeBanner];
+// TODO: Add bannerAdView to your view hierarchy.
+```
+
+For `Swift`
+
+```swift
+let bannerAdView = Yodo1MasBannerAdView()
+bannerAdView.setAdSize(.banner)
+// TODO: Add bannerAdView to your view hierarchy.
+```
+
+#### Banner sizes
+|  Size in dp   | Description  | Availability | AdSize constant |
+|  :-----------  | :-----------  | :--------------- | :--------------- |
+| 320x50  | Banner | Phones and Tablets | Banner |
+| 320x100  | Large Banner | Phones and Tablets |  LargeBanner |
+| 300x250  | IAB Medium Rectangle | Phones and Tablets |  IABMediumRectangle |
+| Full screen width x Adaptive height | Adaptive banner | Phones and Tablets |  AdaptiveBanner |
+| Screen width x 32/50/90  | Smart banner | Phones and Tablets | SmartBanner |
+
+### 2. Load an ad
+
+Once the `Yodo1MasBannerAdView` is in place, the next step is to load an ad. That's done with the `loadAd()` method in the `Yodo1MasBannerAdView` class.
+
+Here's an example that shows how to load an ad in the `viewDidLoad` method of an `UIViewController`:
+
+For `Objective-C` 
+
+```objective-c
+
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+#import "Yodo1MasBannerAdView.h"
+  
+@interface MainController ()
+  
+@property (nonatomic, strong) Yodo1MasBannerAdView *bannerAdView;
+
+@end
+
+@implementation BannerController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _bannerAdView = [[Yodo1MasBannerAdView alloc] init];
+  [_bannerAdView setAdSize:Yodo1MasBannerAdSizeBanner];
+  [_bannerAdView loadAd];
+	CGSize size = _bannerAdView.intrinsicContentSize;
+  _bannerAdView.frame = CGRectMake((self.view.bounds.size.width - size.width) / 2, self.view.bounds.size.height - size.height, size.width, size.height);
+  [self.view addSubview:_bannerAdView];
+}
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController : UIViewController {
+
+	var bannerAdView: Yodo1MasBannerAdView!
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+    Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+    } fail: { error in
+
+    }
+    bannerAdView = Yodo1MasBannerAdView()
+    bannerAdView.setAdSize(.banner)
+    bannerAdView.loadAd()
+    let size = bannerAdView.intrinsicContentSize
+    bannerAdView.frame = CGRect(x: (self.view.bounds.width - size.width) / 2, y: self.view.bounds.height - size.height, width: size.width, height: size.height)
+    self.view.addSubview(bannerAdView)
+   }
+}
+```
+
+That's it! Your app is now ready to display banner ads.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasBannerAdListener` class.
+
+For `Objective-C` 
+
+```objective-c
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+#import "Yodo1MasBannerAdView.h"
+  
+@interface MainController ()<Yodo1MasBannerAdViewDelegate>
+  
+@property (nonatomic, strong) Yodo1MasBannerAdView *bannerAdView;
+
+@end
+
+@implementation BannerController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _bannerAdView = [[Yodo1MasBannerAdView alloc] init];
+  [_bannerAdView setAdSize:Yodo1MasBannerAdSizeBanner];
+  [_bannerAdView loadAd];
+	CGSize size = _bannerAdView.intrinsicContentSize;
+  _bannerAdView.frame = CGRectMake((self.view.bounds.size.width - size.width) / 2, self.view.bounds.size.height - size.height, size.width, size.height);
+  [self.view addSubview:_bannerAdView];
+}
+
+
+#pragma mark - Yodo1MasBannerAdViewDelegate
+- (void)onBannerAdLoaded:(Yodo1MasBannerAdView *)banner {
+    
+}
+
+- (void)onBannerAdFailedToLoad:(Yodo1MasBannerAdView *)banner withError:(Yodo1MasError *)error {
+    
+}
+
+- (void)onBannerAdOpened:(Yodo1MasBannerAdView *)banner {
+
+}
+
+- (void)onBannerAdFailedToOpen:(Yodo1MasBannerAdView *)banner withError:(Yodo1MasError *)error {
+    
+}
+
+- (void)onBannerAdClosed:(Yodo1MasBannerAdView *)banner {
+
+}
+
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController: UIViewController {
+    var bannerAdView: Yodo1MasBannerAdView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+        } fail: { error in
+            
+        }
+        
+        bannerAdView = Yodo1MasBannerAdView()
+        bannerAdView.setAdSize(.banner)
+        bannerAdView.adDelegate = self
+        bannerAdView.loadAd()
+        let size = bannerAdView.intrinsicContentSize
+        bannerAdView.frame = CGRect(x: (self.view.bounds.width - size.width) / 2, y: self.view.bounds.height - size.height, width: size.width, height: size.height)
+        self.view.addSubview(bannerAdView)
+    }
+}
+
+extension MainController: Yodo1MasBannerAdViewDelegate {
+    // MARK: Yodo1MasBannerAdViewDelegate
+    func onBannerAdLoaded(_ banner: Yodo1MasBannerAdView) {
+        
+    }
+    
+    func onBannerAdFailed(toLoad banner: Yodo1MasBannerAdView, withError error: Yodo1MasError) {
+        
+    }
+    
+    func onBannerAdOpened(_ banner: Yodo1MasBannerAdView) {
+        
+    }
+    
+    func onBannerAdFailed(toOpen banner: Yodo1MasBannerAdView, withError error: Yodo1MasError) {
+        
+    }
+    
+    func onBannerAdClosed(_ banner: Yodo1MasBannerAdView) {
+        
+    }
+    
+}
+```
+
+## Interstitial Integration
+
+### 1. Set the interstitial ad delegate method
+
+```java
+Yodo1Mas.getInstance().setInterstitialListener(new Yodo1Mas.InterstitialListener() {
+    @Override
+    public void onAdOpened(@NonNull Yodo1MasAdEvent event) {
+    }
+
+    @Override
+    public void onAdError(@NonNull Yodo1MasAdEvent event, @NonNull Yodo1MasError error) {
+        
+    }
+
+    @Override
+    public void onAdClosed(@NonNull Yodo1MasAdEvent event) {
+    
+    }
+});      
+```
 
 ## Advanced Settings
 ### Ad Placements
