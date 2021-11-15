@@ -136,13 +136,11 @@ using Yodo1.MAS;
 
 #### 6.2 Sets the initialization delegate method
 ```c#
-Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => {
-    if (success){// Initialize successful
-
-    } else { // Initialize failure
-
+Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{
+    if (success)
+    {
     }
-});
+};
     
 ```
 
@@ -388,21 +386,30 @@ public static ** valueOf(java.lang.String);
 ## Banner Integration
 ### 1. Set the banner ad delegate method
 ```c#
-Yodo1U3dMas.SetBannerAdDelegate((Yodo1U3dAdEvent adEvent, Yodo1U3dAdError error) => {
-    Debug.Log("[Yodo1 Mas] BannerdDelegate:" + adEvent.ToString() + "\n" + error.ToString());
-    switch (adEvent)
-    {
-        case Yodo1U3dAdEvent.AdClosed:
-            Debug.Log("[Yodo1 Mas] Banner ad has been closed.");
-            break;
-        case Yodo1U3dAdEvent.AdOpened:
-            Debug.Log("[Yodo1 Mas] Banner ad has been shown.");
-            break;
-        case Yodo1U3dAdEvent.AdError:
-            Debug.Log("[Yodo1 Mas] Banner ad error, " + error.ToString());
-            break;
-    }
-});
+private void InitializeBannerAds()
+{
+	// Add Events
+    Yodo1U3dMasCallback.Banner.OnAdOpenedEvent += OnBannerAdOpenedEvent;
+    Yodo1U3dMasCallback.Banner.OnAdClosedEvent += OnBannerAdClosedEvent;
+    Yodo1U3dMasCallback.Banner.OnAdErrorEvent += OnBannerAdErrorEvent;
+
+    Yodo1U3dMas.ShowBannerAd();
+}
+
+private void OnBannerAdErrorEvent(Yodo1U3dAdError adError)
+{
+    Debug.Log("[Yodo1 Mas] Banner ad error - " + adError.ToString());
+}
+
+private void OnBannerAdOpenedEvent()
+{
+    Debug.Log("[Yodo1 Mas] Banner ad opened");
+}
+
+private void OnBannerAdClosedEvent()
+{
+    Debug.Log("[Yodo1 Mas] Banner ad closed");
+}
 ```
 
 ### 2. Show banner ad
@@ -599,6 +606,7 @@ When you are finished with a BannerView, make sure to call the Destroy() method 
 
 ```c#
 bannerAdView.Destroy();
+bannerAdView = null;
 ```
 
 ### 6. Create a Banner Placement
@@ -612,22 +620,30 @@ bannerAdView.SetAdPlacement("Placement_Name")
 ## Interstitial Integration
 ### 1. Set the interstitial ad delegate method
 ```c#
-Yodo1U3dMas.SetInterstitialAdDelegate((Yodo1U3dAdEvent adEvent, Yodo1U3dAdError error) => {
-    Debug.Log("[Yodo1 Mas] InterstitialAdDelegate:" + adEvent.ToString() + "\n" + error.ToString());
-    switch (adEvent)
-    {
-        case Yodo1U3dAdEvent.AdClosed:
-            Debug.Log("[Yodo1 Mas] Interstital ad has been closed.");
-            break;
-        case Yodo1U3dAdEvent.AdOpened:
-            Debug.Log("[Yodo1 Mas] Interstital ad has been shown.");
-            break;
-        case Yodo1U3dAdEvent.AdError:
-            Debug.Log("[Yodo1 Mas] Interstital ad error, " + error.ToString());
-            break;
-    }
-});
+private void InitializeInterstitialAds()
+{
+	// Add Events
+    Yodo1U3dMasCallback.Interstitial.OnAdOpenedEvent += OnInterstitialAdOpenedEvent;
+    Yodo1U3dMasCallback.Interstitial.OnAdClosedEvent += OnInterstitialAdClosedEvent;
+    Yodo1U3dMasCallback.Interstitial.OnAdErrorEvent += OnInterstitialAdErorEvent;
+}
+
+private void OnInterstitialAdOpenedEvent()
+{
+    Debug.Log("[Yodo1 Mas] Interstitial ad opened");
+}
+
+private void OnInterstitialAdClosedEvent()
+{
+    Debug.Log("[Yodo1 Mas] Interstitial ad closed");
+}
+
+private void OnInterstitialAdErorEvent(Yodo1U3dAdError adError)
+{
+    Debug.Log("[Yodo1 Mas] Interstitial ad error - " + adError.ToString());
+}
 ```
+
 ### 2. Check Interstitial Ad Loading Status
 
 ```c#
@@ -651,26 +667,36 @@ Yodo1U3dMas.ShowInterstitialAd("Placement_Name");
 ## Rewarded Video Ad Integration
 ### 1. Set the rewarded video ad delegate method
 ```c#
-Yodo1U3dMas.SetRewardedAdDelegate((Yodo1U3dAdEvent adEvent, Yodo1U3dAdError error) => {
-    Debug.Log("[Yodo1 Mas] RewardVideoDelegate:" + adEvent.ToString() + "\n" + error.ToString());
-    switch (adEvent)
-    {
-        case Yodo1U3dAdEvent.AdClosed:
-            Debug.Log("[Yodo1 Mas] Reward video ad has been closed.");
-            break;
-        case Yodo1U3dAdEvent.AdOpened:
-            Debug.Log("[Yodo1 Mas] Reward video ad has shown successful.");
-            break;
-        case Yodo1U3dAdEvent.AdError:
-            Debug.Log("[Yodo1 Mas] Reward video ad error, " + error);
-            break;
-        case Yodo1U3dAdEvent.AdReward:
-            Debug.Log("[Yodo1 Mas] Reward video ad reward, give rewards to the player.");
-            break;
-    }
+private void InitializeRewardedAds()
+{
+	// Add Events
+    Yodo1U3dMasCallback.Rewarded.OnAdOpenedEvent += OnRewardedAdOpenedEvent;
+    Yodo1U3dMasCallback.Rewarded.OnAdClosedEvent += OnRewardedAdClosedEvent;
+    Yodo1U3dMasCallback.Rewarded.OnAdReceivedRewardEvent += OnAdReceivedRewardEvent;
+    Yodo1U3dMasCallback.Rewarded.OnAdErrorEvent += OnRewardedAdErorEvent;
+}
 
-});
+private void OnRewardedAdOpenedEvent()
+{
+    Debug.Log("[Yodo1 Mas] Rewarded ad opened");
+}
+
+private void OnRewardedAdClosedEvent()
+{
+    Debug.Log("[Yodo1 Mas] Rewarded ad closed");
+}
+
+private void OnAdReceivedRewardEvent()
+{
+    Debug.Log("[Yodo1 Mas] Rewarded ad received reward");
+}
+
+private void OnRewardedAdErorEvent(Yodo1U3dAdError adError)
+{
+    Debug.Log("[Yodo1 Mas] Rewarded ad error - " + adError.ToString());
+}
 ```
+
 ### 2. Check Rewarded Video Ad Loading Status
 ```c#
 bool isLoaded = Yodo1U3dMas.IsRewardedAdLoaded();
