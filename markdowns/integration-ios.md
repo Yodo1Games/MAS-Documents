@@ -887,7 +887,7 @@ That's it! Your app is now ready to display banner ads.
 
 ### 3. Ad events
 
-To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasBannerAdListener` class.
+To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasBannerAdViewDelegate`.
 
 For `Objective-C` 
 
@@ -913,6 +913,7 @@ For `Objective-C`
   }];
   
   _bannerAdView = [[Yodo1MasBannerAdView alloc] init];
+  _bannerAdView.adDelegate = self;
   [_bannerAdView setAdSize:Yodo1MasBannerAdSizeBanner];
   [_bannerAdView loadAd];
 	CGSize size = _bannerAdView.intrinsicContentSize;
