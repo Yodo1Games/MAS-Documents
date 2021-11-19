@@ -1,13 +1,5 @@
 # Android Integration
 
-**Before Start**:
-
-Please confirm whether the SDK version you are currently using is v3：
-
-If it is v3 version, please read [upgrade document](upgrade-guide-android.md)
-
-If you have not integrated, please read the following documents
-
 > MAS supports Android version 4.4.+ (Android API level: 19+) and above
 
 ## The Integration Steps
@@ -20,7 +12,7 @@ maven { url "https://android-sdk.is.com" }
 maven { url "https://sdk.tapjoy.com/" }
 ```
 
-If you need to comply with Google Family Policy:
+Use the code bellow if you need to comply with the Google Family Policy.
 
 ```groovy
 mavenCentral()
@@ -28,17 +20,19 @@ maven { url "https://android-sdk.is.com" }
 maven { url "https://sdk.tapjoy.com/" }
 ```
 
+**Note**: If you create your project under Android Studio Arctic Fox, the repositories should be added to settings.gradle
+
 ### 2. Open your app-level `build.gradle` and add the relevant code.
 #### 2.1 Add a Gradle dependency
 
 ```groovy
-implementation 'com.yodo1.mas:full:4.3.2'
+implementation 'com.yodo1.mas:full:4.4.0'
 ```
 
 If you need to comply with Google Family Policy:
 
 ```groovy
-implementation 'com.yodo1.mas:google:4.3.2'
+implementation 'com.yodo1.mas:google:4.4.0'
 ```
 
 #### 2.2 Add the `compileOptions` property to the `Android` section
@@ -143,18 +137,21 @@ Please comply with all legal frameworks that apply to your game and its users. Y
 * [CCPA](privacy-ccpa.md)
 
 
-Or, you can enable the built-in privacy compliance dialog in the SDK to collect user information:
+If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dialog in the SDK to collect user information:
 
 <img src="./../resource/privacy-dialog.png" style="zoom:50%;" />
 
 1. Enable (Please call before initialization)
+
 ```java
     Yodo1MasAdBuildConfig config = new Yodo1MasAdBuildConfig.Builder()
                 .enableUserPrivacyDialog(true) // default value is false
                 .build();
     Yodo1Mas.getInstance().setAdBuildConfig(config);
 ```
+
 2. Custom user agreement
+
 ```java
     Yodo1MasAdBuildConfig config = new Yodo1MasAdBuildConfig.Builder()
                 .enableUserPrivacyDialog(true)
@@ -162,7 +159,9 @@ Or, you can enable the built-in privacy compliance dialog in the SDK to collect 
                 .build();
     Yodo1Mas.getInstance().setAdBuildConfig(config);
 ```
+
 3. Custom privacy policy 
+
 ```java
     Yodo1MasAdBuildConfig config = new Yodo1MasAdBuildConfig.Builder()
                 .enableUserPrivacyDialog(true)
@@ -170,6 +169,8 @@ Or, you can enable the built-in privacy compliance dialog in the SDK to collect 
                 .build();
     Yodo1Mas.getInstance().setAdBuildConfig(config);
 ```
+
+**IMPORTANT**! Failure to comply with these frameworks can lead to **Google Play Store rejecting** your game, as well as a negative impact of your game’s monetization.
 
 ### 9. Initialize the SDK
 Initialize the SDK in the `onCreate` method of `Activity`
@@ -202,6 +203,7 @@ If you're using ProGuard with the MAS SDK, add the following code to your ProGua
 -keep class com.yodo1.mas.ads.** {*;}
 -keep class com.yodo1.mas.error.** { *; }
 -keep class com.yodo1.mas.event.** { *; }
+-keep class com.yodo1.mas.banner.** { *; }
 -keep public class * extends com.yodo1.mas.mediation.Yodo1MasAdapterBase
 
 -keep class com.google.ads.** { *; }
@@ -411,6 +413,309 @@ public static ** valueOf(java.lang.String);
 -keep interface com.uc.crashsdk.** { *; }
 ```
 
+## Banner Integration
+### 1. Set up the banner ad delegate method
+```java
+Yodo1Mas.getInstance().setBannerListener(new Yodo1Mas.BannerListener() {
+    @Override
+    public void onAdOpened(@NonNull Yodo1MasAdEvent event) {
+    
+    }
+
+    @Override
+    public void onAdError(@NonNull Yodo1MasAdEvent event, @NonNull Yodo1MasError error) {
+    
+    }
+
+    @Override
+    public void onAdClosed(@NonNull Yodo1MasAdEvent event) {
+    
+    }
+});
+```
+
+### 2. Show banner ad
+
+The method using the default parameters, align: `Yodo1Mas.BannerBottom | Yodo1Mas.BannerHorizontalCenter` and offset(X: 0,Y: 0)
+
+```java
+Yodo1Mas.getInstance().showBannerAd(MyActivity.this);
+```
+
+The method using the default offset(X: 0, Y: 0), you need to customize the banner alignment.
+
+```java
+int align = Yodo1Mas.BannerTop | Yodo1Mas.BannerHorizontalCenter;
+Yodo1Mas.getInstance().showBannerAd(MyActivity.this, align);
+```
+
+The method need to customize the banner alignment and offset.
+
+```java
+int align = Yodo1Mas.BannerTop | Yodo1Mas.BannerHorizontalCenter;
+int offsetX = 10; //offsetX > 0, the banner will move to the right. offsetX < 0, the banner will move to the left. if align = Yodo1Mas.BannerLeft, offsetX < 0 is invalid
+int offsetY = 10; // offsetY > 0, the banner will move to the bottom. offsetY < 0, the banner will move to the top. if align = Yodo1Mas.BannerTop, offsetY < 0 is invalid
+Yodo1Mas.getInstance().showBannerAd(MyActivity.this, align, offsetX, offsetY);
+```
+
+### 3. Dismiss banner ad
+```java
+Yodo1Mas.getInstance().dismissBannerAd();
+
+boolean destroy = false; // if destroy == true, the ads displayed in the next call to showBanner are different. if destroy == false, the ads displayed in the next call to showBanner are same
+Yodo1Mas.getInstance().dismissBannerAd(destroy);
+```
+
+## Banner(V2) Integration
+
+### 1. Add Yodo1MasBannerAdView to the layout
+
+The first step toward displaying a banner is to place `Yodo1MasBannerAdView` in the layout for the Activity or Fragment in which you'd like to display it. The easiest way to do this is to add one to the corresponding XML layout file. Here's an example that shows an activity's `Yodo1MasBannerAdView`:
+
+```xml
+...
+	<com.yodo1.mas.banner.Yodo1MasBannerAdView 
+		xmlns:masads="http://schemas.android.com/apk/res-auto"
+		android:id="@+id/yodo1_mas_banner"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal|top"
+		masads:adSize="Banner" />
+...
+```
+
+Note the following required attributes:
+
+* masads:adSize - Set this to the ad size you'd like to use.
+
+You can alternatively create `Yodo1MasBannerAdView` programmatically:
+
+For Java
+
+```java
+Yodo1MasBannerAdView bannerAdView = new Yodo1MasBannerAdView(this);
+bannerAdView.setAdSize(Yodo1MasBannerAdSize.Banner);
+// TODO: Add bannerAdView to your view hierarchy.
+```
+
+For Kotlin
+
+```kotlin
+val bannerAdView = Yodo1MasBannerAdView(this)
+bannerAdView.setAdSize(Yodo1MasBannerAdSize.Banner)
+// TODO: Add bannerAdView to your view hierarchy.
+```
+
+#### Banner sizes
+|  Size in dp   | Description  | Availability | AdSize constant |
+|  :-----------  | :-----------  | :--------------- | :--------------- |
+| 320x50  | Banner | Phones and Tablets | Banner |
+| 320x100  | Large Banner | Phones and Tablets |  LargeBanner |
+| 300x250  | IAB Medium Rectangle | Phones and Tablets |  IABMediumRectangle |
+| Full screen width x Adaptive height | Adaptive banner | Phones and Tablets |  AdaptiveBanner |
+| Screen width x 32/50/90  | Smart banner | Phones and Tablets | SmartBanner |
+
+### 2. Load an ad
+
+Once the `Yodo1MasBannerAdView` is in place, the next step is to load an ad. That's done with the `loadAd()` method in the `Yodo1MasBannerAdView` class.
+
+Here's an example that shows how to load an ad in the `onCreate()` method of an `Activity`:
+
+For Java
+
+```java
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.banner.Yodo1MasBannerAdView;
+
+public class MainActivity extends AppCompatActivity {
+    private Yodo1MasBannerAdView bannerAdView;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+            @Override
+            public void onMasInitSuccessful() {
+            }
+
+            @Override
+            public void onMasInitFailed(@NonNull Yodo1MasError error) {
+            }
+        });
+
+        bannerAdView = findViewById(R.id.yodo1_mas_banner);
+        bannerAdView.loadAd();
+    }
+}
+```
+
+For Kotlin
+
+```kotlin
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.banner.Yodo1MasBannerAdView;
+
+class MainActivity : AppCompatActivity() {
+
+    lateinit var bannerAdView : Yodo1MasBannerAdView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        	override fun onMasInitSuccessful() {    
+        		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
+        	} 
+        	override fun onMasInitFailed(error: Yodo1MasError) {
+        		Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()  
+        	}
+        })
+
+        bannerAdView = findViewById(R.id.yodo1_mas_banner)
+        bannerAdView.loadAd()
+    }
+}
+```
+
+That's it! Your app is now ready to display banner ads.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasBannerAdListener` class.
+
+For Java
+
+```java
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.banner.Yodo1MasBannerAdListener;
+import com.yodo1.mas.banner.Yodo1MasBannerAdView;
+
+public class MainActivity extends AppCompatActivity {
+    private Yodo1MasBannerAdView bannerAdView;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+            @Override
+            public void onMasInitSuccessful() {
+            }
+
+            @Override
+            public void onMasInitFailed(@NonNull Yodo1MasError error) {
+            }
+        });
+
+        bannerAdView = findViewById(R.id.yodo1_mas_banner);
+        bannerAdView.setAdListener(new Yodo1MasBannerAdListener() {
+		    @Override
+		    public void onBannerAdLoaded(Yodo1MasBannerAdView bannerAdView) {
+		        // Code to be executed when an ad finishes loading.
+		    }
+		
+		    @Override
+		    public void onBannerAdFailedToLoad(Yodo1MasBannerAdView bannerAdView, @NonNull Yodo1MasError error) {
+		        // Code to be executed when an ad request fails.
+		    }
+		
+		    @Override
+		    public void onBannerAdOpened(Yodo1MasBannerAdView bannerAdView) {
+		        // Code to be executed when an ad opens an overlay that
+		        // covers the screen.
+		    }
+		
+		    @Override
+		    public void onBannerAdFailedToOpen(Yodo1MasBannerAdView bannerAdView, @NonNull Yodo1MasError error) {
+				// Code to be executed when an ad open fails.
+		    }
+		
+		    @Override
+		    public void onBannerAdClosed(Yodo1MasBannerAdView bannerAdView) {
+		        // Code to be executed when the user is about to return
+		        // to the app after tapping on an ad.
+		    }
+		 });
+        bannerAdView.loadAd();
+    }
+}
+```
+
+For Kotlin
+
+```kotlin
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.banner.Yodo1MasBannerAdListener;
+import com.yodo1.mas.banner.Yodo1MasBannerAdView;
+
+class MainActivity : AppCompatActivity() {
+
+    lateinit var bannerAdView : Yodo1MasBannerAdView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        	override fun onMasInitSuccessful() {    
+        		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
+        	} 
+        	override fun onMasInitFailed(error: Yodo1MasError) {
+        		Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()  
+        	}
+        })
+
+        bannerAdView = findViewById(R.id.yodo1_mas_banner)
+        bannerAdView.setAdListener(object : Yodo1MasBannerAdListener {
+            override fun onBannerAdLoaded(bannerAdView: Yodo1MasBannerAdView?) {
+                // Code to be executed when an ad finishes loading.
+            }
+
+            override fun onBannerAdFailedToLoad(
+                bannerAdView: Yodo1MasBannerAdView?,
+                error: Yodo1MasError
+            ) {
+                // Code to be executed when an ad request fails.
+            }
+
+            override fun onBannerAdOpened(bannerAdView: Yodo1MasBannerAdView?) {
+                // Code to be executed when an ad opens an overlay that
+		         // covers the screen.
+            }
+
+            override fun onBannerAdFailedToOpen(
+                bannerAdView: Yodo1MasBannerAdView?,
+                error: Yodo1MasError
+            ) {
+                // Code to be executed when an ad open fails.
+            }
+
+            override fun onBannerAdClosed(bannerAdView: Yodo1MasBannerAdView?) {
+                // Code to be executed when the user is about to return
+		         // to the app after tapping on an ad.
+
+            }
+
+        })
+        bannerAdView.loadAd()
+    }
+}
+```
+
 ## Interstitial Integration
 
 ### 1. Set the interstitial ad delegate method
@@ -483,64 +788,6 @@ boolean isLoaded = Yodo1Mas.getInstance().isBannerAdLoaded();
 
 ```java
 Yodo1Mas.getInstance().showRewardedAd(MyActivity.this);
-```
-
-## Banner Integration
-### 1. Set up the banner ad delegate method
-```java
-Yodo1Mas.getInstance().setBannerListener(new Yodo1Mas.BannerListener() {
-    @Override
-    public void onAdOpened(@NonNull Yodo1MasAdEvent event) {
-    
-    }
-
-    @Override
-    public void onAdError(@NonNull Yodo1MasAdEvent event, @NonNull Yodo1MasError error) {
-    
-    }
-
-    @Override
-    public void onAdClosed(@NonNull Yodo1MasAdEvent event) {
-    
-    }
-});
-```
-
-### 2. Check the banner ad load status
-```java
-boolean isLoaded =  Yodo1Mas.getInstance().isBannerAdLoaded();
-```
-
-### 3. Show banner ad
-
-The method using the default parameters, align: `Yodo1Mas.BannerBottom | Yodo1Mas.BannerHorizontalCenter` and offset(X: 0,Y: 0)
-
-```java
-Yodo1Mas.getInstance().showBannerAd(MyActivity.this);
-```
-
-The method using the default offset(X: 0, Y: 0), you need to customize the banner alignment.
-
-```java
-int align = Yodo1Mas.BannerTop | Yodo1Mas.BannerHorizontalCenter;
-Yodo1Mas.getInstance().showBannerAd(MyActivity.this, align);
-```
-
-The method need to customize the banner alignment and offset.
-
-```java
-int align = Yodo1Mas.BannerTop | Yodo1Mas.BannerHorizontalCenter;
-int offsetX = 10; //offsetX > 0, the banner will move to the right. offsetX < 0, the banner will move to the left. if align = Yodo1Mas.BannerLeft, offsetX < 0 is invalid
-int offsetY = 10; // offsetY > 0, the banner will move to the bottom. offsetY < 0, the banner will move to the top. if align = Yodo1Mas.BannerTop, offsetY < 0 is invalid
-Yodo1Mas.getInstance().showBannerAd(MyActivity.this, align, offsetX, offsetY);
-```
-
-### 4. Dismiss banner ad
-```java
-Yodo1Mas.getInstance().dismissBannerAd();
-
-boolean destroy = false; // if destroy == true, the ads displayed in the next call to showBanner are different. if destroy == false, the ads displayed in the next call to showBanner are same
-Yodo1Mas.getInstance().dismissBannerAd(destroy);
 ```
 
 ## Advanced Settings
