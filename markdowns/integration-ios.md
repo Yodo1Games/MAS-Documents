@@ -1,51 +1,122 @@
 # iOS Integration
 
-**Before Start**:
+## Prerequisites
 
-Please confirm whether the SDK version you are currently using is v3：
-
-If it is v3 version, please read [upgrade document](upgrade-guide-ios.md)
-
-If you have not integrated, please read the following documents
-
->* iOS 15 requires `Xcode 13+`. Please make sure you are using the latest version of Xcode.
->* MAS supports iOS 10.0 and above
->* The easiest way is to use `CocoaPods`(Please use version `1.10.0` and above), If you are just starting out with 'CocoaPods', please refer to its [official documentation](https://guides.cocoapods.org/using/using-cocoapods) to study how to create and use it `Podfile`
-
-Please upgrade to Firebase 7.0.0 and above if you are using Firebase, lower Firebase will not be probably compatible with AdMob since we are using the most updated Admob. According to Admob, Firebase needs to be updated to match the Admob version. And this update will also improve your general SDK integration process for long-term
+* iOS 15 requires `Xcode 13+`. Please make sure you are using the latest version of Xcode.
+* MAS supports iOS 10.0 and above
+* The easiest way is to use `CocoaPods`(Please use version `1.10.0` and above), If you are just starting out with 'CocoaPods', please refer to its [official documentation](https://guides.cocoapods.org/using/using-cocoapods) to study how to create and use it `Podfile`
 
 ## The Integration Steps
 ### 1. Add iOS SDK to your project
-#### 1.1 Create the `Podfile` file
 
-Create the `Podfile` file in the project root directory
+#### 1.1 CocoaPods
+* Create the `Podfile` file
 
-```ruby
-touch Podfile
-```
+	Create the `Podfile` file in the project root directory
+	
+	```ruby
+	touch Podfile
+	```
 
-#### 1.2 Import the iOS SDK into the project
-Please open the project's `Podfile` file and add the following code to the target of the application:
+* Import the iOS SDK into the project
+	Please open the project's `Podfile` file and add the following code to the target of the application:
+	
+	```ruby
+	# use_frameworks! # If you use Facebook to share or log in, please add
+	source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
+	source 'https://github.com/Yodo1Games/MAS-Spec.git'
+	source 'https://github.com/Yodo1Games/Yodo1Spec.git'
+	
+	pod 'Yodo1MasFull', '4.4.0'
+	```
+	
+	Execute the following command in `Terminal` :
+	
+	```ruby
+	pod install --repo-update
+	```
+	
+	Make sure to always open the Xcode workspace instead of the project file when building your project:
+	```
+	open App.xcworkspace
+	```
+	
+#### 1.2 Manual Download
 
-```ruby
-# use_frameworks! # If you use Facebook to share or log in, please add
-source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
-source 'https://github.com/Yodo1Games/MAS-Spec.git'
-source 'https://github.com/Yodo1Games/Yodo1Spec.git'
+Follow these steps to add the SDK to your project:
 
-pod 'Yodo1MasFull', '4.4.0'
-```
+* [Download iOS SDK Version 4.4.0](https://mas-artifacts.yodo1.com/4.4.0/iOS/Release/Yodo1MasFull-Manual-4.4.0.zip)</br>
+	After you download the SDK; Unzip and copy the downloaded SDK into the project
+	<img src="./../resource/ios-manual-01.png" width="400"/>
+	<img src="./../resource/ios-manual-02.png" width="400"/> 
 
-Execute the following command in `Terminal` :
+* Add System Resource Library
 
-```ruby
-pod install --repo-update
-```
+	<img src="./../resource/ios-manual-03.png" width="400"/>
+	<img src="./../resource/ios-manual-04.png" width="400"/>
 
-Make sure to always open the Xcode workspace instead of the project file when building your project:
-```
-open App.xcworkspace
-```
+	Please follow the above method to add all the following:
+	
+	- Accelerate
+	- AdSupport
+	- AppTrackingTransparency
+	- AudioToolbox
+	- AVKit
+	- MapKit
+	- WebKit
+	- Security
+	- CoreMedia
+	- AVFoundation
+	- CoreTelephony
+	- CoreLocation
+	- SystemConfiguration
+	- MobileCoreServices
+	- JavaScriptCore
+	- MessageUI
+	- CoreImage
+	- ImageIO
+	- CoreText
+	- CoreMotion
+	- CoreServices
+	- SafariServices
+	- StoreKit
+	- CFNetwork
+	- Social
+	- WatchConnectivity
+	- QuartzCore
+	- EventKit
+	- CoreVideo
+	- MediaPlayer
+	- LocalAuthentication
+	- VideoToolbox
+	- c++
+	- c++abi
+	- sqlite3
+	- sqlite3.0
+	- xml2
+	- xml2.2
+	- bz2
+	- resolv
+	- iconv
+	- z
+
+* Add Linker Flags
+
+	<img src="./../resource/ios-manual-05.png"  width="400"/>
+
+	Please follow the above method to add all the following:
+	
+	- `-ObjC`
+	- `-l"bz2"`
+	- `-l"c++"`
+	- `-l"c++abi"`
+	- `-l"iconv"`
+	- `-l"resolv"`
+	- `-l"sqlite3"`
+	- `-l"sqlite3.0"`
+	- `-l"xml2"`
+	- `-l"xml2.2"`
+	- `-l"z"`
 
 ### 2. Xcode project configuration
 #### 2.1 AppLovin SDK Key
@@ -54,11 +125,22 @@ open App.xcworkspace
 * Enter the key name - `AppLovinSdkKey`.
 * Choose a string value type.
 * Enter `xcGD2fy-GdmiZQapx_kUSy5SMKyLoXBk8RyB5u9MVv34KetGdbl4XrXvAUFy0Qg9scKyVTI0NM4i_yzdXih4XE` in the value field.
-```xml
-<key>AppLovinSdkKey</key>
-<string>xcGD2fy-GdmiZQapx_kUSy5SMKyLoXBk8RyB5u9MVv34KetGdbl4XrXvAUFy0Qg9scKyVTI0NM4i_yzdXih4XE</string>
-```
-#### 2.2 iOS9 `App Transport Security (ATS)` Settings
+
+	```xml
+	<key>AppLovinSdkKey</key>
+	<string>xcGD2fy-GdmiZQapx_kUSy5SMKyLoXBk8RyB5u9MVv34KetGdbl4XrXvAUFy0Qg9scKyVTI0NM4i_yzdXih4XE</string>
+	```
+
+#### 2.2 Add AdMob App ID
+* Add `GADApplicationIdentifier` with `String` type to your project's `info.plist` file.
+* You may edit the `info.plist` file and add `GADApplicationIdentifier` to it by using the `Open As Source Code` option.
+
+	``` xml
+	<key>GADApplicationIdentifier</key> 
+	<string>Your MAS AdMob App ID</string>
+	```
+
+#### 2.3 iOS9 `App Transport Security (ATS)` Settings
 
 Apple has added in controls for ATS in iOS9. To ensure uninterrupted ad delivery across all Mediation Networks, it’s important to make these changes to your `info.plist`.
 
@@ -75,7 +157,7 @@ You may edit the `info.plist` file using the `Open As Source Code` and add the c
 </dict>
 ```
 
-#### 2.3 iOS14 `AppTrackingTransparency(ATT)` Settings
+#### 2.4 iOS14 `AppTrackingTransparency(ATT)` Settings
 
 **User tracking instructions**
 
@@ -87,10 +169,11 @@ iOS 14 requires publishers to obtain permission to track user devices across app
 * Choose a string value type.
 * Enter the app tracking transparency message in the value field.
 * Personalized ads are delivered using this identifier. For example:
-```xml
-<key>NSUserTrackingUsageDescription</key>
-<string>This identifier will be used to deliver personalized ads to you.</string>
-```
+
+	```xml
+	<key>NSUserTrackingUsageDescription</key>
+	<string>This identifier will be used to deliver personalized ads to you.</string>
+	```
 
 For more information about `NSUserTrackingUsageDescription`, check Apple's developer [documentation](https://developer.apple.com/documentation/bundleresources/information_property_list/nsusertrackingusagedescription). 
 
@@ -605,19 +688,12 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 ```
 
-#### 2.4 Disable `BitCode`
+<!--#### 2.4 Disable `BitCode`
 Ensure that all mediation networks work properly by disabling bitcode.
 
 <img src="./../resource/ios-bitcode-disable.png" style="zoom:50%;" />
+-->
 
-#### 2.5 Add AdMob App ID
-* Add `GADApplicationIdentifier` with `String` type to your project's `info.plist` file.
-* You may edit the `info.plist` file and add `GADApplicationIdentifier` to it by using the `Open As Source Code` option.
-
-``` xml
-<key>GADApplicationIdentifier</key> 
-<string>Your MAS AdMob App ID</string>
-```
 
 ### 3. Comply With Necessary Legal Framework
 Please comply with all legal frameworks that apply to your game and its users. You can find references to the major legal frameworks and details about how to comply with them while using MAS through these links:
@@ -630,25 +706,30 @@ Or, you can enable the built-in privacy compliance dialog in the SDK to collect 
 
 <img src="./../resource/privacy-dialog.png" style="zoom:50%;" />
 
-1. Enable (Please call before initialization)
+1.Enable (Please call before initialization)
+
 ```obj-c
-    Yodo1MasAdBuildConfig *config = [Yodo1MasAdBuildConfig instance];
-    config.enableUserPrivacyDialog = YES; // default value is NO
-    [[Yodo1Mas sharedInstance] setAdBuildConfig:config];
+Yodo1MasAdBuildConfig *config = [Yodo1MasAdBuildConfig instance];
+config.enableUserPrivacyDialog = YES; // default value is NO
+[[Yodo1Mas sharedInstance] setAdBuildConfig:config];
 ```
-2. Custom user agreement
+
+2.Custom user agreement
+
 ```obj-c
-    Yodo1MasAdBuildConfig *config = [Yodo1MasAdBuildConfig instance];
-    config.enableUserPrivacyDialog = YES;
-    config.userAgreementUrl = @"Your user agreement url";
-    [[Yodo1Mas sharedInstance] setAdBuildConfig:config];
+Yodo1MasAdBuildConfig *config = [Yodo1MasAdBuildConfig instance];
+config.enableUserPrivacyDialog = YES;
+config.userAgreementUrl = @"Your user agreement url";
+[[Yodo1Mas sharedInstance] setAdBuildConfig:config];
 ```
-3. Custom privacy policy 
+
+3.Custom privacy policy
+ 
 ```obj-c
-    Yodo1MasAdBuildConfig *config = [Yodo1MasAdBuildConfig instance];
-    config.enableUserPrivacyDialog = YES;
-    config.privacyPolicyUrl = @"Your privacy policy url";
-    [[Yodo1Mas sharedInstance] setAdBuildConfig:config];
+Yodo1MasAdBuildConfig *config = [Yodo1MasAdBuildConfig instance];
+config.enableUserPrivacyDialog = YES;
+config.privacyPolicyUrl = @"Your privacy policy url";
+[[Yodo1Mas sharedInstance] setAdBuildConfig:config];
 ```
 
 <font color=red>IMPORTANT!</font> Failure to comply with these frameworks can lead to **Apple App Store and/or Google Play Store rejecting** your game, as well as a negative impact of your game's monetization.
@@ -667,69 +748,6 @@ Or, you can enable the built-in privacy compliance dialog in the SDK to collect 
 } fail:^(NSError * _Nonnull error) {
     
 }];
-```
-
-## Interstitial Integration
-### 1. Set the interstitial ad delegate method
-``` obj-c
-[Yodo1Mas sharedInstance].interstitialAdDelegate = self; 
-
-#pragma mark - Interstitial Delegate
-- (void)onAdOpened:(Yodo1MasAdEvent *)event {
-    
-}
-
-- (void)onAdClosed:(Yodo1MasAdEvent *)event {
-    
-}
-
-- (void)onAdError:(Yodo1MasAdEvent *)event error:(Yodo1MasError *)error {
-    
-}       
-```
-
-### 2. Check the loading status of interstitials
-``` obj-c
-BOOL isLoaded = [[Yodo1Mas sharedInstance] isInterstitialAdLoaded];
-```
-
-### 3. Show interstitial ad
-```obj-c
-[[Yodo1Mas sharedInstance] showInterstitialAd];
-```
-
-## Rewarded Video Integration
-### 1. Set up rewarded video ad delegate methods
-``` obj-c
-[Yodo1Mas sharedInstance].rewardAdDelegate = self;
-
-#pragma mark - Yodo1MasAdDelegate
-- (void)onAdOpened:(Yodo1MasAdEvent *)event {
-    
-}
-
-- (void)onAdClosed:(Yodo1MasAdEvent *)event {
-    
-}
-
-- (void)onAdvertError:(Yodo1MasAdEvent *)event error:(Yodo1MasError *)error {
-    
-}
-
-#pragma mark - Ad Rewarded
-- (void)onAdRewardEarned:(Yodo1MasAdEvent *)event {
-    
-}
-```
-
-### 2. Check the loading status of rewarded video ads
-``` obj-c
-BOOL isLoaded = [[Yodo1Mas sharedInstance] isRewardAdLoaded];
-```
-
-### 3. Show rewarded video ads
-```obj-c
-[[Yodo1Mas sharedInstance] showRewardAd]
 ```
 
 ## Banner Integration
@@ -751,12 +769,7 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isRewardAdLoaded];
 }
 ```
 
-### 2. Check the loading status of banners
-```obj-c
-BOOL isLoaded = [[Yodo1Mas sharedInstance] isBannerAdLoaded];
-```
-
-### 3. Show banner ad
+### 2. Show banner ad
 
 The method using the default parameters, align: `Yodo1MasAdBannerAlignBottom | Yodo1MasAdBannerAlignHorizontalCenter` and offset(X: 0,Y: 0)
 
@@ -780,13 +793,21 @@ CGPoint point = CGPointMake(10.0f, 10.0f);
 [[Yodo1Mas sharedInstance] showBannerAdWithAlign:align offset:point];
 ```
 
-### 4. Dismiss banner ad
+### 3. Dismiss banner ad
+
 ```obj-c
 [[Yodo1Mas sharedInstance] dismissBannerAd];
 
 BOOL destroy = NO; // if destroy == YES, the ads displayed in the next call to showBanner are different. if destroy == NO, the ads displayed in the next call to showBanner are same
 [[Yodo1Mas sharedInstance] dismissBannerAdWithDestroy:destroy];
 ```
+
+### 4. Create a Banner Placement
+
+```obj-c
+[[Yodo1Mas sharedInstance] showBannerAd:@"MY_BANNER_PLACEMENT"]
+```
+
 ## Banner(V2) Integration
 
 ### 1. Init Yodo1MasBannerAdView
@@ -1000,44 +1021,74 @@ extension MainController: Yodo1MasBannerAdViewDelegate {
 ```
 
 ## Interstitial Integration
-
 ### 1. Set the interstitial ad delegate method
+``` obj-c
+[Yodo1Mas sharedInstance].interstitialAdDelegate = self; 
 
-```java
-Yodo1Mas.getInstance().setInterstitialListener(new Yodo1Mas.InterstitialListener() {
-    @Override
-    public void onAdOpened(@NonNull Yodo1MasAdEvent event) {
-    }
-
-    @Override
-    public void onAdError(@NonNull Yodo1MasAdEvent event, @NonNull Yodo1MasError error) {
-        
-    }
-
-    @Override
-    public void onAdClosed(@NonNull Yodo1MasAdEvent event) {
+#pragma mark - Interstitial Delegate
+- (void)onAdOpened:(Yodo1MasAdEvent *)event {
     
-    }
-});      
+}
+
+- (void)onAdClosed:(Yodo1MasAdEvent *)event {
+    
+}
+
+- (void)onAdError:(Yodo1MasAdEvent *)event error:(Yodo1MasError *)error {
+    
+}       
 ```
 
-## Advanced Settings
-### Ad Placements
-> MAS SDK gives you the ability to set a placement name(e.g. MainMenu, Upgrade_Level etc)。
+### 2. Check the loading status of interstitials
+``` obj-c
+BOOL isLoaded = [[Yodo1Mas sharedInstance] isInterstitialAdLoaded];
+```
 
-Below are code snippets on how to set placements for banners, interstitials, and rewarded ads.
+### 3. Show interstitial ad
+```obj-c
+[[Yodo1Mas sharedInstance] showInterstitialAd];
+```
 
-**Interstitial Ads**</br>
+### 4. Create a Interstitial Placement
 ```obj-c
 [[Yodo1Mas sharedInstance] showInterstitialAd:@"MY_INTERSTITIAL_PLACEMENT"]
 ```
 
-**Rewarded Video Ads**</br>
-```obj-c
-[[Yodo1Mas sharedInstance] showRewardAd:@"MY_REWARDED_PLACEMENT"]
+## Rewarded Video Integration
+### 1. Set up rewarded video ad delegate methods
+``` obj-c
+[Yodo1Mas sharedInstance].rewardAdDelegate = self;
+
+#pragma mark - Yodo1MasAdDelegate
+- (void)onAdOpened:(Yodo1MasAdEvent *)event {
+    
+}
+
+- (void)onAdClosed:(Yodo1MasAdEvent *)event {
+    
+}
+
+- (void)onAdvertError:(Yodo1MasAdEvent *)event error:(Yodo1MasError *)error {
+    
+}
+
+#pragma mark - Ad Rewarded
+- (void)onAdRewardEarned:(Yodo1MasAdEvent *)event {
+    
+}
 ```
 
-**Banner Ads**</br>
+### 2. Check the loading status of rewarded video ads
+``` obj-c
+BOOL isLoaded = [[Yodo1Mas sharedInstance] isRewardAdLoaded];
+```
+
+### 3. Show rewarded video ads
 ```obj-c
-[[Yodo1Mas sharedInstance] showBannerAd:@"MY_BANNER_PLACEMENT"]
+[[Yodo1Mas sharedInstance] showRewardAd]
+```
+
+### 4. Create a rewarded Placement
+```obj-c
+[[Yodo1Mas sharedInstance] showRewardAd:@"MY_REWARDED_PLACEMENT"]
 ```
