@@ -27,7 +27,7 @@
 	source 'https://github.com/Yodo1Games/MAS-Spec.git'
 	source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 	
-	pod 'Yodo1MasFull', '4.4.5'
+	pod 'Yodo1MasFull', '4.5.0'
 	```
 	
 	Execute the following command in `Terminal` :
@@ -45,7 +45,7 @@
 
 Follow these steps to add the SDK to your project:
 
-* [Download iOS SDK Version 4.4.5](https://mas-artifacts.yodo1.com/4.4.5/iOS/Release/Yodo1MasFull-Manual-4.4.5.zip)</br>
+* [Download iOS SDK Version 4.5.0](https://mas-artifacts.yodo1.com/4.5.0/iOS/Release/Yodo1MasFull-Manual-4.5.0.zip)</br>
 	After you download the SDK; Unzip and copy the downloaded SDK into the project
 	<img src="./../resource/ios-manual-01.png" width="400"/>
 	<img src="./../resource/ios-manual-02.png" width="400"/> 
