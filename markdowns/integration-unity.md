@@ -16,9 +16,9 @@ MAS provides 2 versions of the Unity plugin, and you need to select one dependin
 * If your game is not part of the “Designed for Families Program”, please use the Standard MAS Plugin.
 * If your game is a part of Google Play’s “Designed for Families” program, you will need to use the Designed For Families plugin in order to comply with the program’s requirements.
 
-[Designed For Families](https://mas-artifacts.yodo1.com/4.4.5/Unity/Release/Rivendell-4.4.5-Family.unitypackage)
+[Designed For Families](https://mas-artifacts.yodo1.com/4.5.0/Unity/Release/Rivendell-4.5.0-Family.unitypackage)
 
-[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.4.5/Unity/Release/Rivendell-4.4.5-Full.unitypackage)
+[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.5.0/Unity/Release/Rivendell-4.5.0-Full.unitypackage)
 
 ### Note:
 If you are use unity **2018**,please check on the Custom Gradle Template through the following steps:
