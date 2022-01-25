@@ -878,7 +878,7 @@ For `Objective-C`
 
 @end
 
-@implementation BannerController
+@implementation MainController
   
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -944,7 +944,7 @@ For `Objective-C`
 
 @end
 
-@implementation BannerController
+@implementation MainController
   
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -1112,4 +1112,173 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isRewardAdLoaded];
 ### 4. Create a rewarded Placement
 ```obj-c
 [[Yodo1Mas sharedInstance] showRewardAd:@"MY_REWARDED_PLACEMENT"]
+```
+
+## Native Ads Integration
+
+### 1. Init Yodo1MasNativeAdView
+
+For `Objective-C` 
+
+```objective-c
+Yodo1MasNativeAdView *nativeAdView = [[Yodo1MasNativeAdView alloc] init];
+nativeAdView.frame = CGRectMake(0, 0, 375, 200);
+// TODO: Add nativeAdView to your view hierarchy.
+```
+
+For `Swift`
+
+```swift
+let nativeAdView = Yodo1MasNativeAdView()
+bnativeAdView.frame = CGRect(x: 0, y: 0, width: 375, height: 200)
+// TODO: Add bnativeAdView to your view hierarchy.
+```
+### 2. Load an ad
+
+Once the `Yodo1MasNativeAdView` is in place, the next step is to load an ad. That's done with the `loadAd()` method in the `Yodo1MasNativeAdView` class.
+
+Here's an example that shows how to load an ad in the `viewDidLoad` method of an `UIViewController`:
+
+For `Objective-C` 
+
+```objective-c
+
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+#import "Yodo1MasNativeAdView.h"
+  
+@interface MainController ()
+  
+@property (nonatomic, strong) Yodo1MasNativeAdView *nativeAdView;
+
+@end
+
+@implementation MainController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _nativeAdView = [[Yodo1MasNativeAdView alloc] init];
+  _nativeAdView.frame = CGRectMake(0, 0, 375, 200);
+  [_nativeAdView loadAd];
+  [self.view addSubview:_nativeAdView];
+}
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController : UIViewController {
+
+	var nativeAdView: Yodo1MasNativeAdView!
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+    Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+    } fail: { error in
+
+    }
+    nativeAdView = Yodo1MasNativeAdView()
+    nativeAdView.frame = CGRect(x: 0, y: 0, width: 375, height: 200)
+    nativeAdView.loadAd()
+    self.view.addSubview(nativeAdView)
+   }
+}
+```
+
+That's it! Your app is now ready to display native ads.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasNativeAdViewDelegate`.
+
+For `Objective-C` 
+
+```objective-c
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+#import "Yodo1MasNativeAdView.h"
+  
+@interface MainController ()<Yodo1MasNativeAdViewDelegate>
+  
+@property (nonatomic, strong) Yodo1MasNativeAdView *nativeAdView;
+
+@end
+
+@implementation MainController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _nativeAdView = [[Yodo1MasNativeAdView alloc] init];
+  _nativeAdView.frame = CGRectMake(0, 0, 375, 200);
+  _nativeAdView.adDelegate = self;
+  [_nativeAdView loadAd];
+  [self.view addSubview:_nativeAdView];
+}
+
+
+#pragma mark - Yodo1MasNativeAdViewDelegate
+- (void)onNativeAdLoaded:(Yodo1MasNativeAdView *)nativeView {
+    
+}
+
+- (void)onNativeAdFailedToLoad:(Yodo1MasNativeAdView *)nativeView withError:(Yodo1MasError *)error {
+    
+}
+
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController: UIViewController {
+    var nativeAdView: Yodo1MasNativeAdView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+        } fail: { error in
+            
+        }
+        
+        nativeAdView = Yodo1MasNativeAdView()
+        nativeAdView.frame = CGRect(x: 0, y: 0, width: 375, height: 200)
+        nativeAdView.adDelegate = self
+        nativeAdView.loadAd()
+        self.view.addSubview(nativeAdView)
+    }
+}
+
+extension MainController: Yodo1MasNativeAdViewDelegate {
+    // MARK: Yodo1MasNativeAdViewDelegate
+    func onNativerAdLoaded(_ nativeView: Yodo1MasNativeAdView) {
+        
+    }
+    
+    func onNativeAdFailed(toLoad nativeView: Yodo1MasNativeAdView, withError error: Yodo1MasError) {
+        
+    }
+}
 ```
