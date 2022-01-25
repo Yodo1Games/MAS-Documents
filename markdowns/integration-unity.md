@@ -123,6 +123,23 @@ If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dia
         .privacyPolicyUrl("Your privacy policy url");
     Yodo1U3dMas.SetAdBuildConfig(config);
 ```
+4. Custom The age verification pop up (optional)
+
+```
+Yodo1MasUserPrivacyConfig userPrivacyConfig = new Yodo1MasUserPrivacyConfig()
+    .titleBackgroundColor(Color.green)
+    .titleTextColor(Color.blue)
+    .contentBackgroundColor(Color.black)
+    .contentTextColor(Color.white)
+    .buttonBackgroundColor(Color.red)
+    .buttonTextColor(Color.green);
+
+Yodo1AdBuildConfig config = new Yodo1AdBuildConfig()
+    .enableUserPrivacyDialog(true)
+    .userPrivacyConfig(userPrivacyConfig);
+
+Yodo1U3dMas.SetAdBuildConfig(config);
+```
 
 <font color=red>IMPORTANT!</font> Failure to comply with these frameworks can lead the Apple App Store and/or Google Play Store rejecting your game, as well as a negative impact of your game's monetization.
 
