@@ -735,6 +735,23 @@ config.enableUserPrivacyDialog = YES;
 config.privacyPolicyUrl = @"Your privacy policy url";
 [[Yodo1Mas sharedInstance] setAdBuildConfig:config];
 ```
+4.Custom The age verification pop up (optional)
+
+```obj-c
+Yodo1MasUserPrivacyConfig *privacyConfig = [Yodo1MasUserPrivacyConfig instance];
+privacyConfig.titleBackgroundColor = UIColor.blueColor;
+privacyConfig.titleTextColor = UIColor.whiteColor;
+privacyConfig.contentBackgroundColor = UIColor.whiteColor;
+privacyConfig.contentTextColor = UIColor.darkTextColor;
+privacyConfig.buttonBackgroundColor = UIColor.blueColor;
+privacyConfig.buttonTextColor = [UIColor whiteColor];
+    
+Yodo1MasAdBuildConfig *config = [Yodo1MasAdBuildConfig instance];
+config.enableUserPrivacyDialog = YES;
+config.userPrivacyConfig = privacyConfig;
+    
+[[Yodo1Mas sharedInstance] setAdBuildConfig:config];
+```
 
 <font color=red>IMPORTANT!</font> Failure to comply with these frameworks can lead to **Apple App Store and/or Google Play Store rejecting** your game, as well as a negative impact of your game's monetization.
 

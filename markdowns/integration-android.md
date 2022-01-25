@@ -141,7 +141,7 @@ If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dia
 
 <img src="./../resource/privacy-dialog.png" style="zoom:50%;" />
 
-1. Enable (Please call before initialization)
+1.Enable (Please call before initialization)
 
 ```java
     Yodo1MasAdBuildConfig config = new Yodo1MasAdBuildConfig.Builder()
@@ -150,7 +150,7 @@ If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dia
     Yodo1Mas.getInstance().setAdBuildConfig(config);
 ```
 
-2. Custom user agreement
+2.Custom user agreement
 
 ```java
     Yodo1MasAdBuildConfig config = new Yodo1MasAdBuildConfig.Builder()
@@ -160,7 +160,7 @@ If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dia
     Yodo1Mas.getInstance().setAdBuildConfig(config);
 ```
 
-3. Custom privacy policy 
+3.Custom privacy policy 
 
 ```java
     Yodo1MasAdBuildConfig config = new Yodo1MasAdBuildConfig.Builder()
@@ -169,9 +169,9 @@ If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dia
                 .build();
     Yodo1Mas.getInstance().setAdBuildConfig(config);
 ```
-4. Custom The age verification pop up (optional)
+4.Custom The age verification pop up (optional)
 
-```
+```java
 Yodo1MasUserPrivacyConfig agePopBuildConfig = new Yodo1MasUserPrivacyConfig.Builder()
         .titleBackgroundColor(Color.BLUE)
         .titleTextColor(Color.WHITE)

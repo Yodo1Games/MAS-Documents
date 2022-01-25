@@ -98,7 +98,7 @@ If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dia
 
 <img src="./../resource/privacy-dialog.png" style="zoom:50%;" />
 
-1. Enable (Please call before initialization)
+1.Enable (Please call before initialization)
 
 ```c#
     Yodo1AdBuildConfig config = new Yodo1AdBuildConfig()
@@ -106,7 +106,7 @@ If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dia
     Yodo1U3dMas.SetAdBuildConfig(config);
 ```
 
-2. Custom user agreement
+2.Custom user agreement
 
 ```c#
     Yodo1AdBuildConfig config = new Yodo1AdBuildConfig()
@@ -115,7 +115,7 @@ If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dia
     Yodo1U3dMas.SetAdBuildConfig(config);
 ```
 
-3. Custom privacy policy
+3.Custom privacy policy
  
 ```c#
     Yodo1AdBuildConfig config = new Yodo1AdBuildConfig()
@@ -123,9 +123,9 @@ If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dia
         .privacyPolicyUrl("Your privacy policy url");
     Yodo1U3dMas.SetAdBuildConfig(config);
 ```
-4. Custom The age verification pop up (optional)
+4.Custom The age verification pop up (optional)
 
-```
+```c#
 Yodo1MasUserPrivacyConfig userPrivacyConfig = new Yodo1MasUserPrivacyConfig()
     .titleBackgroundColor(Color.green)
     .titleTextColor(Color.blue)
