@@ -20,19 +20,31 @@ maven { url "https://android-sdk.is.com" }
 maven { url "https://sdk.tapjoy.com/" }
 ```
 
+Use the code bellow if you need to use lightweight SDK.
+
+```groovy
+mavenCentral()
+```
+
 **Note**: If you create your project under Android Studio Arctic Fox, the repositories should be added to settings.gradle
 
 ### 2. Open your app-level `build.gradle` and add the relevant code.
 #### 2.1 Add a Gradle dependency
 
 ```groovy
-implementation 'com.yodo1.mas:full:4.5.0'
+implementation 'com.yodo1.mas:full:4.6.0'
 ```
 
 If you need to comply with Google Family Policy:
 
 ```groovy
-implementation 'com.yodo1.mas:google:4.5.0'
+implementation 'com.yodo1.mas:google:4.6.0'
+```
+
+If you need to use lightweight SDK:
+
+```groovy
+implementation 'com.yodo1.mas:lite:4.6.0'
 ```
 
 #### 2.2 Add the `compileOptions` property to the `Android` section

@@ -25,10 +25,19 @@
 	# use_frameworks! # If you use Facebook to share or log in, please add
 	source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
 	source 'https://github.com/Yodo1Games/MAS-Spec.git'
-	source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 	
-	pod 'Yodo1MasFull', '4.5.0'
+	pod 'Yodo1MasFull', '4.6.0'
 	```
+
+  If you need to use lightweight SDK:
+
+  ```ruby
+  # use_frameworks! # If you use Facebook to share or log in, please add
+  source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
+  source 'https://github.com/Yodo1Games/MAS-Spec.git'
+  
+  pod 'Yodo1MasLite', '4.6.0'
+  ```
 	
 	Execute the following command in `Terminal` :
 	
@@ -45,7 +54,7 @@
 
 Follow these steps to add the SDK to your project:
 
-* [Download iOS SDK Version 4.5.0](https://mas-artifacts.yodo1.com/4.5.0/iOS/Release/Yodo1MasFull-Manual-4.5.0.zip)</br>
+* [Download iOS SDK Version 4.6.0](https://mas-artifacts.yodo1.com/4.6.0/iOS/Release/Yodo1MasFull-Manual-4.6.0.zip)</br> or [Download iOS Lite SDK Version 4.6.0](https://mas-artifacts.yodo1.com/4.6.0/iOS/Release/Yodo1MasLite-Manual-4.6.0.zip)</br>
 	After you download the SDK; Unzip and copy the downloaded SDK into the project
 	<img src="./../resource/ios-manual-01.png" width="400"/>
 	<img src="./../resource/ios-manual-02.png" width="400"/> 
@@ -139,6 +148,15 @@ Follow these steps to add the SDK to your project:
 	<key>GADApplicationIdentifier</key> 
 	<string>Your MAS AdMob App ID</string>
 	```
+
+Enable Google Ad Manager
+
+In your app’s `Info.plist`, add a `GADIsAdManagerApp` key with the Boolean value of `YES`.
+
+  ``` xml
+  <key>GADIsAdManagerApp</key>
+  <true/>
+  ```
 
 #### 2.3 iOS9 `App Transport Security (ATS)` Settings
 
@@ -237,6 +255,10 @@ The following shows the array of dictionaries you need to access the SDK.
 <dict>
   <key>SKAdNetworkIdentifier</key>
   <string>523jb4fst2.skadnetwork</string>
+</dict>
+<dict>
+  <key>SKAdNetworkIdentifier</key>
+  <string>578prtvx9j.skadnetwork</string>
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
@@ -444,10 +466,6 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
-  <string>578prtvx9j.skadnetwork</string>
-</dict>
-<dict>
-  <key>SKAdNetworkIdentifier</key>
   <string>5a6flpkh64.skadnetwork</string>
 </dict>
 <dict>
@@ -512,6 +530,10 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
+  <string>dkc879ngq3.skadnetwork</string>
+</dict>
+<dict>
+  <key>SKAdNetworkIdentifier</key>
   <string>feyaarzu9v.skadnetwork</string>
 </dict>
 <dict>
@@ -529,6 +551,10 @@ The following shows the array of dictionaries you need to access the SDK.
 <dict>
   <key>SKAdNetworkIdentifier</key>
   <string>ludvb6z3bs.skadnetwork</string>
+</dict>
+<dict>
+  <key>SKAdNetworkIdentifier</key>
+  <string>nzq8sh4pbs.skadnetwork</string>
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
@@ -640,6 +666,10 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
+  <string>a2p9lx4jpn.skadnetwork</string>
+</dict>
+<dict>
+  <key>SKAdNetworkIdentifier</key>
   <string>ecpz2srf59.skadnetwork</string>
 </dict>
 <dict>
@@ -656,15 +686,15 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
-  <string>nzq8sh4pbs.skadnetwork</string>
-</dict>
-<dict>
-  <key>SKAdNetworkIdentifier</key>
   <string>pu4na253f3.skadnetwork</string>
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
   <string>v79kvwwj4g.skadnetwork</string>
+</dict>
+<dict>
+  <key>SKAdNetworkIdentifier</key>
+  <string>x44k69ngh6.skadnetwork</string>
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
@@ -681,10 +711,6 @@ The following shows the array of dictionaries you need to access the SDK.
 <dict>
   <key>SKAdNetworkIdentifier</key>
   <string>mp6xlyr22a.skadnetwork</string>
-</dict>
-<dict>
-  <key>SKAdNetworkIdentifier</key>
-  <string>x44k69ngh6.skadnetwork</string>
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
