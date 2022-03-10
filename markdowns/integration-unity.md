@@ -16,9 +16,11 @@ MAS provides 2 versions of the Unity plugin, and you need to select one dependin
 * If your game is not part of the “Designed for Families Program”, please use the Standard MAS Plugin.
 * If your game is a part of Google Play’s “Designed for Families” program, you will need to use the Designed For Families plugin in order to comply with the program’s requirements.
 
-[Designed For Families](https://mas-artifacts.yodo1.com/4.5.0/Unity/Release/Rivendell-4.5.0-Family.unitypackage)
+[Designed For Families](https://mas-artifacts.yodo1.com/4.6.0-rc.1/Unity/Release/Rivendell-4.6.0-rc.1-Family.unitypackage)
 
-[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.5.0/Unity/Release/Rivendell-4.5.0-Full.unitypackage)
+[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.6.0-rc.1/Unity/Release/Rivendell-4.6.0-rc.1-Full.unitypackage)
+
+[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.6.0-rc.1/Unity/Release/Rivendell-4.6.0-rc.1-Lite.unitypackage)
 
 ### Note:
 If you are use unity **2018**,please check on the Custom Gradle Template through the following steps:
@@ -98,7 +100,7 @@ If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dia
 
 <img src="./../resource/privacy-dialog.png" style="zoom:50%;" />
 
-1. Enable (Please call before initialization)
+1.Enable (Please call before initialization)
 
 ```c#
     Yodo1AdBuildConfig config = new Yodo1AdBuildConfig()
@@ -106,7 +108,7 @@ If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dia
     Yodo1U3dMas.SetAdBuildConfig(config);
 ```
 
-2. Custom user agreement
+2.Custom user agreement
 
 ```c#
     Yodo1AdBuildConfig config = new Yodo1AdBuildConfig()
@@ -115,13 +117,30 @@ If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dia
     Yodo1U3dMas.SetAdBuildConfig(config);
 ```
 
-3. Custom privacy policy
+3.Custom privacy policy
  
 ```c#
     Yodo1AdBuildConfig config = new Yodo1AdBuildConfig()
         .enableUserPrivacyDialog(true)
         .privacyPolicyUrl("Your privacy policy url");
     Yodo1U3dMas.SetAdBuildConfig(config);
+```
+4.Custom The age verification pop up (optional)
+
+```c#
+Yodo1MasUserPrivacyConfig userPrivacyConfig = new Yodo1MasUserPrivacyConfig()
+    .titleBackgroundColor(Color.green)
+    .titleTextColor(Color.blue)
+    .contentBackgroundColor(Color.black)
+    .contentTextColor(Color.white)
+    .buttonBackgroundColor(Color.red)
+    .buttonTextColor(Color.green);
+
+Yodo1AdBuildConfig config = new Yodo1AdBuildConfig()
+    .enableUserPrivacyDialog(true)
+    .userPrivacyConfig(userPrivacyConfig);
+
+Yodo1U3dMas.SetAdBuildConfig(config);
 ```
 
 <font color=red>IMPORTANT!</font> Failure to comply with these frameworks can lead the Apple App Store and/or Google Play Store rejecting your game, as well as a negative impact of your game's monetization.
@@ -713,4 +732,129 @@ Simply add the placement name as a string into the parentheses.
 
 ```c#
 Yodo1U3dMas.ShowRewardedAd("Placement_Name");
+```
+
+## Native Ads Integration
+
+### 1. Create a Yodo1U3dNativeAdView
+
+The first step toward displaying a native is to create a **Yodo1U3dNativeAdView** object in a C# script attached to a GameObject.
+
+```c#
+using System;
+using UnityEngine;
+using Yodo1.MAS;
+...
+public class NativeSampleV2 : MonoBehaviour
+{
+    private Yodo1U3dNativeAdView nativeAdView;
+    ...
+    public void Start()
+    {
+        // Initialize the MAS SDK.
+        Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => { });
+        Yodo1U3dMas.InitializeSdk();
+		
+        this.RequestNative();
+    }
+
+    private void RequestNative()
+    {
+        // Create a 320x200 native at top of the screen
+        nativeAdView = new Yodo1U3dNativeAdView(0, 0, 375, 200);
+    }
+}
+```
+
+### 2. Load an ad
+
+Once the NativeView is instantiated, the next step is to load an ad. That's done with the loadAd() method in the NativeView class.
+
+Here's an example that shows how to load an ad:
+
+```c#
+...
+    private void RequestNative()
+    {
+        // Create a 375x200 native at top of the screen
+        nativeAdView = new Yodo1U3dNativeAdView(0, 0, 375, 200);
+
+        // Load native ads, the native ad will be displayed automatically after loaded
+        nativeAdView.LoadAd();
+    }
+...
+```
+
+That's it! Your app is now ready to display native ads from MAS.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook into a number of events in the ad's lifecycle: loading, opening, closing, and so on.
+
+```c#
+...
+using System;
+using UnityEngine;
+using Yodo1.MAS;
+...
+public class NativeSampleV2 : MonoBehaviour
+{
+    private Yodo1U3dNativeAdView nativeAdView;
+
+    public void Start()
+    {
+        // Initialize the MAS SDK.
+        Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => { });
+        Yodo1U3dMas.InitializeSdk();
+		
+        this.RequestNative();
+    }
+
+    private void RequestNative()
+    {
+		  // Clean up native before reusing
+        if (nativeAdView != null)
+        {
+            nativeAdView.Destroy();
+        }
+
+    	 // Create a 375x200 native at top of the screen
+        nativeAdView = new Yodo1U3dNativeAdView(0, 0 , 375, 200);
+
+		 // Ad Events
+        nativeAdView.OnAdLoadedEvent += OnNativeAdLoadedEvent;
+        nativeAdView.OnAdFailedToLoadEvent += OnNativeAdFailedToLoadEvent;
+
+        // Load native ads, the native ad will be displayed automatically after loaded
+        nativeAdView.LoadAd();
+    }
+
+    private void OnNativeAdLoadedEvent(Yodo1U3dNativeAdView adView)
+    {
+        // Native ad is ready to be shown.
+        Debug.Log("[Yodo1 Mas] OnNativeAdLoadedEvent event received");
+    }
+
+    private void OnNativeAdFailedToLoadEvent(Yodo1U3dNativeAdView adView, Yodo1U3dAdError adError)
+    {
+        Debug.Log("[Yodo1 Mas] OnNativeAdFailedToLoadEvent event received with error: " + adError.ToString());
+    }
+}
+```
+
+### 5. Clean up native ads
+
+When you are finished with a NativeView, make sure to call the Destroy() method before dropping your reference to it:
+
+```c#
+nativeAdView.Destroy();
+nativeAdView = null;
+```
+
+### 6. Create a Native Placement
+
+Simply add the placement name as a string in the parentheses.
+
+```c#
+nativeAdView.SetAdPlacement("Placement_Name")
 ```

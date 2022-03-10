@@ -20,19 +20,31 @@ maven { url "https://android-sdk.is.com" }
 maven { url "https://sdk.tapjoy.com/" }
 ```
 
+Use the code bellow if you need to use lightweight SDK.
+
+```groovy
+mavenCentral()
+```
+
 **Note**: If you create your project under Android Studio Arctic Fox, the repositories should be added to settings.gradle
 
 ### 2. Open your app-level `build.gradle` and add the relevant code.
 #### 2.1 Add a Gradle dependency
 
 ```groovy
-implementation 'com.yodo1.mas:full:4.5.0'
+implementation 'com.yodo1.mas:full:4.6.0'
 ```
 
 If you need to comply with Google Family Policy:
 
 ```groovy
-implementation 'com.yodo1.mas:google:4.5.0'
+implementation 'com.yodo1.mas:google:4.6.0'
+```
+
+If you need to use lightweight SDK:
+
+```groovy
+implementation 'com.yodo1.mas:lite:4.6.0'
 ```
 
 #### 2.2 Add the `compileOptions` property to the `Android` section
@@ -141,7 +153,7 @@ If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dia
 
 <img src="./../resource/privacy-dialog.png" style="zoom:50%;" />
 
-1. Enable (Please call before initialization)
+1.Enable (Please call before initialization)
 
 ```java
     Yodo1MasAdBuildConfig config = new Yodo1MasAdBuildConfig.Builder()
@@ -150,7 +162,7 @@ If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dia
     Yodo1Mas.getInstance().setAdBuildConfig(config);
 ```
 
-2. Custom user agreement
+2.Custom user agreement
 
 ```java
     Yodo1MasAdBuildConfig config = new Yodo1MasAdBuildConfig.Builder()
@@ -160,7 +172,7 @@ If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dia
     Yodo1Mas.getInstance().setAdBuildConfig(config);
 ```
 
-3. Custom privacy policy 
+3.Custom privacy policy 
 
 ```java
     Yodo1MasAdBuildConfig config = new Yodo1MasAdBuildConfig.Builder()
@@ -168,6 +180,25 @@ If you’re using MAS 4.3.0+, you can enable the built-in privacy compliance dia
                 .privacyPolicyUrl("Your privacy policy url")
                 .build();
     Yodo1Mas.getInstance().setAdBuildConfig(config);
+```
+4.Custom The age verification pop up (optional)
+
+```java
+Yodo1MasUserPrivacyConfig agePopBuildConfig = new Yodo1MasUserPrivacyConfig.Builder()
+        .titleBackgroundColor(Color.BLUE)
+        .titleTextColor(Color.WHITE)
+        .contentBackgroundColor(Color.WHITE)
+        .contentTextColor(Color.BLACK)
+        .buttonBackgroundColor(Color.BLUE)
+        .buttonTextColor(Color.WHITE)
+        .build();
+
+Yodo1MasAdBuildConfig config = new Yodo1MasAdBuildConfig.Builder()
+        .enableUserPrivacyDialog(true)
+        .userPrivacyConfig(agePopBuildConfig)
+        .build();
+Yodo1Mas.getInstance().setAdBuildConfig(config);
+
 ```
 
 **IMPORTANT**! Failure to comply with these frameworks can lead to **Google Play Store rejecting** your game, as well as a negative impact of your game’s monetization.
@@ -788,6 +819,202 @@ boolean isLoaded = Yodo1Mas.getInstance().isBannerAdLoaded();
 
 ```java
 Yodo1Mas.getInstance().showRewardedAd(MyActivity.this);
+```
+
+## Native Ads Integration
+### 1. Add Yodo1MasNativeAdView to the layout
+
+The first step toward displaying a native is to place `Yodo1MasNativeAdView` in the layout for the Activity or Fragment in which you'd like to display it. The easiest way to do this is to add one to the corresponding XML layout file. Here's an example that shows an activity's `Yodo1MasNativeAdView`:
+
+```xml
+...
+	<com.yodo1.mas.nativeads.Yodo1MasNativeAdView 
+		xmlns:masads="http://schemas.android.com/apk/res-auto"
+		android:id="@+id/yodo1_mas_native"
+		android:layout_width="match_parent"
+		android:layout_height="300dp"
+		android:layout_gravity="center_horizontal|top"/>
+...
+```
+
+You can alternatively create `Yodo1MasNativeAdView` programmatically:
+
+For Java
+
+```java
+Yodo1MasNativeAdView nativeAdView = new Yodo1MasNativeAdView(this);
+nativeAdView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp2px(300)));
+// TODO: Add nativeAdView to your view hierarchy.
+```
+
+For Kotlin
+
+```kotlin
+val nativeAdView = Yodo1MasNativeAdView(this)
+nativeAdView.setLayoutParams(ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp2px(300)))
+// TODO: Add nativeAdView to your view hierarchy.
+```
+
+### 2. Load an ad
+
+Once the `Yodo1MasNativeAdView` is in place, the next step is to load an ad. That's done with the `loadAd()` method in the `Yodo1MasNativeAdView` class.
+
+Here's an example that shows how to load an ad in the `onCreate()` method of an `Activity`:
+
+For Java
+
+```java
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.nativeads.Yodo1MasNativeAdView;
+
+public class MainActivity extends AppCompatActivity {
+    private Yodo1MasNativeAdView nativeAdView;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+            @Override
+            public void onMasInitSuccessful() {
+            }
+
+            @Override
+            public void onMasInitFailed(@NonNull Yodo1MasError error) {
+            }
+        });
+
+        nativeAdView = findViewById(R.id.yodo1_mas_native);
+        nativeAdView.loadAd();
+    }
+}
+```
+
+For Kotlin
+
+```kotlin
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.nativeads.Yodo1MasNativeAdView;
+
+class MainActivity : AppCompatActivity() {
+
+    lateinit var nativeAdView : Yodo1MasNativeAdView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        	override fun onMasInitSuccessful() {    
+        		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
+        	} 
+        	override fun onMasInitFailed(error: Yodo1MasError) {
+        		Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()  
+        	}
+        })
+
+        nativeAdView = findViewById(R.id.yodo1_mas_native)
+        nativeAdView.loadAd()
+    }
+}
+```
+
+That's it! Your app is now ready to display native ads.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasNativeAdListener` class.
+
+For Java
+
+```java
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.nativeads.Yodo1MasNativeAdListener;
+import com.yodo1.mas.nativeads.Yodo1MasNativeAdView;
+
+public class MainActivity extends AppCompatActivity {
+    private Yodo1MasNativeAdView nativeAdView;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+            @Override
+            public void onMasInitSuccessful() {
+            }
+
+            @Override
+            public void onMasInitFailed(@NonNull Yodo1MasError error) {
+            }
+        });
+
+        nativeAdView = findViewById(R.id.yodo1_mas_native);
+        nativeAdView.setAdListener(new Yodo1MasNativeAdListener() {
+		    @Override
+		    public void onNativeAdLoaded(Yodo1MasNativeAdView nativeAdView) {
+		        // Code to be executed when an ad finishes loading.
+		    }
+		
+		    @Override
+		    public void onNativeAdFailedToLoad(Yodo1MasNativeAdView nativeAdView, @NonNull Yodo1MasError error) {
+		        // Code to be executed when an ad request fails.
+		    }
+		 });
+        nativeAdView.loadAd();
+    }
+}
+```
+
+For Kotlin
+
+```kotlin
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.nativeads.Yodo1MasNativeAdListener;
+import com.yodo1.mas.nativeads.Yodo1MasNativeAdView;
+
+class MainActivity : AppCompatActivity() {
+
+    lateinit var nativeAdView : Yodo1MasNativeAdView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        	override fun onMasInitSuccessful() {    
+        		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
+        	} 
+        	override fun onMasInitFailed(error: Yodo1MasError) {
+        		Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()  
+        	}
+        })
+
+        nativeAdView = findViewById(R.id.yodo1_mas_native)
+        nativeAdView.setAdListener(object : Yodo1MasNativeAdListener {
+            override fun onNativeAdLoaded(nativeAdView: Yodo1MasNativeAdView?) {
+                // Code to be executed when an ad finishes loading.
+            }
+
+            override fun onNativeAdFailedToLoad(nativeAdView: Yodo1MasNativeAdView?, error: Yodo1MasError) {
+                // Code to be executed when an ad request fails.
+            }
+        })
+        nativeAdView.loadAd()
+    }
+}
 ```
 
 ## Advanced Settings

@@ -25,10 +25,19 @@
 	# use_frameworks! # If you use Facebook to share or log in, please add
 	source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
 	source 'https://github.com/Yodo1Games/MAS-Spec.git'
-	source 'https://github.com/Yodo1Games/Yodo1Spec.git'
 	
-	pod 'Yodo1MasFull', '4.5.0'
+	pod 'Yodo1MasFull', '4.6.0-rc.1'
 	```
+
+  If you need to use lightweight SDK:
+
+  ```ruby
+  # use_frameworks! # If you use Facebook to share or log in, please add
+  source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
+  source 'https://github.com/Yodo1Games/MAS-Spec.git'
+  
+  pod 'Yodo1MasLite', '4.6.0-rc.1'
+  ```
 	
 	Execute the following command in `Terminal` :
 	
@@ -45,7 +54,7 @@
 
 Follow these steps to add the SDK to your project:
 
-* [Download iOS SDK Version 4.5.0](https://mas-artifacts.yodo1.com/4.5.0/iOS/Release/Yodo1MasFull-Manual-4.5.0.zip)</br>
+* [Download iOS SDK Version 4.6.0](https://mas-artifacts.yodo1.com/4.6.0-rc.1/iOS/Release/Yodo1MasFull-Manual-4.6.0-rc.1.zip)</br> or [Download iOS Lite SDK Version 4.6.0](https://mas-artifacts.yodo1.com/4.6.0-rc.1/iOS/Release/Yodo1MasLite-Manual-4.6.0-rc.1.zip)</br>
 	After you download the SDK; Unzip and copy the downloaded SDK into the project
 	<img src="./../resource/ios-manual-01.png" width="400"/>
 	<img src="./../resource/ios-manual-02.png" width="400"/> 
@@ -139,6 +148,15 @@ Follow these steps to add the SDK to your project:
 	<key>GADApplicationIdentifier</key> 
 	<string>Your MAS AdMob App ID</string>
 	```
+
+Enable Google Ad Manager
+
+In your app’s `Info.plist`, add a `GADIsAdManagerApp` key with the Boolean value of `YES`.
+
+  ``` xml
+  <key>GADIsAdManagerApp</key>
+  <true/>
+  ```
 
 #### 2.3 iOS9 `App Transport Security (ATS)` Settings
 
@@ -237,6 +255,10 @@ The following shows the array of dictionaries you need to access the SDK.
 <dict>
   <key>SKAdNetworkIdentifier</key>
   <string>523jb4fst2.skadnetwork</string>
+</dict>
+<dict>
+  <key>SKAdNetworkIdentifier</key>
+  <string>578prtvx9j.skadnetwork</string>
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
@@ -444,10 +466,6 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
-  <string>578prtvx9j.skadnetwork</string>
-</dict>
-<dict>
-  <key>SKAdNetworkIdentifier</key>
   <string>5a6flpkh64.skadnetwork</string>
 </dict>
 <dict>
@@ -512,6 +530,10 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
+  <string>dkc879ngq3.skadnetwork</string>
+</dict>
+<dict>
+  <key>SKAdNetworkIdentifier</key>
   <string>feyaarzu9v.skadnetwork</string>
 </dict>
 <dict>
@@ -529,6 +551,10 @@ The following shows the array of dictionaries you need to access the SDK.
 <dict>
   <key>SKAdNetworkIdentifier</key>
   <string>ludvb6z3bs.skadnetwork</string>
+</dict>
+<dict>
+  <key>SKAdNetworkIdentifier</key>
+  <string>nzq8sh4pbs.skadnetwork</string>
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
@@ -640,6 +666,10 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
+  <string>a2p9lx4jpn.skadnetwork</string>
+</dict>
+<dict>
+  <key>SKAdNetworkIdentifier</key>
   <string>ecpz2srf59.skadnetwork</string>
 </dict>
 <dict>
@@ -656,15 +686,15 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
-  <string>nzq8sh4pbs.skadnetwork</string>
-</dict>
-<dict>
-  <key>SKAdNetworkIdentifier</key>
   <string>pu4na253f3.skadnetwork</string>
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
   <string>v79kvwwj4g.skadnetwork</string>
+</dict>
+<dict>
+  <key>SKAdNetworkIdentifier</key>
+  <string>x44k69ngh6.skadnetwork</string>
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
@@ -681,10 +711,6 @@ The following shows the array of dictionaries you need to access the SDK.
 <dict>
   <key>SKAdNetworkIdentifier</key>
   <string>mp6xlyr22a.skadnetwork</string>
-</dict>
-<dict>
-  <key>SKAdNetworkIdentifier</key>
-  <string>x44k69ngh6.skadnetwork</string>
 </dict>
 <dict>
   <key>SKAdNetworkIdentifier</key>
@@ -733,6 +759,23 @@ config.userAgreementUrl = @"Your user agreement url";
 Yodo1MasAdBuildConfig *config = [Yodo1MasAdBuildConfig instance];
 config.enableUserPrivacyDialog = YES;
 config.privacyPolicyUrl = @"Your privacy policy url";
+[[Yodo1Mas sharedInstance] setAdBuildConfig:config];
+```
+4.Custom The age verification pop up (optional)
+
+```obj-c
+Yodo1MasUserPrivacyConfig *privacyConfig = [Yodo1MasUserPrivacyConfig instance];
+privacyConfig.titleBackgroundColor = UIColor.blueColor;
+privacyConfig.titleTextColor = UIColor.whiteColor;
+privacyConfig.contentBackgroundColor = UIColor.whiteColor;
+privacyConfig.contentTextColor = UIColor.darkTextColor;
+privacyConfig.buttonBackgroundColor = UIColor.blueColor;
+privacyConfig.buttonTextColor = [UIColor whiteColor];
+    
+Yodo1MasAdBuildConfig *config = [Yodo1MasAdBuildConfig instance];
+config.enableUserPrivacyDialog = YES;
+config.userPrivacyConfig = privacyConfig;
+    
 [[Yodo1Mas sharedInstance] setAdBuildConfig:config];
 ```
 
@@ -861,7 +904,7 @@ For `Objective-C`
 
 @end
 
-@implementation BannerController
+@implementation MainController
   
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -927,7 +970,7 @@ For `Objective-C`
 
 @end
 
-@implementation BannerController
+@implementation MainController
   
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -1095,4 +1138,173 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isRewardAdLoaded];
 ### 4. Create a rewarded Placement
 ```obj-c
 [[Yodo1Mas sharedInstance] showRewardAd:@"MY_REWARDED_PLACEMENT"]
+```
+
+## Native Ads Integration
+
+### 1. Init Yodo1MasNativeAdView
+
+For `Objective-C` 
+
+```objective-c
+Yodo1MasNativeAdView *nativeAdView = [[Yodo1MasNativeAdView alloc] init];
+nativeAdView.frame = CGRectMake(0, 0, 375, 200);
+// TODO: Add nativeAdView to your view hierarchy.
+```
+
+For `Swift`
+
+```swift
+let nativeAdView = Yodo1MasNativeAdView()
+bnativeAdView.frame = CGRect(x: 0, y: 0, width: 375, height: 200)
+// TODO: Add bnativeAdView to your view hierarchy.
+```
+### 2. Load an ad
+
+Once the `Yodo1MasNativeAdView` is in place, the next step is to load an ad. That's done with the `loadAd()` method in the `Yodo1MasNativeAdView` class.
+
+Here's an example that shows how to load an ad in the `viewDidLoad` method of an `UIViewController`:
+
+For `Objective-C` 
+
+```objective-c
+
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+#import "Yodo1MasNativeAdView.h"
+  
+@interface MainController ()
+  
+@property (nonatomic, strong) Yodo1MasNativeAdView *nativeAdView;
+
+@end
+
+@implementation MainController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _nativeAdView = [[Yodo1MasNativeAdView alloc] init];
+  _nativeAdView.frame = CGRectMake(0, 0, 375, 200);
+  [_nativeAdView loadAd];
+  [self.view addSubview:_nativeAdView];
+}
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController : UIViewController {
+
+	var nativeAdView: Yodo1MasNativeAdView!
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+    Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+    } fail: { error in
+
+    }
+    nativeAdView = Yodo1MasNativeAdView()
+    nativeAdView.frame = CGRect(x: 0, y: 0, width: 375, height: 200)
+    nativeAdView.loadAd()
+    self.view.addSubview(nativeAdView)
+   }
+}
+```
+
+That's it! Your app is now ready to display native ads.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasNativeAdViewDelegate`.
+
+For `Objective-C` 
+
+```objective-c
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+#import "Yodo1MasNativeAdView.h"
+  
+@interface MainController ()<Yodo1MasNativeAdViewDelegate>
+  
+@property (nonatomic, strong) Yodo1MasNativeAdView *nativeAdView;
+
+@end
+
+@implementation MainController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _nativeAdView = [[Yodo1MasNativeAdView alloc] init];
+  _nativeAdView.frame = CGRectMake(0, 0, 375, 200);
+  _nativeAdView.adDelegate = self;
+  [_nativeAdView loadAd];
+  [self.view addSubview:_nativeAdView];
+}
+
+
+#pragma mark - Yodo1MasNativeAdViewDelegate
+- (void)onNativeAdLoaded:(Yodo1MasNativeAdView *)nativeView {
+    
+}
+
+- (void)onNativeAdFailedToLoad:(Yodo1MasNativeAdView *)nativeView withError:(Yodo1MasError *)error {
+    
+}
+
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController: UIViewController {
+    var nativeAdView: Yodo1MasNativeAdView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+        } fail: { error in
+            
+        }
+        
+        nativeAdView = Yodo1MasNativeAdView()
+        nativeAdView.frame = CGRect(x: 0, y: 0, width: 375, height: 200)
+        nativeAdView.adDelegate = self
+        nativeAdView.loadAd()
+        self.view.addSubview(nativeAdView)
+    }
+}
+
+extension MainController: Yodo1MasNativeAdViewDelegate {
+    // MARK: Yodo1MasNativeAdViewDelegate
+    func onNativerAdLoaded(_ nativeView: Yodo1MasNativeAdView) {
+        
+    }
+    
+    func onNativeAdFailed(toLoad nativeView: Yodo1MasNativeAdView, withError error: Yodo1MasError) {
+        
+    }
+}
 ```
