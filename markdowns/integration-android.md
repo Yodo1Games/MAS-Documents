@@ -821,7 +821,7 @@ boolean isLoaded = Yodo1Mas.getInstance().isBannerAdLoaded();
 Yodo1Mas.getInstance().showRewardedAd(MyActivity.this);
 ```
 
-## Native Ads Integration
+## Native Ads (Template) Integration
 ### 1. Add Yodo1MasNativeAdView to the layout
 
 The first step toward displaying a native is to place `Yodo1MasNativeAdView` in the layout for the Activity or Fragment in which you'd like to display it. The easiest way to do this is to add one to the corresponding XML layout file. Here's an example that shows an activity's `Yodo1MasNativeAdView`:
@@ -928,6 +928,429 @@ class MainActivity : AppCompatActivity() {
 That's it! Your app is now ready to display native ads.
 
 ### 3. Ad events
+
+To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasNativeAdListener` class.
+
+For Java
+
+```java
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.nativeads.Yodo1MasNativeAdListener;
+import com.yodo1.mas.nativeads.Yodo1MasNativeAdView;
+
+public class MainActivity extends AppCompatActivity {
+    private Yodo1MasNativeAdView nativeAdView;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+            @Override
+            public void onMasInitSuccessful() {
+            }
+
+            @Override
+            public void onMasInitFailed(@NonNull Yodo1MasError error) {
+            }
+        });
+
+        nativeAdView = findViewById(R.id.yodo1_mas_native);
+        nativeAdView.setAdListener(new Yodo1MasNativeAdListener() {
+		    @Override
+		    public void onNativeAdLoaded(Yodo1MasNativeAdView nativeAdView) {
+		        // Code to be executed when an ad finishes loading.
+		    }
+		
+		    @Override
+		    public void onNativeAdFailedToLoad(Yodo1MasNativeAdView nativeAdView, @NonNull Yodo1MasError error) {
+		        // Code to be executed when an ad request fails.
+		    }
+		 });
+        nativeAdView.loadAd();
+    }
+}
+```
+
+For Kotlin
+
+```kotlin
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.nativeads.Yodo1MasNativeAdListener;
+import com.yodo1.mas.nativeads.Yodo1MasNativeAdView;
+
+class MainActivity : AppCompatActivity() {
+
+    lateinit var nativeAdView : Yodo1MasNativeAdView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        	override fun onMasInitSuccessful() {    
+        		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
+        	} 
+        	override fun onMasInitFailed(error: Yodo1MasError) {
+        		Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()  
+        	}
+        })
+
+        nativeAdView = findViewById(R.id.yodo1_mas_native)
+        nativeAdView.setAdListener(object : Yodo1MasNativeAdListener {
+            override fun onNativeAdLoaded(nativeAdView: Yodo1MasNativeAdView?) {
+                // Code to be executed when an ad finishes loading.
+            }
+
+            override fun onNativeAdFailedToLoad(nativeAdView: Yodo1MasNativeAdView?, error: Yodo1MasError) {
+                // Code to be executed when an ad request fails.
+            }
+        })
+        nativeAdView.loadAd()
+    }
+}
+```
+
+## Native Ads (Manual) Integration
+### 1. Create a custom view, such as
+### `XML`
+`native_custom_ad_view.xml`
+```xml
+<!-- native_custom_ad_view.xml -->
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+		xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/icon_image_view"
+		    … />
+    <LinearLayout
+        android:id="@+id/ad_options_view"
+		    … />
+    <TextView
+        android:id="@+id/title_text_view"
+		    … />
+    <TextView
+        android:id="@+id/advertiser_textView"
+		    … />
+    <TextView
+        android:id="@+id/body_text_view"
+		    … />
+    <FrameLayout
+        android:id="@+id/media_view_container"
+		    … />
+    <Button
+        android:id="@+id/cta_button"
+		    … />
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
+### `Code`
+For `Java`
+```java
+import android.content.Context;
+import android.util.AttributeSet;
+import android.view.View;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import androidx.annotation.IdRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
+public class NativeCustomAdView extends ConstraintLayout {
+
+    private ImageView iconImageView;
+    private LinearLayout adOptionsView;
+    private TextView titleTextView;
+    private TextView advertiserTextView;
+    private TextView bodyTextView;
+    private FrameLayout mediaViewContainer;
+    private Button ctaButton;
+
+    public NativeCustomAdView(@NonNull Context context) {
+        super(context);
+        initView();
+    }
+
+    public NativeCustomAdView(@NonNull Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+        initView();
+    }
+
+    public NativeCustomAdView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        initView();
+    }
+
+    private void initView() {
+        Context context = getContext();
+        if (context == null) return;
+        iconImageView = new ImageView(context);
+        iconImageView.setId(R.id.icon_image_view);
+				// set layout
+				...
+        addView(iconImageView);
+
+        adOptionsView = new LinearLayout(context);
+        adOptionsView.setId(R.id.options_view);
+				// set layout
+				...
+        addView(adOptionsView);
+
+        titleTextView = new TextView(context);
+        titleTextView.setId(R.id.title_text_view);
+				// set layout
+				...
+        addView(titleTextView);
+
+        advertiserTextView = new TextView(context);
+        advertiserTextView.setId(R.id.advertiser_textView);
+				// set layout
+				...
+        addView(advertiserTextView);
+
+        bodyTextView = new TextView(context);
+        bodyTextView.setId(R.id.body_text_view);
+				// set layout
+				...
+        addView(bodyTextView);
+
+        mediaViewContainer = new FrameLayout(context);
+        mediaViewContainer.setId(R.id.media_view_container);
+				// set layout
+				...
+        addView(mediaViewContainer);
+
+        ctaButton = new Button(context);
+        ctaButton.setId(R.id.cta_button);
+				// set layout
+				...
+        addView(ctaButton);
+    }
+}
+```
+For `Kotlin`
+```kotlin
+import android.content.Context
+import android.util.AttributeSet
+import android.widget.*
+import androidx.constraintlayout.widget.ConstraintLayout
+
+
+class NativeCustomAdView: ConstraintLayout {
+    private var iconImageView: ImageView? = null
+    private var adOptionsView: LinearLayout? = null
+    private var titleTextView: TextView? = null
+    private var advertiserTextView: TextView? = null
+    private var bodyTextView: TextView? = null
+    private var mediaViewContainer: FrameLayout? = null
+    private var ctaButton: Button? = null
+
+    constructor(context: Context) : super(context) {
+        initView()
+    }
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
+        initView()
+    }
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
+        initView()
+    }
+
+    private fun initView() {
+        if (context == null) return;
+        iconImageView = ImageView(context);
+        iconImageView?.id = R.id.icon_image_view
+        // set layout
+        ...
+        addView(iconImageView);
+
+        adOptionsView = LinearLayout(context);
+        adOptionsView?.id = R.id.options_view
+        // set layout
+        ...
+        addView(adOptionsView);
+
+        titleTextView = TextView(context);
+        titleTextView?.id = R.id.title_text_view
+        // set layout
+        ...
+        addView(titleTextView);
+
+        advertiserTextView = TextView(context);
+        advertiserTextView?.id = R.id.advertiser_textView
+        // set layout
+        ...
+        addView(advertiserTextView);
+
+        bodyTextView = TextView(context);
+        bodyTextView?.id = R.id.body_text_view
+        // set layout
+        ...
+        addView(bodyTextView);
+
+        mediaViewContainer = FrameLayout(context);
+        mediaViewContainer?.id = R.id.media_view_container
+        // set layout
+        ...
+        addView(mediaViewContainer);
+
+        ctaButton = Button(context);
+        ctaButton?.id = R.id.cta_button
+        // set layout
+        ...
+        addView(ctaButton);
+    }
+}
+```
+
+### 2. Add Yodo1MasNativeAdView to the layout
+
+The first step toward displaying a native is to place `Yodo1MasNativeAdView` in the layout for the Activity or Fragment in which you'd like to display it. The easiest way to do this is to add one to the corresponding XML layout file. Here's an example that shows an activity's `Yodo1MasNativeAdView`:
+
+```xml
+...
+	<com.yodo1.mas.nativeads.Yodo1MasNativeAdView 
+		xmlns:masads="http://schemas.android.com/apk/res-auto"
+		android:id="@+id/yodo1_mas_native"
+		android:layout_width="match_parent"
+		android:layout_height="300dp"
+		android:layout_gravity="center_horizontal|top"/>
+...
+```
+
+You can alternatively create `Yodo1MasNativeAdView` programmatically:
+
+For `Java`
+
+```java
+Yodo1MasNativeAdView nativeAdView = new Yodo1MasNativeAdView(this);
+nativeAdView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp2px(300)));
+// TODO: Add nativeAdView to your view hierarchy.
+```
+
+For `Kotlin`
+
+```kotlin
+val nativeAdView = Yodo1MasNativeAdView(this)
+nativeAdView.setLayoutParams(ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp2px(300)))
+// TODO: Add nativeAdView to your view hierarchy.
+```
+
+### 3. Set up custom layouts and load ads
+
+Once the `Yodo1MasNativeAdView` is in place, the next step is to load an ad. That's done with the `loadAd()` method in the `Yodo1MasNativeAdView` class.
+
+Here's an example that shows how to load an ad in the `onCreate()` method of an `Activity`:
+
+For Java
+
+```java
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.nativeads.Yodo1MasNativeAdView;
+
+public class MainActivity extends AppCompatActivity {
+    private Yodo1MasNativeAdView nativeAdView;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+            @Override
+            public void onMasInitSuccessful() {
+            }
+
+            @Override
+            public void onMasInitFailed(@NonNull Yodo1MasError error) {
+            }
+        });
+
+        Yodo1MasNativeAdViewBuilder builder = new Yodo1MasNativeAdViewBuilder()
+                .setTitleTextViewId( R.id.title_text_view )
+                .setBodyTextViewId( R.id.body_text_view )
+                .setAdvertiserTextViewId( R.id.advertiser_textView )
+                .setIconImageViewId( R.id.icon_image_view )
+                .setMediaContentViewGroupId( R.id.media_view_container )
+                .setOptionsContentViewGroupId( R.id.options_view )
+                .setCallToActionButtonId( R.id.cta_button );
+
+        nativeAdView = findViewById(R.id.yodo1_mas_native);
+        // Set up custom layout, and must be set before calling loadAd()
+        nativeAdView.setLayoutId(R.layout.native_custom_ad_view, builder); 
+        // nativeAdView.setLayoutView(NativeCustomAdView.class, builder); 
+
+        nativeAdView.loadAd();
+    }
+}
+```
+
+For Kotlin
+
+```kotlin
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.nativeads.Yodo1MasNativeAdView;
+
+class MainActivity : AppCompatActivity() {
+
+    lateinit var nativeAdView : Yodo1MasNativeAdView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        	override fun onMasInitSuccessful() {    
+        		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
+        	} 
+        	override fun onMasInitFailed(error: Yodo1MasError) {
+        		Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()  
+        	}
+        })
+
+        val builder = Yodo1MasNativeAdViewBuilder()
+                .setTitleTextViewId( R.id.title_text_view )
+                .setBodyTextViewId( R.id.body_text_view )
+                .setAdvertiserTextViewId( R.id.advertiser_textView )
+                .setIconImageViewId( R.id.icon_image_view )
+                .setMediaContentViewGroupId( R.id.media_view_container )
+                .setOptionsContentViewGroupId( R.id.options_view )
+                .setCallToActionButtonId( R.id.cta_button );
+
+        nativeAdView = findViewById(R.id.yodo1_mas_native)
+
+        // Set up custom layout, and must be set before calling loadAd()
+        nativeAdView.setLayoutId(R.layout.native_custom_ad_view, builder)
+        // nativeAdView.setLayoutView(NativeCustomAdView.class, builder)
+
+        nativeAdView.loadAd()
+    }
+}
+```
+
+That's it! Your app is now ready to display native ads.
+
+### 4. Ad events
 
 To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasNativeAdListener` class.
 
