@@ -88,8 +88,30 @@ If force resolve succeeded, you will see the result as the following screenshot
 <center class="half">
     <img src="./../resource/unity-android-resolve-succeeded.jpg" width="400"/> 
 </center>
+### 5. Support Android 12
+To adapt to Android 12, you need to set Target API Level to API level 31.
 
-### 5. Comply With Necessary Legal Frameworks
+The following settings are required on versions lower than Unity 2019 (No settings required for Unity 2020+)
+
+1.Check the options like screenshot
+
+<center class="half">
+    <img src="./../resource/unity-android-support12-1.png" width="400"/> 
+</center>
+
+2.Open the baseProjectTemplate.gradle file under /Assets/Plugins/Android/ and modify the gradle plugin version to 4.1.0 or above
+
+<center class="half">
+    <img src="./../resource/unity-android-support12-2.png" width="400"/> 
+</center>
+
+3.Modify the gradle version used by Unity to 6.5 or above
+
+<center class="half">
+    <img src="./../resource/unity-android-support12-3.png" width="400"/> 
+</center>
+
+### 6. Comply With Necessary Legal Frameworks
 Please comply with all legal frameworks that apply to your game and its users. You can find information on compliance through these links:
 
 * [GDPR](privacy-gdpr.md)
@@ -145,15 +167,15 @@ Yodo1U3dMas.SetAdBuildConfig(config);
 
 <font color=red>IMPORTANT!</font> Failure to comply with these frameworks can lead the Apple App Store and/or Google Play Store rejecting your game, as well as a negative impact of your game's monetization.
 
-### 6. Initialize the SDK
+### 7. Initialize the SDK
 
-#### 6.1 Using namespace
+#### 7.1 Using namespace
 
 ```c#
 using Yodo1.MAS;
 ```
 
-#### 6.2 Sets the initialization delegate method
+#### 7.2 Sets the initialization delegate method
 ```c#
 Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{
     if (success)
@@ -163,7 +185,7 @@ Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{
     
 ```
 
-#### 6.3 SDK initialization is called in the `Start` method
+#### 7.3 SDK initialization is called in the `Start` method
 
 ```c#
 void Start()  {
@@ -171,7 +193,7 @@ void Start()  {
 }
 ```
 
-### 7. Proguard
+### 8. Proguard
 > If you don't need to use Proguard to obfuscate the code, please ignore this item.
 
 
