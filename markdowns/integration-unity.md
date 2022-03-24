@@ -91,9 +91,9 @@ If force resolve succeeded, you will see the result as the following screenshot
 ### 5. Support Android 12
 To adapt to Android 12, you need to set Target API Level to API level 31.
 
-The following settings are required on versions lower than Unity 2019 (No settings required for Unity 2020+)
+The following settings are required for all versions of Unity 2019 and lower. (No change in settings are required for Unity 2020+)
 
-1.Check the options like screenshot
+1.Select the options as shown in the screenshot
 
 <center class="half">
     <img src="./../resource/unity-android-support12-1.png" width="400"/> 
