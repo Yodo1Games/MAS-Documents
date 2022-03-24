@@ -110,6 +110,7 @@ The following settings are required on versions lower than Unity 2019 (No settin
 <center class="half">
     <img src="./../resource/unity-android-support12-3.png" width="400"/> 
 </center>
+Here is the gradle versions download link [Gradle versions](https://services.gradle.org/distributions/)
 
 ### 6. Comply With Necessary Legal Frameworks
 Please comply with all legal frameworks that apply to your game and its users. You can find information on compliance through these links:
