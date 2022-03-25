@@ -1,6 +1,8 @@
 # Android Integration
 
 > MAS supports Android version 4.4.+ (Android API level: 19+) and above
+> 
+> Need compileSdkVersion 31 from MAS SDK 4.6.1
 
 ## The Integration Steps
 ### 1. Open your project-level `build.gradle` and add the relevant code.
