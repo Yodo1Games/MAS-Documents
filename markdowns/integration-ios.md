@@ -6,6 +6,11 @@
 * MAS supports iOS 10.0 and above
 * The easiest way is to use `CocoaPods`(Please use version `1.10.0` and above), If you are just starting out with 'CocoaPods', please refer to its [official documentation](https://guides.cocoapods.org/using/using-cocoapods) to study how to create and use it `Podfile`
 
+**Tips**
+> To ensure your build is compatible with artifacts that contain Swift, set `Build Settings Always Embed Swift Standard Libraries` to `YES`.
+
+> If you use Swift and build for iOS 12.2.0 or earlier, add `/usr/lib/swift` to `Build Settings > Runpath Search Paths` to prevent any issues with `libswiftCore.dylib`.
+
 ## The Integration Steps
 ### 1. Add iOS SDK to your project
 
@@ -26,7 +31,7 @@
 	source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
 	source 'https://github.com/Yodo1Games/MAS-Spec.git'
 	
-	pod 'Yodo1MasFull', '4.6.0-rc.1'
+	pod 'Yodo1MasFull', '4.6.1'
 	```
 
   If you need to use lightweight SDK:
@@ -36,7 +41,7 @@
   source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
   source 'https://github.com/Yodo1Games/MAS-Spec.git'
   
-  pod 'Yodo1MasLite', '4.6.0-rc.1'
+  pod 'Yodo1MasLite', '4.6.1'
   ```
 	
 	Execute the following command in `Terminal` :
@@ -54,7 +59,7 @@
 
 Follow these steps to add the SDK to your project:
 
-* [Download iOS SDK Version 4.6.0](https://mas-artifacts.yodo1.com/4.6.0-rc.1/iOS/Release/Yodo1MasFull-Manual-4.6.0-rc.1.zip)</br> or [Download iOS Lite SDK Version 4.6.0](https://mas-artifacts.yodo1.com/4.6.0-rc.1/iOS/Release/Yodo1MasLite-Manual-4.6.0-rc.1.zip)</br>
+* [Download iOS SDK Version 4.6.1](https://mas-artifacts.yodo1.com/4.6.1/iOS/Release/Yodo1MasFull-Manual-4.6.0-rc.1.zip) or [Download iOS Lite SDK Version 4.6.1](https://mas-artifacts.yodo1.com/4.6.0-rc.1/iOS/Release/Yodo1MasLite-Manual-4.6.1.zip)</br>
 	After you download the SDK; Unzip and copy the downloaded SDK into the project
 	<img src="./../resource/ios-manual-01.png" width="400"/>
 	<img src="./../resource/ios-manual-02.png" width="400"/> 
