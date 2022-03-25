@@ -782,13 +782,28 @@ public class NativeSampleV2 : MonoBehaviour
 
     private void RequestNative()
     {
-        // Create a 320x200 native at top of the screen
-        nativeAdView = new Yodo1U3dNativeAdView(0, 0, 375, 200);
+        // Create a 375x200 native at bottom of the screen
+        nativeAdView = new Yodo1U3dNativeAdView(Yodo1U3dNativeAdPosition.NativeHorizontalCenter | Yodo1U3dNativeAdPosition.NativeBottom, 0, 0, 375, 200);
+
     }
 }
 ```
+The constructor for a `Yodo1U3dNativeAdView` has the following parameter:
 
-### 2. Load an ad
+* `Yodo1U3dNativeAdPosition` - The position where the native ad should be placed. The `Yodo1U3dNativeAdPosition` enum lists the valid ad position values.
+
+### 2. (Optional) Custom ad position
+For greater control over where a `Yodo1U3dNativeAdView` is placed on screen than what's offered by `Yodo1U3dNativeAdPosition` values, use the `Yodo1U3dNativeAdView` constructor that has x- and y-coordinates as parameters:
+
+```c#
+// Create a 375x200 native ad at coordinate (0,50) on screen.
+nativeAdView = new Yodo1U3dNativeAdView(0, 50, 375, 200);
+```
+
+The top-left corner of the `Yodo1U3NativeAdView` will be positioned at the x and y values passed to the constructor, where the origin is the top-left of the screen.
+
+
+### 3. Load an ad
 
 Once the NativeView is instantiated, the next step is to load an ad. That's done with the loadAd() method in the NativeView class.
 
@@ -798,8 +813,8 @@ Here's an example that shows how to load an ad:
 ...
     private void RequestNative()
     {
-        // Create a 375x200 native at top of the screen
-        nativeAdView = new Yodo1U3dNativeAdView(0, 0, 375, 200);
+        // Create a 375x200 native at bottom of the screen
+        nativeAdView = new Yodo1U3dNativeAdView(Yodo1U3dNativeAdPosition.NativeHorizontalCenter | Yodo1U3dNativeAdPosition.NativeBottom, 0, 0, 375, 200);
 
         // Load native ads, the native ad will be displayed automatically after loaded
         nativeAdView.LoadAd();
@@ -809,7 +824,7 @@ Here's an example that shows how to load an ad:
 
 That's it! Your app is now ready to display native ads from MAS.
 
-### 3. Ad events
+### 4. Ad events
 
 To further customize the behavior of your ad, you can hook into a number of events in the ad's lifecycle: loading, opening, closing, and so on.
 
