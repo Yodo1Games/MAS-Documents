@@ -89,28 +89,27 @@ If force resolve succeeded, you will see the result as the following screenshot
     <img src="./../resource/unity-android-resolve-succeeded.jpg" width="400"/> 
 </center>
 ### 5. Support Android 12
-To adapt to Android 12, you need to set Target API Level to API level 31.
+1. You need to set `Target API Level` to `API level 31`
 
-The following settings are required for all versions of Unity 2019 and lower. (No change in settings are required for Unity 2020+)
+1. Unity 2019 and below need to upgrade to the latest LTS version and do the following settings
 
-1.Select the options as shown in the screenshot
+- Select the options as shown in the screenshot
 
 <center class="half">
     <img src="./../resource/unity-android-support12-1.png" width="400"/> 
 </center>
 
-2.Open the baseProjectTemplate.gradle file under /Assets/Plugins/Android/ and modify the gradle plugin version to 4.1.0 or above
+- Open the `baseProjectTemplate.gradle` file under `/Assets/Plugins/Android/` and modify the gradle plugin version to 4.1.0 or above
 
 <center class="half">
     <img src="./../resource/unity-android-support12-2.png" width="400"/> 
 </center>
 
-3.Modify the gradle version used by Unity to 6.5 or above
+- Modify the gradle version used by Unity to 6.5 or above, you can get the gradle versions from [here](https://services.gradle.org/distributions/)
 
 <center class="half">
     <img src="./../resource/unity-android-support12-3.png" width="400"/> 
 </center>
-Here is the gradle versions download link [Gradle versions](https://services.gradle.org/distributions/)
 
 ### 6. Comply With Necessary Legal Frameworks
 Please comply with all legal frameworks that apply to your game and its users. You can find information on compliance through these links:
