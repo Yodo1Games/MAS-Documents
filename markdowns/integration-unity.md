@@ -16,11 +16,11 @@ MAS provides 2 versions of the Unity plugin, and you need to select one dependin
 * If your game is not part of the “Designed for Families Program”, please use the Standard MAS Plugin.
 * If your game is a part of Google Play’s “Designed for Families” program, you will need to use the Designed For Families plugin in order to comply with the program’s requirements.
 
-[Designed For Families](https://mas-artifacts.yodo1.com/4.6.0-rc.1/Unity/Release/Rivendell-4.6.0-rc.1-Family.unitypackage)
+[Designed For Families](https://mas-artifacts.yodo1.com/4.6.1/Unity/Release/Rivendell-4.6.1-Family.unitypackage)
 
-[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.6.0-rc.1/Unity/Release/Rivendell-4.6.0-rc.1-Full.unitypackage)
+[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.6.1/Unity/Release/Rivendell-4.6.1-Full.unitypackage)
 
-[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.6.0-rc.1/Unity/Release/Rivendell-4.6.0-rc.1-Lite.unitypackage)
+[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.6.1/Unity/Release/Rivendell-4.6.1-Lite.unitypackage)
 
 ### Note:
 If you are use unity **2018**,please check on the Custom Gradle Template through the following steps:
@@ -88,8 +88,30 @@ If force resolve succeeded, you will see the result as the following screenshot
 <center class="half">
     <img src="./../resource/unity-android-resolve-succeeded.jpg" width="400"/> 
 </center>
+### 5. Support Android 12
+1. You need to set `Target API Level` to `API level 31`
 
-### 5. Comply With Necessary Legal Frameworks
+1. Unity 2019 and below need to upgrade to the latest LTS version and do the following settings
+
+- Select the options as shown in the screenshot
+
+<center class="half">
+    <img src="./../resource/unity-android-support12-1.png" width="400"/> 
+</center>
+
+- Open the `baseProjectTemplate.gradle` file under `/Assets/Plugins/Android/` and modify the gradle plugin version to 4.1.0 or above
+
+<center class="half">
+    <img src="./../resource/unity-android-support12-2.png" width="400"/> 
+</center>
+
+- Modify the gradle version used by Unity to 6.5 or above, you can get the gradle versions from [here](https://services.gradle.org/distributions/)
+
+<center class="half">
+    <img src="./../resource/unity-android-support12-3.png" width="400"/> 
+</center>
+
+### 6. Comply With Necessary Legal Frameworks
 Please comply with all legal frameworks that apply to your game and its users. You can find information on compliance through these links:
 
 * [GDPR](privacy-gdpr.md)
@@ -145,15 +167,15 @@ Yodo1U3dMas.SetAdBuildConfig(config);
 
 <font color=red>IMPORTANT!</font> Failure to comply with these frameworks can lead the Apple App Store and/or Google Play Store rejecting your game, as well as a negative impact of your game's monetization.
 
-### 6. Initialize the SDK
+### 7. Initialize the SDK
 
-#### 6.1 Using namespace
+#### 7.1 Using namespace
 
 ```c#
 using Yodo1.MAS;
 ```
 
-#### 6.2 Sets the initialization delegate method
+#### 7.2 Sets the initialization delegate method
 ```c#
 Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{
     if (success)
@@ -163,7 +185,7 @@ Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{
     
 ```
 
-#### 6.3 SDK initialization is called in the `Start` method
+#### 7.3 SDK initialization is called in the `Start` method
 
 ```c#
 void Start()  {
@@ -171,7 +193,7 @@ void Start()  {
 }
 ```
 
-### 7. Proguard
+### 8. Proguard
 > If you don't need to use Proguard to obfuscate the code, please ignore this item.
 
 
@@ -760,13 +782,28 @@ public class NativeSampleV2 : MonoBehaviour
 
     private void RequestNative()
     {
-        // Create a 320x200 native at top of the screen
-        nativeAdView = new Yodo1U3dNativeAdView(0, 0, 375, 200);
+        // Create a 375x200 native at bottom of the screen
+        nativeAdView = new Yodo1U3dNativeAdView(Yodo1U3dNativeAdPosition.NativeHorizontalCenter | Yodo1U3dNativeAdPosition.NativeBottom, 0, 0, 375, 200);
+
     }
 }
 ```
+The constructor for a `Yodo1U3dNativeAdView` has the following parameter:
 
-### 2. Load an ad
+* `Yodo1U3dNativeAdPosition` - The position where the native ad should be placed. The `Yodo1U3dNativeAdPosition` enum lists the valid ad position values.
+
+### 2. (Optional) Custom ad position
+For greater control over where a `Yodo1U3dNativeAdView` is placed on screen than what's offered by `Yodo1U3dNativeAdPosition` values, use the `Yodo1U3dNativeAdView` constructor that has x- and y-coordinates as parameters:
+
+```c#
+// Create a 375x200 native ad at coordinate (0,50) on screen.
+nativeAdView = new Yodo1U3dNativeAdView(0, 50, 375, 200);
+```
+
+The top-left corner of the `Yodo1U3NativeAdView` will be positioned at the x and y values passed to the constructor, where the origin is the top-left of the screen.
+
+
+### 3. Load an ad
 
 Once the NativeView is instantiated, the next step is to load an ad. That's done with the loadAd() method in the NativeView class.
 
@@ -776,8 +813,8 @@ Here's an example that shows how to load an ad:
 ...
     private void RequestNative()
     {
-        // Create a 375x200 native at top of the screen
-        nativeAdView = new Yodo1U3dNativeAdView(0, 0, 375, 200);
+        // Create a 375x200 native at bottom of the screen
+        nativeAdView = new Yodo1U3dNativeAdView(Yodo1U3dNativeAdPosition.NativeHorizontalCenter | Yodo1U3dNativeAdPosition.NativeBottom, 0, 0, 375, 200);
 
         // Load native ads, the native ad will be displayed automatically after loaded
         nativeAdView.LoadAd();
@@ -787,7 +824,7 @@ Here's an example that shows how to load an ad:
 
 That's it! Your app is now ready to display native ads from MAS.
 
-### 3. Ad events
+### 4. Ad events
 
 To further customize the behavior of your ad, you can hook into a number of events in the ad's lifecycle: loading, opening, closing, and so on.
 
