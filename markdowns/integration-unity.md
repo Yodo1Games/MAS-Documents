@@ -20,7 +20,7 @@ MAS provides 2 versions of the Unity plugin, and you need to select one dependin
 
 [Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.6.3/Unity/Release/Rivendell-4.6.3-Full.unitypackage)
 
-[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.6.2/Unity/Release/Rivendell-4.6.3-Lite.unitypackage)
+[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.6.3/Unity/Release/Rivendell-4.6.3-Lite.unitypackage)
 
 ### Note:
 If you are use unity **2018**,please check on the Custom Gradle Template through the following steps:
