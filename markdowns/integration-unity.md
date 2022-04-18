@@ -88,6 +88,7 @@ If force resolve succeeded, you will see the result as the following screenshot
 <center class="half">
     <img src="./../resource/unity-android-resolve-succeeded.jpg" width="400"/> 
 </center>
+
 ### 5. Support Android 12
 
 Unity 2020.3.15 and above / 2021.1.16 and above can ignore the following settings. Lower versions require the following settings
