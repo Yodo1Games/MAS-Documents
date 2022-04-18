@@ -77,6 +77,7 @@ You will need to take the app key (generated in the game submission process) and
 <center class="half">
     <img src="./../resource/use-jetifier.png" width="400"/> 
 </center>
+
 #### 4.3 Force Resolve
 
 Do the force resolve as below
