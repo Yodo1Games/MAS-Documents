@@ -16,11 +16,11 @@ MAS provides 2 versions of the Unity plugin, and you need to select one dependin
 * If your game is not part of the “Designed for Families Program”, please use the Standard MAS Plugin.
 * If your game is a part of Google Play’s “Designed for Families” program, you will need to use the Designed For Families plugin in order to comply with the program’s requirements.
 
-[Designed For Families](https://mas-artifacts.yodo1.com/4.6.5/Unity/Release/Rivendell-4.6.5-Family.unitypackage)
+[Designed For Families](https://mas-artifacts.yodo1.com/4.6.6/Unity/Release/Rivendell-4.6.6-Family.unitypackage)
 
-[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.6.5/Unity/Release/Rivendell-4.6.5-Full.unitypackage)
+[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.6.6/Unity/Release/Rivendell-4.6.6-Full.unitypackage)
 
-[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.6.5/Unity/Release/Rivendell-4.6.5-Lite.unitypackage)
+[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.6.6/Unity/Release/Rivendell-4.6.6-Lite.unitypackage)
 
 ### Note:
 If you are use unity **2018**,please check on the Custom Gradle Template through the following steps:
@@ -157,6 +157,23 @@ Yodo1U3dMas.SetAdBuildConfig(config);
 ```
 
 <font color=red>IMPORTANT!</font> Failure to comply with these frameworks can lead the Apple App Store and/or Google Play Store rejecting your game, as well as a negative impact of your game's monetization.
+
+5.Get user age and ATT status (optional)
+
+```c#
+int age = Yodo1U3dMas.GetUserAge();
+
+int attStatus = Yodo1U3dMas.GetAttrackingStatus();
+switch(attStatus) {
+    case Yodo1U3dAttrackingStatus.NotDetermined: break;
+    case Yodo1U3dAttrackingStatus.Restricted: break;
+    case Yodo1U3dAttrackingStatus.Denied: break;
+    case Yodo1U3dAttrackingStatus.Authorized: break;
+    case Yodo1U3dAttrackingStatus.SystemLow: break;
+}
+```
+
+<font color=red>IMPORTANT!</font> `GetUserAge()` and `GetAttrackingStatus()` must be called after the SDK is initialized. `GetAttrackingStatus()` only works on iOS platform
 
 ### 7. Initialize the SDK
 
