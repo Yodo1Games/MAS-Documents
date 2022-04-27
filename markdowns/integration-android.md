@@ -205,6 +205,14 @@ Yodo1Mas.getInstance().setAdBuildConfig(config);
 
 **IMPORTANT**! Failure to comply with these frameworks can lead to **Google Play Store rejecting** your game, as well as a negative impact of your game’s monetization.
 
+5.Get user age (optional)
+
+```java
+int age = Yodo1Mas.getInstance().getUserAge();
+```
+
+<font color=red>IMPORTANT!</font> `getUserAge()` must be called after the SDK is initialized.
+
 ### 9. Initialize the SDK
 Initialize the SDK in the `onCreate` method of `Activity`
 
