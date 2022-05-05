@@ -34,19 +34,19 @@ mavenCentral()
 #### 2.1 Add a Gradle dependency
 
 ```groovy
-implementation 'com.yodo1.mas:full:4.6.5'
+implementation 'com.yodo1.mas:full:4.6.6'
 ```
 
 If you need to comply with Google Family Policy:
 
 ```groovy
-implementation 'com.yodo1.mas:google:4.6.5'
+implementation 'com.yodo1.mas:google:4.6.6'
 ```
 
 If you need to use lightweight SDK:
 
 ```groovy
-implementation 'com.yodo1.mas:lite:4.6.5'
+implementation 'com.yodo1.mas:lite:4.6.6'
 ```
 
 #### 2.2 Add the `compileOptions` property to the `Android` section
@@ -204,6 +204,14 @@ Yodo1Mas.getInstance().setAdBuildConfig(config);
 ```
 
 **IMPORTANT**! Failure to comply with these frameworks can lead to **Google Play Store rejecting** your game, as well as a negative impact of your game’s monetization.
+
+5.Get user age (optional)
+
+```java
+int age = Yodo1Mas.getInstance().getUserAge();
+```
+
+<font color=red>IMPORTANT!</font> `getUserAge()` must be called after the SDK is initialized.
 
 ### 9. Initialize the SDK
 Initialize the SDK in the `onCreate` method of `Activity`

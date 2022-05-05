@@ -31,7 +31,7 @@
 	source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
 	source 'https://github.com/Yodo1Games/MAS-Spec.git'
 	
-	pod 'Yodo1MasFull', '4.6.5'
+	pod 'Yodo1MasFull', '4.6.6'
 	```
 
   If you need to use lightweight SDK:
@@ -41,7 +41,7 @@
   source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
   source 'https://github.com/Yodo1Games/MAS-Spec.git'
   
-  pod 'Yodo1MasLite', '4.6.5'
+  pod 'Yodo1MasLite', '4.6.6'
   ```
 	
 	Execute the following command in `Terminal` :
@@ -805,6 +805,23 @@ config.userPrivacyConfig = privacyConfig;
 ```
 
 <font color=red>IMPORTANT!</font> Failure to comply with these frameworks can lead to **Apple App Store and/or Google Play Store rejecting** your game, as well as a negative impact of your game's monetization.
+
+5.Get user age and ATT status (optional)
+
+```obj-c
+NSInteger age = [Yodo1Mas sharedInstance].userAge;
+
+Yodo1MasATTrackingStatus attStatus = [Yodo1Mas sharedInstance].attrackingStatus;
+switch(attStatus) {
+    case Yodo1MasATTrackingStatusNotDetermined: break;
+    case Yodo1MasATTrackingStatusRestricted: break;
+    case Yodo1MasATTrackingStatusDenied: break;
+    case Yodo1MasATTrackingStatusAuthorized: break;
+    case Yodo1MasATTrackingStatusSystemLow: break; // iOS version below 14
+}
+```
+
+<font color=red>IMPORTANT!</font> `userAge` and `attrackingStatus` must be called after the SDK is initialized. 
 
 ### 4. Initialize the SDK
 #### 4.1 Import header file `Yodo1Mas.h`
