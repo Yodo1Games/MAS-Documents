@@ -16,11 +16,11 @@ MAS provides 2 versions of the Unity plugin, and you need to select one dependin
 * If your game is not part of the “Designed for Families Program”, please use the Standard MAS Plugin.
 * If your game is a part of Google Play’s “Designed for Families” program, you will need to use the Designed For Families plugin in order to comply with the program’s requirements.
 
-[Designed For Families](https://mas-artifacts.yodo1.com/4.6.6/Unity/Release/Rivendell-4.6.6-Family.unitypackage)
+[Designed For Families](https://mas-artifacts.yodo1.com/4.7.0/Unity/Release/Rivendell-4.7.0-Family.unitypackage)
 
-[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.6.6/Unity/Release/Rivendell-4.6.6-Full.unitypackage)
+[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.7.0/Unity/Release/Rivendell-4.7.0-Full.unitypackage)
 
-[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.6.6/Unity/Release/Rivendell-4.6.6-Lite.unitypackage)
+[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.7.0/Unity/Release/Rivendell-4.7.0-Lite.unitypackage)
 
 ### Note:
 If you are use unity **2018**,please check on the Custom Gradle Template through the following steps:
@@ -672,9 +672,21 @@ bannerAdView.SetAdPlacement("Placement_Name")
 private void InitializeInterstitialAds()
 {
 	// Add Events
+    Yodo1U3dMasCallback.Interstitial.OnAdLoadedEvent += OnInterstitialAdLoadedEvent;
+    Yodo1U3dMasCallback.Interstitial.OnAdLoadFailedEvent += OnInterstitialAdLoadFailedEvent;
     Yodo1U3dMasCallback.Interstitial.OnAdOpenedEvent += OnInterstitialAdOpenedEvent;
+    Yodo1U3dMasCallback.Interstitial.OnAdOpenFailedEvent += OnInterstitialAdOpenFailedEvent;
     Yodo1U3dMasCallback.Interstitial.OnAdClosedEvent += OnInterstitialAdClosedEvent;
-    Yodo1U3dMasCallback.Interstitial.OnAdErrorEvent += OnInterstitialAdErorEvent;
+}
+
+private void OnInterstitialAdLoadedEvent() 
+{
+    Debug.Log("[Yodo1 Mas] Interstitial ad loaded");
+}
+
+private void OnInterstitialAdLoadFailedEvent(Yodo1U3dAdError adError) 
+{
+    Debug.Log("[Yodo1 Mas] Interstitial ad load error - " + adError.ToString());
 }
 
 private void OnInterstitialAdOpenedEvent()
@@ -682,14 +694,14 @@ private void OnInterstitialAdOpenedEvent()
     Debug.Log("[Yodo1 Mas] Interstitial ad opened");
 }
 
+private void OnInterstitialAdOpenFailedEvent(Yodo1U3dAdError adError) 
+{
+    Debug.Log("[Yodo1 Mas] Interstitial ad open error - " + adError.ToString());
+}
+
 private void OnInterstitialAdClosedEvent()
 {
     Debug.Log("[Yodo1 Mas] Interstitial ad closed");
-}
-
-private void OnInterstitialAdErorEvent(Yodo1U3dAdError adError)
-{
-    Debug.Log("[Yodo1 Mas] Interstitial ad error - " + adError.ToString());
 }
 ```
 
@@ -713,21 +725,161 @@ Simply add the placement name as a string in the parentheses.
 Yodo1U3dMas.ShowInterstitialAd("Placement_Name");
 ```
 
+## Interstitial(V2) Integration
+
+### 1. Create a Yodo1MasInterstitialAd
+
+The first step toward displaying a Interstitial is to create a **Yodo1MasInterstitialAd** object in a C# script attached to a GameObject.
+
+```c#
+using System;
+using UnityEngine;
+using Yodo1.MAS;
+...
+public class InterstitialSampleV2 : MonoBehaviour
+{
+    private Yodo1MasInterstitialAd interstitialAd;
+    ...
+    public void Start()
+    {
+        // Initialize the MAS SDK.
+        Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => { });
+        Yodo1U3dMas.InitializeSdk();
+		
+        this.RequestInterstitial();
+    }
+
+    private void RequestInterstitial()
+    {
+        interstitialAd = Yodo1MasInterstitialAd.GetInstance();
+    }
+}
+```
+
+### 2. Load an ad
+
+Once the Yodo1MasInterstitialAd is instantiated, the next step is to load an ad. That's done with the loadAd() method in the Yodo1MasInterstitialAd class.
+
+Here's an example that shows how to load an ad:
+
+```c#
+...
+    private void RequestInterstitial()
+    {
+        interstitialAd = Yodo1MasInterstitialAd.GetInstance();
+        interstitialAd.LoadAd();
+    }
+...
+```
+
+That's it! Your app is now ready to display interstitial ads from MAS.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook into a number of events in the ad's lifecycle: loading, opening, closing, and so on.
+
+```c#
+...
+using System;
+using UnityEngine;
+using Yodo1.MAS;
+...
+public class InterstitialSampleV2 : MonoBehaviour
+{
+    private Yodo1MasInterstitialAd interstitialAd;
+
+    public void Start()
+    {
+        // Initialize the MAS SDK.
+        Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => { });
+        Yodo1U3dMas.InitializeSdk();
+		
+        this.RequestInterstitial();
+    }
+
+    private void RequestInterstitial()
+    {
+        interstitialAd = Yodo1MasInterstitialAd.GetInstance();
+
+		 // Ad Events
+        interstitialAd.OnAdLoadedEvent += OnInterstitialAdLoadedEvent;
+        interstitialAd.OnAdLoadFailedEvent += OnInterstitialAdLoadFailedEvent;
+        interstitialAd.OnAdOpenedEvent += OnInterstitialAdOpenedEvent;
+        interstitialAd.OnAdOpenFailedEvent += OnInterstitialAdOpenFailedEvent;
+        interstitialAd.OnAdClosedEvent += OnInterstitialAdClosedEvent;
+        interstitialAd.LoadAd();
+    }
+
+    private void OnInterstitialAdLoadedEvent(Yodo1MasInterstitialAd ad)
+    {
+        ad.ShowAd();
+        Debug.Log("[Yodo1 Mas] OnInterstitialAdLoadedEvent event received");
+    }
+
+    private void OnInterstitialAdLoadFailedEvent(Yodo1MasInterstitialAd ad, Yodo1U3dAdError adError)
+    {
+        Debug.Log("[Yodo1 Mas] OnInterstitialAdLoadFailedEvent event received with error: " + adError.ToString());
+    }
+
+    private void OnInterstitialAdOpenedEvent(Yodo1MasInterstitialAd ad adView)
+    {
+        Debug.Log("[Yodo1 Mas] OnInterstitialAdOpenedEvent event received");
+    }
+
+    private void OnInterstitialAdOpenFailedEvent(Yodo1MasInterstitialAd ad, Yodo1U3dAdError adError)
+    {
+        Debug.Log("[Yodo1 Mas] OnInterstitialAdOpenFailedEvent event received with error: " + adError.ToString());
+    }
+
+    private void OnInterstitialAdClosedEvent(Yodo1MasInterstitialAd ad)
+    {
+        Debug.Log("[Yodo1 Mas] OnInterstitialAdClosedEvent event received");
+    }
+}
+```
+
+### 4. Create a Interstitial Placement
+
+Simply add the placement name as a string in the parentheses.
+
+```c#
+interstitialAd.SetAdPlacement("Placement_Name")
+```
+
 ## Rewarded Video Ad Integration
 ### 1. Set the rewarded video ad delegate method
 ```c#
+
+
 private void InitializeRewardedAds()
 {
 	// Add Events
+    Yodo1U3dMasCallback.Rewarded.OnAdLoadedEvent += OnRewardedAdLoadedEvent;
+    Yodo1U3dMasCallback.Rewarded.OnAdLoadFailedEvent += OnRewardedAdLoadFailedEvent;
     Yodo1U3dMasCallback.Rewarded.OnAdOpenedEvent += OnRewardedAdOpenedEvent;
+    Yodo1U3dMasCallback.Rewarded.OnAdOpenFailedEvent += OnRewardedAdOpenFailedEvent;
     Yodo1U3dMasCallback.Rewarded.OnAdClosedEvent += OnRewardedAdClosedEvent;
     Yodo1U3dMasCallback.Rewarded.OnAdReceivedRewardEvent += OnAdReceivedRewardEvent;
-    Yodo1U3dMasCallback.Rewarded.OnAdErrorEvent += OnRewardedAdErorEvent;
+}
+
+private void OnRewardedAdLoadedEvent() 
+{
+    Debug.Log("[Yodo1 Mas] Rewarded ad loaded");
+}
+
+private void OnRewardedAdLoadFailedEvent(Yodo1U3dAdError adError) 
+{
+    Debug.Log("[Yodo1 Mas] Rewarded ad load error - " + adError.ToString());
 }
 
 private void OnRewardedAdOpenedEvent()
 {
     Debug.Log("[Yodo1 Mas] Rewarded ad opened");
+}
+
+private void OnRewardedAdOpenFailedEvent(Yodo1U3dAdError adError) 
+{
+    Debug.Log("[Yodo1 Mas] Rewarded ad open error - " + adError.ToString());
 }
 
 private void OnRewardedAdClosedEvent()
@@ -738,11 +890,6 @@ private void OnRewardedAdClosedEvent()
 private void OnAdReceivedRewardEvent()
 {
     Debug.Log("[Yodo1 Mas] Rewarded ad received reward");
-}
-
-private void OnRewardedAdErorEvent(Yodo1U3dAdError adError)
-{
-    Debug.Log("[Yodo1 Mas] Rewarded ad error - " + adError.ToString());
 }
 ```
 
@@ -762,6 +909,133 @@ Simply add the placement name as a string into the parentheses.
 
 ```c#
 Yodo1U3dMas.ShowRewardedAd("Placement_Name");
+```
+
+## Rewarded(V2) Integration
+
+### 1. Create a Yodo1MasRewardedAd
+
+The first step toward displaying a Interstitial is to create a **Yodo1MasRewardedAd** object in a C# script attached to a GameObject.
+
+```c#
+using System;
+using UnityEngine;
+using Yodo1.MAS;
+...
+public class RewardSampleV2 : MonoBehaviour
+{
+    private Yodo1MasRewardAd rewardAd;
+    ...
+    public void Start()
+    {
+        // Initialize the MAS SDK.
+        Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => { });
+        Yodo1U3dMas.InitializeSdk();
+		
+        this.RequestReward();
+    }
+
+    private void RequestReward()
+    {
+        rewardAd = Yodo1MasRewardAd.GetInstance();
+    }
+}
+```
+
+### 2. Load an ad
+
+Once the `Yodo1MasRewardAd` is instantiated, the next step is to load an ad. That's done with the loadAd() method in the `Yodo1MasRewardAd` class.
+
+Here's an example that shows how to load an ad:
+
+```c#
+...
+    private void RequestReward()
+    {
+        rewardAd = Yodo1MasRewardAd.GetInstance();
+        rewardAd.LoadAd();
+    }
+...
+```
+
+That's it! Your app is now ready to display reward ads from MAS.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook into a number of events in the ad's lifecycle: loading, opening, closing, and so on.
+
+```c#
+...
+using System;
+using UnityEngine;
+using Yodo1.MAS;
+...
+public class RewardSampleV2 : MonoBehaviour
+{
+    private Yodo1MasRewardAd rewardAd;
+
+    public void Start()
+    {
+        // Initialize the MAS SDK.
+        Yodo1U3dMas.SetInitializeDelegate((bool success, Yodo1U3dAdError error) => { });
+        Yodo1U3dMas.InitializeSdk();
+		
+        this.RequestReward();
+    }
+
+    private void RequestReward()
+    {
+        rewardAd = Yodo1MasRewardAd.GetInstance();
+
+		 // Ad Events
+        rewardAd.OnAdLoadedEvent += OnRewardAdLoadedEvent;
+        rewardAd.OnAdLoadFailedEvent += OnRewardAdLoadFailedEvent;
+        rewardAd.OnAdOpenedEvent += OnRewardAdOpenedEvent;
+        rewardAd.OnAdOpenFailedEvent += OnRewardAdOpenFailedEvent;
+        rewardAd.OnAdClosedEvent += OnRewardAdClosedEvent;
+        rewardAd.OnAdEarnedEvent += OnRewardAdEarnedEvent;
+        rewardAd.LoadAd();
+    }
+
+    private void OnRewardAdLoadedEvent(Yodo1MasRewardAd ad)
+    {
+        Debug.Log("[Yodo1 Mas] OnRewardAdLoadedEvent event received");
+        ad.ShowAd();
+    }
+
+    private void OnRewardAdLoadFailedEvent(Yodo1MasRewardAd ad, Yodo1U3dAdError adError)
+    {
+        Debug.Log("[Yodo1 Mas] OnRewardAdLoadFailedEvent event received with error: " + adError.ToString());
+    }
+
+    private void OnRewardAdOpenedEvent(Yodo1MasRewardAd ad adView)
+    {
+        Debug.Log("[Yodo1 Mas] OnRewardAdOpenedEvent event received");
+    }
+
+    private void OnRewardAdOpenFailedEvent(Yodo1MasRewardAd ad, Yodo1U3dAdError adError)
+    {
+        Debug.Log("[Yodo1 Mas] OnRewardAdOpenFailedEvent event received with error: " + adError.ToString());
+    }
+
+    private void OnRewardAdClosedEvent(Yodo1MasRewardAd ad)
+    {
+        Debug.Log("[Yodo1 Mas] OnRewardAdClosedEvent event received");
+    }
+
+    private void OnRewardAdEarnedEvent(Yodo1MasRewardAd ad) 
+    {
+         Debug.Log("[Yodo1 Mas] OnRewardAdEarnedEvent event received");
+    }
+}
+```
+
+### 4. Create a Reward Placement
+
+Simply add the placement name as a string in the parentheses.
+
+```c#
+rewardAd.SetAdPlacement("Placement_Name")
 ```
 
 ## Native Ads Integration

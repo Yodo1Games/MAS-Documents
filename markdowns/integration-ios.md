@@ -31,7 +31,7 @@
 	source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
 	source 'https://github.com/Yodo1Games/MAS-Spec.git'
 	
-	pod 'Yodo1MasFull', '4.6.6'
+	pod 'Yodo1MasFull', '4.7.0'
 	```
 
   If you need to use lightweight SDK:
@@ -41,7 +41,7 @@
   source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
   source 'https://github.com/Yodo1Games/MAS-Spec.git'
   
-  pod 'Yodo1MasLite', '4.6.6'
+  pod 'Yodo1MasLite', '4.7.0'
   ```
 	
 	Execute the following command in `Terminal` :
@@ -1115,17 +1115,25 @@ extension MainController: Yodo1MasBannerAdViewDelegate {
 [Yodo1Mas sharedInstance].interstitialAdDelegate = self; 
 
 #pragma mark - Interstitial Delegate
+- (void)onAdLoaded:(Yodo1MasAdEvent *)event {
+    
+}
+
+- (void)onAdLoadError:(Yodo1MasError *)error {
+    
+}
+
 - (void)onAdOpened:(Yodo1MasAdEvent *)event {
+    
+}
+
+- (void)onAdOpenError:(Yodo1MasError *)error {
     
 }
 
 - (void)onAdClosed:(Yodo1MasAdEvent *)event {
     
-}
-
-- (void)onAdError:(Yodo1MasAdEvent *)event error:(Yodo1MasError *)error {
-    
-}       
+}     
 ```
 
 ### 2. Check the loading status of interstitials
@@ -1143,21 +1151,213 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isInterstitialAdLoaded];
 [[Yodo1Mas sharedInstance] showInterstitialAd:@"MY_INTERSTITIAL_PLACEMENT"]
 ```
 
+## Interstitial(V2) Integration
+
+### 1. Init Yodo1MasInterstitialAd
+
+For `Objective-C` 
+
+```objective-c
+Yodo1MasInterstitialAd *interstitialAd = [Yodo1MasInterstitialAd sharedInstance];
+```
+
+For `Swift`
+
+```swift
+let interstitialAd = Yodo1MasInterstitialAd.sharedInstance()
+```
+
+### 2. Load an ad
+
+Once the `Yodo1MasInterstitialAd` is in place, the next step is to load an ad. That's done with the `loadAd()` method in the `Yodo1MasInterstitialAd` class.
+
+Here's an example that shows how to load an ad in the `viewDidLoad` method of an `UIViewController`:
+
+For `Objective-C` 
+
+```objective-c
+
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+  
+@interface MainController ()
+  
+@property (nonatomic, strong) Yodo1MasInterstitialAd *interstitialAd;
+
+@end
+
+@implementation MainController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _interstitialAd = [Yodo1MasInterstitialAd sharedInstance];
+  [_interstitialAd setAdPlacement:@"Your Placement Id"];
+  [_interstitialAd loadAd];
+}
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController : UIViewController {
+
+	var interstitialAd: Yodo1MasInterstitialAd!
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+    Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+    } fail: { error in
+
+    }
+    interstitialAd = Yodo1MasInterstitialAd.sharedInstance()
+    interstitialAd.setAdPlacement("Your Placement Id")
+    interstitialAd.loadAd()
+   }
+}
+```
+
+That's it! Your app is now ready to display banner ads.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasInterstitialDelegate`.
+
+For `Objective-C` 
+
+```objective-c
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+  
+@interface MainController ()<Yodo1MasInterstitialDelegate>
+  
+@property (nonatomic, strong) Yodo1MasInterstitialAd *interstitialAd;
+
+@end
+
+@implementation MainController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _interstitialAd = [Yodo1MasInterstitialAd sharedInstance];
+  _interstitialAd.adDelegate = self;
+  [_interstitialAd setAdPlacement:@"Your Placement Id"];
+  [_interstitialAd loadAd];
+}
+
+
+#pragma mark - Yodo1MasInterstitialDelegate
+- (void)onInterstitialAdLoaded:(Yodo1MasInterstitialAd *)ad {
+    [ad showAd];
+}
+
+- (void)onInterstitialAdFailedToLoad:(Yodo1MasInterstitialAd *)ad withError:(Yodo1MasError *)error {
+    
+}
+
+- (void)onInterstitialAdOpened:(Yodo1MasInterstitialAd *)ad {
+    
+}
+
+- (void)onInterstitialAdFailedToOpen:(Yodo1MasInterstitialAd *)ad withError:(Yodo1MasError *)error {
+    
+}
+
+- (void)onInterstitialAdClosed:(Yodo1MasInterstitialAd *)ad {
+    
+}
+
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController: UIViewController {
+    var interstitialAd: Yodo1MasInterstitialAd!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+        } fail: { error in
+            
+        }
+        
+        interstitialAd = Yodo1MasInterstitialAd.sharedInstance()
+        interstitialAd.setAdPlacement("Your Placement Id")
+        interstitialAd.adDelegate = self
+        interstitialAd.loadAd()
+    }
+}
+
+extension MainController: Yodo1MasInterstitialDelegate {
+    // MARK: Yodo1MasInterstitialDelegate
+    func onInterstitialAdLoaded(_ ad: Yodo1MasInterstitialAd) {
+        ad.showAd()
+    }
+    
+    func onInterstitialAdFailed(toLoad ad: Yodo1MasInterstitialAd, withError error: Yodo1MasError) {
+        
+    }
+    
+    func onInterstitialAdOpened(_ ad: Yodo1MasInterstitialAd) {
+        
+    }
+    
+    func onInterstitialAdFailed(toOpen ad: Yodo1MasInterstitialAd, withError error: Yodo1MasError) {
+        
+    }
+    
+    func onInterstitialAdClosed(_ ad: Yodo1MasInterstitialAd) {
+        
+    }
+}
+```
+
 ## Rewarded Video Integration
 ### 1. Set up rewarded video ad delegate methods
 ``` obj-c
 [Yodo1Mas sharedInstance].rewardAdDelegate = self;
 
 #pragma mark - Yodo1MasAdDelegate
+- (void)onAdLoaded:(Yodo1MasAdEvent *)event {
+    
+}
+
+- (void)onAdLoadError:(Yodo1MasError *)error {
+    
+}
+
 - (void)onAdOpened:(Yodo1MasAdEvent *)event {
     
 }
 
-- (void)onAdClosed:(Yodo1MasAdEvent *)event {
+- (void)onAdOpenError:(Yodo1MasError *)error {
     
 }
 
-- (void)onAdvertError:(Yodo1MasAdEvent *)event error:(Yodo1MasError *)error {
+- (void)onAdClosed:(Yodo1MasAdEvent *)event {
     
 }
 
@@ -1180,6 +1380,198 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isRewardAdLoaded];
 ### 4. Create a rewarded Placement
 ```obj-c
 [[Yodo1Mas sharedInstance] showRewardAd:@"MY_REWARDED_PLACEMENT"]
+```
+
+## Rewarded(V2) Integration
+
+### 1. Init Yodo1MasRewardAd
+
+For `Objective-C` 
+
+```objective-c
+Yodo1MasRewardAd *rewardAd = [Yodo1MasRewardAd sharedInstance];
+```
+
+For `Swift`
+
+```swift
+let rewardAd = Yodo1MasRewardAd.sharedInstance()
+```
+
+### 2. Load an ad
+
+Once the `Yodo1MasRewardAd` is in place, the next step is to load an ad. That's done with the `loadAd()` method in the `Yodo1MasRewardAd` class.
+
+Here's an example that shows how to load an ad in the `viewDidLoad` method of an `UIViewController`:
+
+For `Objective-C` 
+
+```objective-c
+
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+  
+@interface MainController ()
+  
+@property (nonatomic, strong) Yodo1MasRewardAd *rewardAd;
+
+@end
+
+@implementation MainController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _rewardAd = [Yodo1MasRewardAd sharedInstance];
+  [_rewardAd setAdPlacement:@"Your Placement Id"];
+  [_rewardAd loadAd];
+}
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController : UIViewController {
+
+	var rewardAd: Yodo1MasRewardAd!
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+    Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+    } fail: { error in
+
+    }
+    rewardAd = Yodo1MasRewardAd.sharedInstance()
+    rewardAd.setAdPlacement("Your Placement Id")
+    rewardAd.loadAd()
+   }
+}
+```
+
+That's it! Your app is now ready to display banner ads.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasRewardDelegate`.
+
+For `Objective-C` 
+
+```objective-c
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+  
+@interface MainController ()<Yodo1MasRewardDelegate>
+  
+@property (nonatomic, strong) Yodo1MasRewardAd *rewardAd;
+
+@end
+
+@implementation MainController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _rewardAd = [Yodo1MasRewardAd sharedInstance];
+  _rewardAd.adDelegate = self;
+  [_rewardAd setAdPlacement:@"Your Placement Id"];
+  [_rewardAd loadAd];
+}
+
+
+#pragma mark - Yodo1MasRewardDelegate
+- (void)onRewardAdLoaded:(Yodo1MasRewardAd *)ad {
+    [ad showAd];
+}
+
+- (void)onRewardAdFailedToLoad:(Yodo1MasRewardAd *)ad withError:(Yodo1MasError *)error {
+    
+}
+
+- (void)onRewardAdOpened:(Yodo1MasRewardAd *)ad {
+    
+}
+
+- (void)onRewardAdFailedToOpen:(Yodo1MasRewardAd *)ad withError:(Yodo1MasError *)error {
+    
+}
+
+- (void)onRewardAdClosed:(Yodo1MasRewardAd *)ad {
+    
+}
+
+- (void)onRewardAdEarned:(Yodo1MasRewardAd *)ad {
+    
+}
+
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController: UIViewController {
+    var rewardAd: Yodo1MasRewardAd!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+        } fail: { error in
+            
+        }
+        
+        rewardAd = Yodo1MasRewardAd.sharedInstance()
+        rewardAd.setAdPlacement("Your Placement Id")
+        rewardAd.adDelegate = self
+        rewardAd.loadAd()
+    }
+}
+
+extension MainController: Yodo1MasRewardDelegate {
+    // MARK: Yodo1MasRewardDelegate
+    func onRewardAdLoaded(_ ad: Yodo1MasRewardAd) {
+        ad.showAd()
+    }
+    
+    func onRewardAdFailed(toLoad ad: Yodo1MasRewardAd, withError error: Yodo1MasError) {
+        
+    }
+    
+    func onRewardAdOpened(_ ad: Yodo1MasRewardAd) {
+        
+    }
+    
+    func onRewardAdFailed(toOpen ad: Yodo1MasRewardAd, withError error: Yodo1MasError) {
+        
+    }
+    
+    func onRewardAdClosed(_ ad: Yodo1MasRewardAd) {
+        
+    }
+
+    func onRewardAdEarned(_ ad: Yodo1MasRewardAd) {
+        
+    }
+}
 ```
 
 ## Native Ads(Template) Integration
