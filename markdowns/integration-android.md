@@ -1010,7 +1010,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-        bannerAdView.loadAd()
+        interstitialAd.loadAd()
     }
 }
 ```
@@ -1280,7 +1280,7 @@ class MainActivity : AppCompatActivity() {
                
             }
         })
-        bannerAdView.loadAd()
+        reweardAd.loadAd()
     }
 }
 ```
