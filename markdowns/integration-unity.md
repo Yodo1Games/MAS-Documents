@@ -3,7 +3,7 @@
 ## Prerequisites
 * MAS supports Unity LTS versions from 2018 and above
 * To deploy to Android, you need to target API 19+
-* To deploy to iOS, you need to use Xcode 12.5+
+* To deploy to iOS, you need to use Xcode 13+
 * To build on iOS, you need to use Cocoapods 1.10.0+
 * Please make sure to check the Sample `/Assets/Yodo1/MAS/Sample` to aid your integration</br>
 
@@ -11,10 +11,11 @@
 
 ### 1. Download the Correct Unity Plugin
 
-MAS provides 2 versions of the Unity plugin, and you need to select one depending on your game:
+MAS provides 3 versions of the Unity plugin, and you need to select one depending on your game:
 
-* If your game is not part of the “Designed for Families Program”, please use the Standard MAS Plugin.
-* If your game is a part of Google Play’s “Designed for Families” program, you will need to use the Designed For Families plugin in order to comply with the program’s requirements.
+* If your game is a part of Google Play’s “Designed for Families” program, you will need to use the Family SDK in order to comply with the program’s requirements.
+* If your game is not part of the “Designed for Families Program”, please use the Standard SDK.
+* If your game prefers to use the 4 top ad networks to keep the SDK lightweight without making significant compromises on Monetization, please use the Lite SDK.
 
 [Designed For Families](https://mas-artifacts.yodo1.com/4.6.6/Unity/Release/Rivendell-4.6.6-Family.unitypackage)
 
