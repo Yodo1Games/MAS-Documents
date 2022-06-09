@@ -821,7 +821,7 @@ public class InterstitialSampleV2 : MonoBehaviour
         Debug.Log("[Yodo1 Mas] OnInterstitialAdLoadFailedEvent event received with error: " + adError.ToString());
     }
 
-    private void OnInterstitialAdOpenedEvent(Yodo1MasInterstitialAd ad adView)
+    private void OnInterstitialAdOpenedEvent(Yodo1MasInterstitialAd ad)
     {
         Debug.Log("[Yodo1 Mas] OnInterstitialAdOpenedEvent event received");
     }
@@ -1008,7 +1008,7 @@ public class RewardSampleV2 : MonoBehaviour
         Debug.Log("[Yodo1 Mas] OnRewardAdLoadFailedEvent event received with error: " + adError.ToString());
     }
 
-    private void OnRewardAdOpenedEvent(Yodo1MasRewardAd ad adView)
+    private void OnRewardAdOpenedEvent(Yodo1MasRewardAd ad)
     {
         Debug.Log("[Yodo1 Mas] OnRewardAdOpenedEvent event received");
     }
