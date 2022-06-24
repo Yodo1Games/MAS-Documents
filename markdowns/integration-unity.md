@@ -430,6 +430,10 @@ public static ** valueOf(java.lang.String);
 
 -keep class com.uc.crashsdk.** { *; }
 -keep interface com.uc.crashsdk.** { *; } 
+
+-keep class com.alibaba.sdk.android.**{*;}
+-keep class com.ut.**{*;}
+-keep class com.ta.**{*;}
 ```
 
 ## Banner Integration

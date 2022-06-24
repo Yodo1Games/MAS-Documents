@@ -12,6 +12,10 @@ mavenCentral()
 maven { url "https://artifact.bytedance.com/repository/pangle" }
 maven { url "https://android-sdk.is.com" }
 maven { url "https://sdk.tapjoy.com/" }
+maven {
+    url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
+    allowInsecureProtocol = true
+}
 ```
 
 Use the code bellow if you need to comply with the Google Family Policy.
@@ -20,6 +24,10 @@ Use the code bellow if you need to comply with the Google Family Policy.
 mavenCentral()
 maven { url "https://android-sdk.is.com" }
 maven { url "https://sdk.tapjoy.com/" }
+maven {
+    url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
+    allowInsecureProtocol = true
+}
 ```
 
 Use the code bellow if you need to use lightweight SDK.
@@ -452,6 +460,10 @@ public static ** valueOf(java.lang.String);
 
 -keep class com.uc.crashsdk.** { *; }
 -keep interface com.uc.crashsdk.** { *; }
+
+-keep class com.alibaba.sdk.android.**{*;}
+-keep class com.ut.**{*;}
+-keep class com.ta.**{*;}
 ```
 
 ## Banner Integration
