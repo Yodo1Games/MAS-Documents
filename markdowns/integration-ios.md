@@ -31,7 +31,7 @@
 	source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
 	source 'https://github.com/Yodo1Games/MAS-Spec.git'
 	
-	pod 'Yodo1MasFull', '4.6.6'
+	pod 'Yodo1MasFull', '4.7.0'
 	```
 
   If you need to use lightweight SDK:
@@ -41,7 +41,7 @@
   source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
   source 'https://github.com/Yodo1Games/MAS-Spec.git'
   
-  pod 'Yodo1MasLite', '4.6.6'
+  pod 'Yodo1MasLite', '4.7.0'
   ```
 	
 	Execute the following command in `Terminal` :
@@ -219,235 +219,11 @@ The following shows the array of dictionaries you need to access the SDK.
 ```
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>275upjj5gd.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>294l99pt4k.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
     <string>2fnua5tdw4.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
     <string>2u9pt9hc89.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>3rd42ekr43.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>4468km3ulz.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>44jx6755aq.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>44n7hlldy6.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>4fzdc2evr5.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>4pfyvq9l8r.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>523jb4fst2.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>578prtvx9j.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>5l3tpt7t6e.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>5lm9lj6jb7.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>6964rsfnh4.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>6g9af3uyq4.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>74b6s63p6l.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>7rz58n8ntl.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>7ug5zh24hu.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>84993kbrcf.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>8s468mfl3y.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>9nlqeag3gk.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>9rd848q2bz.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>9t245vhmpl.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>a7xqa6mtl2.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>c6k4g5qg8m.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>cg4yq2srnc.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>cj5566h2ga.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>e5fvkxwrpn.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>ejvt5qm6ak.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>g28c52eehv.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>g2y4y55b64.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>gta9lk7p23.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>hs6bdukanm.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>kbd757ywx3.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>kbmxgpxpgc.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>klf5c3l5u5.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>m8dbw4sv7c.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>mlmmfzh3r3.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>mtkv5xtk9e.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>n6fk4nfna4.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>n9x2a789qt.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>ppxm28t8ap.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>prcb7njmu6.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>pwa73g5rt2.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>pwdxu55a5a.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>qqp299437r.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>r45fhb6rf7.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>rx5hdcabgc.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>t38b2kh725.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>tl55sbb4fm.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>u679fj5vs4.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>uw77j35x4d.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>v72qych5uu.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>wg4vff78zm.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>wzmmz9fp6w.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>yclnxrl5pm.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>ydx93a7ass.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -467,7 +243,19 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>4468km3ulz.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>4dzt52r2t5.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>4fzdc2evr5.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>578prtvx9j.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -475,7 +263,23 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>7ug5zh24hu.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>8c4e2ghe7u.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>8s468mfl3y.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>9rd848q2bz.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>9t245vhmpl.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -483,7 +287,15 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>c6k4g5qg8m.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>cstr6suwn9.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>e5fvkxwrpn.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -491,7 +303,31 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>hs6bdukanm.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>kbd757ywx3.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>klf5c3l5u5.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>n6fk4nfna4.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>p78axxw29g.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>ppxm28t8ap.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>prcb7njmu6.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -499,7 +335,31 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>t38b2kh725.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>uw77j35x4d.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>v4nxqhlyqp.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>v72qych5uu.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>wzmmz9fp6w.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>yclnxrl5pm.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>ydx93a7ass.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -507,7 +367,19 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>22mmun2rn5.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>24t9a8vw3c.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>275upjj5gd.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>294l99pt4k.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -515,7 +387,43 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>3l6bd9hu43.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>3rd42ekr43.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>4pfyvq9l8r.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>523jb4fst2.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>52fl2v3hgk.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>54nzkqm89y.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>5l3tpt7t6e.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>5lm9lj6jb7.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>5tjdwbrq8w.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>6g9af3uyq4.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -527,7 +435,23 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>7rz58n8ntl.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>9b89h5y424.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>9nlqeag3gk.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>9yg77x724h.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>a8cz6cu7e5.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -535,11 +459,27 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>cg4yq2srnc.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>cj5566h2ga.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>dkc879ngq3.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>ejvt5qm6ak.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>feyaarzu9v.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>g28c52eehv.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -551,7 +491,15 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>gta9lk7p23.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>k674qkevps.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>kbmxgpxpgc.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -559,7 +507,43 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>m5mvw97r93.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>m8dbw4sv7c.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>mlmmfzh3r3.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>mtkv5xtk9e.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>n66cz3y3bx.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>n9x2a789qt.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>nzq8sh4pbs.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>pwa73g5rt2.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>qqp299437r.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>r45fhb6rf7.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -567,11 +551,31 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>tl55sbb4fm.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>vcra2ehyfk.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>wg4vff78zm.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>x44k69ngh6.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>x5l83yy675.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>x8jxxk4ff5.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>x8uqf25wch.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -583,35 +587,23 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>22mmun2rn5.skadnetwork</string>
+    <string>n38lu8286q.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>4w7y6s5ca2.skadnetwork</string>
+    <string>v9wttpbfk9.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>5tjdwbrq8w.skadnetwork</string>
+    <string>252b5q8x7y.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>6p4ks3rnbw.skadnetwork</string>
+    <string>44jx6755aq.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>737z793b9f.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>97r2b46745.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>b9bk5wbcq9.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>bxvub5ada5.skadnetwork</string>
+    <string>9g2aggbj52.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -631,31 +623,7 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>lr83yxwka7.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>mls7yz5dvl.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>mp6xlyr22a.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>s69wq72ugq.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>su67r6k2v3.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>w9q455wk68.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>x8uqf25wch.skadnetwork</string>
+    <string>rx5hdcabgc.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -663,19 +631,27 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>n38lu8286q.skadnetwork</string>
+    <string>74b6s63p6l.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>v9wttpbfk9.skadnetwork</string>
+    <string>97r2b46745.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>252b5q8x7y.skadnetwork</string>
+    <string>b9bk5wbcq9.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>9g2aggbj52.skadnetwork</string>
+    <string>mls7yz5dvl.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>w9q455wk68.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>su67r6k2v3.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -687,15 +663,15 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>44n7hlldy6.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>488r3q3dtq.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>52fl2v3hgk.skadnetwork</string>
-</dict>
-<dict>
-    <key>SKAdNetworkIdentifier</key>
-    <string>9yg77x724h.skadnetwork</string>
+    <string>737z793b9f.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -711,11 +687,15 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
-    <string>n66cz3y3bx.skadnetwork</string>
+    <string>lr83yxwka7.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
     <string>pu4na253f3.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>u679fj5vs4.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -735,11 +715,27 @@ The following shows the array of dictionaries you need to access the SDK.
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>4w7y6s5ca2.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>f7s53z58qe.skadnetwork</string>
 </dict>
 <dict>
     <key>SKAdNetworkIdentifier</key>
+    <string>mp6xlyr22a.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
     <string>7953jerfzd.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>7fmhfwg9en.skadnetwork</string>
+</dict>
+<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>qu637u8glc.skadnetwork</string>
 </dict>
 ```
 
@@ -1115,17 +1111,25 @@ extension MainController: Yodo1MasBannerAdViewDelegate {
 [Yodo1Mas sharedInstance].interstitialAdDelegate = self; 
 
 #pragma mark - Interstitial Delegate
+- (void)onAdLoaded:(Yodo1MasAdEvent *)event {
+    
+}
+
+- (void)onAdLoadError:(Yodo1MasError *)error {
+    
+}
+
 - (void)onAdOpened:(Yodo1MasAdEvent *)event {
+    
+}
+
+- (void)onAdOpenError:(Yodo1MasError *)error {
     
 }
 
 - (void)onAdClosed:(Yodo1MasAdEvent *)event {
     
-}
-
-- (void)onAdError:(Yodo1MasAdEvent *)event error:(Yodo1MasError *)error {
-    
-}       
+}     
 ```
 
 ### 2. Check the loading status of interstitials
@@ -1143,21 +1147,213 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isInterstitialAdLoaded];
 [[Yodo1Mas sharedInstance] showInterstitialAd:@"MY_INTERSTITIAL_PLACEMENT"]
 ```
 
+## Interstitial(V2) Integration
+
+### 1. Init Yodo1MasInterstitialAd
+
+For `Objective-C` 
+
+```objective-c
+Yodo1MasInterstitialAd *interstitialAd = [Yodo1MasInterstitialAd sharedInstance];
+```
+
+For `Swift`
+
+```swift
+let interstitialAd = Yodo1MasInterstitialAd.sharedInstance()
+```
+
+### 2. Load an ad
+
+Once the `Yodo1MasInterstitialAd` is in place, the next step is to load an ad. That's done with the `loadAd()` method in the `Yodo1MasInterstitialAd` class.
+
+Here's an example that shows how to load an ad in the `viewDidLoad` method of an `UIViewController`:
+
+For `Objective-C` 
+
+```objective-c
+
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+  
+@interface MainController ()
+  
+@property (nonatomic, strong) Yodo1MasInterstitialAd *interstitialAd;
+
+@end
+
+@implementation MainController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _interstitialAd = [Yodo1MasInterstitialAd sharedInstance];
+  [_interstitialAd setAdPlacement:@"Your Placement Id"];
+  [_interstitialAd loadAd];
+}
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController : UIViewController {
+
+	var interstitialAd: Yodo1MasInterstitialAd!
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+    Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+    } fail: { error in
+
+    }
+    interstitialAd = Yodo1MasInterstitialAd.sharedInstance()
+    interstitialAd.setAdPlacement("Your Placement Id")
+    interstitialAd.loadAd()
+   }
+}
+```
+
+That's it! Your app is now ready to display banner ads.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasInterstitialDelegate`.
+
+For `Objective-C` 
+
+```objective-c
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+  
+@interface MainController ()<Yodo1MasInterstitialDelegate>
+  
+@property (nonatomic, strong) Yodo1MasInterstitialAd *interstitialAd;
+
+@end
+
+@implementation MainController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _interstitialAd = [Yodo1MasInterstitialAd sharedInstance];
+  _interstitialAd.adDelegate = self;
+  [_interstitialAd setAdPlacement:@"Your Placement Id"];
+  [_interstitialAd loadAd];
+}
+
+
+#pragma mark - Yodo1MasInterstitialDelegate
+- (void)onInterstitialAdLoaded:(Yodo1MasInterstitialAd *)ad {
+    [ad showAd];
+}
+
+- (void)onInterstitialAdFailedToLoad:(Yodo1MasInterstitialAd *)ad withError:(Yodo1MasError *)error {
+    
+}
+
+- (void)onInterstitialAdOpened:(Yodo1MasInterstitialAd *)ad {
+    
+}
+
+- (void)onInterstitialAdFailedToOpen:(Yodo1MasInterstitialAd *)ad withError:(Yodo1MasError *)error {
+    
+}
+
+- (void)onInterstitialAdClosed:(Yodo1MasInterstitialAd *)ad {
+    
+}
+
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController: UIViewController {
+    var interstitialAd: Yodo1MasInterstitialAd!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+        } fail: { error in
+            
+        }
+        
+        interstitialAd = Yodo1MasInterstitialAd.sharedInstance()
+        interstitialAd.setAdPlacement("Your Placement Id")
+        interstitialAd.adDelegate = self
+        interstitialAd.loadAd()
+    }
+}
+
+extension MainController: Yodo1MasInterstitialDelegate {
+    // MARK: Yodo1MasInterstitialDelegate
+    func onInterstitialAdLoaded(_ ad: Yodo1MasInterstitialAd) {
+        ad.showAd()
+    }
+    
+    func onInterstitialAdFailed(toLoad ad: Yodo1MasInterstitialAd, withError error: Yodo1MasError) {
+        
+    }
+    
+    func onInterstitialAdOpened(_ ad: Yodo1MasInterstitialAd) {
+        
+    }
+    
+    func onInterstitialAdFailed(toOpen ad: Yodo1MasInterstitialAd, withError error: Yodo1MasError) {
+        
+    }
+    
+    func onInterstitialAdClosed(_ ad: Yodo1MasInterstitialAd) {
+        
+    }
+}
+```
+
 ## Rewarded Video Integration
 ### 1. Set up rewarded video ad delegate methods
 ``` obj-c
 [Yodo1Mas sharedInstance].rewardAdDelegate = self;
 
 #pragma mark - Yodo1MasAdDelegate
+- (void)onAdLoaded:(Yodo1MasAdEvent *)event {
+    
+}
+
+- (void)onAdLoadError:(Yodo1MasError *)error {
+    
+}
+
 - (void)onAdOpened:(Yodo1MasAdEvent *)event {
     
 }
 
-- (void)onAdClosed:(Yodo1MasAdEvent *)event {
+- (void)onAdOpenError:(Yodo1MasError *)error {
     
 }
 
-- (void)onAdvertError:(Yodo1MasAdEvent *)event error:(Yodo1MasError *)error {
+- (void)onAdClosed:(Yodo1MasAdEvent *)event {
     
 }
 
@@ -1180,6 +1376,198 @@ BOOL isLoaded = [[Yodo1Mas sharedInstance] isRewardAdLoaded];
 ### 4. Create a rewarded Placement
 ```obj-c
 [[Yodo1Mas sharedInstance] showRewardAd:@"MY_REWARDED_PLACEMENT"]
+```
+
+## Rewarded(V2) Integration
+
+### 1. Init Yodo1MasRewardAd
+
+For `Objective-C` 
+
+```objective-c
+Yodo1MasRewardAd *rewardAd = [Yodo1MasRewardAd sharedInstance];
+```
+
+For `Swift`
+
+```swift
+let rewardAd = Yodo1MasRewardAd.sharedInstance()
+```
+
+### 2. Load an ad
+
+Once the `Yodo1MasRewardAd` is in place, the next step is to load an ad. That's done with the `loadAd()` method in the `Yodo1MasRewardAd` class.
+
+Here's an example that shows how to load an ad in the `viewDidLoad` method of an `UIViewController`:
+
+For `Objective-C` 
+
+```objective-c
+
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+  
+@interface MainController ()
+  
+@property (nonatomic, strong) Yodo1MasRewardAd *rewardAd;
+
+@end
+
+@implementation MainController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _rewardAd = [Yodo1MasRewardAd sharedInstance];
+  [_rewardAd setAdPlacement:@"Your Placement Id"];
+  [_rewardAd loadAd];
+}
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController : UIViewController {
+
+	var rewardAd: Yodo1MasRewardAd!
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+    Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+    } fail: { error in
+
+    }
+    rewardAd = Yodo1MasRewardAd.sharedInstance()
+    rewardAd.setAdPlacement("Your Placement Id")
+    rewardAd.loadAd()
+   }
+}
+```
+
+That's it! Your app is now ready to display banner ads.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasRewardDelegate`.
+
+For `Objective-C` 
+
+```objective-c
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+  
+@interface MainController ()<Yodo1MasRewardDelegate>
+  
+@property (nonatomic, strong) Yodo1MasRewardAd *rewardAd;
+
+@end
+
+@implementation MainController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _rewardAd = [Yodo1MasRewardAd sharedInstance];
+  _rewardAd.adDelegate = self;
+  [_rewardAd setAdPlacement:@"Your Placement Id"];
+  [_rewardAd loadAd];
+}
+
+
+#pragma mark - Yodo1MasRewardDelegate
+- (void)onRewardAdLoaded:(Yodo1MasRewardAd *)ad {
+    [ad showAd];
+}
+
+- (void)onRewardAdFailedToLoad:(Yodo1MasRewardAd *)ad withError:(Yodo1MasError *)error {
+    
+}
+
+- (void)onRewardAdOpened:(Yodo1MasRewardAd *)ad {
+    
+}
+
+- (void)onRewardAdFailedToOpen:(Yodo1MasRewardAd *)ad withError:(Yodo1MasError *)error {
+    
+}
+
+- (void)onRewardAdClosed:(Yodo1MasRewardAd *)ad {
+    
+}
+
+- (void)onRewardAdEarned:(Yodo1MasRewardAd *)ad {
+    
+}
+
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController: UIViewController {
+    var rewardAd: Yodo1MasRewardAd!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+        } fail: { error in
+            
+        }
+        
+        rewardAd = Yodo1MasRewardAd.sharedInstance()
+        rewardAd.setAdPlacement("Your Placement Id")
+        rewardAd.adDelegate = self
+        rewardAd.loadAd()
+    }
+}
+
+extension MainController: Yodo1MasRewardDelegate {
+    // MARK: Yodo1MasRewardDelegate
+    func onRewardAdLoaded(_ ad: Yodo1MasRewardAd) {
+        ad.showAd()
+    }
+    
+    func onRewardAdFailed(toLoad ad: Yodo1MasRewardAd, withError error: Yodo1MasError) {
+        
+    }
+    
+    func onRewardAdOpened(_ ad: Yodo1MasRewardAd) {
+        
+    }
+    
+    func onRewardAdFailed(toOpen ad: Yodo1MasRewardAd, withError error: Yodo1MasError) {
+        
+    }
+    
+    func onRewardAdClosed(_ ad: Yodo1MasRewardAd) {
+        
+    }
+
+    func onRewardAdEarned(_ ad: Yodo1MasRewardAd) {
+        
+    }
+}
 ```
 
 ## Native Ads(Template) Integration

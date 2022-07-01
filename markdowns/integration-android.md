@@ -12,6 +12,10 @@ mavenCentral()
 maven { url "https://artifact.bytedance.com/repository/pangle" }
 maven { url "https://android-sdk.is.com" }
 maven { url "https://sdk.tapjoy.com/" }
+maven {
+    url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
+    allowInsecureProtocol = true
+}
 ```
 
 Use the code bellow if you need to comply with the Google Family Policy.
@@ -20,6 +24,10 @@ Use the code bellow if you need to comply with the Google Family Policy.
 mavenCentral()
 maven { url "https://android-sdk.is.com" }
 maven { url "https://sdk.tapjoy.com/" }
+maven {
+    url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
+    allowInsecureProtocol = true
+}
 ```
 
 Use the code bellow if you need to use lightweight SDK.
@@ -34,19 +42,19 @@ mavenCentral()
 #### 2.1 Add a Gradle dependency
 
 ```groovy
-implementation 'com.yodo1.mas:full:4.6.6'
+implementation 'com.yodo1.mas:full:4.7.0'
 ```
 
 If you need to comply with Google Family Policy:
 
 ```groovy
-implementation 'com.yodo1.mas:google:4.6.6'
+implementation 'com.yodo1.mas:google:4.7.0'
 ```
 
 If you need to use lightweight SDK:
 
 ```groovy
-implementation 'com.yodo1.mas:lite:4.6.6'
+implementation 'com.yodo1.mas:lite:4.7.0'
 ```
 
 #### 2.2 Add the `compileOptions` property to the `Android` section
@@ -452,6 +460,10 @@ public static ** valueOf(java.lang.String);
 
 -keep class com.uc.crashsdk.** { *; }
 -keep interface com.uc.crashsdk.** { *; }
+
+-keep class com.alibaba.sdk.android.**{*;}
+-keep class com.ut.**{*;}
+-keep class com.ta.**{*;}
 ```
 
 ## Banner Integration
@@ -763,13 +775,24 @@ class MainActivity : AppCompatActivity() {
 
 ```java
 Yodo1Mas.getInstance().setInterstitialListener(new Yodo1Mas.InterstitialListener() {
+
+     @Override
+    public void onAdLoaded(@NonNull Yodo1MasAdEvent event) {
+
+    }
+
+    @Override
+    public void onAdLoadError(@NonNull Yodo1MasError error) {
+
+    }
+
     @Override
     public void onAdOpened(@NonNull Yodo1MasAdEvent event) {
     }
 
     @Override
-    public void onAdError(@NonNull Yodo1MasAdEvent event, @NonNull Yodo1MasError error) {
-        
+    public void onAdOpenError(@NonNull Yodo1MasError error) {
+
     }
 
     @Override
@@ -791,6 +814,219 @@ boolean isLoaded = Yodo1Mas.getInstance().isInterstitialAdLoaded();
 Yodo1Mas.getInstance().showInterstitialAd(MyActivity.this);
 ```
 
+## Interstitial(V2) Integration
+
+### 1. Init Yodo1MasInterstitialAd
+For Java
+
+```java
+Yodo1MasInterstitialAd interstitialAd = Yodo1MasInterstitialAd.getInstance();
+```
+
+For Kotlin
+
+```kotlin
+val interstitialAd = Yodo1MasInterstitialAd.getInstance()
+```
+
+### 2. Load an ad
+
+Once the `Yodo1MasInterstitialAd` is in place, the next step is to load an ad. That's done with the `loadAd()` method in the `Yodo1MasInterstitialAd` class.
+
+Here's an example that shows how to load an ad in the `onCreate()` method of an `Activity`:
+
+For Java
+
+```java
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.interstitial.Yodo1MasInterstitialAd;
+
+public class MainActivity extends AppCompatActivity {
+    private Yodo1MasInterstitialAd interstitialAd = Yodo1MasInterstitialAd.getInstance();
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+            @Override
+            public void onMasInitSuccessful() {
+            }
+
+            @Override
+            public void onMasInitFailed(@NonNull Yodo1MasError error) {
+            }
+        });
+        interstitialAd.loadAd();
+    }
+}
+```
+
+For Kotlin
+
+```kotlin
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.interstitial.Yodo1MasInterstitialAd;
+
+class MainActivity : AppCompatActivity() {
+
+    val interstitialAd = Yodo1MasInterstitialAd.getInstance()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        	override fun onMasInitSuccessful() {    
+        		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
+        	} 
+        	override fun onMasInitFailed(error: Yodo1MasError) {
+        		Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()  
+        	}
+        })
+
+        interstitialAd.loadAd()
+    }
+}
+```
+
+That's it! Your app is now ready to display banner ads.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasInterstitialAdListener` class.
+
+For Java
+
+```java
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.interstitial.Yodo1MasInterstitialAd;
+import com.yodo1.mas.interstitial.Yodo1MasInterstitialAdListener;
+
+public class MainActivity extends AppCompatActivity {
+    private Yodo1MasInterstitialAd interstitialAd = Yodo1MasInterstitialAd.getInstance();
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+            @Override
+            public void onMasInitSuccessful() {
+            }
+
+            @Override
+            public void onMasInitFailed(@NonNull Yodo1MasError error) {
+            }
+        });
+
+        interstitialAd.setAdListener(new Yodo1MasInterstitialAdListener() {
+		    @Override
+		    public void onInterstitialAdLoaded(Yodo1MasInterstitialAd ad) {
+		        // Code to be executed when an ad finishes loading.
+                ad.showAd(MainActivity.this)
+		    }
+		
+		    @Override
+		    public void onInterstitialAdFailedToLoad(Yodo1MasInterstitialAd ad, @NonNull Yodo1MasError error) {
+		        // Code to be executed when an ad request fails.
+		    }
+		
+		    @Override
+		    public void onInterstitialAdOpened(Yodo1MasInterstitialAd ad) {
+		        // Code to be executed when an ad opens an overlay that
+		        // covers the screen.
+		    }
+		
+		    @Override
+		    public void onInterstitialAdFailedToOpen(Yodo1MasInterstitialAd ad, @NonNull Yodo1MasError error) {
+				// Code to be executed when an ad open fails.
+		    }
+		
+		    @Override
+		    public void onInterstitialAdClosed(Yodo1MasInterstitialAd ad) {
+		        // Code to be executed when the user is about to return
+		        // to the app after tapping on an ad.
+		    }
+		 });
+        interstitialAd.loadAd();
+    }
+}
+```
+
+For Kotlin
+
+```kotlin
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.interstitial.Yodo1MasInterstitialAd;
+import com.yodo1.mas.interstitial.Yodo1MasInterstitialAdListener;
+
+class MainActivity : AppCompatActivity() {
+
+    val interstitialAd = Yodo1MasInterstitialAd.getInstance()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        	override fun onMasInitSuccessful() {    
+        		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
+        	} 
+        	override fun onMasInitFailed(error: Yodo1MasError) {
+        		Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()  
+        	}
+        })
+
+        interstitialAd.setAdListener(object : Yodo1MasInterstitialAdListener {
+            override fun onInterstitialAdLoaded(ad: Yodo1MasInterstitialAd?) {
+                // Code to be executed when an ad finishes loading.
+                ad.showAd(this@MainActivity)
+            }
+
+            override fun onInterstitialAdFailedToLoad(
+                ad: Yodo1MasInterstitialAd?,
+                error: Yodo1MasError
+            ) {
+                // Code to be executed when an ad request fails.
+            }
+
+            override fun onInterstitialAdOpened(ad: Yodo1MasInterstitialAd?) {
+                // Code to be executed when an ad opens an overlay that
+		         // covers the screen.
+            }
+
+            override fun onInterstitialAdFailedToOpen(
+                ad: Yodo1MasInterstitialAd?,
+                error: Yodo1MasError
+            ) {
+                // Code to be executed when an ad open fails.
+            }
+
+            override fun onInterstitialAdClosed(ad: Yodo1MasInterstitialAd?) {
+                // Code to be executed when the user is about to return
+		         // to the app after tapping on an ad.
+
+            }
+
+        })
+        interstitialAd.loadAd()
+    }
+}
+```
+
 ## Rewarded Video Integration
 
 ### 1. Set up rewarded video ad delegate methods
@@ -798,18 +1034,28 @@ Yodo1Mas.getInstance().showInterstitialAd(MyActivity.this);
 ```java
 Yodo1Mas.getInstance().setRewardListener(new Yodo1Mas.RewardListener() {
     @Override
+    public void onAdLoaded(@NonNull Yodo1MasAdEvent event) {
+
+    }
+
+    @Override
+    public void onAdLoadError(@NonNull Yodo1MasError error) {
+
+    }
+
+    @Override
     public void onAdOpened(@NonNull Yodo1MasAdEvent event) {
+
+    }
+
+    @Override
+    public void onAdOpenError(@NonNull Yodo1MasError error) {
 
     }
 
     @Override
     public void onAdvertRewardEarned(@NonNull Yodo1MasAdEvent event) {
 
-    }
-
-    @Override
-    public void onAdError(@NonNull Yodo1MasAdEvent event, @NonNull Yodo1MasError error) {
-    
     }
     
     @Override
@@ -829,6 +1075,226 @@ boolean isLoaded = Yodo1Mas.getInstance().isBannerAdLoaded();
 
 ```java
 Yodo1Mas.getInstance().showRewardedAd(MyActivity.this);
+```
+
+## Rewarded(V2) Integration
+
+### 1. Init Yodo1MasRewardlAd
+For Java
+
+```java
+Yodo1MasRewardlAd rewardAd = Yodo1MasRewardlAd.getInstance();
+```
+
+For Kotlin
+
+```kotlin
+val rewardAd = Yodo1MasRewardlAd.getInstance()
+```
+
+### 2. Load an ad
+
+Once the `Yodo1MasRewardlAd` is in place, the next step is to load an ad. That's done with the `loadAd()` method in the `Yodo1MasRewardlAd` class.
+
+Here's an example that shows how to load an ad in the `onCreate()` method of an `Activity`:
+
+For Java
+
+```java
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.reward.Yodo1MasRewardlAd;
+
+public class MainActivity extends AppCompatActivity {
+    private Yodo1MasRewardlAd rewardAd = Yodo1MasRewardlAd.getInstance();
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+            @Override
+            public void onMasInitSuccessful() {
+            }
+
+            @Override
+            public void onMasInitFailed(@NonNull Yodo1MasError error) {
+            }
+        });
+        rewardAd.loadAd();
+    }
+}
+```
+
+For Kotlin
+
+```kotlin
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.reward.Yodo1MasRewardAd;
+
+class MainActivity : AppCompatActivity() {
+
+    val rewardAd = Yodo1MasRewardAd.getInstance()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        	override fun onMasInitSuccessful() {    
+        		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
+        	} 
+        	override fun onMasInitFailed(error: Yodo1MasError) {
+        		Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()  
+        	}
+        })
+
+        rewardAd.loadAd()
+    }
+}
+```
+
+That's it! Your app is now ready to display banner ads.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasRewardAdListener` class.
+
+For Java
+
+```java
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.reward.Yodo1MasRewardAd;
+import com.yodo1.mas.reward.Yodo1MasRewardAdListener;
+
+public class MainActivity extends AppCompatActivity {
+    private Yodo1MasRewardAd rewardAd = Yodo1MasRewardAd.getInstance();
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+            @Override
+            public void onMasInitSuccessful() {
+            }
+
+            @Override
+            public void onMasInitFailed(@NonNull Yodo1MasError error) {
+            }
+        });
+
+        rewardAd.setAdListener(new Yodo1MasRewardAdListener() {
+		    @Override
+		    public void onRewardAdLoaded(Yodo1MasRewardAd ad) {
+		        // Code to be executed when an ad finishes loading.
+                ad.showAd(MainActivity.this)
+		    }
+		
+		    @Override
+		    public void onRewardAdFailedToLoad(Yodo1MasRewardAd ad, @NonNull Yodo1MasError error) {
+		        // Code to be executed when an ad request fails.
+		    }
+		
+		    @Override
+		    public void onRewardAdOpened(Yodo1MasRewardAd ad) {
+		        // Code to be executed when an ad opens an overlay that
+		        // covers the screen.
+		    }
+		
+		    @Override
+		    public void onRewardAdFailedToOpen(Yodo1MasRewardAd ad, @NonNull Yodo1MasError error) {
+				// Code to be executed when an ad open fails.
+		    }
+		
+		    @Override
+		    public void onRewardAdClosed(Yodo1MasRewardAd ad) {
+		        // Code to be executed when the user is about to return
+		        // to the app after tapping on an ad.
+		    }
+
+            @Override
+            public void onRewardAdEarned(Yodo1MasRewardAd ad) {
+            
+            }
+		 });
+        rewardAd.loadAd();
+    }
+}
+```
+
+For Kotlin
+
+```kotlin
+package ...
+
+import ...
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.reward.Yodo1MasRewardAd;
+import com.yodo1.mas.reward.Yodo1MasRewardAdListener;
+
+class MainActivity : AppCompatActivity() {
+
+    val rewardAd = Yodo1MasRewardAd.getInstance()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        	override fun onMasInitSuccessful() {    
+        		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
+        	} 
+        	override fun onMasInitFailed(error: Yodo1MasError) {
+        		Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()  
+        	}
+        })
+
+        rewardAd.setAdListener(object : Yodo1MasRewardAdListener {
+            override fun onRewardAdLoaded(ad: Yodo1MasRewardAd?) {
+                // Code to be executed when an ad finishes loading.
+                ad.showAd(this@MainActivity)
+            }
+
+            override fun onRewardAdFailedToLoad(
+                ad: Yodo1RewardAd?,
+                error: Yodo1MasError
+            ) {
+                // Code to be executed when an ad request fails.
+            }
+
+            override fun onRewardAdOpened(ad: Yodo1MasRewardAd?) {
+                // Code to be executed when an ad opens an overlay that
+		         // covers the screen.
+            }
+
+            override fun onRewardAdFailedToOpen(
+                ad: Yodo1MasRewardAd?,
+                error: Yodo1MasError
+            ) {
+                // Code to be executed when an ad open fails.
+            }
+
+            override fun onRewardAdClosed(ad: Yodo1MasRewardAd?) {
+                // Code to be executed when the user is about to return
+		         // to the app after tapping on an ad.
+            }
+
+            override fun onRewardAdEarned(ad: Yodo1MasRewardAd?) {
+               
+            }
+        })
+        reweardAd.loadAd()
+    }
+}
 ```
 
 ## Native Ads (Template) Integration
