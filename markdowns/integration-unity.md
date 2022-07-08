@@ -17,11 +17,11 @@ MAS provides 3 versions of the Unity plugin, and you need to select one dependin
 * If your game is not part of the “Designed for Families Program”, please use the Standard SDK.
 * If your game prefers to use the 4 top ad networks to keep the SDK lightweight without making significant compromises on Monetization, please use the Lite SDK.
 
-[Designed For Families](https://mas-artifacts.yodo1.com/4.7.0/Unity/Release/Rivendell-4.7.0-Family.unitypackage)
+[Designed For Families](https://mas-artifacts.yodo1.com/4.7.2/Unity/Release/Rivendell-4.7.2-Family.unitypackage)
 
-[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.7.0/Unity/Release/Rivendell-4.7.0-Full.unitypackage)
+[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.7.2/Unity/Release/Rivendell-4.7.2-Full.unitypackage)
 
-[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.7.0/Unity/Release/Rivendell-4.7.0-Lite.unitypackage)
+[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.7.2/Unity/Release/Rivendell-4.7.2-Lite.unitypackage)
 
 ### Note:
 If you are use unity **2018**,please check on the Custom Gradle Template through the following steps:
