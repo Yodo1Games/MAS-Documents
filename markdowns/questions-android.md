@@ -20,7 +20,7 @@ Android has a 64K method constraint. Since the game will include third-party lib
 
 ## What is the minimum Android API version supported by MAS?
 
-MAS SDK supports Android API version 19+.
+MAS SDK supports Android API version 21+.
 
 ## What is the cause of the error below during testing with our demo?
 

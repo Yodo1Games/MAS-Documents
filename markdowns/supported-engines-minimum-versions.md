@@ -18,10 +18,10 @@ A plugin for games built on the Unity Engine which will run as mobile apps IOS o
 
 Designed for games and apps that run on an Android-powered mobile phone but were not built from Unity. Any game engine or framework that allows you to build an Android app is eligible to use the Android SDK.  Implemented in Java.
 
-**IMPORTANT!**  MAS supports Android version 4.4.+ (Android API level: 19+).
+**IMPORTANT!**  MAS supports Android version 5.0.+ (Android API level: 21+).
 
 ##  MAS for IOS
 
 Designed for games and apps that run on an iPhone device but were not built from Unity. Any game engine or framework that allows you to build an iPhone app is eligible to use the IOS SDK. Implemented in Objective C.
 
-**IMPORTANT!**  MAS supports iOS 9.0+ and Xcode 12.+.
+**IMPORTANT!**  MAS supports iOS 10.0+ and Xcode 13.+.

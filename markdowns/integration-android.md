@@ -1,6 +1,6 @@
 # Android Integration
 
-> MAS supports Android version 4.4.+ (Android API level: 19+) and above
+> MAS supports Android version 5.0.+ (Android API level: 21+) and above
 > 
 > Need compileSdkVersion 31 from MAS SDK 4.6.1
 
@@ -42,19 +42,19 @@ mavenCentral()
 #### 2.1 Add a Gradle dependency
 
 ```groovy
-implementation 'com.yodo1.mas:full:4.7.2'
+implementation 'com.yodo1.mas:full:4.7.5'
 ```
 
 If you need to comply with Google Family Policy:
 
 ```groovy
-implementation 'com.yodo1.mas:google:4.7.2'
+implementation 'com.yodo1.mas:google:4.7.5'
 ```
 
 If you need to use lightweight SDK:
 
 ```groovy
-implementation 'com.yodo1.mas:lite:4.7.2'
+implementation 'com.yodo1.mas:lite:4.7.5'
 ```
 
 #### 2.2 Add the `compileOptions` property to the `Android` section
