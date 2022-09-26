@@ -42,19 +42,19 @@ mavenCentral()
 #### 2.1 Add a Gradle dependency
 
 ```groovy
-implementation 'com.yodo1.mas:full:4.7.6'
+implementation 'com.yodo1.mas:full:4.7.7'
 ```
 
 If you need to comply with Google Family Policy:
 
 ```groovy
-implementation 'com.yodo1.mas:google:4.7.6'
+implementation 'com.yodo1.mas:google:4.7.7'
 ```
 
 If you need to use lightweight SDK:
 
 ```groovy
-implementation 'com.yodo1.mas:lite:4.7.6'
+implementation 'com.yodo1.mas:lite:4.7.7'
 ```
 
 #### 2.2 Add the `compileOptions` property to the `Android` section
