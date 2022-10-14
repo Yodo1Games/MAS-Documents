@@ -198,7 +198,7 @@ Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{
 
 ```c#
 void Start()  {
-	Yodo1U3dMas.InitializeSdk();
+	Yodo1U3dMas.InitializeMasSdk();
 }
 ```
 
@@ -532,7 +532,7 @@ public class BannerSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestBanner();
     }
@@ -599,7 +599,7 @@ public class BannerSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestBanner();
     }
@@ -749,7 +749,7 @@ public class InterstitialSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestInterstitial();
     }
@@ -797,7 +797,7 @@ public class InterstitialSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestInterstitial();
     }
@@ -935,7 +935,7 @@ public class RewardSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestReward();
     }
@@ -983,7 +983,7 @@ public class RewardSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestReward();
     }
@@ -1062,7 +1062,7 @@ public class RewardedInterstitialSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestRewardedInterstitial();
     }
@@ -1110,7 +1110,7 @@ public class RewardedInterstitialSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestRewardedInterstitial();
     }
@@ -1190,7 +1190,7 @@ public class AppOpenSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestAppOpen();
     }
@@ -1238,7 +1238,7 @@ public class AppOpenSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestAppOpen();
     }
@@ -1307,7 +1307,7 @@ public class AppOpenSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestAppOpen();
     }
@@ -1381,7 +1381,7 @@ public class NativeSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestNative();
     }
@@ -1448,7 +1448,7 @@ public class NativeSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestNative();
     }

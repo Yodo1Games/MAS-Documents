@@ -828,7 +828,7 @@ switch(attStatus) {
 #### 4.2 Add the snippet below by using your AppDelegate's `didFinishLaunchingWithOptions` method:
 
 ``` obj-c
-[[Yodo1Mas sharedInstance] initWithAppId:@"Your AppId" successful:^{
+[[Yodo1Mas sharedInstance] initMasWithAppId:@"Your AppId" successful:^{
     
 } fail:^(NSError * _Nonnull error) {
     
@@ -946,7 +946,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1012,7 +1012,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1186,7 +1186,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1245,7 +1245,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1417,7 +1417,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1476,7 +1476,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1609,7 +1609,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1668,7 +1668,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1801,7 +1801,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1860,7 +1860,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -2086,7 +2086,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -2148,7 +2148,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -2376,7 +2376,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -2467,7 +2467,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 

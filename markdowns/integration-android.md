@@ -227,7 +227,7 @@ Initialize the SDK in the `onCreate` method of `Activity`
 ```java
 protected void onCreate() {
   super.onCreate();
-	Yodo1Mas.getInstance().init(this, "Your AppId", new Yodo1Mas.InitListener() {
+	Yodo1Mas.getInstance().initMas(this, "Your AppId", new Yodo1Mas.InitListener() {
 	    @Override
 	    public void onMasInitSuccessful() {
 	        // 初始化成功
@@ -590,7 +590,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", new Yodo1Mas.InitListener() {
             @Override
             public void onMasInitSuccessful() {
             }
@@ -623,7 +623,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", object : Yodo1Mas.InitListener {
         	override fun onMasInitSuccessful() {    
         		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
         	} 
@@ -661,7 +661,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", new Yodo1Mas.InitListener() {
             @Override
             public void onMasInitSuccessful() {
             }
@@ -723,7 +723,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", object : Yodo1Mas.InitListener {
         	override fun onMasInitSuccessful() {    
         		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
         	} 
@@ -851,7 +851,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", new Yodo1Mas.InitListener() {
             @Override
             public void onMasInitSuccessful() {
             }
@@ -882,7 +882,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", object : Yodo1Mas.InitListener {
         	override fun onMasInitSuccessful() {    
         		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
         	} 
@@ -919,7 +919,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", new Yodo1Mas.InitListener() {
             @Override
             public void onMasInitSuccessful() {
             }
@@ -981,7 +981,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", object : Yodo1Mas.InitListener {
         	override fun onMasInitSuccessful() {    
         		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
         	} 
@@ -1114,7 +1114,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", new Yodo1Mas.InitListener() {
             @Override
             public void onMasInitSuccessful() {
             }
@@ -1145,7 +1145,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", object : Yodo1Mas.InitListener {
         	override fun onMasInitSuccessful() {    
         		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
         	} 
@@ -1182,7 +1182,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", new Yodo1Mas.InitListener() {
             @Override
             public void onMasInitSuccessful() {
             }
@@ -1249,7 +1249,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", object : Yodo1Mas.InitListener {
         	override fun onMasInitSuccessful() {    
         		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
         	} 
@@ -1334,7 +1334,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", new Yodo1Mas.InitListener() {
             @Override
             public void onMasInitSuccessful() {
             }
@@ -1365,7 +1365,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", object : Yodo1Mas.InitListener {
         	override fun onMasInitSuccessful() {    
         		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
         	} 
@@ -1402,7 +1402,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", new Yodo1Mas.InitListener() {
             @Override
             public void onMasInitSuccessful() {
             }
@@ -1469,7 +1469,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", object : Yodo1Mas.InitListener {
         	override fun onMasInitSuccessful() {    
         		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
         	} 
@@ -1554,7 +1554,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", new Yodo1Mas.InitListener() {
             @Override
             public void onMasInitSuccessful() {
             }
@@ -1585,7 +1585,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", object : Yodo1Mas.InitListener {
         	override fun onMasInitSuccessful() {    
         		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
         	} 
@@ -1622,7 +1622,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", new Yodo1Mas.InitListener() {
             @Override
             public void onMasInitSuccessful() {
             }
@@ -1684,7 +1684,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", object : Yodo1Mas.InitListener {
         	override fun onMasInitSuccessful() {    
         		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
         	} 
@@ -1915,7 +1915,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", new Yodo1Mas.InitListener() {
             @Override
             public void onMasInitSuccessful() {
             }
@@ -1948,7 +1948,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", object : Yodo1Mas.InitListener {
         	override fun onMasInitSuccessful() {    
         		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
         	} 
@@ -1986,7 +1986,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", new Yodo1Mas.InitListener() {
             @Override
             public void onMasInitSuccessful() {
             }
@@ -2031,7 +2031,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", object : Yodo1Mas.InitListener {
         	override fun onMasInitSuccessful() {    
         		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
         	} 
@@ -2311,7 +2311,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", new Yodo1Mas.InitListener() {
             @Override
             public void onMasInitSuccessful() {
             }
@@ -2357,7 +2357,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", object : Yodo1Mas.InitListener {
         	override fun onMasInitSuccessful() {    
         		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
         	} 
@@ -2409,7 +2409,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", new Yodo1Mas.InitListener() {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", new Yodo1Mas.InitListener() {
             @Override
             public void onMasInitSuccessful() {
             }
@@ -2454,7 +2454,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Yodo1Mas.getInstance().init(this, "YourAppKey", object : Yodo1Mas.InitListener {
+        Yodo1Mas.getInstance().initMas(this, "YourAppKey", object : Yodo1Mas.InitListener {
         	override fun onMasInitSuccessful() {    
         		Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
         	} 
