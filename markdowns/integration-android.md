@@ -1744,13 +1744,14 @@ import com.yodo1.mas.Yodo1Mas;
 import com.yodo1.mas.appopenad.Yodo1MasAppOpenAd;
 import com.yodo1.mas.appopenad.Yodo1MasAppOpenAdListener;
 
-public class MyApplication extends Application
+public class MyApplication extends Application, LifecycleObserver
 {
    private Yodo1MasAppOpenAd appOpenAd = Yodo1MasAppOpenAd.getInstance();
 
    @Override
    public void onCreate() {
        super.onCreate();
+       ProcessLifecycleOwner.get().getLifecycle().addObserver(this);
        appOpenAd.setAdListener(new Yodo1MasAppOpenAdListener() {
 		    @Override
 		    public void onAppOpenAdLoaded(Yodo1MasAppOpenAd ad) {
@@ -1802,12 +1803,13 @@ import com.yodo1.mas.Yodo1Mas;
 import com.yodo1.mas.appopenad.Yodo1MasAppOpenAd;
 import com.yodo1.mas.appopenad.Yodo1MasAppOpenAdListener;
 
-class MyApplication : Application() {
+class MyApplication : Application(), LifecycleObserver {
 
     val appOpenAd = Yodo1MasAppOpenAd.getInstance()
 
     override fun onCreate() {
         super.onCreate()
+        ProcessLifecycleOwner.get().getLifecycle().addObserver(this);
         appOpenAd.setAdListener(object : Yodo1MasAppOpenAdListener {
             override fun onAppOpenAdLoaded(ad: Yodo1MasAppOpenAd?) {
                 // Code to be executed when an ad finishes loading.
