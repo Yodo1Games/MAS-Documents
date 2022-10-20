@@ -933,7 +933,7 @@ public class MainActivity extends AppCompatActivity {
 		    @Override
 		    public void onInterstitialAdLoaded(Yodo1MasInterstitialAd ad) {
 		        // Code to be executed when an ad finishes loading.
-                ad.showAd(MainActivity.this)
+                ad.showAd(MainActivity.this);
 		    }
 		
 		    @Override
@@ -1196,7 +1196,7 @@ public class MainActivity extends AppCompatActivity {
 		    @Override
 		    public void onRewardAdLoaded(Yodo1MasRewardAd ad) {
 		        // Code to be executed when an ad finishes loading.
-                ad.showAd(MainActivity.this)
+                ad.showAd(MainActivity.this);
 		    }
 		
 		    @Override
@@ -1416,7 +1416,7 @@ public class MainActivity extends AppCompatActivity {
 		    @Override
 		    public void onRewardedInterstitialAdLoaded(Yodo1MasRewardedInterstitialAd ad) {
 		        // Code to be executed when an ad finishes loading.
-                ad.showAd(MainActivity.this)
+                ad.showAd(MainActivity.this);
 		    }
 		
 		    @Override
@@ -1636,7 +1636,7 @@ public class MainActivity extends AppCompatActivity {
 		    @Override
 		    public void onAppOpenAdLoaded(Yodo1MasAppOpenAd ad) {
 		        // Code to be executed when an ad finishes loading.
-                ad.showAd(MainActivity.this)
+                ad.showAd(MainActivity.this);
 		    }
 		
 		    @Override
