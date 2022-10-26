@@ -1736,6 +1736,7 @@ implementation("androidx.lifecycle:lifecycle-process:2.2.0")
 ```
 
 For Java
+
 ```java
 package ...
 
@@ -1784,7 +1785,7 @@ public class MyApplication extends Application, LifecycleObserver
    public void onStart() {
         Activity activity = Yodo1Mas.getInstance().getCurrentActivity();
         if (activity == null) return;  
-        if (appOpenAd.isLoaded) {
+        if (appOpenAd.isLoaded()) {
             appOpenAd.showAd(activity);
         } else {
             appOpenAd.loadAd(activity);
@@ -1850,7 +1851,7 @@ class MyApplication : Application(), LifecycleObserver {
     fun onStart() {
         var activity = Yodo1Mas.getInstance().getCurrentActivity()
         if (activity == null) return 
-        if (appOpenAd.isLoaded) {
+        if (appOpenAd.isLoaded()) {
             appOpenAd.showAd(activity)
         } else {
             appOpenAd.loadAd(activity)
