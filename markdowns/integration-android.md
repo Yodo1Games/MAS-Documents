@@ -1781,8 +1781,9 @@ public class MyApplication extends Application, LifecycleObserver
 		 });
    }
 
+   /** LifecycleObserver method that shows the app open ad when the app moves to foreground. */
    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-   public void onStart() {
+   public void onMoveToForeground() {
         Activity activity = Yodo1Mas.getInstance().getCurrentActivity();
         if (activity == null) return;  
         if (appOpenAd.isLoaded()) {
@@ -1847,8 +1848,9 @@ class MyApplication : Application(), LifecycleObserver {
         
     }
 
+    /** LifecycleObserver method that shows the app open ad when the app moves to foreground. */
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    fun onStart() {
+    fun onMoveToForeground() {
         var activity = Yodo1Mas.getInstance().getCurrentActivity()
         if (activity == null) return 
         if (appOpenAd.isLoaded()) {
