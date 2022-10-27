@@ -1745,7 +1745,7 @@ import com.yodo1.mas.Yodo1Mas;
 import com.yodo1.mas.appopenad.Yodo1MasAppOpenAd;
 import com.yodo1.mas.appopenad.Yodo1MasAppOpenAdListener;
 
-public class MyApplication extends Application, LifecycleObserver
+public class MyApplication extends Application implements LifecycleObserver
 {
    private Yodo1MasAppOpenAd appOpenAd = Yodo1MasAppOpenAd.getInstance();
 
