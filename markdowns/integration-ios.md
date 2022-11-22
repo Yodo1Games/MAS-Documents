@@ -981,7 +981,7 @@ class MainController : UIViewController {
     }
     bannerAdView = Yodo1MasBannerAdView()
     bannerAdView.setAdSize(.banner)
-    bannerAdView.loadAd()
+    bannerAdView.load()
     let size = bannerAdView.intrinsicContentSize
     bannerAdView.frame = CGRect(x: (self.view.bounds.width - size.width) / 2, y: self.view.bounds.height - size.height, width: size.width, height: size.height)
     self.view.addSubview(bannerAdView)
@@ -1073,7 +1073,7 @@ class MainController: UIViewController {
         bannerAdView = Yodo1MasBannerAdView()
         bannerAdView.setAdSize(.banner)
         bannerAdView.adDelegate = self
-        bannerAdView.loadAd()
+        bannerAdView.load()
         let size = bannerAdView.intrinsicContentSize
         bannerAdView.frame = CGRect(x: (self.view.bounds.width - size.width) / 2, y: self.view.bounds.height - size.height, width: size.width, height: size.height)
         self.view.addSubview(bannerAdView)
@@ -1155,12 +1155,14 @@ For `Objective-C`
 
 ```objective-c
 Yodo1MasInterstitialAd *interstitialAd = [Yodo1MasInterstitialAd sharedInstance];
+interstitialAd.autoDelayIfLoadFail = YES; // if you need
 ```
 
 For `Swift`
 
 ```swift
 let interstitialAd = Yodo1MasInterstitialAd.sharedInstance()
+interstitialAd.autoDelayIfLoadFail = true; // if you need
 ```
 
 ### 2. Load an ad
@@ -1193,7 +1195,6 @@ For `Objective-C`
   }];
   
   _interstitialAd = [Yodo1MasInterstitialAd sharedInstance];
-  [_interstitialAd setAdPlacement:@"Your Placement Id"];
   [_interstitialAd loadAd];
 }
 @end
@@ -1211,14 +1212,13 @@ class MainController : UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-    Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
-            
-    } fail: { error in
+        Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+                
+        } fail: { error in
 
-    }
-    interstitialAd = Yodo1MasInterstitialAd.sharedInstance()
-    interstitialAd.setAdPlacement("Your Placement Id")
-    interstitialAd.loadAd()
+        }
+        interstitialAd = Yodo1MasInterstitialAd.sharedInstance()
+        interstitialAd.load()
    }
 }
 ```
@@ -1253,14 +1253,13 @@ For `Objective-C`
   
   _interstitialAd = [Yodo1MasInterstitialAd sharedInstance];
   _interstitialAd.adDelegate = self;
-  [_interstitialAd setAdPlacement:@"Your Placement Id"];
   [_interstitialAd loadAd];
 }
 
 
 #pragma mark - Yodo1MasInterstitialDelegate
 - (void)onInterstitialAdLoaded:(Yodo1MasInterstitialAd *)ad {
-    [ad showAd];
+    [ad showAdWithPlacement:@"Your placement id"];
 }
 
 - (void)onInterstitialAdFailedToLoad:(Yodo1MasInterstitialAd *)ad withError:(Yodo1MasError *)error {
@@ -1301,16 +1300,15 @@ class MainController: UIViewController {
         }
         
         interstitialAd = Yodo1MasInterstitialAd.sharedInstance()
-        interstitialAd.setAdPlacement("Your Placement Id")
         interstitialAd.adDelegate = self
-        interstitialAd.loadAd()
+        interstitialAd.load()
     }
 }
 
 extension MainController: Yodo1MasInterstitialDelegate {
     // MARK: Yodo1MasInterstitialDelegate
     func onInterstitialAdLoaded(_ ad: Yodo1MasInterstitialAd) {
-        ad.showAd()
+        ad.show(withPlacement: "Your placement id")
     }
     
     func onInterstitialAdFailed(toLoad ad: Yodo1MasInterstitialAd, withError error: Yodo1MasError) {
@@ -1386,12 +1384,14 @@ For `Objective-C`
 
 ```objective-c
 Yodo1MasRewardAd *rewardAd = [Yodo1MasRewardAd sharedInstance];
+rewardAd.autoDelayIfLoadFail = YES; // if you need
 ```
 
 For `Swift`
 
 ```swift
 let rewardAd = Yodo1MasRewardAd.sharedInstance()
+rewardAd.autoDelayIfLoadFail = true; // if you need
 ```
 
 ### 2. Load an ad
@@ -1424,7 +1424,6 @@ For `Objective-C`
   }];
   
   _rewardAd = [Yodo1MasRewardAd sharedInstance];
-  [_rewardAd setAdPlacement:@"Your Placement Id"];
   [_rewardAd loadAd];
 }
 @end
@@ -1442,14 +1441,13 @@ class MainController : UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-    Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
-            
-    } fail: { error in
+        Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+                
+        } fail: { error in
 
-    }
-    rewardAd = Yodo1MasRewardAd.sharedInstance()
-    rewardAd.setAdPlacement("Your Placement Id")
-    rewardAd.loadAd()
+        }
+        rewardAd = Yodo1MasRewardAd.sharedInstance()
+        rewardAd.load()
    }
 }
 ```
@@ -1484,14 +1482,13 @@ For `Objective-C`
   
   _rewardAd = [Yodo1MasRewardAd sharedInstance];
   _rewardAd.adDelegate = self;
-  [_rewardAd setAdPlacement:@"Your Placement Id"];
   [_rewardAd loadAd];
 }
 
 
 #pragma mark - Yodo1MasRewardDelegate
 - (void)onRewardAdLoaded:(Yodo1MasRewardAd *)ad {
-    [ad showAd];
+    [ad showAdWithPlacement: @"Your placement id"];
 }
 
 - (void)onRewardAdFailedToLoad:(Yodo1MasRewardAd *)ad withError:(Yodo1MasError *)error {
@@ -1536,16 +1533,15 @@ class MainController: UIViewController {
         }
         
         rewardAd = Yodo1MasRewardAd.sharedInstance()
-        rewardAd.setAdPlacement("Your Placement Id")
         rewardAd.adDelegate = self
-        rewardAd.loadAd()
+        rewardAd.load()
     }
 }
 
 extension MainController: Yodo1MasRewardDelegate {
     // MARK: Yodo1MasRewardDelegate
     func onRewardAdLoaded(_ ad: Yodo1MasRewardAd) {
-        ad.showAd()
+        ad.show(withPlacement: "Your placement id")
     }
     
     func onRewardAdFailed(toLoad ad: Yodo1MasRewardAd, withError error: Yodo1MasError) {
@@ -1578,12 +1574,14 @@ For `Objective-C`
 
 ```objective-c
 Yodo1MasRewardedInterstitialAd *rewardedInterstitialAd = [Yodo1MasRewardedInterstitialAd sharedInstance];
+rewardedInterstitialAd.autoDelayIfLoadFail = YES; // if you need
 ```
 
 For `Swift`
 
 ```swift
 let rewardedInterstitialAd = Yodo1MasRewardedInterstitialAd.sharedInstance()
+rewardedInterstitialAd.autoDelayIfLoadFail = true; // if you need
 ```
 
 ### 2. Load an ad
@@ -1616,7 +1614,6 @@ For `Objective-C`
   }];
   
   _rewardedInterstitialAd = [Yodo1MasRewardedInterstitialAd sharedInstance];
-  [_rewardedInterstitialAd setAdPlacement:@"Your Placement Id"];
   [_rewardedInterstitialAd loadAd];
 }
 @end
@@ -1634,14 +1631,13 @@ class MainController : UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-    Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
-            
-    } fail: { error in
+        Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+                
+        } fail: { error in
 
-    }
-    rewardedInterstitialAd = Yodo1MasRewardedInterstitialAd.sharedInstance()
-    rewardedInterstitialAd.setAdPlacement("Your Placement Id")
-    rewardedInterstitialAd.loadAd()
+        }
+        rewardedInterstitialAd = Yodo1MasRewardedInterstitialAd.sharedInstance()
+        rewardedInterstitialAd.load()
    }
 }
 ```
@@ -1676,14 +1672,13 @@ For `Objective-C`
   
   _rewardedInterstitialAd = [Yodo1MasRewardedInterstitialAd sharedInstance];
   _rewardedInterstitialAd.adDelegate = self;
-  [_rewardedInterstitialAd setAdPlacement:@"Your Placement Id"];
   [_rewardedInterstitialAd loadAd];
 }
 
 
 #pragma mark - Yodo1MasRewardedInterstitialAdDelegate
 - (void)onRewardedInterstitialAdLoaded:(Yodo1MasRewardedInterstitialAd *)ad {
-    [ad showAd];
+    [ad showAdWithPlacement: @"Your placement id"];
 }
 
 - (void)onRewardedInterstitialAdFailedToLoad:(Yodo1MasRewardedInterstitialAd *)ad withError:(Yodo1MasError *)error {
@@ -1728,16 +1723,15 @@ class MainController: UIViewController {
         }
         
         rewardedInterstitialAd = Yodo1MasRewardedInterstitialAd.sharedInstance()
-        rewardedInterstitialAd.setAdPlacement("Your Placement Id")
         rewardedInterstitialAd.adDelegate = self
-        rewardedInterstitialAd.loadAd()
+        rewardedInterstitialAd.load()
     }
 }
 
 extension MainController: Yodo1MasRewardedInterstitialAdDelegate {
     // MARK: Yodo1MasRewardedInterstitialAdDelegate
     func onRewardedInterstitialAdLoaded(_ ad: Yodo1MasRewardedInterstitialAd) {
-        ad.showAd()
+        ad.show(withPlacement: "Your placement id")
     }
     
     func onRewardedInterstitialAdFailed(toLoad ad: Yodo1MasRewardedInterstitialAd, withError error: Yodo1MasError) {
@@ -1770,12 +1764,14 @@ For `Objective-C`
 
 ```objective-c
 Yodo1MasAppOpenAd *appOpenAd = [Yodo1MasAppOpenAd sharedInstance];
+appOpenAd.autoDelayIfLoadFail = YES; // if you need
 ```
 
 For `Swift`
 
 ```swift
 let appOpenAd = Yodo1MasAppOpenAd.sharedInstance()
+appOpenAd.autoDelayIfLoadFail = true; // if you need
 ```
 
 ### 2. Load an ad
@@ -1808,7 +1804,6 @@ For `Objective-C`
   }];
   
   _appOpenAd = [Yodo1MasAppOpenAd sharedInstance];
-  [_appOpenAd setAdPlacement:@"Your Placement Id"];
   [_appOpenAd loadAd];
 }
 @end
@@ -1826,14 +1821,13 @@ class MainController : UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-    Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
-            
-    } fail: { error in
+        Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+                
+        } fail: { error in
 
-    }
-    appOpenAd = Yodo1MasAppOpenAd.sharedInstance()
-    appOpenAd.setAdPlacement("Your Placement Id")
-    appOpenAd.loadAd()
+        }
+        appOpenAd = Yodo1MasAppOpenAd.sharedInstance()
+        appOpenAd.load()
    }
 }
 ```
@@ -1868,14 +1862,13 @@ For `Objective-C`
   
   _appOpenAd = [Yodo1MasAppOpenAd sharedInstance];
   _appOpenAd.adDelegate = self;
-  [_appOpenAd setAdPlacement:@"Your Placement Id"];
   [_appOpenAd loadAd];
 }
 
 
 #pragma mark - Yodo1MasAppOpenAdDelegate
 - (void)onAppOpenAdLoaded:(Yodo1MasAppOpenAd *)ad {
-    [ad showAd];
+    [ad showAdWithPlacement: @"Your placement id"];
 }
 
 - (void)onAppOpenAdFailedToLoad:(Yodo1MasAppOpenAd *)ad withError:(Yodo1MasError *)error {
@@ -1916,16 +1909,15 @@ class MainController: UIViewController {
         }
         
         appOpenAd = Yodo1MasAppOpenAd.sharedInstance()
-        appOpenAd.setAdPlacement("Your Placement Id")
         appOpenAd.adDelegate = self
-        appOpenAd.loadAd()
+        appOpenAd.load()
     }
 }
 
 extension MainController: Yodo1MasAppOpenAdDelegate {
     // MARK: Yodo1MasAppOpenAdDelegate
     func onAppOpenAdLoaded(_ ad: Yodo1MasAppOpenAd) {
-        ad.showAd()
+        ad.show(withPlacement: "Your placement id")
     }
     
     func onAppOpenAdFailed(toLoad ad: Yodo1MasAppOpenAd, withError error: Yodo1MasError) {
@@ -2008,13 +2000,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appOpenAd = Yodo1MasAppOpenAd.sharedInstance()
         appOpenAd.setAdPlacement("Your Placement Id")
         appOpenAd.adDelegate = self
-        appOpenAd.loadAd()
+        appOpenAd.load()
         return true
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         if (appOpenAd.isLoaded) {
-            appOpenAd.showAd();
+            appOpenAd.show();
         }
     }
 }
@@ -2026,7 +2018,7 @@ extension AppDelegate: Yodo1MasAppOpenAdDelegate {
     }
     
     func onAppOpenAdFailed(toLoad ad: Yodo1MasAppOpenAd, withError error: Yodo1MasError) {
-        ad.loadAd()
+        ad.load()
     }
     
     func onAppOpenAdOpened(_ ad: Yodo1MasAppOpenAd) {
@@ -2034,11 +2026,11 @@ extension AppDelegate: Yodo1MasAppOpenAdDelegate {
     }
     
     func onAppOpenAdFailed(toOpen ad: Yodo1MasAppOpenAd, withError error: Yodo1MasError) {
-        ad.loadAd()
+        ad.load()
     }
     
     func onAppOpenAdClosed(_ ad: Yodo1MasAppOpenAd) {
-        ad.loadAd()
+        ad.load()
     }
 }
 ```
@@ -2119,7 +2111,7 @@ class MainController : UIViewController {
     }
     nativeAdView = Yodo1MasNativeAdView()
     nativeAdView.frame = CGRect(x: 0, y: 0, width: 375, height: 200)
-    nativeAdView.loadAd()
+    nativeAdView.load()
     self.view.addSubview(nativeAdView)
    }
 }
@@ -2195,7 +2187,7 @@ class MainController: UIViewController {
         nativeAdView = Yodo1MasNativeAdView()
         nativeAdView.frame = CGRect(x: 0, y: 0, width: 375, height: 200)
         nativeAdView.adDelegate = self
-        nativeAdView.loadAd()
+        nativeAdView.load()
         self.view.addSubview(nativeAdView)
     }
 }
@@ -2438,7 +2430,7 @@ class MainController : UIViewController {
     nativeView.setLayoutXib("NativeCustomAdView", builder:builder)
     //nativeView.setLayout(NativeCustomAdView.self, builder:builder)
 
-    nativeAdView.loadAd()
+    nativeAdView.load()
     self.view.addSubview(nativeAdView)
    }
 }
@@ -2514,7 +2506,7 @@ class MainController: UIViewController {
         nativeAdView = Yodo1MasNativeAdView()
         nativeAdView.frame = CGRect(x: 0, y: 0, width: 375, height: 200)
         nativeAdView.adDelegate = self
-        nativeAdView.loadAd()
+        nativeAdView.load()
         self.view.addSubview(nativeAdView)
     }
 }

@@ -757,6 +757,7 @@ public class InterstitialSampleV2 : MonoBehaviour
     private void RequestInterstitial()
     {
         interstitialAd = Yodo1U3dInterstitialAd.GetInstance();
+        interstitialAd.autoDelayIfLoadFail = true;
     }
 }
 ```
@@ -772,6 +773,7 @@ Here's an example that shows how to load an ad:
     private void RequestInterstitial()
     {
         interstitialAd = Yodo1U3dInterstitialAd.GetInstance();
+        interstitialAd.autoDelayIfLoadFail = true;
         interstitialAd.LoadAd();
     }
 ...
@@ -805,6 +807,7 @@ public class InterstitialSampleV2 : MonoBehaviour
     private void RequestInterstitial()
     {
         interstitialAd = Yodo1U3dInterstitialAd.GetInstance();
+        interstitialAd.autoDelayIfLoadFail = true;
 
 		 // Ad Events
         interstitialAd.OnAdLoadedEvent += OnInterstitialAdLoadedEvent;
@@ -943,6 +946,7 @@ public class RewardSampleV2 : MonoBehaviour
     private void RequestReward()
     {
         rewardAd = Yodo1U3dRewardAd.GetInstance();
+        rewardAd.autoDelayIfLoadFail = true;
     }
 }
 ```
@@ -958,6 +962,7 @@ Here's an example that shows how to load an ad:
     private void RequestReward()
     {
         rewardAd = Yodo1U3dRewardAd.GetInstance();
+        rewardAd.autoDelayIfLoadFail = true;
         rewardAd.LoadAd();
     }
 ...
@@ -991,6 +996,7 @@ public class RewardSampleV2 : MonoBehaviour
     private void RequestReward()
     {
         rewardAd = Yodo1U3dRewardAd.GetInstance();
+        rewardAd.autoDelayIfLoadFail = true;
 
 		 // Ad Events
         rewardAd.OnAdLoadedEvent += OnRewardAdLoadedEvent;
@@ -1070,6 +1076,7 @@ public class RewardedInterstitialSampleV2 : MonoBehaviour
     private void RequestRewardedInterstitial()
     {
         rewardedInterstitialAd = Yodo1U3dRewardedInterstitialAd.GetInstance();
+        rewardedInterstitialAd.autoDelayIfLoadFail = true;
     }
 }
 ```
@@ -1085,6 +1092,7 @@ Here's an example that shows how to load an ad:
     private void RequestRewardedInterstitial()
     {
         rewardedInterstitialAd = Yodo1U3dRewardedInterstitialAd.GetInstance();
+        rewardedInterstitialAd.autoDelayIfLoadFail = true;
         rewardedInterstitialAd.LoadAd();
     }
 ...
@@ -1118,6 +1126,7 @@ public class RewardedInterstitialSampleV2 : MonoBehaviour
     private void RequestRewardedInterstitial()
     {
         rewardedInterstitialAd = Yodo1U3dRewardedInterstitialAd.GetInstance();
+        rewardedInterstitialAd.autoDelayIfLoadFail = true;
 
 		 // Ad Events
         rewardedInterstitialAd.OnAdLoadedEvent += OnRewardedInterstitialAdLoadedEvent;
@@ -1198,6 +1207,7 @@ public class AppOpenSampleV2 : MonoBehaviour
     private void RequestAppOpen()
     {
         appOpenAd = Yodo1U3dAppOpenAd.GetInstance();
+        appOpenAd.autoDelayIfLoadFail = true;
     }
 }
 ```
@@ -1213,6 +1223,7 @@ Here's an example that shows how to load an ad:
     private void RequestAppOpen()
     {
         appOpenAd = Yodo1U3dAppOpenAd.GetInstance();
+        appOpenAd.autoDelayIfLoadFail = true;
         appOpenAd.LoadAd();
     }
 ...
@@ -1246,6 +1257,7 @@ public class AppOpenSampleV2 : MonoBehaviour
     private void RequestAppOpen()
     {
         appOpenAd = Yodo1U3dAppOpenAd.GetInstance();
+        appOpenAd.autoDelayIfLoadFail = true;
 
 		 // Ad Events
         appOpenAd.OnAdLoadedEvent += OnAppOpenAdLoadedEvent;
@@ -1315,6 +1327,8 @@ public class AppOpenSampleV2 : MonoBehaviour
     private void RequestAppOpen()
     {
         appOpenAd = Yodo1U3dAppOpenAd.GetInstance();
+        appOpenAd.autoDelayIfLoadFail = true;
+        
         appOpenAd.OnAdLoadedEvent += OnAppOpenAdLoadedEvent;
         appOpenAd.OnAdLoadFailedEvent += OnAppOpenAdLoadFailedEvent;
         appOpenAd.OnAdOpenedEvent += OnAppOpenAdOpenedEvent;

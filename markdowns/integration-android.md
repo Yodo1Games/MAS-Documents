@@ -12,6 +12,7 @@ mavenCentral()
 maven { url "https://artifact.bytedance.com/repository/pangle" }
 maven { url "https://android-sdk.is.com" }
 maven { url "https://sdk.tapjoy.com/" }
+maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" }
 maven {
     url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
     allowInsecureProtocol = true
@@ -42,19 +43,19 @@ mavenCentral()
 #### 2.1 Add a Gradle dependency
 
 ```groovy
-implementation 'com.yodo1.mas:full:4.8.0'
+implementation 'com.yodo1.mas:full:4.8.1'
 ```
 
 If you need to comply with Google Family Policy:
 
 ```groovy
-implementation 'com.yodo1.mas:google:4.8.0'
+implementation 'com.yodo1.mas:google:4.8.1'
 ```
 
 If you need to use lightweight SDK:
 
 ```groovy
-implementation 'com.yodo1.mas:lite:4.8.0'
+implementation 'com.yodo1.mas:lite:4.8.1'
 ```
 
 #### 2.2 Add the `compileOptions` property to the `Android` section
@@ -821,12 +822,14 @@ For Java
 
 ```java
 Yodo1MasInterstitialAd interstitialAd = Yodo1MasInterstitialAd.getInstance();
+interstitialAd.autoDelayIfLoadFail = true; // if you need
 ```
 
 For Kotlin
 
 ```kotlin
 val interstitialAd = Yodo1MasInterstitialAd.getInstance()
+interstitialAd.autoDelayIfLoadFail = true; // if you need
 ```
 
 ### 2. Load an ad
@@ -860,7 +863,7 @@ public class MainActivity extends AppCompatActivity {
             public void onMasInitFailed(@NonNull Yodo1MasError error) {
             }
         });
-        interstitialAd.loadAd();
+        interstitialAd.loadAd(this);
     }
 }
 ```
@@ -891,7 +894,7 @@ class MainActivity : AppCompatActivity() {
         	}
         })
 
-        interstitialAd.loadAd()
+        interstitialAd.loadAd(this@MainActivity)
     }
 }
 ```
@@ -933,7 +936,7 @@ public class MainActivity extends AppCompatActivity {
 		    @Override
 		    public void onInterstitialAdLoaded(Yodo1MasInterstitialAd ad) {
 		        // Code to be executed when an ad finishes loading.
-                ad.showAd(MainActivity.this);
+                ad.showAd(MainActivity.this, "Your placement id");
 		    }
 		
 		    @Override
@@ -958,7 +961,7 @@ public class MainActivity extends AppCompatActivity {
 		        // to the app after tapping on an ad.
 		    }
 		 });
-        interstitialAd.loadAd();
+        interstitialAd.loadAd(this);
     }
 }
 ```
@@ -993,7 +996,7 @@ class MainActivity : AppCompatActivity() {
         interstitialAd.setAdListener(object : Yodo1MasInterstitialAdListener {
             override fun onInterstitialAdLoaded(ad: Yodo1MasInterstitialAd?) {
                 // Code to be executed when an ad finishes loading.
-                ad.showAd(this@MainActivity)
+                ad.showAd(this@MainActivity, "Your placement id")
             }
 
             override fun onInterstitialAdFailedToLoad(
@@ -1022,7 +1025,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-        interstitialAd.loadAd()
+        interstitialAd.loadAd(this@MainActivity)
     }
 }
 ```
@@ -1084,12 +1087,14 @@ For Java
 
 ```java
 Yodo1MasRewardAd rewardAd = Yodo1MasRewardAd.getInstance();
+rewardAd.autoDelayIfLoadFail = true; // if you need
 ```
 
 For Kotlin
 
 ```kotlin
 val rewardAd = Yodo1MasRewardAd.getInstance()
+rewardAd.autoDelayIfLoadFail = true; // if you need
 ```
 
 ### 2. Load an ad
@@ -1123,7 +1128,7 @@ public class MainActivity extends AppCompatActivity {
             public void onMasInitFailed(@NonNull Yodo1MasError error) {
             }
         });
-        rewardAd.loadAd();
+        rewardAd.loadAd(this);
     }
 }
 ```
@@ -1154,7 +1159,7 @@ class MainActivity : AppCompatActivity() {
         	}
         })
 
-        rewardAd.loadAd()
+        rewardAd.loadAd(this@MainActivity)
     }
 }
 ```
@@ -1196,7 +1201,7 @@ public class MainActivity extends AppCompatActivity {
 		    @Override
 		    public void onRewardAdLoaded(Yodo1MasRewardAd ad) {
 		        // Code to be executed when an ad finishes loading.
-                ad.showAd(MainActivity.this);
+                ad.showAd(MainActivity.this, "Your placement id");
 		    }
 		
 		    @Override
@@ -1226,7 +1231,7 @@ public class MainActivity extends AppCompatActivity {
             
             }
 		 });
-        rewardAd.loadAd();
+        rewardAd.loadAd(this);
     }
 }
 ```
@@ -1261,7 +1266,7 @@ class MainActivity : AppCompatActivity() {
         rewardAd.setAdListener(object : Yodo1MasRewardAdListener {
             override fun onRewardAdLoaded(ad: Yodo1MasRewardAd?) {
                 // Code to be executed when an ad finishes loading.
-                ad.showAd(this@MainActivity)
+                ad.showAd(this@MainActivity, "Your placement id")
             }
 
             override fun onRewardAdFailedToLoad(
@@ -1292,7 +1297,7 @@ class MainActivity : AppCompatActivity() {
                
             }
         })
-        reweardAd.loadAd()
+        reweardAd.loadAd(this@MainActivity)
     }
 }
 ```
@@ -1304,12 +1309,14 @@ For Java
 
 ```java
 Yodo1MasRewardedInterstitialAd rewardedInterstitialAd = Yodo1MasRewardedInterstitialAd.getInstance();
+rewardedInterstitialAd.autoDelayIfLoadFail = true; // if you need
 ```
 
 For Kotlin
 
 ```kotlin
 val rewardedInterstitialAd = Yodo1MasRewardedInterstitialAd.getInstance()
+rewardedInterstitialAd.autoDelayIfLoadFail = true; // if you need
 ```
 
 ### 2. Load an ad
@@ -1343,7 +1350,7 @@ public class MainActivity extends AppCompatActivity {
             public void onMasInitFailed(@NonNull Yodo1MasError error) {
             }
         });
-        rewardedInterstitialAd.loadAd();
+        rewardedInterstitialAd.loadAd(this);
     }
 }
 ```
@@ -1374,7 +1381,7 @@ class MainActivity : AppCompatActivity() {
         	}
         })
 
-        rewardedInterstitialAd.loadAd()
+        rewardedInterstitialAd.loadAd(this@MainActivity)
     }
 }
 ```
@@ -1416,7 +1423,7 @@ public class MainActivity extends AppCompatActivity {
 		    @Override
 		    public void onRewardedInterstitialAdLoaded(Yodo1MasRewardedInterstitialAd ad) {
 		        // Code to be executed when an ad finishes loading.
-                ad.showAd(MainActivity.this);
+                ad.showAd(MainActivity.this, "Your placement id");
 		    }
 		
 		    @Override
@@ -1446,7 +1453,7 @@ public class MainActivity extends AppCompatActivity {
             
             }
 		 });
-        rewardedInterstitialAd.loadAd();
+        rewardedInterstitialAd.loadAd(this);
     }
 }
 ```
@@ -1481,7 +1488,7 @@ class MainActivity : AppCompatActivity() {
         rewardedInterstitialAd.setAdListener(object : Yodo1MasRewardedInterstitialAdListener {
             override fun onRewardedInterstitialAdLoaded(ad: Yodo1MasRewardedInterstitialAd?) {
                 // Code to be executed when an ad finishes loading.
-                ad.showAd(this@MainActivity)
+                ad.showAd(this@MainActivity, "Your placement id")
             }
 
             override fun onRewardedInterstitialAdFailedToLoad(
@@ -1512,7 +1519,7 @@ class MainActivity : AppCompatActivity() {
                
             }
         })
-        rewardedInterstitialAd.loadAd()
+        rewardedInterstitialAd.loadAd(this@MainActivity)
     }
 }
 ```
@@ -1524,12 +1531,14 @@ For Java
 
 ```java
 Yodo1MasAppOpenAd appOpenAd = Yodo1MasAppOpenAd.getInstance();
+appOpenAd.autoDelayIfLoadFail = true; // if you need
 ```
 
 For Kotlin
 
 ```kotlin
 val appOpenAd = Yodo1MasAppOpenAd.getInstance()
+appOpenAd.autoDelayIfLoadFail = true; // if you need
 ```
 
 ### 2. Load an ad
@@ -1563,7 +1572,7 @@ public class MainActivity extends AppCompatActivity {
             public void onMasInitFailed(@NonNull Yodo1MasError error) {
             }
         });
-        appOpenAd.loadAd();
+        appOpenAd.loadAd(this);
     }
 }
 ```
@@ -1594,7 +1603,7 @@ class MainActivity : AppCompatActivity() {
         	}
         })
 
-        appOpenAd.loadAd()
+        appOpenAd.loadAd(this@MainActivity)
     }
 }
 ```
@@ -1636,7 +1645,7 @@ public class MainActivity extends AppCompatActivity {
 		    @Override
 		    public void onAppOpenAdLoaded(Yodo1MasAppOpenAd ad) {
 		        // Code to be executed when an ad finishes loading.
-                ad.showAd(MainActivity.this);
+                ad.showAd(MainActivity.this, "Your placement id");
 		    }
 		
 		    @Override
@@ -1661,7 +1670,7 @@ public class MainActivity extends AppCompatActivity {
 		        // to the app after tapping on an ad.
 		    }
 		 });
-        appOpenAd.loadAd();
+        appOpenAd.loadAd(this);
     }
 }
 ```
@@ -1696,7 +1705,7 @@ class MainActivity : AppCompatActivity() {
         appOpenAd.setAdListener(object : Yodo1MasAppOpenAdListener {
             override fun onAppOpenAdLoaded(ad: Yodo1MasAppOpenAd?) {
                 // Code to be executed when an ad finishes loading.
-                ad.showAd(this@MainActivity)
+                ad.showAd(this@MainActivity, "Your placement id")
             }
 
             override fun onAppOpenAdFailedToLoad(
@@ -1723,7 +1732,7 @@ class MainActivity : AppCompatActivity() {
 		         // to the app after tapping on an ad.
             }
         })
-        appOpenAd.loadAd()
+        appOpenAd.loadAd(this@MainActivity)
     }
 }
 ```
@@ -1787,7 +1796,7 @@ public class MyApplication extends Application implements LifecycleObserver
         Activity activity = Yodo1Mas.getInstance().getCurrentActivity();
         if (activity == null) return;  
         if (appOpenAd.isLoaded()) {
-            appOpenAd.showAd(activity);
+            appOpenAd.showAd(activity, "Your placement id");
         } else {
             appOpenAd.loadAd(activity);
         }
@@ -1854,7 +1863,7 @@ class MyApplication : Application(), LifecycleObserver {
         var activity = Yodo1Mas.getInstance().getCurrentActivity()
         if (activity == null) return 
         if (appOpenAd.isLoaded()) {
-            appOpenAd.showAd(activity)
+            appOpenAd.showAd(activity, "Your placement id")
         } else {
             appOpenAd.loadAd(activity)
         }
