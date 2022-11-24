@@ -1155,14 +1155,14 @@ For `Objective-C`
 
 ```objective-c
 Yodo1MasInterstitialAd *interstitialAd = [Yodo1MasInterstitialAd sharedInstance];
-interstitialAd.autoDelayIfLoadFail = YES; // if you need
+interstitialAd.autoDelayIfLoadFail = YES; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
 ```
 
 For `Swift`
 
 ```swift
 let interstitialAd = Yodo1MasInterstitialAd.sharedInstance()
-interstitialAd.autoDelayIfLoadFail = true; // if you need
+interstitialAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
 ```
 
 ### 2. Load an ad
@@ -1384,14 +1384,14 @@ For `Objective-C`
 
 ```objective-c
 Yodo1MasRewardAd *rewardAd = [Yodo1MasRewardAd sharedInstance];
-rewardAd.autoDelayIfLoadFail = YES; // if you need
+rewardAd.autoDelayIfLoadFail = YES; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
 ```
 
 For `Swift`
 
 ```swift
 let rewardAd = Yodo1MasRewardAd.sharedInstance()
-rewardAd.autoDelayIfLoadFail = true; // if you need
+rewardAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
 ```
 
 ### 2. Load an ad
@@ -1574,14 +1574,14 @@ For `Objective-C`
 
 ```objective-c
 Yodo1MasRewardedInterstitialAd *rewardedInterstitialAd = [Yodo1MasRewardedInterstitialAd sharedInstance];
-rewardedInterstitialAd.autoDelayIfLoadFail = YES; // if you need
+rewardedInterstitialAd.autoDelayIfLoadFail = YES; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
 ```
 
 For `Swift`
 
 ```swift
 let rewardedInterstitialAd = Yodo1MasRewardedInterstitialAd.sharedInstance()
-rewardedInterstitialAd.autoDelayIfLoadFail = true; // if you need
+rewardedInterstitialAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
 ```
 
 ### 2. Load an ad
@@ -1764,14 +1764,14 @@ For `Objective-C`
 
 ```objective-c
 Yodo1MasAppOpenAd *appOpenAd = [Yodo1MasAppOpenAd sharedInstance];
-appOpenAd.autoDelayIfLoadFail = YES; // if you need
+appOpenAd.autoDelayIfLoadFail = YES; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
 ```
 
 For `Swift`
 
 ```swift
 let appOpenAd = Yodo1MasAppOpenAd.sharedInstance()
-appOpenAd.autoDelayIfLoadFail = true; // if you need
+appOpenAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
 ```
 
 ### 2. Load an ad
