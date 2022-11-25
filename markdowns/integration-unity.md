@@ -17,11 +17,11 @@ MAS provides 3 versions of the Unity plugin, and you need to select one dependin
 * If your game is not part of the “Designed for Families Program”, please use the Standard SDK.
 * If your game prefers to use the 4 top ad networks to keep the SDK lightweight without making significant compromises on Monetization, please use the Lite SDK.
 
-[Designed For Families](https://mas-artifacts.yodo1.com/4.7.7/Unity/Release/Rivendell-4.7.7-Family.unitypackage)
+[Designed For Families](https://mas-artifacts.yodo1.com/4.8.0/Unity/Release/Rivendell-4.8.0-Family.unitypackage)
 
-[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.7.7/Unity/Release/Rivendell-4.7.7-Full.unitypackage)
+[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.8.0/Unity/Release/Rivendell-4.8.0-Full.unitypackage)
 
-[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.7.7/Unity/Release/Rivendell-4.7.7-Lite.unitypackage)
+[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.8.0/Unity/Release/Rivendell-4.8.0-Lite.unitypackage)
 
 ### Note:
 If you are use unity **2018**,please check on the Custom Gradle Template through the following steps:
@@ -198,7 +198,7 @@ Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{
 
 ```c#
 void Start()  {
-	Yodo1U3dMas.InitializeSdk();
+	Yodo1U3dMas.InitializeMasSdk();
 }
 ```
 
@@ -532,7 +532,7 @@ public class BannerSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestBanner();
     }
@@ -599,7 +599,7 @@ public class BannerSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestBanner();
     }
@@ -732,9 +732,9 @@ Yodo1U3dMas.ShowInterstitialAd("Placement_Name");
 
 ## Interstitial(V2) Integration
 
-### 1. Create a Yodo1MasInterstitialAd
+### 1. Create a Yodo1U3dInterstitialAd
 
-The first step toward displaying a Interstitial is to create a **Yodo1MasInterstitialAd** object in a C# script attached to a GameObject.
+The first step toward displaying a Interstitial is to create a **Yodo1U3dInterstitialAd** object in a C# script attached to a GameObject.
 
 ```c#
 using System;
@@ -743,27 +743,27 @@ using Yodo1.MAS;
 ...
 public class InterstitialSampleV2 : MonoBehaviour
 {
-    private Yodo1MasInterstitialAd interstitialAd;
+    private Yodo1U3dInterstitialAd interstitialAd;
     ...
     public void Start()
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestInterstitial();
     }
 
     private void RequestInterstitial()
     {
-        interstitialAd = Yodo1MasInterstitialAd.GetInstance();
+        interstitialAd = Yodo1U3dInterstitialAd.GetInstance();
     }
 }
 ```
 
 ### 2. Load an ad
 
-Once the Yodo1MasInterstitialAd is instantiated, the next step is to load an ad. That's done with the loadAd() method in the Yodo1MasInterstitialAd class.
+Once the Yodo1U3dInterstitialAd is instantiated, the next step is to load an ad. That's done with the loadAd() method in the Yodo1U3dInterstitialAd class.
 
 Here's an example that shows how to load an ad:
 
@@ -771,7 +771,7 @@ Here's an example that shows how to load an ad:
 ...
     private void RequestInterstitial()
     {
-        interstitialAd = Yodo1MasInterstitialAd.GetInstance();
+        interstitialAd = Yodo1U3dInterstitialAd.GetInstance();
         interstitialAd.LoadAd();
     }
 ...
@@ -791,20 +791,20 @@ using Yodo1.MAS;
 ...
 public class InterstitialSampleV2 : MonoBehaviour
 {
-    private Yodo1MasInterstitialAd interstitialAd;
+    private Yodo1U3dInterstitialAd interstitialAd;
 
     public void Start()
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestInterstitial();
     }
 
     private void RequestInterstitial()
     {
-        interstitialAd = Yodo1MasInterstitialAd.GetInstance();
+        interstitialAd = Yodo1U3dInterstitialAd.GetInstance();
 
 		 // Ad Events
         interstitialAd.OnAdLoadedEvent += OnInterstitialAdLoadedEvent;
@@ -815,28 +815,28 @@ public class InterstitialSampleV2 : MonoBehaviour
         interstitialAd.LoadAd();
     }
 
-    private void OnInterstitialAdLoadedEvent(Yodo1MasInterstitialAd ad)
+    private void OnInterstitialAdLoadedEvent(Yodo1U3dInterstitialAd ad)
     {
         ad.ShowAd();
         Debug.Log("[Yodo1 Mas] OnInterstitialAdLoadedEvent event received");
     }
 
-    private void OnInterstitialAdLoadFailedEvent(Yodo1MasInterstitialAd ad, Yodo1U3dAdError adError)
+    private void OnInterstitialAdLoadFailedEvent(Yodo1U3dInterstitialAd ad, Yodo1U3dAdError adError)
     {
         Debug.Log("[Yodo1 Mas] OnInterstitialAdLoadFailedEvent event received with error: " + adError.ToString());
     }
 
-    private void OnInterstitialAdOpenedEvent(Yodo1MasInterstitialAd ad)
+    private void OnInterstitialAdOpenedEvent(Yodo1U3dInterstitialAd ad)
     {
         Debug.Log("[Yodo1 Mas] OnInterstitialAdOpenedEvent event received");
     }
 
-    private void OnInterstitialAdOpenFailedEvent(Yodo1MasInterstitialAd ad, Yodo1U3dAdError adError)
+    private void OnInterstitialAdOpenFailedEvent(Yodo1U3dInterstitialAd ad, Yodo1U3dAdError adError)
     {
         Debug.Log("[Yodo1 Mas] OnInterstitialAdOpenFailedEvent event received with error: " + adError.ToString());
     }
 
-    private void OnInterstitialAdClosedEvent(Yodo1MasInterstitialAd ad)
+    private void OnInterstitialAdClosedEvent(Yodo1U3dInterstitialAd ad)
     {
         Debug.Log("[Yodo1 Mas] OnInterstitialAdClosedEvent event received");
     }
@@ -918,9 +918,9 @@ Yodo1U3dMas.ShowRewardedAd("Placement_Name");
 
 ## Rewarded(V2) Integration
 
-### 1. Create a Yodo1MasRewardedAd
+### 1. Create a Yodo1U3dRewardedAd
 
-The first step toward displaying a Interstitial is to create a **Yodo1MasRewardedAd** object in a C# script attached to a GameObject.
+The first step toward displaying a Interstitial is to create a **Yodo1U3dRewardedAd** object in a C# script attached to a GameObject.
 
 ```c#
 using System;
@@ -929,27 +929,27 @@ using Yodo1.MAS;
 ...
 public class RewardSampleV2 : MonoBehaviour
 {
-    private Yodo1MasRewardAd rewardAd;
+    private Yodo1U3dRewardAd rewardAd;
     ...
     public void Start()
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestReward();
     }
 
     private void RequestReward()
     {
-        rewardAd = Yodo1MasRewardAd.GetInstance();
+        rewardAd = Yodo1U3dRewardAd.GetInstance();
     }
 }
 ```
 
 ### 2. Load an ad
 
-Once the `Yodo1MasRewardAd` is instantiated, the next step is to load an ad. That's done with the loadAd() method in the `Yodo1MasRewardAd` class.
+Once the `Yodo1U3dRewardAd` is instantiated, the next step is to load an ad. That's done with the loadAd() method in the `Yodo1U3dRewardAd` class.
 
 Here's an example that shows how to load an ad:
 
@@ -957,7 +957,7 @@ Here's an example that shows how to load an ad:
 ...
     private void RequestReward()
     {
-        rewardAd = Yodo1MasRewardAd.GetInstance();
+        rewardAd = Yodo1U3dRewardAd.GetInstance();
         rewardAd.LoadAd();
     }
 ...
@@ -977,20 +977,20 @@ using Yodo1.MAS;
 ...
 public class RewardSampleV2 : MonoBehaviour
 {
-    private Yodo1MasRewardAd rewardAd;
+    private Yodo1U3dRewardAd rewardAd;
 
     public void Start()
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestReward();
     }
 
     private void RequestReward()
     {
-        rewardAd = Yodo1MasRewardAd.GetInstance();
+        rewardAd = Yodo1U3dRewardAd.GetInstance();
 
 		 // Ad Events
         rewardAd.OnAdLoadedEvent += OnRewardAdLoadedEvent;
@@ -1002,33 +1002,33 @@ public class RewardSampleV2 : MonoBehaviour
         rewardAd.LoadAd();
     }
 
-    private void OnRewardAdLoadedEvent(Yodo1MasRewardAd ad)
+    private void OnRewardAdLoadedEvent(Yodo1U3dRewardAd ad)
     {
         Debug.Log("[Yodo1 Mas] OnRewardAdLoadedEvent event received");
         ad.ShowAd();
     }
 
-    private void OnRewardAdLoadFailedEvent(Yodo1MasRewardAd ad, Yodo1U3dAdError adError)
+    private void OnRewardAdLoadFailedEvent(Yodo1U3dRewardAd ad, Yodo1U3dAdError adError)
     {
         Debug.Log("[Yodo1 Mas] OnRewardAdLoadFailedEvent event received with error: " + adError.ToString());
     }
 
-    private void OnRewardAdOpenedEvent(Yodo1MasRewardAd ad)
+    private void OnRewardAdOpenedEvent(Yodo1U3dRewardAd ad)
     {
         Debug.Log("[Yodo1 Mas] OnRewardAdOpenedEvent event received");
     }
 
-    private void OnRewardAdOpenFailedEvent(Yodo1MasRewardAd ad, Yodo1U3dAdError adError)
+    private void OnRewardAdOpenFailedEvent(Yodo1U3dRewardAd ad, Yodo1U3dAdError adError)
     {
         Debug.Log("[Yodo1 Mas] OnRewardAdOpenFailedEvent event received with error: " + adError.ToString());
     }
 
-    private void OnRewardAdClosedEvent(Yodo1MasRewardAd ad)
+    private void OnRewardAdClosedEvent(Yodo1U3dRewardAd ad)
     {
         Debug.Log("[Yodo1 Mas] OnRewardAdClosedEvent event received");
     }
 
-    private void OnRewardAdEarnedEvent(Yodo1MasRewardAd ad) 
+    private void OnRewardAdEarnedEvent(Yodo1U3dRewardAd ad) 
     {
          Debug.Log("[Yodo1 Mas] OnRewardAdEarnedEvent event received");
     }
@@ -1041,6 +1041,325 @@ Simply add the placement name as a string in the parentheses.
 
 ```c#
 rewardAd.SetAdPlacement("Placement_Name")
+```
+
+## Rewarded Interstitial Integration
+
+### 1. Create a Yodo1U3dRewardedInterstitialAd
+
+The first step toward displaying a Rewarded Interstitial is to create a **Yodo1U3dRewardedInterstitialAd** object in a C# script attached to a GameObject.
+
+```c#
+using System;
+using UnityEngine;
+using Yodo1.MAS;
+...
+public class RewardedInterstitialSampleV2 : MonoBehaviour
+{
+    private Yodo1U3dRewardedInterstitialAd rewardedInterstitialAd;
+    ...
+    public void Start()
+    {
+        // Initialize the MAS SDK.
+        Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
+        Yodo1U3dMas.InitializeMasSdk();
+		
+        this.RequestRewardedInterstitial();
+    }
+
+    private void RequestRewardedInterstitial()
+    {
+        rewardedInterstitialAd = Yodo1U3dRewardedInterstitialAd.GetInstance();
+    }
+}
+```
+
+### 2. Load an ad
+
+Once the `Yodo1U3dRewardedInterstitialAd` is instantiated, the next step is to load an ad. That's done with the loadAd() method in the `Yodo1U3dRewardedInterstitialAd` class.
+
+Here's an example that shows how to load an ad:
+
+```c#
+...
+    private void RequestRewardedInterstitial()
+    {
+        rewardedInterstitialAd = Yodo1U3dRewardedInterstitialAd.GetInstance();
+        rewardedInterstitialAd.LoadAd();
+    }
+...
+```
+
+That's it! Your app is now ready to display rewarded interstitial ads from MAS.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook into a number of events in the ad's lifecycle: loading, opening, closing, and so on.
+
+```c#
+...
+using System;
+using UnityEngine;
+using Yodo1.MAS;
+...
+public class RewardedInterstitialSampleV2 : MonoBehaviour
+{
+    private Yodo1U3dRewardedInterstitialAd rewardedInterstitialAd;
+
+    public void Start()
+    {
+        // Initialize the MAS SDK.
+        Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
+        Yodo1U3dMas.InitializeMasSdk();
+		
+        this.RequestRewardedInterstitial();
+    }
+
+    private void RequestRewardedInterstitial()
+    {
+        rewardedInterstitialAd = Yodo1U3dRewardedInterstitialAd.GetInstance();
+
+		 // Ad Events
+        rewardedInterstitialAd.OnAdLoadedEvent += OnRewardedInterstitialAdLoadedEvent;
+        rewardedInterstitialAd.OnAdLoadFailedEvent += OnRewardedInterstitialAdLoadFailedEvent;
+        rewardedInterstitialAd.OnAdOpenedEvent += OnRewardedInterstitialAdOpenedEvent;
+        rewardedInterstitialAd.OnAdOpenFailedEvent += OnRewardedInterstitialAdOpenFailedEvent;
+        rewardedInterstitialAd.OnAdClosedEvent += OnRewardedInterstitialAdClosedEvent;
+        rewardedInterstitialAd.OnAdEarnedEvent += OnRewardedInterstitialAdEarnedEvent;
+        rewardedInterstitialAd.LoadAd();
+    }
+
+    private void OnRewardedInterstitialAdLoadedEvent(Yodo1U3dRewardedInterstitialAd ad)
+    {
+        Debug.Log("[Yodo1 Mas] OnRewardedInterstitialAdLoadedEvent event received");
+        ad.ShowAd();
+    }
+
+    private void OnRewardedInterstitialAdLoadFailedEvent(Yodo1U3dRewardedInterstitialAd ad, Yodo1U3dAdError adError)
+    {
+        Debug.Log("[Yodo1 Mas] OnRewardedInterstitialAdLoadFailedEvent event received with error: " + adError.ToString());
+    }
+
+    private void OnRewardedInterstitialAdOpenedEvent(Yodo1U3dRewardedInterstitialAd ad)
+    {
+        Debug.Log("[Yodo1 Mas] OnRewardedInterstitialAdOpenedEvent event received");
+    }
+
+    private void OnRewardedInterstitialAdOpenFailedEvent(Yodo1U3dRewardedInterstitialAd ad, Yodo1U3dAdError adError)
+    {
+        Debug.Log("[Yodo1 Mas] OnRewardedInterstitialAdOpenFailedEvent event received with error: " + adError.ToString());
+    }
+
+    private void OnRewardedInterstitialAdClosedEvent(Yodo1U3dRewardedInterstitialAd ad)
+    {
+        Debug.Log("[Yodo1 Mas] OnRewardedInterstitialAdClosedEvent event received");
+    }
+
+    private void OnRewardedInterstitialAdEarnedEvent(Yodo1U3dRewardedInterstitialAd ad) 
+    {
+         Debug.Log("[Yodo1 Mas] OnRewardedInterstitialAdEarnedEvent event received");
+    }
+}
+```
+
+### 4. Create a Rewarded Interstitial Placement
+
+Simply add the placement name as a string in the parentheses.
+
+```c#
+rewardedInterstitialAd.SetAdPlacement("Placement_Name")
+```
+
+
+## App Open Integration
+
+### 1. Create a Yodo1U3dAppOpenAd
+
+The first step toward displaying a Rewarded Interstitial is to create a **Yodo1U3dAppOpenAd** object in a C# script attached to a GameObject.
+
+```c#
+using System;
+using UnityEngine;
+using Yodo1.MAS;
+...
+public class AppOpenSampleV2 : MonoBehaviour
+{
+    private Yodo1U3dAppOpenAd appOpenAd;
+    ...
+    public void Start()
+    {
+        // Initialize the MAS SDK.
+        Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
+        Yodo1U3dMas.InitializeMasSdk();
+		
+        this.RequestAppOpen();
+    }
+
+    private void RequestAppOpen()
+    {
+        appOpenAd = Yodo1U3dAppOpenAd.GetInstance();
+    }
+}
+```
+
+### 2. Load an ad
+
+Once the `Yodo1U3dAppOpenAd` is instantiated, the next step is to load an ad. That's done with the loadAd() method in the `Yodo1U3dAppOpenAd` class.
+
+Here's an example that shows how to load an ad:
+
+```c#
+...
+    private void RequestAppOpen()
+    {
+        appOpenAd = Yodo1U3dAppOpenAd.GetInstance();
+        appOpenAd.LoadAd();
+    }
+...
+```
+
+That's it! Your app is now ready to display app open ads from MAS.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook into a number of events in the ad's lifecycle: loading, opening, closing, and so on.
+
+```c#
+...
+using System;
+using UnityEngine;
+using Yodo1.MAS;
+...
+public class AppOpenSampleV2 : MonoBehaviour
+{
+    private Yodo1U3dAppOpenAd appOpenAd;
+
+    public void Start()
+    {
+        // Initialize the MAS SDK.
+        Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
+        Yodo1U3dMas.InitializeMasSdk();
+		
+        this.RequestAppOpen();
+    }
+
+    private void RequestAppOpen()
+    {
+        appOpenAd = Yodo1U3dAppOpenAd.GetInstance();
+
+		 // Ad Events
+        appOpenAd.OnAdLoadedEvent += OnAppOpenAdLoadedEvent;
+        appOpenAd.OnAdLoadFailedEvent += OnAppOpenAdLoadFailedEvent;
+        appOpenAd.OnAdOpenedEvent += OnAppOpenAdOpenedEvent;
+        appOpenAd.OnAdOpenFailedEvent += OnAppOpenAdOpenFailedEvent;
+        appOpenAd.OnAdClosedEvent += OnAppOpenAdClosedEvent;
+        appOpenAd.OnAdEarnedEvent += OnAppOpenAdEarnedEvent;
+        appOpenAd.LoadAd();
+    }
+
+    private void OnAppOpenAdLoadedEvent(Yodo1U3dAppOpenAd ad)
+    {
+        Debug.Log("[Yodo1 Mas] OnAppOpenAdLoadedEvent event received");
+        ad.ShowAd();
+    }
+
+    private void OnAppOpenAdLoadFailedEvent(Yodo1U3dAppOpenAd ad, Yodo1U3dAdError adError)
+    {
+        Debug.Log("[Yodo1 Mas] OnAppOpenAdLoadFailedEvent event received with error: " + adError.ToString());
+    }
+
+    private void OnAppOpenAdOpenedEvent(Yodo1U3dAppOpenAd ad)
+    {
+        Debug.Log("[Yodo1 Mas] OnAppOpenAdOpenedEvent event received");
+    }
+
+    private void OnAppOpenAdOpenFailedEvent(Yodo1U3dAppOpenAd ad, Yodo1U3dAdError adError)
+    {
+        Debug.Log("[Yodo1 Mas] OnAppOpenAdOpenFailedEvent event received with error: " + adError.ToString());
+    }
+
+    private void OnAppOpenAdClosedEvent(Yodo1U3dAppOpenAd ad)
+    {
+        Debug.Log("[Yodo1 Mas] OnAppOpenAdClosedEvent event received");
+    }
+}
+```
+
+### 4. Create a App Open Placement
+
+Simply add the placement name as a string in the parentheses.
+
+```c#
+appOpenAd.SetAdPlacement("Placement_Name")
+```
+
+### 5. Cold Starts and Loading Screens
+```c#
+using System;
+using UnityEngine;
+using Yodo1.MAS;
+...
+public class AppOpenSampleV2 : MonoBehaviour
+{
+    private Yodo1U3dAppOpenAd appOpenAd;
+    ...
+    public void Start()
+    {
+        // Initialize the MAS SDK.
+        Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
+        Yodo1U3dMas.InitializeMasSdk();
+		
+        this.RequestAppOpen();
+    }
+
+    private void RequestAppOpen()
+    {
+        appOpenAd = Yodo1U3dAppOpenAd.GetInstance();
+        appOpenAd.OnAdLoadedEvent += OnAppOpenAdLoadedEvent;
+        appOpenAd.OnAdLoadFailedEvent += OnAppOpenAdLoadFailedEvent;
+        appOpenAd.OnAdOpenedEvent += OnAppOpenAdOpenedEvent;
+        appOpenAd.OnAdOpenFailedEvent += OnAppOpenAdOpenFailedEvent;
+        appOpenAd.OnAdClosedEvent += OnAppOpenAdClosedEvent;
+        appOpenAd.OnAdEarnedEvent += OnAppOpenAdEarnedEvent;
+        appOpenAd.LoadAd();
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if (focus)
+        {
+            appOpenAd.ShowAd();
+        }
+    }
+
+    private void OnAppOpenAdLoadedEvent(Yodo1U3dAppOpenAd ad)
+    {
+        Debug.Log("[Yodo1 Mas] OnAppOpenAdLoadedEvent event received");
+    }
+
+    private void OnAppOpenAdLoadFailedEvent(Yodo1U3dAppOpenAd ad, Yodo1U3dAdError adError)
+    {
+        Debug.Log("[Yodo1 Mas] OnAppOpenAdLoadFailedEvent event received with error: " + adError.ToString());
+        ad.LoadAd();
+    }
+
+    private void OnAppOpenAdOpenedEvent(Yodo1U3dAppOpenAd ad)
+    {
+        Debug.Log("[Yodo1 Mas] OnAppOpenAdOpenedEvent event received");
+    }
+
+    private void OnAppOpenAdOpenFailedEvent(Yodo1U3dAppOpenAd ad, Yodo1U3dAdError adError)
+    {
+        Debug.Log("[Yodo1 Mas] OnAppOpenAdOpenFailedEvent event received with error: " + adError.ToString());
+        ad.LoadAd();
+    }
+
+    private void OnAppOpenAdClosedEvent(Yodo1U3dAppOpenAd ad)
+    {
+        Debug.Log("[Yodo1 Mas] OnAppOpenAdClosedEvent event received");
+        ad.LoadAd();
+    }
+}
 ```
 
 ## Native Ads Integration
@@ -1062,7 +1381,7 @@ public class NativeSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestNative();
     }
@@ -1129,7 +1448,7 @@ public class NativeSampleV2 : MonoBehaviour
     {
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
-        Yodo1U3dMas.InitializeSdk();
+        Yodo1U3dMas.InitializeMasSdk();
 		
         this.RequestNative();
     }

@@ -27,21 +27,21 @@
 	Please open the project's `Podfile` file and add the following code to the target of the application:
 	
 	```ruby
-	# use_frameworks! # If you use Facebook to share or log in, please add
+	use_frameworks!
 	source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
 	source 'https://github.com/Yodo1Games/MAS-Spec.git'
 	
-	pod 'Yodo1MasFull', '4.7.7'
+	pod 'Yodo1MasFull', '4.8.0'
 	```
 
   If you need to use lightweight SDK:
 
   ```ruby
-  # use_frameworks! # If you use Facebook to share or log in, please add
+  use_frameworks!
   source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
   source 'https://github.com/Yodo1Games/MAS-Spec.git'
   
-  pod 'Yodo1MasLite', '4.7.7'
+  pod 'Yodo1MasLite', '4.8.0'
   ```
 	
 	Execute the following command in `Terminal` :
@@ -828,7 +828,7 @@ switch(attStatus) {
 #### 4.2 Add the snippet below by using your AppDelegate's `didFinishLaunchingWithOptions` method:
 
 ``` obj-c
-[[Yodo1Mas sharedInstance] initWithAppId:@"Your AppId" successful:^{
+[[Yodo1Mas sharedInstance] initMasWithAppId:@"Your AppId" successful:^{
     
 } fail:^(NSError * _Nonnull error) {
     
@@ -946,7 +946,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1012,7 +1012,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1186,7 +1186,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1223,7 +1223,7 @@ class MainController : UIViewController {
 }
 ```
 
-That's it! Your app is now ready to display banner ads.
+That's it! Your app is now ready to display interstitial ads.
 
 ### 3. Ad events
 
@@ -1245,7 +1245,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1417,7 +1417,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1454,7 +1454,7 @@ class MainController : UIViewController {
 }
 ```
 
-That's it! Your app is now ready to display banner ads.
+That's it! Your app is now ready to display rewarded ads.
 
 ### 3. Ad events
 
@@ -1476,7 +1476,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1570,6 +1570,479 @@ extension MainController: Yodo1MasRewardDelegate {
 }
 ```
 
+## Rewarded Interstitial Integration
+
+### 1. Init Yodo1MasRewardedInterstitialAd
+
+For `Objective-C` 
+
+```objective-c
+Yodo1MasRewardedInterstitialAd *rewardedInterstitialAd = [Yodo1MasRewardedInterstitialAd sharedInstance];
+```
+
+For `Swift`
+
+```swift
+let rewardedInterstitialAd = Yodo1MasRewardedInterstitialAd.sharedInstance()
+```
+
+### 2. Load an ad
+
+Once the `Yodo1MasRewardedInterstitialAd` is in place, the next step is to load an ad. That's done with the `loadAd()` method in the `Yodo1MasRewardedInterstitialAd` class.
+
+Here's an example that shows how to load an ad in the `viewDidLoad` method of an `UIViewController`:
+
+For `Objective-C` 
+
+```objective-c
+
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+  
+@interface MainController ()
+  
+@property (nonatomic, strong) Yodo1MasRewardedInterstitialAd *rewardedInterstitialAd;
+
+@end
+
+@implementation MainController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _rewardedInterstitialAd = [Yodo1MasRewardedInterstitialAd sharedInstance];
+  [_rewardedInterstitialAd setAdPlacement:@"Your Placement Id"];
+  [_rewardedInterstitialAd loadAd];
+}
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController : UIViewController {
+
+	var rewardedInterstitialAd: Yodo1MasRewardedInterstitialAd!
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+    Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+    } fail: { error in
+
+    }
+    rewardedInterstitialAd = Yodo1MasRewardedInterstitialAd.sharedInstance()
+    rewardedInterstitialAd.setAdPlacement("Your Placement Id")
+    rewardedInterstitialAd.loadAd()
+   }
+}
+```
+
+That's it! Your app is now ready to display rewarded interstitial ads.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasRewardedInterstitialDelegate`.
+
+For `Objective-C` 
+
+```objective-c
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+  
+@interface MainController ()<Yodo1MasRewardedInterstitialAdDelegate>
+  
+@property (nonatomic, strong) Yodo1MasRewardedInterstitialAd *rewardedInterstitialAd;
+
+@end
+
+@implementation MainController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _rewardedInterstitialAd = [Yodo1MasRewardedInterstitialAd sharedInstance];
+  _rewardedInterstitialAd.adDelegate = self;
+  [_rewardedInterstitialAd setAdPlacement:@"Your Placement Id"];
+  [_rewardedInterstitialAd loadAd];
+}
+
+
+#pragma mark - Yodo1MasRewardedInterstitialAdDelegate
+- (void)onRewardedInterstitialAdLoaded:(Yodo1MasRewardedInterstitialAd *)ad {
+    [ad showAd];
+}
+
+- (void)onRewardedInterstitialAdFailedToLoad:(Yodo1MasRewardedInterstitialAd *)ad withError:(Yodo1MasError *)error {
+    
+}
+
+- (void)onRewardedInterstitialAdOpened:(Yodo1MasRewardedInterstitialAd *)ad {
+    
+}
+
+- (void)onRewardedInterstitialAdFailedToOpen:(Yodo1MasRewardedInterstitialAd *)ad withError:(Yodo1MasError *)error {
+    
+}
+
+- (void)onRewardedInterstitialAdClosed:(Yodo1MasRewardedInterstitialAd *)ad {
+    
+}
+
+- (void)onRewardedInterstitialAdEarned:(Yodo1MasRewardedInterstitialAd *)ad {
+    
+}
+
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController: UIViewController {
+    var rewardedInterstitialAd: Yodo1MasRewardedInterstitialAd!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+        } fail: { error in
+            
+        }
+        
+        rewardedInterstitialAd = Yodo1MasRewardedInterstitialAd.sharedInstance()
+        rewardedInterstitialAd.setAdPlacement("Your Placement Id")
+        rewardedInterstitialAd.adDelegate = self
+        rewardedInterstitialAd.loadAd()
+    }
+}
+
+extension MainController: Yodo1MasRewardedInterstitialAdDelegate {
+    // MARK: Yodo1MasRewardedInterstitialAdDelegate
+    func onRewardedInterstitialAdLoaded(_ ad: Yodo1MasRewardedInterstitialAd) {
+        ad.showAd()
+    }
+    
+    func onRewardedInterstitialAdFailed(toLoad ad: Yodo1MasRewardedInterstitialAd, withError error: Yodo1MasError) {
+        
+    }
+    
+    func onRewardedInterstitialAdOpened(_ ad: Yodo1MasRewardedInterstitialAd) {
+        
+    }
+    
+    func onRewardedInterstitialAdFailed(toOpen ad: Yodo1MasRewardedInterstitialAd, withError error: Yodo1MasError) {
+        
+    }
+    
+    func onRewardedInterstitialAdClosed(_ ad: Yodo1MasRewardedInterstitialAd) {
+        
+    }
+
+    func onRewardedInterstitialAdEarned(_ ad: Yodo1MasRewardedInterstitialAd) {
+        
+    }
+}
+```
+
+## App Open Integration
+
+### 1. Init Yodo1MasAppOpenAd
+
+For `Objective-C` 
+
+```objective-c
+Yodo1MasAppOpenAd *appOpenAd = [Yodo1MasAppOpenAd sharedInstance];
+```
+
+For `Swift`
+
+```swift
+let appOpenAd = Yodo1MasAppOpenAd.sharedInstance()
+```
+
+### 2. Load an ad
+
+Once the `Yodo1MasAppOpenAd` is in place, the next step is to load an ad. That's done with the `loadAd()` method in the `Yodo1MasAppOpenAd` class.
+
+Here's an example that shows how to load an ad in the `viewDidLoad` method of an `UIViewController`:
+
+For `Objective-C` 
+
+```objective-c
+
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+  
+@interface MainController ()
+  
+@property (nonatomic, strong) Yodo1MasAppOpenAdAd *appOpenAd;
+
+@end
+
+@implementation MainController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _appOpenAd = [Yodo1MasAppOpenAd sharedInstance];
+  [_appOpenAd setAdPlacement:@"Your Placement Id"];
+  [_appOpenAd loadAd];
+}
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController : UIViewController {
+
+	var appOpenAd: Yodo1MasAppOpenAd!
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+    Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+    } fail: { error in
+
+    }
+    appOpenAd = Yodo1MasAppOpenAd.sharedInstance()
+    appOpenAd.setAdPlacement("Your Placement Id")
+    appOpenAd.loadAd()
+   }
+}
+```
+
+That's it! Your app is now ready to display app open ads.
+
+### 3. Ad events
+
+To further customize the behavior of your ad, you can hook onto a number of events in the ad's lifecycle: loading, opening, closing, and so on. You can listen for these events through the `Yodo1MasAppOpenDelegate`.
+
+For `Objective-C` 
+
+```objective-c
+#import <UIKit/UIKit.h>
+#import "Yodo1Mas.h"
+  
+@interface MainController ()<Yodo1MasAppOpenAdDelegate>
+  
+@property (nonatomic, strong) Yodo1MasAppOpenAd *appOpenAd;
+
+@end
+
+@implementation MainController
+  
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
+
+  } fail:^(NSError * _Nonnull error) {
+
+  }];
+  
+  _appOpenAd = [Yodo1MasAppOpenAd sharedInstance];
+  _appOpenAd.adDelegate = self;
+  [_appOpenAd setAdPlacement:@"Your Placement Id"];
+  [_appOpenAd loadAd];
+}
+
+
+#pragma mark - Yodo1MasAppOpenAdDelegate
+- (void)onAppOpenAdLoaded:(Yodo1MasAppOpenAd *)ad {
+    [ad showAd];
+}
+
+- (void)onAppOpenAdFailedToLoad:(Yodo1MasAppOpenAd *)ad withError:(Yodo1MasError *)error {
+    
+}
+
+- (void)onAppOpenAdOpened:(Yodo1MasAppOpenAd *)ad {
+    
+}
+
+- (void)onAppOpenAdFailedToOpen:(Yodo1MasAppOpenAd *)ad withError:(Yodo1MasError *)error {
+    
+}
+
+- (void)onAppOpenAdClosed:(Yodo1MasAppOpenAd *)ad {
+    
+}
+
+@end
+```
+
+For `Swift`
+
+```swift
+import UIKit
+import Yodo1MasCore
+
+class MainController: UIViewController {
+    var appOpenAd: Yodo1MasAppOpenAd!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Yodo1Mas.sharedInstance().initWithAppKey("YourAppKey") {
+            
+        } fail: { error in
+            
+        }
+        
+        appOpenAd = Yodo1MasAppOpenAd.sharedInstance()
+        appOpenAd.setAdPlacement("Your Placement Id")
+        appOpenAd.adDelegate = self
+        appOpenAd.loadAd()
+    }
+}
+
+extension MainController: Yodo1MasAppOpenAdDelegate {
+    // MARK: Yodo1MasAppOpenAdDelegate
+    func onAppOpenAdLoaded(_ ad: Yodo1MasAppOpenAd) {
+        ad.showAd()
+    }
+    
+    func onAppOpenAdFailed(toLoad ad: Yodo1MasAppOpenAd, withError error: Yodo1MasError) {
+        
+    }
+    
+    func onAppOpenAdOpened(_ ad: Yodo1MasAppOpenAd) {
+        
+    }
+    
+    func onAppOpenAdFailed(toOpen ad: Yodo1MasAppOpenAd, withError error: Yodo1MasError) {
+        
+    }
+    
+    func onAppOpenAdClosed(_ ad: Yodo1MasAppOpenAd) {
+        
+    }
+}
+```
+### 4. Cold Starts and Loading Screens
+For Objective-C
+```obj-c
+#import "AppDelegate.h"
+#import <Yodo1MasCore/Yodo1Mas.h>
+
+@interface AppDelegate ()<Yodo1MasAppOpenAdDelegate>
+
+@property (nonatomic, strong) Yodo1MasAppOpenAd *appOpenAd;
+
+@end
+
+@implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    _appOpenAd = [Yodo1MasAppOpenAd sharedInstance];
+    _appOpenAd.adDelegate = self;
+    [_appOpenAd loadAd];
+    return YES;
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    if (_appOpenAd && _appOpenAd.isLoaded) {
+        [_appOpenAd showAd];
+    }
+}
+
+#pragma mark - Yodo1MasAppOpenAdDelegate
+- (void)onAppOpenAdLoaded:(Yodo1MasAppOpenAd *)ad {
+    
+}
+
+- (void)onAppOpenAdFailedToLoad:(Yodo1MasAppOpenAd *)ad withError:(Yodo1MasError *)error {
+    [ad loadAd];
+}
+
+- (void)onAppOpenAdOpened:(Yodo1MasAppOpenAd *)ad {
+    
+}
+
+- (void)onAppOpenAdFailedToOpen:(Yodo1MasAppOpenAd *)ad withError:(Yodo1MasError *)error {
+    [ad loadAd];
+}
+
+- (void)onAppOpenAdClosed:(Yodo1MasAppOpenAd *)ad {
+    [ad loadAd];
+}
+
+@end
+
+```
+
+For Swift
+```swift
+import UIKit
+
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    var appOpenAd: Yodo1MasAppOpenAd!
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        appOpenAd = Yodo1MasAppOpenAd.sharedInstance()
+        appOpenAd.setAdPlacement("Your Placement Id")
+        appOpenAd.adDelegate = self
+        appOpenAd.loadAd()
+        return true
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        if (appOpenAd.isLoaded) {
+            appOpenAd.showAd();
+        }
+    }
+}
+
+extension AppDelegate: Yodo1MasAppOpenAdDelegate {
+    // MARK: Yodo1MasAppOpenAdDelegate
+    func onAppOpenAdLoaded(_ ad: Yodo1MasAppOpenAd) {
+        
+    }
+    
+    func onAppOpenAdFailed(toLoad ad: Yodo1MasAppOpenAd, withError error: Yodo1MasError) {
+        ad.loadAd()
+    }
+    
+    func onAppOpenAdOpened(_ ad: Yodo1MasAppOpenAd) {
+        
+    }
+    
+    func onAppOpenAdFailed(toOpen ad: Yodo1MasAppOpenAd, withError error: Yodo1MasError) {
+        ad.loadAd()
+    }
+    
+    func onAppOpenAdClosed(_ ad: Yodo1MasAppOpenAd) {
+        ad.loadAd()
+    }
+}
+```
+
 ## Native Ads(Template) Integration
 
 ### 1. Init Yodo1MasNativeAdView
@@ -1613,7 +2086,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1675,7 +2148,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1903,7 +2376,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
@@ -1994,7 +2467,7 @@ For `Objective-C`
   
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[Yodo1Mas sharedInstance] initWithAppKey:@"YourAppKey" successful:^{
+  [[Yodo1Mas sharedInstance] initMasWithAppKey:@"YourAppKey" successful:^{
 
   } fail:^(NSError * _Nonnull error) {
 
