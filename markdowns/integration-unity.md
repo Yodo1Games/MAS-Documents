@@ -17,11 +17,11 @@ MAS provides 3 versions of the Unity plugin, and you need to select one dependin
 * If your game is not part of the “Designed for Families Program”, please use the Standard SDK.
 * If your game prefers to use the 4 top ad networks to keep the SDK lightweight without making significant compromises on Monetization, please use the Lite SDK.
 
-[Designed For Families](https://mas-artifacts.yodo1.com/4.8.0/Unity/Release/Rivendell-4.8.0-Family.unitypackage)
+[Designed For Families](https://mas-artifacts.yodo1.com/4.8.1/Unity/Release/Rivendell-4.8.1-Family.unitypackage)
 
-[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.8.0/Unity/Release/Rivendell-4.8.0-Full.unitypackage)
+[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.8.1/Unity/Release/Rivendell-4.8.1-Full.unitypackage)
 
-[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.8.0/Unity/Release/Rivendell-4.8.0-Lite.unitypackage)
+[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.8.1/Unity/Release/Rivendell-4.8.1-Lite.unitypackage)
 
 ### Note:
 If you are use unity **2018**,please check on the Custom Gradle Template through the following steps:
@@ -757,6 +757,7 @@ public class InterstitialSampleV2 : MonoBehaviour
     private void RequestInterstitial()
     {
         interstitialAd = Yodo1U3dInterstitialAd.GetInstance();
+        interstitialAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
     }
 }
 ```
@@ -772,6 +773,7 @@ Here's an example that shows how to load an ad:
     private void RequestInterstitial()
     {
         interstitialAd = Yodo1U3dInterstitialAd.GetInstance();
+        interstitialAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
         interstitialAd.LoadAd();
     }
 ...
@@ -805,6 +807,7 @@ public class InterstitialSampleV2 : MonoBehaviour
     private void RequestInterstitial()
     {
         interstitialAd = Yodo1U3dInterstitialAd.GetInstance();
+        interstitialAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
 
 		 // Ad Events
         interstitialAd.OnAdLoadedEvent += OnInterstitialAdLoadedEvent;
@@ -943,6 +946,7 @@ public class RewardSampleV2 : MonoBehaviour
     private void RequestReward()
     {
         rewardAd = Yodo1U3dRewardAd.GetInstance();
+        rewardAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
     }
 }
 ```
@@ -958,6 +962,7 @@ Here's an example that shows how to load an ad:
     private void RequestReward()
     {
         rewardAd = Yodo1U3dRewardAd.GetInstance();
+        rewardAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
         rewardAd.LoadAd();
     }
 ...
@@ -991,6 +996,7 @@ public class RewardSampleV2 : MonoBehaviour
     private void RequestReward()
     {
         rewardAd = Yodo1U3dRewardAd.GetInstance();
+        rewardAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
 
 		 // Ad Events
         rewardAd.OnAdLoadedEvent += OnRewardAdLoadedEvent;
@@ -1070,6 +1076,7 @@ public class RewardedInterstitialSampleV2 : MonoBehaviour
     private void RequestRewardedInterstitial()
     {
         rewardedInterstitialAd = Yodo1U3dRewardedInterstitialAd.GetInstance();
+        rewardedInterstitialAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
     }
 }
 ```
@@ -1085,6 +1092,7 @@ Here's an example that shows how to load an ad:
     private void RequestRewardedInterstitial()
     {
         rewardedInterstitialAd = Yodo1U3dRewardedInterstitialAd.GetInstance();
+        rewardedInterstitialAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
         rewardedInterstitialAd.LoadAd();
     }
 ...
@@ -1118,6 +1126,7 @@ public class RewardedInterstitialSampleV2 : MonoBehaviour
     private void RequestRewardedInterstitial()
     {
         rewardedInterstitialAd = Yodo1U3dRewardedInterstitialAd.GetInstance();
+        rewardedInterstitialAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
 
 		 // Ad Events
         rewardedInterstitialAd.OnAdLoadedEvent += OnRewardedInterstitialAdLoadedEvent;
@@ -1198,6 +1207,7 @@ public class AppOpenSampleV2 : MonoBehaviour
     private void RequestAppOpen()
     {
         appOpenAd = Yodo1U3dAppOpenAd.GetInstance();
+        appOpenAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
     }
 }
 ```
@@ -1213,6 +1223,7 @@ Here's an example that shows how to load an ad:
     private void RequestAppOpen()
     {
         appOpenAd = Yodo1U3dAppOpenAd.GetInstance();
+        appOpenAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
         appOpenAd.LoadAd();
     }
 ...
@@ -1246,6 +1257,7 @@ public class AppOpenSampleV2 : MonoBehaviour
     private void RequestAppOpen()
     {
         appOpenAd = Yodo1U3dAppOpenAd.GetInstance();
+        appOpenAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
 
 		 // Ad Events
         appOpenAd.OnAdLoadedEvent += OnAppOpenAdLoadedEvent;
@@ -1315,6 +1327,8 @@ public class AppOpenSampleV2 : MonoBehaviour
     private void RequestAppOpen()
     {
         appOpenAd = Yodo1U3dAppOpenAd.GetInstance();
+        appOpenAd.autoDelayIfLoadFail = true; // If LoadAd method is called in AdLoadFailed callback, there are chances of this function getting called continuously which might lead to ANRs or other errors. So we recommend that you retry with exponentially higher delays, up to a maximum delay. You can use the below boolean variable to turn on ad load retrying exponentially with higher delays from 2 seconds to 32 seconds. By default, this variable will be false. If this variable is enabled, then the AdFailedToLoad callback will be triggered with the above mentioned delays. 
+        
         appOpenAd.OnAdLoadedEvent += OnAppOpenAdLoadedEvent;
         appOpenAd.OnAdLoadFailedEvent += OnAppOpenAdLoadFailedEvent;
         appOpenAd.OnAdOpenedEvent += OnAppOpenAdOpenedEvent;
