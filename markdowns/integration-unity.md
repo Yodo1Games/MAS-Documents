@@ -1374,7 +1374,9 @@ public class AppOpenSampleV2 : MonoBehaviour
         ad.LoadAd();
     }
 }
+
 ```
+If app open ads are showed in app resume methods like OnApplicationFocus() or OnApplicationPause(), there are chances of app open ads getting displayed after rewarded video or Interstitial videos are played. The developers can handle this scenario using boolean flags. That is add a boolean check before showing app open ads.
 
 ## Native Ads Integration
 
