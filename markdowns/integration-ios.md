@@ -1971,7 +1971,7 @@ For Objective-C
 #import "AppDelegate.h"
 #import <Yodo1MasCore/Yodo1Mas.h>
 
-@interface AppDelegate ()<Yodo1MasAppOpenAdDelegate>
+@interface AppDelegate ()<Yodo1MasAppStatusDelegate, Yodo1MasAppOpenAdDelegate>
 
 @property (nonatomic, strong) Yodo1MasAppOpenAd *appOpenAd;
 
@@ -1980,14 +1980,18 @@ For Objective-C
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    [Yodo1Mas sharedInstance].appStatusDelegate = self;
+
     _appOpenAd = [Yodo1MasAppOpenAd sharedInstance];
     _appOpenAd.adDelegate = self;
     [_appOpenAd loadAd];
     return YES;
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    if (_appOpenAd && _appOpenAd.isLoaded) {
+#pragma mark - Yodo1MasAppStatusDelegate
+- (void)onApplicationEnterForeground {
+     if (_appOpenAd && _appOpenAd.isLoaded) {
         [_appOpenAd showAd];
     }
 }
@@ -2025,6 +2029,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var appOpenAd: Yodo1MasAppOpenAd!
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        Yodo1Mas.sharedInstance().appStatusDelegate = self;
+
         appOpenAd = Yodo1MasAppOpenAd.sharedInstance()
         appOpenAd.setAdPlacement("Your Placement Id")
         appOpenAd.adDelegate = self
@@ -2032,14 +2039,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
+    
+}
+
+extension AppDelegate: Yodo1MasAppStatusDelegate, Yodo1MasAppOpenAdDelegate {
+
+    // MARK: Yodo1MasAppStatusDelegate
+    func onApplicationEnterForeground {
         if (appOpenAd.isLoaded) {
             appOpenAd.show();
         }
     }
-}
 
-extension AppDelegate: Yodo1MasAppOpenAdDelegate {
     // MARK: Yodo1MasAppOpenAdDelegate
     func onAppOpenAdLoaded(_ ad: Yodo1MasAppOpenAd) {
         

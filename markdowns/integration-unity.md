@@ -679,6 +679,7 @@ private void InitializeInterstitialAds()
 	// Add Events
     Yodo1U3dMasCallback.Interstitial.OnAdLoadedEvent += OnInterstitialAdLoadedEvent;
     Yodo1U3dMasCallback.Interstitial.OnAdLoadFailedEvent += OnInterstitialAdLoadFailedEvent;
+    Yodo1U3dInterstitialAd.GetInstance().OnAdOpeningEvent += OnInterstitialAdOpeningEvent;
     Yodo1U3dMasCallback.Interstitial.OnAdOpenedEvent += OnInterstitialAdOpenedEvent;
     Yodo1U3dMasCallback.Interstitial.OnAdOpenFailedEvent += OnInterstitialAdOpenFailedEvent;
     Yodo1U3dMasCallback.Interstitial.OnAdClosedEvent += OnInterstitialAdClosedEvent;
@@ -692,6 +693,11 @@ private void OnInterstitialAdLoadedEvent()
 private void OnInterstitialAdLoadFailedEvent(Yodo1U3dAdError adError) 
 {
     Debug.Log("[Yodo1 Mas] Interstitial ad load error - " + adError.ToString());
+}
+
+private void OnInterstitialAdOpeningEvent(Yodo1U3dInterstitialAd ad)
+{
+    Debug.Log(Yodo1U3dMas.TAG + "OnInterstitialAdOpeningEvent event received");
 }
 
 private void OnInterstitialAdOpenedEvent()
@@ -1317,6 +1323,13 @@ public class AppOpenSampleV2 : MonoBehaviour
     ...
     public void Start()
     {
+        Yodo1U3dMasCallback.OnAppEnterForegroundEvent += ()=>
+        {
+            if (focus)
+            {
+                appOpenAd.ShowAd();
+            }
+        };
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
         Yodo1U3dMas.InitializeMasSdk();
@@ -1336,14 +1349,6 @@ public class AppOpenSampleV2 : MonoBehaviour
         appOpenAd.OnAdClosedEvent += OnAppOpenAdClosedEvent;
         appOpenAd.OnAdEarnedEvent += OnAppOpenAdEarnedEvent;
         appOpenAd.LoadAd();
-    }
-
-    private void OnApplicationFocus(bool focus)
-    {
-        if (focus)
-        {
-            appOpenAd.ShowAd();
-        }
     }
 
     private void OnAppOpenAdLoadedEvent(Yodo1U3dAppOpenAd ad)
