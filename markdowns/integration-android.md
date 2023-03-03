@@ -43,19 +43,19 @@ mavenCentral()
 #### 2.1 Add a Gradle dependency
 
 ```groovy
-implementation 'com.yodo1.mas:full:4.8.6'
+implementation 'com.yodo1.mas:full:4.8.7'
 ```
 
 If you need to comply with Google Family Policy:
 
 ```groovy
-implementation 'com.yodo1.mas:google:4.8.6'
+implementation 'com.yodo1.mas:google:4.8.7'
 ```
 
 If you need to use lightweight SDK:
 
 ```groovy
-implementation 'com.yodo1.mas:lite:4.8.6'
+implementation 'com.yodo1.mas:lite:4.8.7'
 ```
 
 #### 2.2 Add the `compileOptions` property to the `Android` section
@@ -1739,10 +1739,8 @@ class MainActivity : AppCompatActivity() {
 
 ### 4. Cold Starts and Loading Screens
 #### Listen for App Foregrounding Events
-To be notified of app foregrounding events, you need to register a LifecycleObserver. You may need to add a lifecycle library to your application-level build.gradlefile:
-```
-implementation("androidx.lifecycle:lifecycle-process:2.2.0")
-```
+To be notified of app foregrounding events, You can listen for these events through the `Yodo1Mas.AppStatusListener` class.
+
 
 For Java
 
@@ -1753,54 +1751,54 @@ import ...
 import com.yodo1.mas.Yodo1Mas;
 import com.yodo1.mas.appopenad.Yodo1MasAppOpenAd;
 import com.yodo1.mas.appopenad.Yodo1MasAppOpenAdListener;
+import com.yodo1.mas.error.Yodo1MasError;
 
-public class MyApplication extends Application implements LifecycleObserver
-{
-   private Yodo1MasAppOpenAd appOpenAd = Yodo1MasAppOpenAd.getInstance();
+public class AppOpenAdActivity extends AppCompatActivity {
 
-   @Override
-   public void onCreate() {
-       super.onCreate();
-       ProcessLifecycleOwner.get().getLifecycle().addObserver(this);
-       appOpenAd.setAdListener(new Yodo1MasAppOpenAdListener() {
-		    @Override
-		    public void onAppOpenAdLoaded(Yodo1MasAppOpenAd ad) {
-		        
-		    }
-		
-		    @Override
-		    public void onAppOpenAdFailedToLoad(Yodo1MasAppOpenAd ad, @NonNull Yodo1MasError error) {
-		        ad.loadAd(Yodo1Mas.getInstance().getCurrentActivity());
-		    }
-		
-		    @Override
-		    public void onAppOpenAdOpened(Yodo1MasAppOpenAd ad) {
-		        
-		    }
-		
-		    @Override
-		    public void onAppOpenAdFailedToOpen(Yodo1MasAppOpenAd ad, @NonNull Yodo1MasError error) {
-				ad.loadAd(Yodo1Mas.getInstance().getCurrentActivity());
-		    }
-		
-		    @Override
-		    public void onAppOpenAdClosed(Yodo1MasAppOpenAd ad) {
-		        ad.loadAd(Yodo1Mas.getInstance().getCurrentActivity());
-		    }
-		 });
-   }
+    private Yodo1MasAppOpenAd appOpenAd = Yodo1MasAppOpenAd.getInstance();
 
-   /** LifecycleObserver method that shows the app open ad when the app moves to foreground. */
-   @OnLifecycleEvent(Lifecycle.Event.ON_START)
-   public void onMoveToForeground() {
-        Activity activity = Yodo1Mas.getInstance().getCurrentActivity();
-        if (activity == null) return;  
-        if (appOpenAd.isLoaded()) {
-            appOpenAd.showAd(activity, "Your placement id");
-        } else {
-            appOpenAd.loadAd(activity);
-        }
-   }
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        appOpenAd.setAdListener(new Yodo1MasAppOpenAdListener() {
+            @Override
+            public void onAppOpenAdLoaded(Yodo1MasAppOpenAd ad) {
+
+            }
+
+            @Override
+            public void onAppOpenAdFailedToLoad(Yodo1MasAppOpenAd ad, @NonNull Yodo1MasError error) {
+                ad.loadAd(Yodo1Mas.getInstance().getCurrentActivity());
+            }
+
+            @Override
+            public void onAppOpenAdOpened(Yodo1MasAppOpenAd ad) {
+
+            }
+
+            @Override
+            public void onAppOpenAdFailedToOpen(Yodo1MasAppOpenAd ad, @NonNull Yodo1MasError error) {
+                ad.loadAd(Yodo1Mas.getInstance().getCurrentActivity());
+            }
+
+            @Override
+            public void onAppOpenAdClosed(Yodo1MasAppOpenAd ad) {
+                ad.loadAd(Yodo1Mas.getInstance().getCurrentActivity());
+            }
+        });
+
+        Yodo1Mas.getInstance().setAppStatusListener(new Yodo1Mas.AppStatusListener() {
+            @Override
+            public void onApplicationEnterForeground() {
+                if (appOpenAd.isLoaded()) {
+                    appOpenAd.showAd(AppOpenAdActivity.this, "Your placement id");
+                } else {
+                    appOpenAd.loadAd(AppOpenAdActivity.this);
+                }
+            }
+        });
+    }
 }
 ```
 
@@ -1810,62 +1808,36 @@ For Kotlin
 package ...
 
 import ...
-import com.yodo1.mas.Yodo1Mas;
-import com.yodo1.mas.appopenad.Yodo1MasAppOpenAd;
-import com.yodo1.mas.appopenad.Yodo1MasAppOpenAdListener;
+import com.yodo1.mas.appopenad.Yodo1MasAppOpenAdListener
+import com.yodo1.mas.error.Yodo1MasError
+import com.yodo1.mas.Yodo1Mas
+import com.yodo1.mas.Yodo1Mas.AppStatusListener
 
-class MyApplication : Application(), LifecycleObserver {
-
-    val appOpenAd = Yodo1MasAppOpenAd.getInstance()
-
-    override fun onCreate() {
-        super.onCreate()
-        ProcessLifecycleOwner.get().getLifecycle().addObserver(this);
+class AppOpenAdActivity : AppCompatActivity() {
+    private val appOpenAd = Yodo1MasAppOpenAd.getInstance()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         appOpenAd.setAdListener(object : Yodo1MasAppOpenAdListener {
-            override fun onAppOpenAdLoaded(ad: Yodo1MasAppOpenAd?) {
-                // Code to be executed when an ad finishes loading.
-                
+            override fun onAppOpenAdLoaded(ad: Yodo1MasAppOpenAd) {}
+            override fun onAppOpenAdFailedToLoad(ad: Yodo1MasAppOpenAd, error: Yodo1MasError) {
+                ad.loadAd(Yodo1Mas.getInstance().currentActivity)
             }
 
-            override fun onAppOpenAdFailedToLoad(
-                ad: Yodo1appOpenAd?,
-                error: Yodo1MasError
-            ) {
-                // Code to be executed when an ad request fails.
-                ad.loadAd(Yodo1Mas.getInstance().getCurrentActivity())
+            override fun onAppOpenAdOpened(ad: Yodo1MasAppOpenAd) {}
+            override fun onAppOpenAdFailedToOpen(ad: Yodo1MasAppOpenAd, error: Yodo1MasError) {
+                ad.loadAd(Yodo1Mas.getInstance().currentActivity)
             }
 
-            override fun onAppOpenAdOpened(ad: Yodo1MasAppOpenAd?) {
-                // Code to be executed when an ad opens an overlay that
-		         // covers the screen.
-            }
-
-            override fun onAppOpenAdFailedToOpen(
-                ad: Yodo1MasAppOpenAd?,
-                error: Yodo1MasError
-            ) {
-                // Code to be executed when an ad open fails.
-                ad.loadAd(Yodo1Mas.getInstance().getCurrentActivity())
-            }
-
-            override fun onAppOpenAdClosed(ad: Yodo1MasAppOpenAd?) {
-                // Code to be executed when the user is about to return
-		         // to the app after tapping on an ad.
-                 ad.loadAd(Yodo1Mas.getInstance().getCurrentActivity())
+            override fun onAppOpenAdClosed(ad: Yodo1MasAppOpenAd) {
+                ad.loadAd(Yodo1Mas.getInstance().currentActivity)
             }
         })
-        
-    }
-
-    /** LifecycleObserver method that shows the app open ad when the app moves to foreground. */
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    fun onMoveToForeground() {
-        var activity = Yodo1Mas.getInstance().getCurrentActivity()
-        if (activity == null) return 
-        if (appOpenAd.isLoaded()) {
-            appOpenAd.showAd(activity, "Your placement id")
-        } else {
-            appOpenAd.loadAd(activity)
+        Yodo1Mas.getInstance().setAppStatusListener {
+            if (appOpenAd.isLoaded) {
+                appOpenAd.showAd(this@AppOpenAdActivity, "Your placement id")
+            } else {
+                appOpenAd.loadAd(this@AppOpenAdActivity)
+            }
         }
     }
 }
