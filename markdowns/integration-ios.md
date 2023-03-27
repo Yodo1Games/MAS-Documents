@@ -31,7 +31,7 @@
 	source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
 	source 'https://github.com/Yodo1Games/MAS-Spec.git'
 	
-	pod 'Yodo1MasFull', '4.8.7'
+	pod 'Yodo1MasFull', '4.8.8'
 	```
 
   If you need to use lightweight SDK:
@@ -41,7 +41,7 @@
   source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
   source 'https://github.com/Yodo1Games/MAS-Spec.git'
   
-  pod 'Yodo1MasLite', '4.8.7'
+  pod 'Yodo1MasLite', '4.8.8'
   ```
 	
 	Execute the following command in `Terminal` :
