@@ -17,11 +17,11 @@ MAS provides 3 versions of the Unity plugin, and you need to select one dependin
 * If your game is not part of the “Designed for Families Program”, please use the Standard SDK.
 * If your game prefers to use the 4 top ad networks to keep the SDK lightweight without making significant compromises on Monetization, please use the Lite SDK.
 
-[Designed For Families](https://mas-artifacts.yodo1.com/4.8.6/Unity/Release/Rivendell-4.8.6-Family.unitypackage)
+[Designed For Families](https://mas-artifacts.yodo1.com/4.8.7/Unity/Release/Rivendell-4.8.7-Family.unitypackage)
 
-[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.8.6/Unity/Release/Rivendell-4.8.6-Full.unitypackage)
+[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.8.7/Unity/Release/Rivendell-4.8.7-Full.unitypackage)
 
-[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.8.6/Unity/Release/Rivendell-4.8.6-Lite.unitypackage)
+[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.8.7/Unity/Release/Rivendell-4.8.7-Lite.unitypackage)
 
 ### Note:
 If you are use unity **2018**,please check on the Custom Gradle Template through the following steps:
@@ -679,6 +679,7 @@ private void InitializeInterstitialAds()
 	// Add Events
     Yodo1U3dMasCallback.Interstitial.OnAdLoadedEvent += OnInterstitialAdLoadedEvent;
     Yodo1U3dMasCallback.Interstitial.OnAdLoadFailedEvent += OnInterstitialAdLoadFailedEvent;
+    Yodo1U3dInterstitialAd.GetInstance().OnAdOpeningEvent += OnInterstitialAdOpeningEvent;
     Yodo1U3dMasCallback.Interstitial.OnAdOpenedEvent += OnInterstitialAdOpenedEvent;
     Yodo1U3dMasCallback.Interstitial.OnAdOpenFailedEvent += OnInterstitialAdOpenFailedEvent;
     Yodo1U3dMasCallback.Interstitial.OnAdClosedEvent += OnInterstitialAdClosedEvent;
@@ -692,6 +693,11 @@ private void OnInterstitialAdLoadedEvent()
 private void OnInterstitialAdLoadFailedEvent(Yodo1U3dAdError adError) 
 {
     Debug.Log("[Yodo1 Mas] Interstitial ad load error - " + adError.ToString());
+}
+
+private void OnInterstitialAdOpeningEvent(Yodo1U3dInterstitialAd ad)
+{
+    Debug.Log(Yodo1U3dMas.TAG + "OnInterstitialAdOpeningEvent event received");
 }
 
 private void OnInterstitialAdOpenedEvent()
@@ -1317,6 +1323,13 @@ public class AppOpenSampleV2 : MonoBehaviour
     ...
     public void Start()
     {
+        Yodo1U3dMasCallback.OnAppEnterForegroundEvent += ()=>
+        {
+            if (focus)
+            {
+                appOpenAd.ShowAd();
+            }
+        };
         // Initialize the MAS SDK.
         Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{ };
         Yodo1U3dMas.InitializeMasSdk();
@@ -1336,14 +1349,6 @@ public class AppOpenSampleV2 : MonoBehaviour
         appOpenAd.OnAdClosedEvent += OnAppOpenAdClosedEvent;
         appOpenAd.OnAdEarnedEvent += OnAppOpenAdEarnedEvent;
         appOpenAd.LoadAd();
-    }
-
-    private void OnApplicationFocus(bool focus)
-    {
-        if (focus)
-        {
-            appOpenAd.ShowAd();
-        }
     }
 
     private void OnAppOpenAdLoadedEvent(Yodo1U3dAppOpenAd ad)

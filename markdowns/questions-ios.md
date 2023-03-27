@@ -13,3 +13,13 @@ This pop-up window is from applovin, which will stop appearing by deleting `NSAl
 ## Will integrate with MAS be rejected by Apple because of UIWebView?
 
 No, the MAS SDK does not use UIWebView. To see where UIWebView is used, click [here](https://levelup.gitconnected.com/how-to-find-and-remove-uiwebview-uses-in-your-ios-app-d9395f7baacc).
+
+## How to view the debuglog?
+From version 4.8.7 the debug log will be hidden by default. If you want to view the debug log, please add the following elements to the info.plist file
+
+```
+<dict>
+    <key>EnableDebugLogging</key>
+    <true/>
+</dict>
+```

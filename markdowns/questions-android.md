@@ -34,6 +34,14 @@ Copy
 
 This issue is caused by an incorrect package name. MAS includes many networks and most of them have a bundle-id verification mechanism. You have to use the real package name from your app to get live ads.
 
+## How to view the debuglog?
+From version 4.8.7 the debug log will be hidden by default. If you want to veiw the debug log, please add the following elements under the application node of the AndroidManifest.xml file
 
+```java
+<meta-data
+    android:name="com.yodo1.mas.EnableDebugLogging"
+    android:value="true" />
+
+```
 
 
