@@ -1544,5 +1544,5 @@ nativeAdView.SetAdPlacement("Placement_Name")
 
 ## Show Debugger
 ```c#
-Yodo1U3dMas.ShowDebugger()
+Yodo1U3dMas.ShowDebugger();
 ```
