@@ -2485,3 +2485,14 @@ Yodo1Mas.getInstance().showRewardedAd(MyActivity.this, "MY_REWARDED_PLACEMENT");
 ```java
 Yodo1Mas.getInstance().showBannerAd(MyActivity.this, "MY_BANNER_PLACEMENT");
 ```
+
+
+## Show Debugger
+For `Java`
+```java
+Yodo1Mas.getInstance().showDebugger(activity);
+```
+For `Kotlin`
+```java
+Yodo1Mas.getInstance().showDebugger(activity)
+```

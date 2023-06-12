@@ -2561,3 +2561,14 @@ extension MainController: Yodo1MasNativeAdViewDelegate {
     }
 }
 ```
+
+## Show Debugger
+For `obj-c`
+```objc
+[[Yodo1Mas sharedInstance] showDebugger];
+```
+
+For `Swift`
+```swift
+Yodo1Mas.sharedInstance().showDebugger()
+```

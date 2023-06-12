@@ -1541,3 +1541,8 @@ Simply add the placement name as a string in the parentheses.
 ```c#
 nativeAdView.SetAdPlacement("Placement_Name")
 ```
+
+## Show Debugger
+```c#
+Yodo1U3dMas.ShowDebugger()
+```
