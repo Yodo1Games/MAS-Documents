@@ -9,22 +9,15 @@
 
 ## The Integration Steps
 
-### 1. Download the Correct Unity Plugin
+### 1. Download the Unity Plugin
 
-MAS provides 3 versions of the Unity plugin, and you need to select one depending on your game:
+Download MAS Unity Plugin from the below link:
 
-* If your game is a part of Google Play’s “Designed for Families” program, you will need to use the Family SDK in order to comply with the program’s requirements.
-* If your game is not part of the “Designed for Families Program”, please use the Standard SDK.
-* If your game prefers to use the 4 top ad networks to keep the SDK lightweight without making significant compromises on Monetization, please use the Lite SDK.
 
-[Designed For Families](https://mas-artifacts.yodo1.com/4.8.9/Unity/Release/Rivendell-4.8.9-Family.unitypackage)
-
-[Standard MAS Plugin](https://mas-artifacts.yodo1.com/4.8.9/Unity/Release/Rivendell-4.8.9-Full.unitypackage)
-
-[Lightweight MAS Plugin](https://mas-artifacts.yodo1.com/4.8.9/Unity/Release/Rivendell-4.8.9-Lite.unitypackage)
+[MAS Unity Plugin](https://mas-artifacts.yodo1.com/4.8.10/Unity/Release/Rivendell-4.8.10-Full.unitypackage)
 
 ### Note:
-If you are use unity **2018**,please check on the Custom Gradle Template through the following steps:
+If you are using unity **2018**, please check on the Custom Gradle Template through the following steps:
 
 File -> Build Setting -> Player Settings -> Publishing Settings -> Build as below
 <center class="half">
@@ -42,7 +35,7 @@ Open your Unity project and import the Unity package. Double click the compresse
 **Important!** The MAS Unity Plugin is built for Android & iOS platforms. Please run your projects on an Android or iOS device to test ads when the integration is completed.
 
 ### 3. Enter Application Information
-> MAS provides a configuration wizard for Unity to quickly configure application information. You can access it through `Assets/Yodo1/MAS Settings`.
+> MAS provides a configuration wizard for Unity to quickly configure application information. You can access it through `Yodo1/MAS/MAS Settings`.
 
 <center class="half">
     <img src="./../resource/settings-mas.png" width="400"/> 
@@ -103,7 +96,33 @@ Unity 2020.3.15 and above / 2021.1.16 and above can ignore the following setting
     <img src="./../resource/unity-android-support12-3.png" width="400"/> 
 </center>
 
-### 6. Comply With Necessary Legal Frameworks
+### 6. Manage ad network in the SDK(Optional)
+
+The supporting third party network SDKs can be removed or installed again if removed into the SDK. This is an optional step and please be advised that removing ad networks from the SDK can impact the revenue. The editor window can be selected using the following steps.
+
+Yodo1-> MAS-> Integration Manager as below
+
+<center class="half">
+    <img src="./../resource/integration-manager.png" width="400"/> 
+</center>
+
+The pop up to manage ad network is as shown below.
+
+<center class="half">
+    <img src="./../resource/integration-manager-editor.png" width="400"/> 
+</center>
+
+The first line in the pop up depicts the details of the SDK. The upgrade button in the pop up can be used to upgrade to the latest SDK when a MAS SDK update is available.
+
+There are separate tabs available for android and iOS versions. The third party networks in each versions are different. 
+
+The third party networks can be removed from the SDK by clicking remove button adjacent to each networks. This step is not recommended as this might negatively impact the revenue. If removed the network can be added back using the install button which will appear next to the removed ad network. 
+
+Note: If a third party SDK is removed or added back again, force resove need to be performed.
+
+In android version, the build size impact of each SDK is shown at the bottom part of the pop up.
+
+### 7. Comply With Necessary Legal Frameworks
 Please comply with all legal frameworks that apply to your game and its users. You can find information on compliance through these links:
 
 * [GDPR](privacy-gdpr.md)
@@ -176,15 +195,15 @@ switch(attStatus) {
 
 <font color=red>IMPORTANT!</font> `GetUserAge()` and `GetAttrackingStatus()` must be called after the SDK is initialized. `GetAttrackingStatus()` only works on iOS platform
 
-### 7. Initialize the SDK
+### 8. Initialize the SDK
 
-#### 7.1 Using namespace
+#### 8.1 Using namespace
 
 ```c#
 using Yodo1.MAS;
 ```
 
-#### 7.2 Sets the initialization delegate method
+#### 8.2 Sets the initialization delegate method
 ```c#
 Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{
     if (success)
@@ -194,7 +213,7 @@ Yodo1U3dMasCallback.OnSdkInitializedEvent += (success, error) =>{
     
 ```
 
-#### 7.3 SDK initialization is called in the `Start` method
+#### 8.3 SDK initialization is called in the `Start` method
 
 ```c#
 void Start()  {
@@ -202,7 +221,7 @@ void Start()  {
 }
 ```
 
-### 8. Proguard
+### 9. Proguard
 > If you don't need to use Proguard to obfuscate the code, please ignore this item.
 
 
