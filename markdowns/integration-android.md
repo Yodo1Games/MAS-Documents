@@ -43,19 +43,19 @@ mavenCentral()
 #### 2.1 Add a Gradle dependency
 
 ```groovy
-implementation 'com.yodo1.mas:full:4.8.9'
+implementation 'com.yodo1.mas:full:4.8.10'
 ```
 
 If you need to comply with Google Family Policy:
 
 ```groovy
-implementation 'com.yodo1.mas:google:4.8.9'
+implementation 'com.yodo1.mas:google:4.8.10'
 ```
 
 If you need to use lightweight SDK:
 
 ```groovy
-implementation 'com.yodo1.mas:lite:4.8.9'
+implementation 'com.yodo1.mas:lite:4.8.10'
 ```
 
 #### 2.2 Add the `compileOptions` property to the `Android` section
@@ -2484,4 +2484,15 @@ Yodo1Mas.getInstance().showRewardedAd(MyActivity.this, "MY_REWARDED_PLACEMENT");
 
 ```java
 Yodo1Mas.getInstance().showBannerAd(MyActivity.this, "MY_BANNER_PLACEMENT");
+```
+
+
+## Show Debugger
+For `Java`
+```java
+Yodo1Mas.getInstance().showDebugger(activity);
+```
+For `Kotlin`
+```java
+Yodo1Mas.getInstance().showDebugger(activity)
 ```

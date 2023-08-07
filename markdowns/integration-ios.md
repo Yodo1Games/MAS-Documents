@@ -31,7 +31,7 @@
 	source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
 	source 'https://github.com/Yodo1Games/MAS-Spec.git'
 	
-	pod 'Yodo1MasFull', '4.8.9'
+	pod 'Yodo1MasFull', '4.8.10'
 	```
 
   If you need to use lightweight SDK:
@@ -41,7 +41,7 @@
   source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
   source 'https://github.com/Yodo1Games/MAS-Spec.git'
   
-  pod 'Yodo1MasLite', '4.8.9'
+  pod 'Yodo1MasLite', '4.8.10'
   ```
 	
 	Execute the following command in `Terminal` :
@@ -2560,4 +2560,15 @@ extension MainController: Yodo1MasNativeAdViewDelegate {
         
     }
 }
+```
+
+## Show Debugger
+For `obj-c`
+```objc
+[[Yodo1Mas sharedInstance] showDebugger];
+```
+
+For `Swift`
+```swift
+Yodo1Mas.sharedInstance().showDebugger()
 ```
