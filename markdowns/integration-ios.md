@@ -31,7 +31,7 @@
 	source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
 	source 'https://github.com/Yodo1Games/MAS-Spec.git'
 	
-	pod 'Yodo1MasFull', '4.8.10'
+	pod 'Yodo1MasFull', '4.9.0'
 	```
 
   If you need to use lightweight SDK:
@@ -41,7 +41,7 @@
   source 'https://github.com/CocoaPods/Specs.git'  # recommend: source 'https://cdn.cocoapods.org/'
   source 'https://github.com/Yodo1Games/MAS-Spec.git'
   
-  pod 'Yodo1MasLite', '4.8.10'
+  pod 'Yodo1MasLite', '4.9.0'
   ```
 	
 	Execute the following command in `Terminal` :
@@ -59,7 +59,7 @@
 
 Follow these steps to add the SDK to your project:
 
-* [Download iOS SDK Version 4.6.3](https://mas-artifacts.yodo1.com/4.6.3/iOS/Release/Yodo1MasFull-Manual-4.6.3.zip) or [Download iOS Lite SDK Version 4.6.3](https://mas-artifacts.yodo1.com/4.6.3/iOS/Release/Yodo1MasLite-Manual-4.6.3.zip)</br>
+* [Download iOS SDK Version 4.8.9](https://mas-artifacts.yodo1.com/4.8.9/iOS/Release/MAS.zip)</br>
 	After you download the SDK; Unzip and copy the downloaded SDK into the project
 	<img src="./../resource/ios-manual-01.png" width="400"/>
 	<img src="./../resource/ios-manual-02.png" width="400"/> 
