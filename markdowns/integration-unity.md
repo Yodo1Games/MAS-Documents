@@ -14,7 +14,7 @@
 Download MAS Unity Plugin from the below link:
 
 
-[MAS Unity Plugin](https://mas-artifacts.yodo1.com/4.9.1/Unity/Release/Rivendell-4.9.1-Full.unitypackage)
+[MAS Unity Plugin](https://mas-artifacts.yodo1.com/4.9.2/Unity/Release/Rivendell-4.9.2-Full.unitypackage)
 
 ### Note:
 If you are using unity **2018**, please check on the Custom Gradle Template through the following steps:
